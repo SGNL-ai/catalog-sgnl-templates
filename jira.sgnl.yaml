@@ -254,8 +254,11 @@ entities:
       - name: fields__timeoriginalestimate
         externalId: fields__timeoriginalestimate
         type: String
-      - name: fields__description
-        externalId: fields__description
+      - name: fields__description__version
+        externalId: fields__description__version
+        type: Int64
+      - name: fields__description__type
+        externalId: fields__description__type
         type: String
       - name: fields__security
         externalId: fields__security
