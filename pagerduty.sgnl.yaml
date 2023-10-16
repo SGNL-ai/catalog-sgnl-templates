@@ -22,11 +22,6 @@ adapterConfig: "e30="
 auth:
   - bearer:
       authToken: "Token token={{Input Required: token}}"
-  - oAuth2ClientCredentials:
-      clientId: "{{Input Required: Client-ID}}"
-      clientSecret: "{{Input Required: Client-Secret}}"
-      tokenUrl: "https://identity.pagerduty.com/oauth/token"
-      authStyle: AutoDetect
 
 entities:
   User:
