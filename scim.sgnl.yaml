@@ -97,7 +97,7 @@ entities:
         type: String
       - name: active
         externalId: active
-        type: Boolean 
+        type: Bool 
       - name: password
         externalId: password
         type: String
@@ -142,6 +142,33 @@ entities:
         externalId: $.meta.location
         type: String
 
+  Email:
+    parent: Users  # External ID of the parent entity
+    displayName: Emails
+    externalId: emails
+    description: Entity representing SCIM user emails
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: display
+        externalId: display
+        type: String
+      - name: type
+        externalId: type
+        type: String
+      - name: primary
+        externalId: primary
+        type: Bool
+      
   Group:
     displayName: SCIMGroup
     externalId: Groups
