@@ -142,33 +142,6 @@ entities:
         externalId: $.meta.location
         type: String
 
-  Email:
-    parent: Users  # External ID of the parent entity
-    displayName: Emails
-    externalId: emails
-    description: Entity representing SCIM user emails
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
-    pageSize: 100
-    pagesOrderedById: false
-    attributes:
-      - name: value
-        externalId: value
-        type: String
-        indexed: true
-        uniqueId: true
-      - name: display
-        externalId: display
-        type: String
-      - name: type
-        externalId: type
-        type: String
-      - name: primary
-        externalId: primary
-        type: Bool
-      
   Group:
     displayName: SCIMGroup
     externalId: Groups
@@ -195,3 +168,252 @@ entities:
         externalId: $.meta.location
         type: String
 
+  GroupMember:
+    parent: Users  # External ID of the parent entity
+    displayName: SCIMGroupMember
+    externalId: groups
+    description: Entity representing SCIM user group members
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: display
+        externalId: display
+        type: String
+      - name: type
+        externalId: type
+        type: String
+      - name: ref
+        externalId: '..["$ref"]'
+        type: String
+  
+  Email:
+    parent: Users  # External ID of the parent entity
+    displayName: SCIMUserEmail
+    externalId: emails
+    description: Entity representing SCIM user emails
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: display
+        externalId: display
+        type: String
+      - name: type
+        externalId: type
+        type: String
+      - name: primary
+        externalId: primary
+        type: Bool
+
+  Address:
+    parent: Users  # External ID of the parent entity
+    displayName: SCIMUserAddress
+    externalId: addresses
+    description: Entity representing SCIM user addresses
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: formatted
+        externalId: formatted
+        type: String
+      - name: streetAddress
+        externalId: streetAddress
+        type: String
+      - name: locality
+        externalId: locality
+        type: String
+      - name: region
+        externalId: region
+        type: String
+      - name: postalCode
+        externalId: postalCode
+        type: String
+      - name: country
+        externalId: country
+        type: String
+      - name: type
+        externalId: type
+        type: String
+
+  PhoneNumber:
+    parent: Users  # External ID of the parent entity
+    displayName: SCIMUserPhoneNumber
+    externalId: phoneNumbers
+    description: Entity representing SCIM user phone numbers
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: display
+        externalId: display
+        type: String
+      - name: type
+        externalId: type
+        type: String
+      - name: primary
+        externalId: primary
+        type: Bool
+
+  IMS:
+    parent: Users  # External ID of the parent entity
+    displayName: SCIMUserIMS
+    externalId: ims
+    description: Entity representing SCIM user ims
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: display
+        externalId: display
+        type: String  
+      - name: type
+        externalId: type
+        type: String
+      - name: primary
+        externalId: primary
+        type: Bool
+
+  Entitlement:
+    parent: Users  # External ID of the parent entity
+    displayName: SCIMUserEntitlement
+    externalId: entitlements
+    description: Entity representing SCIM user entitlements
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: display
+        externalId: display
+        type: String  
+      - name: type
+        externalId: type
+        type: String
+      - name: primary
+        externalId: primary
+        type: Bool
+  
+  Roles:
+    parent: Users  # External ID of the parent entity
+    displayName: SCIMUserRole
+    externalId: roles
+    description: Entity representing SCIM user roles
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: display
+        externalId: display
+        type: String  
+      - name: type
+        externalId: type
+        type: String
+      - name: primary
+        externalId: primary
+        type: Bool
+
+  Photo:
+    parent: Users  # External ID of the parent entity
+    displayName: SCIMUserPhoto
+    externalId: photos
+    description: Entity representing SCIM user photos
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: display
+        externalId: display
+        type: String  
+      - name: type
+        externalId: type
+        type: String
+      - name: primary
+        externalId: primary
+        type: Bool
+  
+  Certificates:
+    parent: Users  # External ID of the parent entity
+    displayName: SCIMUserCertificate
+    externalId: certificates
+    description: Entity representing SCIM user certificates
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: display
+        externalId: display
+        type: String  
+      - name: type
+        externalId: type
+        type: String
+      - name: primary
+        externalId: primary
+        type: Bool
