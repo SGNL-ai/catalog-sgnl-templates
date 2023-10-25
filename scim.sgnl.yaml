@@ -431,7 +431,7 @@ relationships:
   # We rely on the `parent` relationship already created during ingestion.
   DummyParent: 
     name: parent
-    fromAttribute: GroupMember.display
+    fromAttribute: GroupMember.displayName
     toAttribute: User.id
   GroupMember:
     name: GroupMember
