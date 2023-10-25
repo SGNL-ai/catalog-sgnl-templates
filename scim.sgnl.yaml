@@ -417,3 +417,38 @@ entities:
       - name: primary
         externalId: primary
         type: Bool
+
+relationships:
+  # Manager relationship
+  UserManager:
+    name: Manager
+    fromAttribute: User.managerId
+    toAttribute: User.id
+  
+  # The internal `parent` relationship cannot be directly referenced in `path` relationship.
+  # Create a dummy relationship to represent the `parent` relationship.
+  # The fromAttribute and toAttribute does not matter. Only entities should be specified correctly.
+  # We rely on the `parent` relationship already created during ingestion.
+  DummyParent: 
+    name: parent
+    fromAttribute: GroupMember.display
+    toAttribute: User.id
+  GroupMember:
+    name: GroupMember
+    fromAttribute: GroupMember.value
+    toAttribute: Group.id
+  MemberOf:
+    name: MemberOf
+    path:
+      - relationship: DummyParent
+        direction: Backward
+      - relationship: GroupMember
+        direction: Forward
+  HasMember:
+    name: HasMember
+    path:
+      - relationship: GroupMember 
+        direction: Backward
+      - relationship: DummyParent 
+        direction: Forward
+  
