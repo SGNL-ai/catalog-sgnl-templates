@@ -424,8 +424,8 @@ relationships:
   # Manager relationship
   UserManager:
     name: Manager
-    fromAttribute: User.managerId
-    toAttribute: User.id
+    fromAttribute: SCIMUser.managerId
+    toAttribute: SCIMUser.id
   
   # The internal `parent` relationship cannot be directly referenced in `path` relationship.
   # Create a dummy relationship to represent the `parent` relationship.
