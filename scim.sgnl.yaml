@@ -50,9 +50,11 @@ entities:
       - name: externalId
         externalId: externalId
         type: String
+        indexed: true
       - name: userName
         externalId: userName
         type: String
+        indexed: true
       - name: formattedName
         externalId: $.name.formatted
         type: String
@@ -98,14 +100,12 @@ entities:
       - name: active
         externalId: active
         type: Bool 
-      - name: password
-        externalId: password
-        type: String
       
       # Enterprise User Extension
       - name: employeeNumber
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].employeeNumber
         type: String
+        indexed: true
       - name: costCenter
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].costCenter
         type: String
@@ -121,6 +121,7 @@ entities:
       - name: managerId
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.value
         type: String  
+        indexed: true
       - name: managerDisplayName
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.displayName
         type: String
@@ -192,7 +193,7 @@ entities:
         externalId: type
         type: String
       - name: ref
-        externalId: '..["$ref"]'
+        externalId: '$..["$ref"]'
         type: String
   
   Email:
@@ -424,8 +425,8 @@ relationships:
   # Manager relationship
   UserManager:
     name: Manager
-    fromAttribute: SCIMUser.managerId
-    toAttribute: SCIMUser.id
+    fromAttribute: Users.$..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.value
+    toAttribute: Users.id
   
   # The internal `parent` relationship cannot be directly referenced in `path` relationship.
   # Create a dummy relationship to represent the `parent` relationship.
@@ -433,12 +434,12 @@ relationships:
   # We rely on the `parent` relationship already created during ingestion.
   DummyParent: 
     name: parent
-    fromAttribute: SCIMGroupMember.displayName
-    toAttribute: SCIMUser.id
+    fromAttribute: groups.displayName
+    toAttribute: Users.id
   GroupMember:
     name: GroupMember
-    fromAttribute: SCIMGroupMember.value
-    toAttribute: SCIMGroup.id
+    fromAttribute: groups.value
+    toAttribute: groups.id
   MemberOf:
     name: MemberOf
     path:
