@@ -173,7 +173,7 @@ entities:
     parent: Users  # External ID of the parent entity
     displayName: SCIMGroupMember
     externalId: groups
-    description: Entity representing SCIM user group members
+    description: Entity representing the SCIM groups each user belongs to.
     syncFrequency: HOURLY
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
@@ -436,22 +436,15 @@ relationships:
     name: parent
     fromAttribute: groups.displayName
     toAttribute: Users.id
-  GroupMember:
-    name: GroupMember
-    fromAttribute: groups.value
-    toAttribute: groups.id
   MemberOf:
     name: MemberOf
+    fromAttribute: groups.value
+    toAttribute: Groups.id
+  UserMemberGroup:
+    name: Group
     path:
       - relationship: DummyParent
         direction: Backward
-      - relationship: GroupMember
-        direction: Forward
-  HasMember:
-    name: HasMember
-    path:
-      - relationship: GroupMember 
-        direction: Backward
-      - relationship: DummyParent 
+      - relationship: MemberOf
         direction: Forward
   
