@@ -4,7 +4,7 @@
 # - External ID for a Group entity representing a Group resource (/Groups) is "Groups"
 
 displayName: "Curity"
-icon: TODO
+icon: PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjMkIzMDNDIi8+CjxwYXRoIGQ9Ik00OS40OTYzIDM1LjczOTdMNDkuMDUzMSAzNi4xOTA4QzQ2Ljc5NjcgMzguNTg5IDQzLjY5MTcgNDAuMDA5NCA0MC40MDE5IDQwLjE0ODRDMzkuMzEyOCA0MC4xODYzIDM4LjIyNzcgMzkuOTk5IDM3LjIxNDQgMzkuNTk4MUMzNi4yMDExIDM5LjE5NzIgMzUuMjgxNSAzOC41OTE0IDM0LjUxMzIgMzcuODE4N0MzMy43NDQ5IDM3LjA0NTkgMzMuMTQ0NSAzNi4xMjI4IDMyLjc0OTUgMzUuMTA3M0MzMi4zNTQ1IDM0LjA5MTcgMzIuMTczNCAzMy4wMDU1IDMyLjIxNzcgMzEuOTE2N0MzMi4yMTc3IDI3LjE2NzYgMzUuNTczNyAyMy42OTI5IDQwLjIwNCAyMy42OTI5QzQzLjE4MDUgMjMuODA0OSA0Ni4wMzE1IDI0LjkyMDggNDguMjkzMiAyNi44NTg5TDQ4LjczNjUgMjcuMjQ2OEw1My4xNzY4IDIyLjYwODVMNTIuNjc4MiAyMi4xODExQzQ5LjAzNDEgMTkuMTY4NyA0NC40NTcgMTcuNTE1MyAzOS43MjkxIDE3LjUwMzNDMzcuMzYwMiAxNy40NTI5IDM1LjAxNDYgMTcuOTgwMSAzMi44OTUxIDE5LjAzOTJDMzAuNzc1NSAyMC4wOTgzIDI4Ljk0NTcgMjEuNjU3NSAyNy41NjM2IDIzLjU4MjFIMTkuMzcxNUwxOC44OTY2IDI3LjYxMDlIMjUuNjI0NEMyNS40MDczIDI4LjM1MTUgMjUuMjUxMiAyOS4xMDg1IDI1LjE1NzQgMjkuODc0NkgxNS4xMDUyTDE0LjYyMjQgMzMuODk1NEgyNS4xNTc0QzI1LjI0ODIgMzQuNjYwNyAyNS4zOTkgMzUuNDE3NiAyNS42MDg2IDM2LjE1OTJIMTAuNDgyOEwxMCA0MC4xODc5SDI3LjUyNEMzMC4xMjgxIDQzLjkzOTcgMzQuNTY4NCA0Ni4yNjY3IDM5LjkyNyA0Ni4yNjY3QzQ0Ljk5MTIgNDYuMjE2NiA0OS44NSA0NC4yNTc4IDUzLjUzMyA0MC43ODE2TDU0IDQwLjMzODNMNDkuNDk2MyAzNS43Mzk3WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEzLjk2NTUgMjkuODY2N0gxMC45OTczTDEwLjUyMjQgMzMuODk1NEgxMy40ODI2TDEzLjk2NTUgMjkuODY2N1oiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=
 description: "Curity as a System of Record"
 address: "{{Input Required: Curity URL}}"
 defaultSyncFrequency: HOURLY
@@ -45,9 +45,11 @@ entities:
       - name: externalId
         externalId: externalId
         type: String
+        indexed: true
       - name: userName
         externalId: userName
         type: String
+        indexed: true
       - name: formattedName
         externalId: $.name.formatted
         type: String
@@ -99,25 +101,27 @@ entities:
       
       # Enterprise User Extension
       - name: employeeNumber
-        externalId: $..["urn:ietf:params:Curity:schemas:extension:enterprise:2.0:User"].employeeNumber
+        externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].employeeNumber
         type: String
+        indexed: true
       - name: costCenter
-        externalId: $..["urn:ietf:params:Curity:schemas:extension:enterprise:2.0:User"].costCenter
+        externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].costCenter
         type: String
       - name: organization
-        externalId: $..["urn:ietf:params:Curity:schemas:extension:enterprise:2.0:User"].organization
+        externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].organization
         type: String
       - name: division
-        externalId: $..["urn:ietf:params:Curity:schemas:extension:enterprise:2.0:User"].division
+        externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].division
         type: String
       - name: department
-        externalId: $..["urn:ietf:params:Curity:schemas:extension:enterprise:2.0:User"].department
+        externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].department
         type: String
       - name: managerId
-        externalId: $..["urn:ietf:params:Curity:schemas:extension:enterprise:2.0:User"].manager.value
+        externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.value
         type: String  
+        indexed: true
       - name: managerDisplayName
-        externalId: $..["urn:ietf:params:Curity:schemas:extension:enterprise:2.0:User"].manager.displayName
+        externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.displayName
         type: String
       
       # Meta
@@ -366,6 +370,6 @@ relationships:
   # Manager relationship
   UserManager:
     name: Manager
-    fromAttribute: Users.$..["urn:ietf:params:Curity:schemas:extension:enterprise:2.0:User"].manager.value
+    fromAttribute: Users.$..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.value
     toAttribute: Users.id
   
