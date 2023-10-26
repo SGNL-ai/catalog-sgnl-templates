@@ -237,6 +237,8 @@ entities:
       - name: formatted
         externalId: formatted
         type: String
+        indexed: true
+        uniqueId: true
       - name: streetAddress
         externalId: streetAddress
         type: String
@@ -431,12 +433,12 @@ relationships:
   # We rely on the `parent` relationship already created during ingestion.
   DummyParent: 
     name: parent
-    fromAttribute: GroupMember.displayName
-    toAttribute: User.id
+    fromAttribute: SCIMGroupMember.displayName
+    toAttribute: SCIMUser.id
   GroupMember:
     name: GroupMember
-    fromAttribute: GroupMember.value
-    toAttribute: Group.id
+    fromAttribute: SCIMGroupMember.value
+    toAttribute: SCIMGroup.id
   MemberOf:
     name: MemberOf
     path:
