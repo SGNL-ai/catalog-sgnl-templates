@@ -1,0 +1,369 @@
+# Curity Configuration YAML for DS2.0
+# Note: The externalId for each entity must match the endpoint for this resource i.e. 
+# - External ID for an User entity representing a User resource (/Users) is "Users"
+# - External ID for a Group entity representing a Group resource (/Groups) is "Groups"
+
+displayName: "Curity"
+icon: TODO
+description: "Curity as a System of Record"
+address: "{{Input Required: Curity URL}}"
+defaultSyncFrequency: HOURLY
+defaultSyncMinInterval: 1
+defaultApiCallFrequency: SECONDLY
+defaultApiCallMinInterval: 1
+type: "SCIM2.0-1.0.0"
+# Example Configs:
+# empty config: {} | b64: "e30="
+# config with filtering on Users: {"Users":{"queryParams":{"filter":"displayName eq \"SGNL\""}}} | b64: "eyJVc2VycyI6eyJxdWVyeVBhcmFtcyI6eyJmaWx0ZXIiOiJkaXNwbGF5TmFtZSBlcSBcIlNHTkxcIiJ9fQ=="
+# config with filter, ordering and sortBy on Groups {"Groups":{"queryParams":{"filter":"displayName eq \"SGNL\"","sortBy":"userName","ascending":true}}} | b64: "eyJHcm91cHMiOnsicXVlcnlQYXJhbXMiOnsiZmlsdGVyIjoiZGlzcGxheU5hbWUgZXEgXCJTR05MXCIiLCJzb3J0QnkiOiJ1c2VyTmFtZSIsImFzY2VuZGluZyI6dHJ1ZX19fQ=="
+adapterConfig: "e30=" # {}
+# This must match the list of supportedAuthMechanisms specified on the Adapter.
+auth:
+  - oAuth2ClientCredentials:
+      clientId: "{{Input Required: Client-ID}}"
+      clientSecret: "{{Input Required: Client-Secret}}"
+      tokenUrl: "{{Input Required: AuthTokenURL}}"
+      scope: "{{Input Required: Scope}}"
+      authStyle: AutoDetect
+entities:
+  User:
+    displayName: CurityUser
+    externalId: Users
+    description: User entity in Curity
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: externalId
+        externalId: externalId
+        type: String
+      - name: userName
+        externalId: userName
+        type: String
+      - name: formattedName
+        externalId: $.name.formatted
+        type: String
+      - name: familyName
+        externalId: $.name.familyName
+        type: String
+      - name: givenName
+        externalId: $.name.givenName
+        type: String
+      - name: middleName
+        externalId: $.name.middleName
+        type: String
+      - name: honorificPrefix
+        externalId: $.name.honorificPrefix
+        type: String
+      - name: honorificSuffix 
+        externalId: $.name.honorificSuffix
+        type: String
+      - name: displayName
+        externalId: displayName
+        type: String
+      - name: nickName
+        externalId: nickName
+        type: String
+      - name: profileUrl
+        externalId: profileUrl    
+        type: String
+      - name: userType
+        externalId: userType
+        type: String  
+      - name: title
+        externalId: title
+        type: String
+      - name: preferredLanguage
+        externalId: preferredLanguage
+        type: String
+      - name: locale  
+        externalId: locale
+        type: String
+      - name: timezone
+        externalId: timezone
+        type: String
+      - name: active
+        externalId: active
+        type: Bool 
+      - name: password
+        externalId: password
+        type: String
+      
+      # Enterprise User Extension
+      - name: employeeNumber
+        externalId: $..["urn:ietf:params:Curity:schemas:extension:enterprise:2.0:User"].employeeNumber
+        type: String
+      - name: costCenter
+        externalId: $..["urn:ietf:params:Curity:schemas:extension:enterprise:2.0:User"].costCenter
+        type: String
+      - name: organization
+        externalId: $..["urn:ietf:params:Curity:schemas:extension:enterprise:2.0:User"].organization
+        type: String
+      - name: division
+        externalId: $..["urn:ietf:params:Curity:schemas:extension:enterprise:2.0:User"].division
+        type: String
+      - name: department
+        externalId: $..["urn:ietf:params:Curity:schemas:extension:enterprise:2.0:User"].department
+        type: String
+      - name: managerId
+        externalId: $..["urn:ietf:params:Curity:schemas:extension:enterprise:2.0:User"].manager.value
+        type: String  
+      - name: managerDisplayName
+        externalId: $..["urn:ietf:params:Curity:schemas:extension:enterprise:2.0:User"].manager.displayName
+        type: String
+      
+      # Meta
+      - name: resourceType
+        externalId: $.meta.resourceType
+        type: String
+      - name: created
+        externalId: $.meta.created
+        type: DateTime
+      - name: lastModified
+        externalId: $.meta.lastModified
+        type: DateTime
+      - name: version 
+        externalId: $.meta.version
+        type: String  
+      - name: location
+        externalId: $.meta.location
+        type: String
+
+  Email:
+    parent: Users  # External ID of the parent entity
+    displayName: CurityUserEmail
+    externalId: emails
+    description: Entity representing Curity user emails
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: display
+        externalId: display
+        type: String
+      - name: type
+        externalId: type
+        type: String
+      - name: primary
+        externalId: primary
+        type: Bool
+
+  Address:
+    parent: Users  # External ID of the parent entity
+    displayName: CurityUserAddress
+    externalId: addresses
+    description: Entity representing Curity user addresses
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: formatted
+        externalId: formatted
+        type: String
+      - name: streetAddress
+        externalId: streetAddress
+        type: String
+      - name: locality
+        externalId: locality
+        type: String
+      - name: region
+        externalId: region
+        type: String
+      - name: postalCode
+        externalId: postalCode
+        type: String
+      - name: country
+        externalId: country
+        type: String
+      - name: type
+        externalId: type
+        type: String
+
+  PhoneNumber:
+    parent: Users  # External ID of the parent entity
+    displayName: CurityUserPhoneNumber
+    externalId: phoneNumbers
+    description: Entity representing Curity user phone numbers
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: display
+        externalId: display
+        type: String
+      - name: type
+        externalId: type
+        type: String
+      - name: primary
+        externalId: primary
+        type: Bool
+
+  IMS:
+    parent: Users  # External ID of the parent entity
+    displayName: CurityUserIMS
+    externalId: ims
+    description: Entity representing Curity user ims
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: display
+        externalId: display
+        type: String  
+      - name: type
+        externalId: type
+        type: String
+      - name: primary
+        externalId: primary
+        type: Bool
+
+  Entitlement:
+    parent: Users  # External ID of the parent entity
+    displayName: CurityUserEntitlement
+    externalId: entitlements
+    description: Entity representing Curity user entitlements
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: display
+        externalId: display
+        type: String  
+      - name: type
+        externalId: type
+        type: String
+      - name: primary
+        externalId: primary
+        type: Bool
+  
+  Roles:
+    parent: Users  # External ID of the parent entity
+    displayName: CurityUserRole
+    externalId: roles
+    description: Entity representing Curity user roles
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: display
+        externalId: display
+        type: String  
+      - name: type
+        externalId: type
+        type: String
+      - name: primary
+        externalId: primary
+        type: Bool
+
+  Photo:
+    parent: Users  # External ID of the parent entity
+    displayName: CurityUserPhoto
+    externalId: photos
+    description: Entity representing Curity user photos
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: display
+        externalId: display
+        type: String  
+      - name: type
+        externalId: type
+        type: String
+      - name: primary
+        externalId: primary
+        type: Bool
+  
+  Certificates:
+    parent: Users  # External ID of the parent entity
+    displayName: CurityUserCertificate
+    externalId: certificates
+    description: Entity representing Curity user certificates
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: display
+        externalId: display
+        type: String  
+      - name: type
+        externalId: type
+        type: String
+      - name: primary
+        externalId: primary
+        type: Bool
+
+relationships:
+  # Manager relationship
+  UserManager:
+    name: Manager
+    fromAttribute: User.managerId
+    toAttribute: User.id
+  
