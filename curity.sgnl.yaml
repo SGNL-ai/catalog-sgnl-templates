@@ -179,6 +179,8 @@ entities:
       - name: formatted
         externalId: formatted
         type: String
+        indexed: true
+        uniqueId: true
       - name: streetAddress
         externalId: streetAddress
         type: String
@@ -364,6 +366,6 @@ relationships:
   # Manager relationship
   UserManager:
     name: Manager
-    fromAttribute: User.managerId
-    toAttribute: User.id
+    fromAttribute: CurityUser.managerId
+    toAttribute: CurityUser.id
   
