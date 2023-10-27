@@ -170,7 +170,7 @@ entities:
         type: String
 
   GroupMember:
-    parent: Users  # External ID of the parent entity
+    parent: Users  
     displayName: SCIMGroupMember
     externalId: groups
     description: Entity representing the SCIM groups each user belongs to.
@@ -197,7 +197,7 @@ entities:
         type: String
   
   Email:
-    parent: Users  # External ID of the parent entity
+    parent: Users  
     displayName: SCIMUserEmail
     externalId: emails
     description: Entity representing SCIM user emails
@@ -224,7 +224,7 @@ entities:
         type: Bool
 
   Address:
-    parent: Users  # External ID of the parent entity
+    parent: Users  
     displayName: SCIMUserAddress
     externalId: addresses
     description: Entity representing SCIM user addresses
@@ -260,7 +260,7 @@ entities:
         type: String
 
   PhoneNumber:
-    parent: Users  # External ID of the parent entity
+    parent: Users  
     displayName: SCIMUserPhoneNumber
     externalId: phoneNumbers
     description: Entity representing SCIM user phone numbers
@@ -287,7 +287,7 @@ entities:
         type: Bool
 
   IMS:
-    parent: Users  # External ID of the parent entity
+    parent: Users  
     displayName: SCIMUserIMS
     externalId: ims
     description: Entity representing SCIM user ims
@@ -314,7 +314,7 @@ entities:
         type: Bool
 
   Entitlement:
-    parent: Users  # External ID of the parent entity
+    parent: Users  
     displayName: SCIMUserEntitlement
     externalId: entitlements
     description: Entity representing SCIM user entitlements
@@ -341,7 +341,7 @@ entities:
         type: Bool
   
   Roles:
-    parent: Users  # External ID of the parent entity
+    parent: Users  
     displayName: SCIMUserRole
     externalId: roles
     description: Entity representing SCIM user roles
@@ -368,7 +368,7 @@ entities:
         type: Bool
 
   Photo:
-    parent: Users  # External ID of the parent entity
+    parent: Users  
     displayName: SCIMUserPhoto
     externalId: photos
     description: Entity representing SCIM user photos
@@ -395,7 +395,7 @@ entities:
         type: Bool
   
   Certificates:
-    parent: Users  # External ID of the parent entity
+    parent: Users  
     displayName: SCIMUserCertificate
     externalId: certificates
     description: Entity representing SCIM user certificates
@@ -432,7 +432,7 @@ relationships:
   # Create a dummy relationship to represent the `parent` relationship.
   # The fromAttribute and toAttribute does not matter. Only entities should be specified correctly.
   # We rely on the `parent` relationship already created during ingestion.
-  DummyParent: 
+  ParentOfGroupMember: 
     name: parent
     fromAttribute: groups.displayName
     toAttribute: Users.id
@@ -443,7 +443,7 @@ relationships:
   UserMemberGroup:
     name: Group
     path:
-      - relationship: DummyParent
+      - relationship: ParentOfGroupMember
         direction: Backward
       - relationship: MemberOf
         direction: Forward
