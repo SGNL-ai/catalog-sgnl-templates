@@ -142,7 +142,7 @@ entities:
         type: String
 
   Email:
-    parent: Users  # External ID of the parent entity
+    parent: Users  
     displayName: CurityUserEmail
     externalId: emails
     description: Entity representing Curity user emails
@@ -169,7 +169,7 @@ entities:
         type: Bool
 
   Address:
-    parent: Users  # External ID of the parent entity
+    parent: Users  
     displayName: CurityUserAddress
     externalId: addresses
     description: Entity representing Curity user addresses
@@ -205,7 +205,7 @@ entities:
         type: String
 
   PhoneNumber:
-    parent: Users  # External ID of the parent entity
+    parent: Users  
     displayName: CurityUserPhoneNumber
     externalId: phoneNumbers
     description: Entity representing Curity user phone numbers
@@ -224,141 +224,6 @@ entities:
       - name: display
         externalId: display
         type: String
-      - name: type
-        externalId: type
-        type: String
-      - name: primary
-        externalId: primary
-        type: Bool
-
-  IMS:
-    parent: Users  # External ID of the parent entity
-    displayName: CurityUserIMS
-    externalId: ims
-    description: Entity representing Curity user ims
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
-    pageSize: 100
-    pagesOrderedById: false
-    attributes:
-      - name: value
-        externalId: value
-        type: String
-        indexed: true
-        uniqueId: true
-      - name: display
-        externalId: display
-        type: String  
-      - name: type
-        externalId: type
-        type: String
-      - name: primary
-        externalId: primary
-        type: Bool
-
-  Entitlement:
-    parent: Users  # External ID of the parent entity
-    displayName: CurityUserEntitlement
-    externalId: entitlements
-    description: Entity representing Curity user entitlements
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
-    pageSize: 100
-    pagesOrderedById: false
-    attributes:
-      - name: value
-        externalId: value
-        type: String
-        indexed: true
-        uniqueId: true
-      - name: display
-        externalId: display
-        type: String  
-      - name: type
-        externalId: type
-        type: String
-      - name: primary
-        externalId: primary
-        type: Bool
-  
-  Roles:
-    parent: Users  # External ID of the parent entity
-    displayName: CurityUserRole
-    externalId: roles
-    description: Entity representing Curity user roles
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
-    pageSize: 100
-    pagesOrderedById: false
-    attributes:
-      - name: value
-        externalId: value
-        type: String
-        indexed: true
-        uniqueId: true
-      - name: display
-        externalId: display
-        type: String  
-      - name: type
-        externalId: type
-        type: String
-      - name: primary
-        externalId: primary
-        type: Bool
-
-  Photo:
-    parent: Users  # External ID of the parent entity
-    displayName: CurityUserPhoto
-    externalId: photos
-    description: Entity representing Curity user photos
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
-    pageSize: 100
-    pagesOrderedById: false
-    attributes:
-      - name: value
-        externalId: value
-        type: String
-        indexed: true
-        uniqueId: true
-      - name: display
-        externalId: display
-        type: String  
-      - name: type
-        externalId: type
-        type: String
-      - name: primary
-        externalId: primary
-        type: Bool
-  
-  Certificates:
-    parent: Users  # External ID of the parent entity
-    displayName: CurityUserCertificate
-    externalId: certificates
-    description: Entity representing Curity user certificates
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
-    pageSize: 100
-    pagesOrderedById: false
-    attributes:
-      - name: value
-        externalId: value
-        type: String
-        indexed: true
-        uniqueId: true
-      - name: display
-        externalId: display
-        type: String  
       - name: type
         externalId: type
         type: String
