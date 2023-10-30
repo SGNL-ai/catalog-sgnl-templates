@@ -1,5 +1,5 @@
 # Sailpoint 2.0 Configuration YAML for DS2.0
-# Note: The externalId for each entity must match the endpoint for this resource i.e. 
+# Note: The externalId for each entity must match the endpoint for this resource i.e.
 # - External ID for an User entity representing a User resource (/Users) is "Users"
 # - External ID for a Group entity representing a Group resource (/Groups) is "Groups"
 
@@ -90,7 +90,7 @@ entities:
       - name: applicationDisplayName
         externalId: application.displayName
         type: String
-      
+
       # Meta
       - name: resourceType
         externalId: $.meta.resourceType
@@ -101,9 +101,9 @@ entities:
       - name: lastModified
         externalId: $.meta.lastModified
         type: DateTime
-      - name: version 
+      - name: version
         externalId: $.meta.version
-        type: String  
+        type: String
       - name: location
         externalId: $.meta.location
         type: String
@@ -158,7 +158,7 @@ entities:
       - name: targetDisplayName
         externalId: targetDisplayName
         type: String
-      
+
       # Meta
       - name: resourceType
         externalId: $.meta.resourceType
@@ -169,13 +169,13 @@ entities:
       - name: lastModified
         externalId: $.meta.lastModified
         type: DateTime
-      - name: version 
+      - name: version
         externalId: $.meta.version
-        type: String  
+        type: String
       - name: location
         externalId: $.meta.location
         type: String
-  
+
   # TODO: Identify unique and index attributes
   AlertAttributes:
     parent: Alert
@@ -193,7 +193,7 @@ entities:
       - name: value
         externalId: value
         type: String
-  
+
   AlertActions:
     parent: Alert
     displayName: SailpointAlertActions
@@ -217,7 +217,7 @@ entities:
         uniqueId: true
 
   AlertActionResult:
-    parent: actions 
+    parent: actions
     displayName: SailpointAlertActionResultNotifications
     externalId: result
     description: Entity representing the result associated with the Sailpoint Identity IQ Alert Action.
@@ -236,7 +236,7 @@ entities:
         uniqueId: true
 
   AlertActionResultNotifications:
-    parent: result 
+    parent: result
     displayName: SailpointAlertActionResultNotifications
     externalId: notifications
     description: Entity representing the notifications associated with the Sailpoint Identity IQ Alert Action Result.
@@ -291,7 +291,7 @@ entities:
       - name: ownerDisplayName
         externalId: owner.displayName
         type: String
-      
+
       # Meta
       - name: resourceType
         externalId: $.meta.resourceType
@@ -302,9 +302,9 @@ entities:
       - name: lastModified
         externalId: $.meta.lastModified
         type: DateTime
-      - name: version 
+      - name: version
         externalId: $.meta.version
-        type: String  
+        type: String
       - name: location
         externalId: $.meta.location
         type: String
@@ -344,7 +344,7 @@ entities:
     apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
-    attributes: 
+    attributes:
       - name: locale
         externalId: locale
         type: String
@@ -418,7 +418,7 @@ entities:
       - name: reviewerRef
         externalId: reviewer.["$ref"]
         type: String
-      
+
       # Meta
       - name: resourceType
         externalId: $.meta.resourceType
@@ -429,13 +429,13 @@ entities:
       - name: lastModified
         externalId: $.meta.lastModified
         type: DateTime
-      - name: version 
+      - name: version
         externalId: $.meta.version
-        type: String  
+        type: String
       - name: location
         externalId: $.meta.location
         type: String
-  
+
   # TODO: Identify unique and index attributes
   EntitlementClassifications:
     parent: Entitlements
@@ -448,7 +448,7 @@ entities:
     apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
-    attributes: 
+    attributes:
       - name: source
         externalId: source
         type: String
@@ -479,7 +479,7 @@ entities:
     apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
-    attributes: 
+    attributes:
       - name: locale
         externalId: locale
         type: String
@@ -512,7 +512,7 @@ entities:
       - name: ref
         externalId: $..["$ref"]
         type: String
-        
+
   EntitlementOwner:
     parent: Entitlements
     displayName: SailpointEntitlementOwner
@@ -524,7 +524,7 @@ entities:
     apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
-    attributes: 
+    attributes:
       - name: value
         externalId: value
         type: String
@@ -612,7 +612,7 @@ entities:
       - name: launcher
         externalId: launcher
         type: String
-      
+
       # Meta
       - name: resourceType
         externalId: $.meta.resourceType
@@ -623,13 +623,13 @@ entities:
       - name: lastModified
         externalId: $.meta.lastModified
         type: DateTime
-      - name: version 
+      - name: version
         externalId: $.meta.version
-        type: String  
+        type: String
       - name: location
         externalId: $.meta.location
         type: String
-      
+
   # TODO: Identify unique and index attributes
   LaunchedWorkflowInput:
     parent: LaunchedWorkflows
@@ -653,13 +653,13 @@ entities:
       - name: type
         externalId: type
         type: String
-  
+
   # TODO: Identify unique and index attributes
   LaunchedWorkflowOutput:
     parent: LaunchedWorkflows
     displayName: SailpointLaunchedWorkflowOutput
     externalId: output
-    description:  Entity representing the outputs to a Sailpoint Identity IQ Launched Workflow.
+    description: Entity representing the outputs to a Sailpoint Identity IQ Launched Workflow.
     syncFrequency: HOURLY
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
@@ -677,7 +677,7 @@ entities:
       - name: type
         externalId: type
         type: String
-  
+
   # TODO: Identify unique and index attributes
   LaunchedWorkflowAttributes:
     parent: LaunchedWorkflows
@@ -715,7 +715,7 @@ entities:
       - name: name
         externalId: name
         type: String
-        
+
       # Meta
       - name: resourceType
         externalId: $.meta.resourceType
@@ -726,13 +726,13 @@ entities:
       - name: lastModified
         externalId: $.meta.lastModified
         type: DateTime
-      - name: version 
+      - name: version
         externalId: $.meta.version
-        type: String  
+        type: String
       - name: location
         externalId: $.meta.location
         type: String
-  
+
   # TODO: Identify unique and index attributes
   ObjectConfigAttributes:
     parent: ObjectConfigs
@@ -782,7 +782,7 @@ entities:
       - name: editMode
         externalId: editMode
         type: String
-  
+
   # TODO: Identify unique and index attributes
   ObjectAttributeSources:
     parent: objectAttributes
@@ -811,7 +811,7 @@ entities:
 
   # TODO: Identify unique and index attributes
   ObjectAttributeTargets:
-    parent : objectAttributes 
+    parent: objectAttributes
     displayName: SailpointObjectAttributeTargets
     externalId: attributeTargets
     description: Entity representing the attribute targets associated with a Sailpoint Identity IQ ObjectConfig.
@@ -868,7 +868,7 @@ entities:
         type: String
       - name: identityDisplayName
         externalId: identity.displayName
-        type: String   
+        type: String
       - name: ownerValue
         externalId: owner.value
         type: String
@@ -884,7 +884,7 @@ entities:
       - name: status
         externalId: status
         type: String
-        
+
       # Meta
       - name: resourceType
         externalId: $.meta.resourceType
@@ -895,9 +895,9 @@ entities:
       - name: lastModified
         externalId: $.meta.lastModified
         type: DateTime
-      - name: version 
+      - name: version
         externalId: $.meta.version
-        type: String  
+        type: String
       - name: location
         externalId: $.meta.location
         type: String
@@ -942,7 +942,7 @@ entities:
         type: String
       - name: typeAutoAssignment
         externalId: type.autoAssignment
-        type: Bool 
+        type: Bool
       - name: typeAssignmentSelector
         externalId: type.assignmentSelector
         type: Bool
@@ -963,11 +963,11 @@ entities:
         type: String
       - name: ownerValue
         externalId: owner.value
-        type: String  
+        type: String
       - name: ownerRef
         externalId: owner.["$ref"]
         type: String
-        
+
       # Meta
       - name: resourceType
         externalId: $.meta.resourceType
@@ -978,9 +978,9 @@ entities:
       - name: lastModified
         externalId: $.meta.lastModified
         type: DateTime
-      - name: version 
+      - name: version
         externalId: $.meta.version
-        type: String  
+        type: String
       - name: location
         externalId: $.meta.location
         type: String
@@ -1026,7 +1026,7 @@ entities:
       - name: ref
         externalId: $..["$ref"]
         type: String
-  
+
   # TODO: Identify unique and index attributes
   RoleRequirements:
     parent: Roles
@@ -1102,7 +1102,7 @@ entities:
         externalId: classification.type
         type: String
 
-  # TODO: Skip ingestion of this entity?  
+  # TODO: Skip ingestion of this entity?
   # TODO: Identify unique and index attributes
   ServiceProviderConfiguration:
     displayName: SailpointServiceProviderConfiguration
@@ -1140,10 +1140,10 @@ entities:
       - name: changePasswordSupported
         externalId: changePassword.supported
         type: Bool
-      - name: sortSupported 
+      - name: sortSupported
         externalId: sort.supported
         type: Bool
-  
+
   # TODO: Identify unique and index attributes
   ServiceProviderConfigAuthenticationScheme:
     parent: ServiceProviderConfig
@@ -1161,13 +1161,13 @@ entities:
       - name: description
         externalId: description
         type: String
-      - name: specUri 
+      - name: specUri
         externalId: specUri
         type: String
       - name: documentationUri
         externalId: documentationUri
         type: String
-      - name: type  
+      - name: type
         externalId: type
         type: String
 
@@ -1205,7 +1205,7 @@ entities:
       - name: targetClass
         externalId: targetClass
         type: String
-      - name: targetName  
+      - name: targetName
         externalId: targetName
         type: String
       - name: terminated
@@ -1216,13 +1216,13 @@ entities:
         type: Bool
       - name: launched
         externalId: launched
-        type: DateTime  
+        type: DateTime
       - name: completed
         externalId: completed
         type: DateTime
       - name: expiration
         externalId: expiration
-        type: DateTime  
+        type: DateTime
       - name: verified
         externalId: verified
         type: DateTime
@@ -1239,9 +1239,9 @@ entities:
         externalId: taskSchedule
         type: String
       - name: messages
-        externalId: $.messages[*].[*]  # Flatten a [][]string to a []string
+        externalId: $.messages[*].[*] # Flatten a [][]string to a []string
         type: String
-      
+
       # Meta
       - name: resourceType
         externalId: $.meta.resourceType
@@ -1252,9 +1252,9 @@ entities:
       - name: lastModified
         externalId: $.meta.lastModified
         type: DateTime
-      - name: version 
+      - name: version
         externalId: $.meta.version
-        type: String  
+        type: String
       - name: location
         externalId: $.meta.location
         type: String
@@ -1300,7 +1300,7 @@ entities:
         type: String
       - name: familyName
         externalId: name.familyName
-        type: String  
+        type: String
       - name: givenName
         externalId: name.givenName
         type: String
@@ -1317,7 +1317,7 @@ entities:
       # Enterprise extension
       - name: managerId
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.value
-        type: String  
+        type: String
         indexed: true
       - name: managerDisplayName
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.displayName
@@ -1325,7 +1325,7 @@ entities:
       - name: managerRef
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.["$ref"]
         type: String
-      
+
       # Sailpoint user extension
       - name: capabilities
         externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].capabilities
@@ -1367,7 +1367,7 @@ entities:
       - name: regionOwnerRef
         externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].regionOwner.["$ref"]
         type: String
-      - name: location 
+      - name: location
         externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].location
         type: String
       - name: locationOwnerDisplayName
@@ -1392,7 +1392,7 @@ entities:
       - name: lastRefresh
         externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].lastRefresh
         type: DateTime
-      
+
       # Meta
       - name: resourceType
         externalId: $.meta.resourceType
@@ -1403,9 +1403,9 @@ entities:
       - name: lastModified
         externalId: $.meta.lastModified
         type: DateTime
-      - name: version 
+      - name: version
         externalId: $.meta.version
-        type: String  
+        type: String
       - name: location
         externalId: $.meta.location
         type: String
@@ -1556,7 +1556,7 @@ entities:
       - name: handler
         externalId: handler
         type: String
-      
+
       # Meta
       - name: resourceType
         externalId: $.meta.resourceType
@@ -1567,10 +1567,9 @@ entities:
       - name: lastModified
         externalId: $.meta.lastModified
         type: DateTime
-      - name: version 
+      - name: version
         externalId: $.meta.version
-        type: String  
+        type: String
       - name: location
         externalId: $.meta.location
         type: String
-  
