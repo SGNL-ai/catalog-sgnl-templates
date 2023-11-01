@@ -1,7 +1,7 @@
 displayName: "Custom SoR Template"
 icon: ""
 description: "Template to create a SoR without any entities, attributes or relationships. Once created, you can manually add entites and relationships to the SoR."
-address: "{{Input Required: Address}}"
+hostname: "{{Input Required: Address}}"
 defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
