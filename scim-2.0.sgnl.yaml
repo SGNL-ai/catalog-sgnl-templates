@@ -201,10 +201,6 @@ entities:
     displayName: SCIMUserEmail
     externalId: emails
     description: Entity representing SCIM user emails
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -228,10 +224,6 @@ entities:
     displayName: SCIMUserAddress
     externalId: addresses
     description: Entity representing SCIM user addresses
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -264,10 +256,6 @@ entities:
     displayName: SCIMUserPhoneNumber
     externalId: phoneNumbers
     description: Entity representing SCIM user phone numbers
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -291,10 +279,6 @@ entities:
     displayName: SCIMUserIMS
     externalId: ims
     description: Entity representing SCIM user ims
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -318,10 +302,6 @@ entities:
     displayName: SCIMUserEntitlement
     externalId: entitlements
     description: Entity representing SCIM user entitlements
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -345,10 +325,6 @@ entities:
     displayName: SCIMUserRole
     externalId: roles
     description: Entity representing SCIM user roles
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -372,10 +348,6 @@ entities:
     displayName: SCIMUserPhoto
     externalId: photos
     description: Entity representing SCIM user photos
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -399,10 +371,6 @@ entities:
     displayName: SCIMUserCertificate
     externalId: certificates
     description: Entity representing SCIM user certificates
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
