@@ -3,7 +3,7 @@
 # - External ID for an User entity representing a User resource (/Users) is "Users"
 # - External ID for a Group entity representing a Group resource (/Groups) is "Groups"
 
-displayName: "SailPoint"
+displayName: "Sailpoint"
 icon: PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQwLjQxMTggNDIuMTM3M0gxMEwzNS4yMzUzIDEwTDQwLjQxMTggNDIuMTM3M1oiIGZpbGw9IiMwMDMzQTEiLz4KPHBhdGggZD0iTTQwLjQxMTggNDIuMTM3M0g1NEwzNS4yMzUzIDEwTDQwLjQxMTggNDIuMTM3M1oiIGZpbGw9IiNDQzI3QjAiLz4KPHBhdGggZD0iTTQwLjQxMTggNDIuMTM3M0gxMEw0Mi4zNTI5IDUzLjc4NDNMNDAuNDExOCA0Mi4xMzczWiIgZmlsbD0iIzAwNzFDRSIvPgo8cGF0aCBkPSJNNDAuNDExOCA0Mi4xMzczSDU0TDQyLjM1MjkgNTMuNzg0M0w0MC40MTE4IDQyLjEzNzNaIiBmaWxsPSIjRTE3RkQyIi8+Cjwvc3ZnPgo=
 description: "Sailpoint as a System of Record"
 address: "{{Input Required: Sailpoint URL}}"
@@ -11,13 +11,13 @@ defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
-type: "Sailpoint2.0-1.0.0"
+type: "SCIM2.0-1.0.0"
 # Example Configs:
 # empty config: {} | b64: "e30="
 # config with filtering on Users: {"Users":{"queryParams":{"filter":"displayName eq \"SGNL\""}}} | b64: "eyJVc2VycyI6eyJxdWVyeVBhcmFtcyI6eyJmaWx0ZXIiOiJkaXNwbGF5TmFtZSBlcSBcIlNHTkxcIiJ9fQ=="
 # config with filter, ordering and sortBy on Groups {"Groups":{"queryParams":{"filter":"displayName eq \"SGNL\"","sortBy":"userName","ascending":true}}} | b64: "eyJHcm91cHMiOnsicXVlcnlQYXJhbXMiOnsiZmlsdGVyIjoiZGlzcGxheU5hbWUgZXEgXCJTR05MXCIiLCJzb3J0QnkiOiJ1c2VyTmFtZSIsImFzY2VuZGluZyI6dHJ1ZX19fQ=="
 adapterConfig: "e30=" # {}
-# This must match the list of supportedAuthMechanisms specified on the Adapter.
+# All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
   - basic:
       username: "{{Input Required: Username}}"
@@ -73,22 +73,22 @@ entities:
         externalId: identity.value
         type: String
       - name: identityRef
-        externalId: identity.["$ref"]
+        externalId: $.identity.ref
         type: String
       - name: identityUserName
-        externalId: identity.userName
+        externalId: $.identity.userName
         type: String
       - name: identityDisplayName
-        externalId: identity.displayName
+        externalId: $.identity.displayName
         type: String
       - name: applicationValue
-        externalId: application.value
+        externalId: $.application.value
         type: String
       - name: applicationRef
-        externalId: application.["$ref"]
+        externalId: $.application.ref
         type: String
       - name: applicationDisplayName
-        externalId: application.displayName
+        externalId: $.application.displayName
         type: String
 
       # Meta
@@ -116,6 +116,8 @@ entities:
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
     apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
     attributes:
       - name: id
         externalId: id
@@ -132,10 +134,10 @@ entities:
         externalId: type
         type: String
       - name: applicationValue
-        externalId: application.value
+        externalId: $.application.value
         type: String
       - name: applicationRef
-        externalId: application.["$ref"]
+        externalId: $.application..["$ref"]
         type: String
       - name: applicationDisplayName
         externalId: application.displayName
@@ -177,15 +179,13 @@ entities:
         type: String
 
   # TODO: Identify unique and index attributes
-  AlertAttributes:
+  AlertAttribute:
     parent: Alert
     displayName: SailpointAlertAttributes
     externalId: attributes
     description: Entity representing the attibutes associated with the Sailpoint Identity IQ Alert.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
     attributes:
       - name: key
         externalId: key
@@ -194,68 +194,62 @@ entities:
         externalId: value
         type: String
 
-  AlertActions:
+  AlertAction:
     parent: Alert
     displayName: SailpointAlertActions
     externalId: actions
     description: Entity representing the actions associated with the Sailpoint Identity IQ Alert.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
     attributes:
+      - name: resultId
+        externalId: resultId
+        type: String
+        indexed: true
+        uniqueId: true
       - name: type
         externalId: type
         type: String
       - name: alertDefinitionName
         externalId: alertDefinitionName
         type: String
-      - name: resultId
-        externalId: result.id
-        type: String
-        indexed: true
-        uniqueId: true
 
   AlertActionResult:
     parent: actions
     displayName: SailpointAlertActionResultNotifications
     externalId: result
     description: Entity representing the result associated with the Sailpoint Identity IQ Alert Action.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
     attributes:
-      - name: name
-        externalId: name
-        type: String
       - name: workflowName
         externalId: workflowName
         type: String
         indexed: true
         uniqueId: true
+      - name: name
+        externalId: name
+        type: String
 
-  AlertActionResultNotifications:
+  AlertActionResultNotification:
     parent: result
     displayName: SailpointAlertActionResultNotifications
     externalId: notifications
     description: Entity representing the notifications associated with the Sailpoint Identity IQ Alert Action Result.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
     attributes:
+      - name: emailAddresses
+        externalId: emailAddresses
+        type: String
+        indexed: true
+        uniqueId: true
       - name: name
         externalId: name
         type: String
       - name: displayName
         externalId: displayName
         type: String
-      - name: emailAddresses
-        externalId: emailAddresses
-        type: String
-        indexed: true
-        uniqueId: true
 
   Applications:
     displayName: SailpointApplication
@@ -281,15 +275,16 @@ entities:
         type: String
       - name: features
         externalId: features
+        list: true
         type: String
       - name: ownerValue
-        externalId: owner.value
+        externalId: $.owner.value
         type: String
       - name: ownerRef
-        externalId: owner.["$ref"]
+        externalId: $.owner..["$ref"]
         type: String
       - name: ownerDisplayName
-        externalId: owner.displayName
+        externalId: $.owner.displayName
         type: String
 
       # Meta
@@ -309,15 +304,11 @@ entities:
         externalId: $.meta.location
         type: String
 
-  ApplicationSchemas:
+  ApplicationSchema:
     parent: Applications
     displayName: SailpointApplicationSchemas
     externalId: applicationSchemas
     description: Entity representing the schema associated with a Sailpoint Identity IQ Application.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -333,26 +324,22 @@ entities:
         externalId: $..["$ref"]
         type: String
 
-  ApplicationLocalizedDescriptions:
+  ApplicationLocalizedDescription:
     parent: Applications
     displayName: SailpointApplicationLocalizedDescriptions
     externalId: descriptions
     description: Entity representing the localized descriptions associated with a Sailpoint Identity IQ Application.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
-      - name: locale
-        externalId: locale
-        type: String
       - name: value
         externalId: value
         type: String
         indexed: true
         uniqueId: true
+      - name: locale
+        externalId: locale
+        type: String
 
   Entitlement:
     displayName: SailpointEntitlement
@@ -394,12 +381,33 @@ entities:
       - name: lastTargetAggregation
         externalId: lastTargetAggregation
         type: DateTime
+      - name: classificationSource
+        externalId: $.classifications.source
+        type: String
+      - name: classificationEffective
+        externalId: $.classifications.effective
+        type: Bool
+      - name: classificationName
+        externalId: $.classifications.classification.name
+        type: String
+      - name: classificationDisplayName
+        externalId: $.classifications.classification.displayName
+        type: String
+      - name: classificationOrigin
+        externalId: $.classifications.classification.origin
+        type: String
+      - name: classificationType
+        externalId: $.classifications.classification.type
+        type: String
       - name: entitleAuth
         externalId: entitleAuth
         type: String
       - name: entDate
         externalId: entDate
         type: DateTime
+      - name: active
+        externalId: active
+        type: Bool
       - name: rank
         externalId: rank
         type: Int64
@@ -410,13 +418,13 @@ entities:
         externalId: email
         type: String
       - name: reviewerDisplayName
-        externalId: reviewer.displayName
+        externalId: $.reviewer.displayName
         type: String
       - name: reviewerValue
-        externalId: reviewer.value
+        externalId: $.reviewer.value
         type: String
       - name: reviewerRef
-        externalId: reviewer.["$ref"]
+        externalId: $.reviewer..["$ref"]
         type: String
 
       # Meta
@@ -436,68 +444,28 @@ entities:
         externalId: $.meta.location
         type: String
 
-  # TODO: Identify unique and index attributes
-  EntitlementClassifications:
-    parent: Entitlements
-    displayName: SailpointEntitlementClassifications
-    externalId: classifications
-    description: Entity representing a classification associated with a Sailpoint Identity IQ Entitlement.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
-    pageSize: 100
-    pagesOrderedById: false
-    attributes:
-      - name: source
-        externalId: source
-        type: String
-      - name: effective
-        externalId: effective
-        type: Bool
-      - name: classificationName
-        externalId: classification.name
-        type: String
-      - name: classificationDisplayName
-        externalId: classification.displayName
-        type: String
-      - name: classificationOrigin
-        externalId: classification.origin
-        type: String
-      - name: classificationType
-        externalId: classification.type
-        type: String
-
-  EntitlementLocalizedDescriptions:
+  EntitlementLocalizedDescription:
     parent: Entitlements
     displayName: SailpointEntitlementLocalizedDescriptions
     externalId: descriptions
     description: Entity representing the localized descriptions associated with a Sailpoint Identity IQ Entitlement.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
-      - name: locale
-        externalId: locale
-        type: String
       - name: value
         externalId: value
         type: String
         indexed: true
         uniqueId: true
+      - name: locale
+        externalId: locale
+        type: String
 
   EntitlementApplication:
     parent: Entitlements
     displayName: SailpointEntitlementApplications
     externalId: application
     description: Entity representing the application associated with a Sailpoint Identity IQ Entitlement.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -518,10 +486,6 @@ entities:
     displayName: SailpointEntitlementOwner
     externalId: owner
     description: Entity representing the owner associated with a Sailpoint Identity IQ Entitlement.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -547,8 +511,12 @@ entities:
     apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
-
     attributes:
+      - name: id
+        externalId: id
+        type: String
+        uniqueId: true
+        indexed: true
       - name: partitioned
         externalId: partitioned
         type: Bool
@@ -595,11 +563,6 @@ entities:
         externalId: $.messages[*].[*] # Flatten a [][]string to a []string
         type: String
         list: true
-      - name: id
-        externalId: id
-        type: String
-        uniqueId: true
-        indexed: true
       - name: completionStatus
         externalId: completionStatus
         type: String
@@ -636,11 +599,6 @@ entities:
     displayName: SailpointLaunchedWorkflowInput
     externalId: input
     description: Entity representing the inputs to a Sailpoint Identity IQ Launched Workflow.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
-
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -660,11 +618,6 @@ entities:
     displayName: SailpointLaunchedWorkflowOutput
     externalId: output
     description: Entity representing the outputs to a Sailpoint Identity IQ Launched Workflow.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
-
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -679,15 +632,13 @@ entities:
         type: String
 
   # TODO: Identify unique and index attributes
-  LaunchedWorkflowAttributes:
+  LaunchedWorkflowAttribute:
     parent: LaunchedWorkflows
     displayName: SailpointLaunchedWorkflowAttributes
     externalId: attributes
     description: Entity representing the Sailpoint alert attributes each user is associated with.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
     attributes:
       - name: key
         externalId: key
@@ -734,15 +685,11 @@ entities:
         type: String
 
   # TODO: Identify unique and index attributes
-  ObjectConfigAttributes:
+  ObjectConfigAttribute:
     parent: ObjectConfigs
     displayName: SailpointObjectConfigAttributes
     externalId: objectAttributes
     description: Entity representing the attributes associated with a Sailpoint Identity IQ ObjectConfig.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -784,15 +731,11 @@ entities:
         type: String
 
   # TODO: Identify unique and index attributes
-  ObjectAttributeSources:
+  ObjectAttributeSource:
     parent: objectAttributes
     displayName: SailpointObjectAttributeSources
     externalId: attributeSources
     description: Entity representing the attribute sources associated with a Sailpoint Identity IQ ObjectConfig.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -810,15 +753,11 @@ entities:
         type: String
 
   # TODO: Identify unique and index attributes
-  ObjectAttributeTargets:
+  ObjectAttributeTarget:
     parent: objectAttributes
     displayName: SailpointObjectAttributeTargets
     externalId: attributeTargets
     description: Entity representing the attribute targets associated with a Sailpoint Identity IQ ObjectConfig.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -861,22 +800,22 @@ entities:
         externalId: constraintName
         type: String
       - name: identityValue
-        externalId: identity.value
+        externalId: $.identity.value
         type: String
       - name: identityRef
-        externalId: identity..["$ref"]
+        externalId: $.identity..["$ref"]
         type: String
       - name: identityDisplayName
-        externalId: identity.displayName
+        externalId: $.identity.displayName
         type: String
       - name: ownerValue
-        externalId: owner.value
+        externalId: $.owner.value
         type: String
       - name: ownerRef
-        externalId: owner.["$ref"]
+        externalId: $.owner..["$ref"]
         type: String
       - name: ownerDisplayName
-        externalId: owner.displayName
+        externalId: $.owner.displayName
         type: String
       - name: description
         externalId: description
@@ -902,7 +841,7 @@ entities:
         externalId: $.meta.location
         type: String
 
-  Roles:
+  Role:
     displayName: SailpointRole
     externalId: Roles
     description: Entity representing a Sailpoint Identity IQ Role.
@@ -910,7 +849,6 @@ entities:
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
     apiCallMinInterval: 1
-
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -923,28 +861,28 @@ entities:
         externalId: name
         type: String
       - name: typeIIQ
-        externalId: type.iiq
+        externalId: $.type.iiq
         type: Bool
       - name: typeRequirements
-        externalId: type.requirements
+        externalId: $.type.requirements
         type: Bool
       - name: typePermits
-        externalId: type.permits
+        externalId: $.type.permits
         type: Bool
       - name: typeDisplayName
-        externalId: type.displayName
+        externalId: $.type.displayName
         type: String
       - name: typeManualAssignment
-        externalId: type.manualAssignment
+        externalId: $.type.manualAssignment
         type: Bool
       - name: typeName
-        externalId: type.name
+        externalId: $.type.name
         type: String
       - name: typeAutoAssignment
-        externalId: type.autoAssignment
+        externalId: $.type.autoAssignment
         type: Bool
       - name: typeAssignmentSelector
-        externalId: type.assignmentSelector
+        externalId: $.type.assignmentSelector
         type: Bool
       - name: displayableName
         externalId: displayableName
@@ -959,13 +897,13 @@ entities:
         externalId: deactivationDate
         type: DateTime
       - name: ownerDisplayName
-        externalId: owner.displayName
+        externalId: $.owner.displayName
         type: String
       - name: ownerValue
-        externalId: owner.value
+        externalId: $.owner.value
         type: String
       - name: ownerRef
-        externalId: owner.["$ref"]
+        externalId: $.owner..$.["$ref"]
         type: String
 
       # Meta
@@ -985,15 +923,11 @@ entities:
         externalId: $.meta.location
         type: String
 
-  RoleLocalizedDescriptions:
+  RoleLocalizedDescription:
     parent: Roles
     displayName: SailpointEntitlementLocalizedDescriptions
     externalId: descriptions
     description: Entity representing the localized descriptions associated with a Sailpoint Identity IQ Role.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -1009,9 +943,6 @@ entities:
     displayName: SailpointRoleInheritance
     externalId: inheritance
     description: Entity representing the inheritance associated with a Sailpoint Identity IQ Role.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -1028,14 +959,11 @@ entities:
         type: String
 
   # TODO: Identify unique and index attributes
-  RoleRequirements:
+  RoleRequirement:
     parent: Roles
     displayName: SailpointRoleRequirements
     externalId: requirements
     description: Entity representing the requirements associated with a Sailpoint Identity IQ Role.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -1050,14 +978,11 @@ entities:
         type: String
 
   # TODO: Identify unique and index attributes
-  RolePermits:
+  RolePermit:
     parent: Roles
     displayName: SailpointRolePermits
     externalId: permits
     description: Entity representing the permits associated with a Sailpoint Identity IQ Role.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -1072,14 +997,11 @@ entities:
         type: String
 
   # TODO: Identify unique and index attributes
-  RoleClassfications:
+  RoleClassfication:
     parent: Roles
     displayName: SailpointRoleClassfications
     externalId: classifications
     description: Entity representing the classifications associated with a Sailpoint Identity IQ Role.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -1090,16 +1012,16 @@ entities:
         externalId: effective
         type: Bool
       - name: classificationName
-        externalId: classification.name
+        externalId: $.classification.name
         type: String
       - name: classificationDisplayName
-        externalId: classification.displayName
+        externalId: $.classification.displayName
         type: String
       - name: classificationOrigin
-        externalId: classification.origin
+        externalId: $.classification.origin
         type: String
       - name: classificationType
-        externalId: classification.type
+        externalId: $.classification.type
         type: String
 
   # TODO: Skip ingestion of this entity?
@@ -1112,36 +1034,38 @@ entities:
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
     apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
     attributes:
       - name: documentationUri
         externalId: documentationUri
         type: String
       - name: patchSupported
-        externalId: patch.supported
+        externalId: $.patch.supported
         type: Bool
       - name: etagSupported
-        externalId: etag.supported
+        externalId: $.etag.supported
         type: Bool
       - name: bulkSupported
-        externalId: bulk.supported
+        externalId: $.bulk.supported
         type: Bool
       - name: bulkMaxOperations
-        externalId: bulk.maxOperations
+        externalId: $.bulk.maxOperations
         type: Int64
       - name: bulkMaxPayloadSize
-        externalId: bulk.maxPayloadSize
+        externalId: $.bulk.maxPayloadSize
         type: Int64
       - name: filterSupported
-        externalId: filter.supported
+        externalId: $.filter.supported
         type: Bool
       - name: filterMaxResults
-        externalId: filter.maxResults
+        externalId: $.filter.maxResults
         type: Int64
       - name: changePasswordSupported
-        externalId: changePassword.supported
-        type: Bool
+        externalId: $.changePassword.supported
+        type: Bool$.
       - name: sortSupported
-        externalId: sort.supported
+        externalId: $.sort.supported
         type: Bool
 
   # TODO: Identify unique and index attributes
@@ -1150,10 +1074,8 @@ entities:
     displayName: SailpointServiceProviderConfigAuthenticationScheme
     externalId: authenticationSchemes
     description: Entity representing the authentication schemes associated with a Sailpoint Identity IQ Service Provider Configuration.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
     attributes:
       - name: name
         externalId: name
@@ -1171,13 +1093,15 @@ entities:
         externalId: type
         type: String
 
-  TaskResults:
+  TaskResult:
     displayName: SailpointTaskResult
     externalId: TaskResults
     description: Entity representing a Sailpoint Identity IQ Task Results.
     syncFrequency: HOURLY
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
+    pageSize: 100
+    pagesOrderedById: false
     attributes:
       - name: id
         externalId: id
@@ -1260,14 +1184,13 @@ entities:
         type: String
 
   # TODO: Identify unique and index attributes
-  TaskResultsAttributes:
+  TaskResultsAttribute:
     parent: TaskResults
     displayName: SailpointTaskResultAttributes
     externalId: attributes
     description: Entity representing the attributes associated with a Sailpoint Identity IQ Task Results.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
+    pageSize: 100
+    pagesOrderedById: false
     attributes:
       - name: key
         externalId: key
@@ -1283,7 +1206,6 @@ entities:
     syncFrequency: HOURLY
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
-
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -1296,13 +1218,13 @@ entities:
         externalId: userName
         type: String
       - name: formattedName
-        externalId: name.formatted
+        externalId: $.name.formatted
         type: String
       - name: familyName
-        externalId: name.familyName
+        externalId: $.name.familyName
         type: String
       - name: givenName
-        externalId: name.givenName
+        externalId: $.name.givenName
         type: String
       - name: displayName
         externalId: displayName
@@ -1323,7 +1245,7 @@ entities:
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.displayName
         type: String
       - name: managerRef
-        externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.["$ref"]
+        externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager..["$ref"]
         type: String
 
       # Sailpoint user extension
@@ -1341,7 +1263,7 @@ entities:
         externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].administrator.value
         type: String
       - name: administratorRef
-        externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].administrator.["$ref"]
+        externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].administrator..["$ref"]
         type: String
       - name: administratorDisplayName
         externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].administrator.displayName
@@ -1365,7 +1287,7 @@ entities:
         externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].regionOwner.value
         type: String
       - name: regionOwnerRef
-        externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].regionOwner.["$ref"]
+        externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].regionOwner..["$ref"]
         type: String
       - name: location
         externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].location
@@ -1377,7 +1299,7 @@ entities:
         externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].locationOwner.value
         type: String
       - name: locationOwnerRef
-        externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].locationOwner.["$ref"]
+        externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].locationOwner..["$ref"]
         type: String
       - name: department
         externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].department
@@ -1415,10 +1337,6 @@ entities:
     displayName: SailpointUserEmail
     externalId: emails
     description: Entity representing the email addresses associated with a Sailpoint Identity IQ User.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -1442,9 +1360,6 @@ entities:
     displayName: SailpointUserAccount
     externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].accounts
     description: Entity representing the account associated with a Sailpoint Identity IQ User.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -1460,14 +1375,11 @@ entities:
         externalId: $..["$ref"]
         type: String
 
-  SailpointUserEntitlements:
+  SailpointUserEntitlement:
     parent: Users
     displayName: SailpointUserEntitlements
     externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].entitlements
     description: Entity representing the entitlements associated with a Sailpoint Identity IQ User.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -1492,14 +1404,11 @@ entities:
         externalId: $..["$ref"]
         type: String
 
-  SailpointUserRoles:
+  SailpointUserRole:
     parent: Users
     displayName: SailpointUserRoles
     externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].roles
     description: Entity representing the roles associated with a Sailpoint Identity IQ User.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -1535,7 +1444,6 @@ entities:
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
     apiCallMinInterval: 1
-
     pageSize: 100
     pagesOrderedById: false
     attributes:
