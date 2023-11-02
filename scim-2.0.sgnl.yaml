@@ -17,7 +17,7 @@ type: "SCIM2.0-1.0.0"
 # config with filtering on Users: {"Users":{"queryParams":{"filter":"displayName eq \"SGNL\""}}} | b64: "eyJVc2VycyI6eyJxdWVyeVBhcmFtcyI6eyJmaWx0ZXIiOiJkaXNwbGF5TmFtZSBlcSBcIlNHTkxcIiJ9fQ=="
 # config with filter, ordering and sortBy on Groups {"Groups":{"queryParams":{"filter":"displayName eq \"SGNL\"","sortBy":"userName","ascending":true}}} | b64: "eyJHcm91cHMiOnsicXVlcnlQYXJhbXMiOnsiZmlsdGVyIjoiZGlzcGxheU5hbWUgZXEgXCJTR05MXCIiLCJzb3J0QnkiOiJ1c2VyTmFtZSIsImFzY2VuZGluZyI6dHJ1ZX19fQ=="
 adapterConfig: "e30=" # {}
-# This must match the list of supportedAuthMechanisms specified on the Adapter.
+# All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
   - basic:
       username: "{{Input Required: Username}}"
