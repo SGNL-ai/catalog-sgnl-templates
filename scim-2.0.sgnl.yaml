@@ -173,7 +173,7 @@ entities:
     parent: Users  
     displayName: SCIMGroupMember
     externalId: groups
-    description: Entity representing the SCIM groups each user belongs to.
+    description: Entity representing the SCIM groups each user belongs to
     syncFrequency: HOURLY
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
