@@ -18,7 +18,7 @@ type: "PagerDuty-1.0.0"
 # }
 # Each param value must either be []string or string.
 adapterConfig: "e30="
-# This must match the list of supportedAuthMechanisms specified on the Adapter.
+# All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
   - bearer:
       authToken: "Token token={{Input Required: token}}"

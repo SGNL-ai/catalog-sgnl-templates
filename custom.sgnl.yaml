@@ -8,7 +8,7 @@ defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: "{{Input Required: SoR-Type}}"
 adapterConfig: "e30="
-# This must match the list of supportedAuthMechanisms specified on the Adapter.
+# All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
   - oAuth2ClientCredentials:
       clientId: "{{Input Required: Client-ID}}"

@@ -14,7 +14,7 @@ type: "Jira-1.0.0"
 # config with issues jql filter with space {"issuesJqlFilter":"project='Customer Support'"} | b64: "eyJpc3N1ZXNKcWxGaWx0ZXIiOiJwcm9qZWN0PSdDdXN0b21lciBTdXBwb3J0JyJ9"
 # config with objects ql query {"objectsQlQuery":"objectType = Customer"} | b64: "eyJvYmplY3RzUWxRdWVyeSI6Im9iamVjdFR5cGUgPSBDdXN0b21lciJ9"
 adapterConfig: "eyJvYmplY3RzUWxRdWVyeSI6Im9iamVjdFR5cGUgPSBJTlBVVF9SRVFVSVJFRCJ9" # {"objectsQlQuery":"objectType = INPUT_REQUIRED"}
-# This must match the list of supportedAuthMechanisms specified on the Adapter.
+# All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
   - basic:
       username: "{{Input Required: Username}}"

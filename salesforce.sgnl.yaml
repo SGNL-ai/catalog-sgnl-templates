@@ -12,7 +12,7 @@ type: "Salesforce-1.0.0"
 # Example Config:
 # {"version": 1, "config": {"requestTimeout": "10s", "salesforce": {"apiVersion":"56.0"}}}
 adapterConfig: "ewoJInZlcnNpb24iOiAxLAoJImNvbmZpZyI6IHsKCQkicmVxdWVzdFRpbWVvdXQiOiAiMTBzIiwKCQkic2FsZXNmb3JjZSI6IHsiYXBpVmVyc2lvbiI6IjU2LjAifQoJfQp9"
-# This must match the list of supportedAuthMechanisms specified on the Adapter.
+# All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
   - oAuth2ClientCredentials:
       clientId: "{{Input Required: Client-ID}}"
