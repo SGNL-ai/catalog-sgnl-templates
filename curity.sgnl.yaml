@@ -95,9 +95,6 @@ entities:
       - name: active
         externalId: active
         type: Bool 
-      - name: password
-        externalId: password
-        type: String
       
       # Enterprise User Extension
       - name: employeeNumber
@@ -146,10 +143,6 @@ entities:
     displayName: CurityUserEmail
     externalId: emails
     description: Entity representing Curity user emails
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -173,10 +166,6 @@ entities:
     displayName: CurityUserAddress
     externalId: addresses
     description: Entity representing Curity user addresses
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -209,10 +198,6 @@ entities:
     displayName: CurityUserPhoneNumber
     externalId: phoneNumbers
     description: Entity representing Curity user phone numbers
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
