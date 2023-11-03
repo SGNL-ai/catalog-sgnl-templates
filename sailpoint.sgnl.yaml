@@ -1033,7 +1033,7 @@ entities:
       - name: effective
         externalId: effective
         type: Bool
-      
+
   TaskResult:
     displayName: SailpointTaskResult
     externalId: TaskResults
