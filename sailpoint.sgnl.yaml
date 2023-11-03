@@ -70,7 +70,7 @@ entities:
         externalId: hasEntitlements
         type: Bool
       - name: identityValue
-        externalId: identity.value
+        externalId: $.identity.value
         type: String
       - name: identityRef
         externalId: $.identity.ref
@@ -140,7 +140,7 @@ entities:
         externalId: $.application..["$ref"]
         type: String
       - name: applicationDisplayName
-        externalId: application.displayName
+        externalId: $.application.displayName
         type: String
       - name: alertDate
         externalId: alertDate
@@ -179,7 +179,7 @@ entities:
         type: String
 
   AlertAttribute:
-    parent: Alert
+    parent: Alerts
     displayName: SailpointAlertAttributes
     externalId: attributes
     description: Entity representing the attibutes associated with the Sailpoint Identity IQ Alert.
@@ -196,7 +196,7 @@ entities:
         type: String
 
   AlertAction:
-    parent: Alert
+    parent: Alerts
     displayName: SailpointAlertActions
     externalId: actions
     description: Entity representing the actions associated with the Sailpoint Identity IQ Alert.
@@ -333,13 +333,13 @@ entities:
     pageSize: 100
     pagesOrderedById: false
     attributes:
-      - name: value
-        externalId: value
-        type: String
-        indexed: true
-        uniqueId: true
       - name: locale
         externalId: locale
+        type: String
+        uniqueId: true
+        indexed: true
+      - name: value
+        externalId: value
         type: String
 
   Entitlement:
@@ -453,13 +453,13 @@ entities:
     pageSize: 100
     pagesOrderedById: false
     attributes:
-      - name: value
-        externalId: value
+      - name: locale
+        externalId: locale
         type: String
         indexed: true
         uniqueId: true
-      - name: locale
-        externalId: locale
+      - name: value
+        externalId: value
         type: String
 
   EntitlementApplication:
@@ -598,7 +598,7 @@ entities:
     parent: LaunchedWorkflows
     displayName: SailpointLaunchedWorkflowInput
     externalId: input
-    description: Entity representing the inputs to a Sailpoint Identity IQ Launched Workflow.
+    description: Entity representing the inputs associated with a Sailpoint Identity IQ Launched Workflow.
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -618,7 +618,7 @@ entities:
     parent: LaunchedWorkflows
     displayName: SailpointLaunchedWorkflowOutput
     externalId: output
-    description: Entity representing the outputs to a Sailpoint Identity IQ Launched Workflow.
+    description: Entity representing the outputs associated with a Sailpoint Identity IQ Launched Workflow.
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -638,7 +638,7 @@ entities:
     parent: LaunchedWorkflows
     displayName: SailpointLaunchedWorkflowAttributes
     externalId: attributes
-    description: Entity representing the Sailpoint alert attributes each user is associated with.
+    description: Entity representing the attributes associated with a Sailpoint Identity IQ Launched Workflow.
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -910,7 +910,7 @@ entities:
         externalId: $.owner.value
         type: String
       - name: ownerRef
-        externalId: $.owner..$.["$ref"]
+        externalId: $.owner..$..["$ref"]
         type: String
 
       # Meta
@@ -941,6 +941,8 @@ entities:
       - name: locale
         externalId: locale
         type: String
+        uniqueId: true
+        indexed: true
       - name: value
         externalId: value
         type: String
