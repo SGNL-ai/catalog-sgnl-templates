@@ -1233,7 +1233,7 @@ entities:
       - name: regionOwnerRef
         externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].regionOwner..["$ref"]
         type: String
-      - name: location
+      - name: locationName
         externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].location
         type: String
       - name: locationOwnerDisplayName
