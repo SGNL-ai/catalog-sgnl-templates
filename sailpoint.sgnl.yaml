@@ -178,7 +178,6 @@ entities:
         externalId: $.meta.location
         type: String
 
-  # TODO: Identify unique and index attributes
   AlertAttribute:
     parent: Alert
     displayName: SailpointAlertAttributes
@@ -190,6 +189,8 @@ entities:
       - name: key
         externalId: key
         type: String
+        indexed: true
+        uniqueId: true
       - name: value
         externalId: value
         type: String
@@ -593,7 +594,6 @@ entities:
         externalId: $.meta.location
         type: String
 
-  # TODO: Identify unique and index attributes
   LaunchedWorkflowInput:
     parent: LaunchedWorkflows
     displayName: SailpointLaunchedWorkflowInput
@@ -605,6 +605,8 @@ entities:
       - name: key
         externalId: key
         type: String
+        indexed: true
+        uniqueId: true
       - name: value
         externalId: value
         type: String
@@ -612,7 +614,6 @@ entities:
         externalId: type
         type: String
 
-  # TODO: Identify unique and index attributes
   LaunchedWorkflowOutput:
     parent: LaunchedWorkflows
     displayName: SailpointLaunchedWorkflowOutput
@@ -624,6 +625,8 @@ entities:
       - name: key
         externalId: key
         type: String
+        indexed: true
+        uniqueId: true
       - name: value
         externalId: value
         type: String
@@ -631,7 +634,6 @@ entities:
         externalId: type
         type: String
 
-  # TODO: Identify unique and index attributes
   LaunchedWorkflowAttribute:
     parent: LaunchedWorkflows
     displayName: SailpointLaunchedWorkflowAttributes
@@ -643,6 +645,8 @@ entities:
       - name: key
         externalId: key
         type: String
+        indexed: true
+        uniqueId: true
       - name: value
         externalId: value
         type: String
@@ -684,7 +688,6 @@ entities:
         externalId: $.meta.location
         type: String
 
-  # TODO: Identify unique and index attributes
   ObjectConfigAttribute:
     parent: ObjectConfigs
     displayName: SailpointObjectConfigAttributes
@@ -696,6 +699,8 @@ entities:
       - name: name
         externalId: name
         type: String
+        indexed: true
+        uniqueId: true
       - name: displayName
         externalId: displayName
         type: String
@@ -730,7 +735,6 @@ entities:
         externalId: editMode
         type: String
 
-  # TODO: Identify unique and index attributes
   ObjectAttributeSource:
     parent: objectAttributes
     displayName: SailpointObjectAttributeSources
@@ -739,6 +743,11 @@ entities:
     pageSize: 100
     pagesOrderedById: false
     attributes:
+      - name: key
+        externalId: key
+        type: String
+        indexed: true
+        uniqueId: true
       - name: instance
         externalId: instance
         type: String
@@ -748,11 +757,7 @@ entities:
       - name: ruleName
         externalId: ruleName
         type: String
-      - name: key
-        externalId: key
-        type: String
 
-  # TODO: Identify unique and index attributes
   ObjectAttributeTarget:
     parent: objectAttributes
     displayName: SailpointObjectAttributeTargets
@@ -761,6 +766,11 @@ entities:
     pageSize: 100
     pagesOrderedById: false
     attributes:
+      - name: key
+        externalId: key
+        type: String
+        indexed: true
+        uniqueId: true
       - name: instance
         externalId: instance
         type: String
@@ -769,9 +779,6 @@ entities:
         type: String
       - name: ruleName
         externalId: ruleName
-        type: String
-      - name: key
-        externalId: key
         type: String
       - name: provisionAllAccounts
         externalId: provisionAllAccounts
@@ -958,7 +965,6 @@ entities:
         externalId: $..["$ref"]
         type: String
 
-  # TODO: Identify unique and index attributes
   RoleRequirement:
     parent: Roles
     displayName: SailpointRoleRequirements
@@ -970,6 +976,8 @@ entities:
       - name: value
         externalId: value
         type: String
+        indexed: true
+        uniqueId: true
       - name: displayName
         externalId: displayName
         type: String
@@ -977,7 +985,6 @@ entities:
         externalId: $..["$ref"]
         type: String
 
-  # TODO: Identify unique and index attributes
   RolePermit:
     parent: Roles
     displayName: SailpointRolePermits
@@ -989,6 +996,8 @@ entities:
       - name: value
         externalId: value
         type: String
+        indexed: true
+        uniqueId: true
       - name: displayName
         externalId: displayName
         type: String
@@ -996,7 +1005,6 @@ entities:
         externalId: $..["$ref"]
         type: String
 
-  # TODO: Identify unique and index attributes
   RoleClassfication:
     parent: Roles
     displayName: SailpointRoleClassfications
@@ -1005,15 +1013,11 @@ entities:
     pageSize: 100
     pagesOrderedById: false
     attributes:
-      - name: source
-        externalId: source
-        type: String
-      - name: effective
-        externalId: effective
-        type: Bool
       - name: classificationName
         externalId: $.classification.name
         type: String
+        indexed: true
+        uniqueId: true
       - name: classificationDisplayName
         externalId: $.classification.displayName
         type: String
@@ -1023,76 +1027,13 @@ entities:
       - name: classificationType
         externalId: $.classification.type
         type: String
-
-  # TODO: Skip ingestion of this entity?
-  # TODO: Identify unique and index attributes
-  ServiceProviderConfiguration:
-    displayName: SailpointServiceProviderConfiguration
-    externalId: ServiceProviderConfig
-    description: Entity representing a Sailpoint Identity IQ Service Provider Configuration.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
-    pageSize: 100
-    pagesOrderedById: false
-    attributes:
-      - name: documentationUri
-        externalId: documentationUri
+      - name: source
+        externalId: source
         type: String
-      - name: patchSupported
-        externalId: $.patch.supported
+      - name: effective
+        externalId: effective
         type: Bool
-      - name: etagSupported
-        externalId: $.etag.supported
-        type: Bool
-      - name: bulkSupported
-        externalId: $.bulk.supported
-        type: Bool
-      - name: bulkMaxOperations
-        externalId: $.bulk.maxOperations
-        type: Int64
-      - name: bulkMaxPayloadSize
-        externalId: $.bulk.maxPayloadSize
-        type: Int64
-      - name: filterSupported
-        externalId: $.filter.supported
-        type: Bool
-      - name: filterMaxResults
-        externalId: $.filter.maxResults
-        type: Int64
-      - name: changePasswordSupported
-        externalId: $.changePassword.supported
-        type: Bool$.
-      - name: sortSupported
-        externalId: $.sort.supported
-        type: Bool
-
-  # TODO: Identify unique and index attributes
-  ServiceProviderConfigAuthenticationScheme:
-    parent: ServiceProviderConfig
-    displayName: SailpointServiceProviderConfigAuthenticationScheme
-    externalId: authenticationSchemes
-    description: Entity representing the authentication schemes associated with a Sailpoint Identity IQ Service Provider Configuration.
-    pageSize: 100
-    pagesOrderedById: false
-    attributes:
-      - name: name
-        externalId: name
-        type: String
-      - name: description
-        externalId: description
-        type: String
-      - name: specUri
-        externalId: specUri
-        type: String
-      - name: documentationUri
-        externalId: documentationUri
-        type: String
-      - name: type
-        externalId: type
-        type: String
-
+      
   TaskResult:
     displayName: SailpointTaskResult
     externalId: TaskResults
@@ -1183,7 +1124,6 @@ entities:
         externalId: $.meta.location
         type: String
 
-  # TODO: Identify unique and index attributes
   TaskResultsAttribute:
     parent: TaskResults
     displayName: SailpointTaskResultAttributes
@@ -1195,6 +1135,8 @@ entities:
       - name: key
         externalId: key
         type: String
+        indexed: true
+        uniqueId: true
       - name: value
         externalId: value
         type: String
