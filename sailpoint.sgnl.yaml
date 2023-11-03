@@ -910,7 +910,7 @@ entities:
         externalId: $.owner.value
         type: String
       - name: ownerRef
-        externalId: $.owner..$..["$ref"]
+        externalId: $.owner..["$ref"]
         type: String
 
       # Meta
