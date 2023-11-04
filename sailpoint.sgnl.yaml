@@ -78,6 +78,7 @@ entities:
       - name: identityUserName
         externalId: $.identity.userName
         type: String
+        indexed: true
       - name: identityDisplayName
         externalId: $.identity.displayName
         type: String
