@@ -366,7 +366,7 @@ entities:
         externalId: primary
         type: Bool
   
-  Certificates:
+  Certificate:
     parent: Users  
     displayName: SCIMUserCertificate
     externalId: certificates
