@@ -1,10 +1,10 @@
 # SCIM 2.0 Configuration YAML for DS2.0
-# Note: The externalId for each entity must match the endpoint for this resource i.e. 
+# Note: The externalId for each entity must match the endpoint for this resource i.e.
 # - External ID for an User entity representing a User resource (/Users) is "Users"
 # - External ID for a Group entity representing a Group resource (/Groups) is "Groups"
 
 displayName: "SCIM 2.0"
-icon: PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjMDEwMTAxIi8+CjxwYXRoIGQ9Ik0xNC4xOTgyIDM5Ljg5MzZDMTMuMDg1NCAzOS44OTM2IDExLjk5MjQgMzkuNjkxIDEwLjkyMTggMzkuMjg3MkM5Ljg0OTg5IDM4Ljg4MjEgOC44NzY0MSAzOC4yNjAzIDggMzcuNDIxOUw5Ljg5OTEyIDM1LjAxNjNDMTAuNTY1OSAzNS41OTAzIDExLjI1MSAzNi4wNDYxIDExLjk1NDQgMzYuMzg1MUMxMi42NTY0IDM2LjcyNDEgMTMuNDI0NSAzNi44OTI5IDE0LjI2MDEgMzYuODkyOUMxNC45MjgzIDM2Ljg5MjkgMTUuNDQ2IDM2Ljc2MzUgMTUuODE0NSAzNi41MDYxQzE2LjE4MzEgMzYuMjQ4NiAxNi4zNjc0IDM1Ljg5MTMgMTYuMzY3NCAzNS40MzU1VjM1LjM5MDVDMTYuMzY3NCAzNS4xNjk3IDE2LjMyOTQgMzQuOTc1NSAxNi4yNTIgMzQuODA1M0MxNi4xNzQ3IDM0LjYzNjUgMTYuMDI4NCAzNC40Nzc1IDE1LjgxMzEgMzQuMzI5OEMxNS41OTY1IDM0LjE4MzUgMTUuMjk2OSAzNC4wMzU4IDE0LjkxMjggMzMuODg4MUMxNC41Mjg4IDMzLjc0MDQgMTQuMDMwOCAzMy41ODcxIDEzLjQxNiAzMy40MjUzQzEyLjY3NjEgMzMuMjM0IDEyLjAwNzkgMzMuMDIwMSAxMS40MDcyIDMyLjc4NTJDMTAuODA2NSAzMi41NDg5IDEwLjI5NzIgMzIuMjU5MSA5Ljg3OTQzIDMxLjkxM0M5LjQ2MDIyIDMxLjU2NyA5LjEzNjY2IDMxLjEzNjUgOC45MDU5NSAzMC42MjE2QzguNjc1MjQgMzAuMTA2NyA4LjU2MTMgMjkuNDY1MyA4LjU2MTMgMjguNzAxNFYyOC42NTc4QzguNTYxMyAyNy45NTAyIDguNjg1MDkgMjcuMzE0MyA4LjkzNDA5IDI2Ljc0NzRDOS4xODMwOCAyNi4xODA1IDkuNTMxOTYgMjUuNjkwOSA5Ljk4MjEyIDI1LjI3ODdDMTAuNDMwOSAyNC44NjY2IDEwLjk2NjkgMjQuNTUgMTEuNTkxNSAyNC4zMjkyQzEyLjIxNDYgMjQuMTA4MyAxMi45MDI2IDIzLjk5ODYgMTMuNjUzOCAyMy45OTg2QzE0LjcyNTcgMjMuOTk4NiAxNS43MDkgMjQuMTY4OCAxNi42MDY1IDI0LjUwNjRDMTcuNTA0MSAyNC44NDU1IDE4LjMyODQgMjUuMzMwOCAxOS4wNzk2IDI1Ljk2MzhMMTcuNDExMiAyOC41MjQxQzE2Ljc1NzEgMjguMDUyOSAxNi4xMTcgMjcuNjgxNSAxNS40OTEgMjcuNDA4NkMxNC44NjUgMjcuMTM3MSAxNC4yMzkgMjcuMDAwNiAxMy42MTMgMjcuMDAwNkMxMi45ODcgMjcuMDAwNiAxMi41MTcxIDI3LjEzIDEyLjIwNDggMjcuMzg3NUMxMS44OTExIDI3LjY0NDkgMTEuNzM0OSAyNy45NjU3IDExLjczNDkgMjguMzQ4M1YyOC4zOTE5QzExLjczNDkgMjguNjQyMyAxMS43OCAyOC44NTg5IDExLjg3MTQgMjkuMDQzMkMxMS45NjE0IDI5LjIyNjEgMTIuMTI2IDI5LjM5MjEgMTIuMzYyNCAyOS41Mzk4QzEyLjU5ODcgMjkuNjg3NSAxMi45MjM3IDI5LjgyNjggMTMuMzM1OCAyOS45NTlDMTMuNzQ2NiAzMC4wOTI3IDE0LjI2NzEgMzAuMjQ2IDE0Ljg5NDUgMzAuNDIzM0MxNS42MzMxIDMwLjYzMDEgMTYuMjkyOCAzMC44NjA4IDE2Ljg3MjQgMzEuMTE4MkMxNy40NTIgMzEuMzc1NiAxNy45Mzg3IDMxLjY4NTEgMTguMzM2OSAzMi4wNDUzQzE4LjczMzYgMzIuNDA1NCAxOS4wMzQ2IDMyLjgyODggMTkuMjM1OCAzMy4zMTQxQzE5LjQzODQgMzMuNzk5NSAxOS41MzgyIDM0LjM4MTkgMTkuNTM4MiAzNS4wNTg1VjM1LjEwMzVDMTkuNTM4MiAzNS44Njg4IDE5LjQwNzQgMzYuNTQ5NyAxOS4xNDQzIDM3LjE0NDhDMTguODgxMyAzNy43NDEyIDE4LjUxNTUgMzguMjQwNiAxOC4wNDU3IDM4LjY0NThDMTcuNTc1OCAzOS4wNTA5IDE3LjAxNDUgMzkuMzYwNCAxNi4zNjMyIDM5LjU3MjhDMTUuNzExOCAzOS43ODY2IDE0Ljk4ODggMzkuODkzNiAxNC4xOTU0IDM5Ljg5MzZIMTQuMTk4MloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00MS4zOTIyIDI0SDQ0Ljg1NTdMNDguNjk0NyAzMC41MzQ0TDUyLjUzNTIgMjRINTZWNDAuMDAwNUg1Mi44Mjc4VjI5LjM2NEw0OC43MTcyIDM1Ljk2NDVINDguNjM0Mkw0NC41NjQ1IDI5LjQzMDFWMzkuOTk5MUg0MS4zOTIyVjI0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTMwLjU4NjkgMzYuMzYyNkMzMC4wMDg3IDM2LjY4NjIgMjkuMzAzOSAzNi44NDc5IDI4LjQ2OTcgMzYuODQ3OUMyNy44NDM3IDM2Ljg0NzkgMjcuMjY5OCAzNi43MTk5IDI2Ljc0NzkgMzYuNDYxMUMyNi4yMjYgMzYuMjAzNiAyNS43OCAzNS44NTQ4IDI1LjQxMjkgMzUuNDEzQzI1LjA0MjkgMzQuOTcxMyAyNC43NTU5IDM0LjQ1NjQgMjQuNTQ2MyAzMy44NjdDMjQuMzM4MSAzMy4yNzkgMjQuMjM0IDMyLjY1MyAyNC4yMzQgMzEuOTkwNFYzMS45NDY4QzI0LjIzNCAzMS4yODQyIDI0LjMzODEgMzAuNjYzOCAyNC41NDYzIDMwLjA4MTRDMjQuNzU1OSAyOS41MDA0IDI1LjA0NzEgMjguOTg4NCAyNS40MjQxIDI4LjU0NjZDMjUuNzk5NyAyOC4xMDQ5IDI2LjI0ODUgMjcuNzYwMyAyNi43NzA0IDI3LjUwODVDMjcuMjkyMyAyNy4yNTgxIDI3Ljg1OTIgMjcuMTMyOSAyOC40NzExIDI3LjEzMjlDMjkuMjA4MyAyNy4xMzI5IDI5Ljg3MjMgMjcuMjg3NiAzMC40NjMxIDI3LjU5NzFDMzAuNzE5MSAyNy43MzA3IDMwLjM1NzYgMjcuNDkwMiAzMC42MDk0IDI3LjY2NzRMMzIuMjc5MiAyNS4xMDU3QzMxLjkxNDkgMjQuNjQwMSAzMC45MjMxIDI0LjI5MjYgMzAuMzU5IDI0LjE3NDRDMjkuNzk0OSAyNC4wNTc3IDI5LjE3MzEgMjMuOTk3MiAyOC40OTA4IDIzLjk5NzJDMjcuMzY0IDIzLjk5NzIgMjYuMzM0MyAyNC4yMDY4IDI1LjQwMTYgMjQuNjI2QzI0LjQ3MDMgMjUuMDQ2NiAyMy42Njk5IDI1LjYyMDYgMjMuMDAxNyAyNi4zNDc5QzIyLjMzMzUgMjcuMDc2NiAyMS44MTE2IDI3LjkyMiAyMS40MzU5IDI4Ljg4NzFDMjEuMDYwMyAyOS44NTIxIDIwLjg3MzIgMzAuODg0NyAyMC44NzMyIDMxLjk4OVYzMi4wMzI2QzIwLjg3MzIgMzMuMTM2OSAyMS4wNjAzIDM0LjE3MzcgMjEuNDM1OSAzNS4xNDU4QzIxLjgxMTYgMzYuMTE2NCAyMi4zMzM1IDM2Ljk1OTEgMjMuMDAxNyAzNy42NzIzQzIzLjY2OTkgMzguMzg2OSAyNC40NjMzIDM4Ljk0OTYgMjUuMzgwNSAzOS4zNjE4QzI2LjI5OTEgMzkuNzc0IDI3LjI5MzcgMzkuOTc5NCAyOC4zNjQyIDM5Ljk3OTRDMjkuMDczMiAzOS45Nzk0IDI5LjcxNjEgMzkuOTI3MyAzMC4yODQ1IDM5Ljc5MjNDMzAuNzgyNSAzOS42NzI3IDMxLjE2NjUgMzkuNTMyIDMxLjUyOTQgMzkuMzQ5MUMzMS43ODI3IDM5LjIyMjUgMzIuMDI3NCAzOS4wODYxIDMyLjI1NTMgMzguOTIwMUwzMC41ODU1IDM2LjM1OThMMzAuNTg2OSAzNi4zNjI2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTM0LjQxNDcgMzkuOTY5NUMzNS4yNDYxIDM5Ljk2OTUgMzUuMzA1MiAzOS45NzA5IDM1LjM2MTQgMzkuOTcwOUMzNS45NjY0IDM5Ljk4MDggMzYuMTE1NSA0MC4wMjAyIDM2LjY2NDEgMzkuODM1OUMzNy4yMTI3IDM5LjY1MyAzNy41ODU1IDM5LjA3OSAzNy43MzA0IDM4LjU3NjhDMzcuODc1MyAzOC4wNzYgMzcuNzY4NCAzNy40Mzg4IDM3LjY0MDQgMzYuOTU0OEMzNy41ODU1IDM2Ljc0OCAzNy44NjgzIDM2LjYxNDQgMzcuOTQgMzYuNTQ4M0MzOC4wNjUyIDM2LjQzMTUgMzguMTA0NiAzNi4xNjcxIDM4LjAzOTkgMzYuMDU0NUMzNy45NzUyIDM1Ljk0MzQgMzcuOTEzMyAzNS44NjA0IDM3LjcxNSAzNS43NTQ5QzM3LjcxNSAzNS43NTQ5IDM3Ljg1NTYgMzUuNzA1NiAzOC4wMzg1IDM1LjU4NDdDMzguMjY5MiAzNS40MzI3IDM4LjQ2MzQgMzUuMjg5MiAzOC40MTEzIDM1LjAzNkMzOC4zODYgMzQuOTEyMiAzOC4yODE5IDM0LjY5ODQgMzguMTUzOSAzNC40MDNDMzguMDUyNiAzNC4xNjk1IDM4LjExNDUgMzMuNzk4MSAzOC4yNDM5IDMzLjYzMDdDMzguNDM5NCAzMy4zNzQ2IDM4Ljc3NDIgMzMuMzE3IDM4Ljk3NjggMzMuMTc2M0MzOS4xODA4IDMzLjAzNTYgMzkuMzcwNyAzMi44OTkyIDM5LjQ4ODkgMzIuNDc4NUMzOS42MDcgMzIuMDU2NSAzOS4yMDc1IDMxLjY1ODQgMzguNzg4MyAzMS4wNzQ2QzM4LjQyNTQgMzAuNTY4MiAzOC4wMjMgMzAuMDUxOSAzNy43MTkyIDI5LjU2MzdDMzcuMTg3NCAyOC43MDg0IDM3LjgxMDYgMjguNDM4MyAzNy45MzQ0IDI3LjgzMzRDMzguMDU5NiAyNy4yMjk5IDM3LjU5MjYgMjYuMzA5OSAzNy40MzA4IDI1Ljc0NzJDMzcuMjQ1MSAyNS4wOTg3IDM3LjA1MzggMjQuNjQyOSAzNi41NiAyNEgzNC40MTE5VjM5Ljk2OTVIMzQuNDE0N1oiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo= 
+icon: PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjMDEwMTAxIi8+CjxwYXRoIGQ9Ik0xNC4xOTgyIDM5Ljg5MzZDMTMuMDg1NCAzOS44OTM2IDExLjk5MjQgMzkuNjkxIDEwLjkyMTggMzkuMjg3MkM5Ljg0OTg5IDM4Ljg4MjEgOC44NzY0MSAzOC4yNjAzIDggMzcuNDIxOUw5Ljg5OTEyIDM1LjAxNjNDMTAuNTY1OSAzNS41OTAzIDExLjI1MSAzNi4wNDYxIDExLjk1NDQgMzYuMzg1MUMxMi42NTY0IDM2LjcyNDEgMTMuNDI0NSAzNi44OTI5IDE0LjI2MDEgMzYuODkyOUMxNC45MjgzIDM2Ljg5MjkgMTUuNDQ2IDM2Ljc2MzUgMTUuODE0NSAzNi41MDYxQzE2LjE4MzEgMzYuMjQ4NiAxNi4zNjc0IDM1Ljg5MTMgMTYuMzY3NCAzNS40MzU1VjM1LjM5MDVDMTYuMzY3NCAzNS4xNjk3IDE2LjMyOTQgMzQuOTc1NSAxNi4yNTIgMzQuODA1M0MxNi4xNzQ3IDM0LjYzNjUgMTYuMDI4NCAzNC40Nzc1IDE1LjgxMzEgMzQuMzI5OEMxNS41OTY1IDM0LjE4MzUgMTUuMjk2OSAzNC4wMzU4IDE0LjkxMjggMzMuODg4MUMxNC41Mjg4IDMzLjc0MDQgMTQuMDMwOCAzMy41ODcxIDEzLjQxNiAzMy40MjUzQzEyLjY3NjEgMzMuMjM0IDEyLjAwNzkgMzMuMDIwMSAxMS40MDcyIDMyLjc4NTJDMTAuODA2NSAzMi41NDg5IDEwLjI5NzIgMzIuMjU5MSA5Ljg3OTQzIDMxLjkxM0M5LjQ2MDIyIDMxLjU2NyA5LjEzNjY2IDMxLjEzNjUgOC45MDU5NSAzMC42MjE2QzguNjc1MjQgMzAuMTA2NyA4LjU2MTMgMjkuNDY1MyA4LjU2MTMgMjguNzAxNFYyOC42NTc4QzguNTYxMyAyNy45NTAyIDguNjg1MDkgMjcuMzE0MyA4LjkzNDA5IDI2Ljc0NzRDOS4xODMwOCAyNi4xODA1IDkuNTMxOTYgMjUuNjkwOSA5Ljk4MjEyIDI1LjI3ODdDMTAuNDMwOSAyNC44NjY2IDEwLjk2NjkgMjQuNTUgMTEuNTkxNSAyNC4zMjkyQzEyLjIxNDYgMjQuMTA4MyAxMi45MDI2IDIzLjk5ODYgMTMuNjUzOCAyMy45OTg2QzE0LjcyNTcgMjMuOTk4NiAxNS43MDkgMjQuMTY4OCAxNi42MDY1IDI0LjUwNjRDMTcuNTA0MSAyNC44NDU1IDE4LjMyODQgMjUuMzMwOCAxOS4wNzk2IDI1Ljk2MzhMMTcuNDExMiAyOC41MjQxQzE2Ljc1NzEgMjguMDUyOSAxNi4xMTcgMjcuNjgxNSAxNS40OTEgMjcuNDA4NkMxNC44NjUgMjcuMTM3MSAxNC4yMzkgMjcuMDAwNiAxMy42MTMgMjcuMDAwNkMxMi45ODcgMjcuMDAwNiAxMi41MTcxIDI3LjEzIDEyLjIwNDggMjcuMzg3NUMxMS44OTExIDI3LjY0NDkgMTEuNzM0OSAyNy45NjU3IDExLjczNDkgMjguMzQ4M1YyOC4zOTE5QzExLjczNDkgMjguNjQyMyAxMS43OCAyOC44NTg5IDExLjg3MTQgMjkuMDQzMkMxMS45NjE0IDI5LjIyNjEgMTIuMTI2IDI5LjM5MjEgMTIuMzYyNCAyOS41Mzk4QzEyLjU5ODcgMjkuNjg3NSAxMi45MjM3IDI5LjgyNjggMTMuMzM1OCAyOS45NTlDMTMuNzQ2NiAzMC4wOTI3IDE0LjI2NzEgMzAuMjQ2IDE0Ljg5NDUgMzAuNDIzM0MxNS42MzMxIDMwLjYzMDEgMTYuMjkyOCAzMC44NjA4IDE2Ljg3MjQgMzEuMTE4MkMxNy40NTIgMzEuMzc1NiAxNy45Mzg3IDMxLjY4NTEgMTguMzM2OSAzMi4wNDUzQzE4LjczMzYgMzIuNDA1NCAxOS4wMzQ2IDMyLjgyODggMTkuMjM1OCAzMy4zMTQxQzE5LjQzODQgMzMuNzk5NSAxOS41MzgyIDM0LjM4MTkgMTkuNTM4MiAzNS4wNTg1VjM1LjEwMzVDMTkuNTM4MiAzNS44Njg4IDE5LjQwNzQgMzYuNTQ5NyAxOS4xNDQzIDM3LjE0NDhDMTguODgxMyAzNy43NDEyIDE4LjUxNTUgMzguMjQwNiAxOC4wNDU3IDM4LjY0NThDMTcuNTc1OCAzOS4wNTA5IDE3LjAxNDUgMzkuMzYwNCAxNi4zNjMyIDM5LjU3MjhDMTUuNzExOCAzOS43ODY2IDE0Ljk4ODggMzkuODkzNiAxNC4xOTU0IDM5Ljg5MzZIMTQuMTk4MloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00MS4zOTIyIDI0SDQ0Ljg1NTdMNDguNjk0NyAzMC41MzQ0TDUyLjUzNTIgMjRINTZWNDAuMDAwNUg1Mi44Mjc4VjI5LjM2NEw0OC43MTcyIDM1Ljk2NDVINDguNjM0Mkw0NC41NjQ1IDI5LjQzMDFWMzkuOTk5MUg0MS4zOTIyVjI0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTMwLjU4NjkgMzYuMzYyNkMzMC4wMDg3IDM2LjY4NjIgMjkuMzAzOSAzNi44NDc5IDI4LjQ2OTcgMzYuODQ3OUMyNy44NDM3IDM2Ljg0NzkgMjcuMjY5OCAzNi43MTk5IDI2Ljc0NzkgMzYuNDYxMUMyNi4yMjYgMzYuMjAzNiAyNS43OCAzNS44NTQ4IDI1LjQxMjkgMzUuNDEzQzI1LjA0MjkgMzQuOTcxMyAyNC43NTU5IDM0LjQ1NjQgMjQuNTQ2MyAzMy44NjdDMjQuMzM4MSAzMy4yNzkgMjQuMjM0IDMyLjY1MyAyNC4yMzQgMzEuOTkwNFYzMS45NDY4QzI0LjIzNCAzMS4yODQyIDI0LjMzODEgMzAuNjYzOCAyNC41NDYzIDMwLjA4MTRDMjQuNzU1OSAyOS41MDA0IDI1LjA0NzEgMjguOTg4NCAyNS40MjQxIDI4LjU0NjZDMjUuNzk5NyAyOC4xMDQ5IDI2LjI0ODUgMjcuNzYwMyAyNi43NzA0IDI3LjUwODVDMjcuMjkyMyAyNy4yNTgxIDI3Ljg1OTIgMjcuMTMyOSAyOC40NzExIDI3LjEzMjlDMjkuMjA4MyAyNy4xMzI5IDI5Ljg3MjMgMjcuMjg3NiAzMC40NjMxIDI3LjU5NzFDMzAuNzE5MSAyNy43MzA3IDMwLjM1NzYgMjcuNDkwMiAzMC42MDk0IDI3LjY2NzRMMzIuMjc5MiAyNS4xMDU3QzMxLjkxNDkgMjQuNjQwMSAzMC45MjMxIDI0LjI5MjYgMzAuMzU5IDI0LjE3NDRDMjkuNzk0OSAyNC4wNTc3IDI5LjE3MzEgMjMuOTk3MiAyOC40OTA4IDIzLjk5NzJDMjcuMzY0IDIzLjk5NzIgMjYuMzM0MyAyNC4yMDY4IDI1LjQwMTYgMjQuNjI2QzI0LjQ3MDMgMjUuMDQ2NiAyMy42Njk5IDI1LjYyMDYgMjMuMDAxNyAyNi4zNDc5QzIyLjMzMzUgMjcuMDc2NiAyMS44MTE2IDI3LjkyMiAyMS40MzU5IDI4Ljg4NzFDMjEuMDYwMyAyOS44NTIxIDIwLjg3MzIgMzAuODg0NyAyMC44NzMyIDMxLjk4OVYzMi4wMzI2QzIwLjg3MzIgMzMuMTM2OSAyMS4wNjAzIDM0LjE3MzcgMjEuNDM1OSAzNS4xNDU4QzIxLjgxMTYgMzYuMTE2NCAyMi4zMzM1IDM2Ljk1OTEgMjMuMDAxNyAzNy42NzIzQzIzLjY2OTkgMzguMzg2OSAyNC40NjMzIDM4Ljk0OTYgMjUuMzgwNSAzOS4zNjE4QzI2LjI5OTEgMzkuNzc0IDI3LjI5MzcgMzkuOTc5NCAyOC4zNjQyIDM5Ljk3OTRDMjkuMDczMiAzOS45Nzk0IDI5LjcxNjEgMzkuOTI3MyAzMC4yODQ1IDM5Ljc5MjNDMzAuNzgyNSAzOS42NzI3IDMxLjE2NjUgMzkuNTMyIDMxLjUyOTQgMzkuMzQ5MUMzMS43ODI3IDM5LjIyMjUgMzIuMDI3NCAzOS4wODYxIDMyLjI1NTMgMzguOTIwMUwzMC41ODU1IDM2LjM1OThMMzAuNTg2OSAzNi4zNjI2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTM0LjQxNDcgMzkuOTY5NUMzNS4yNDYxIDM5Ljk2OTUgMzUuMzA1MiAzOS45NzA5IDM1LjM2MTQgMzkuOTcwOUMzNS45NjY0IDM5Ljk4MDggMzYuMTE1NSA0MC4wMjAyIDM2LjY2NDEgMzkuODM1OUMzNy4yMTI3IDM5LjY1MyAzNy41ODU1IDM5LjA3OSAzNy43MzA0IDM4LjU3NjhDMzcuODc1MyAzOC4wNzYgMzcuNzY4NCAzNy40Mzg4IDM3LjY0MDQgMzYuOTU0OEMzNy41ODU1IDM2Ljc0OCAzNy44NjgzIDM2LjYxNDQgMzcuOTQgMzYuNTQ4M0MzOC4wNjUyIDM2LjQzMTUgMzguMTA0NiAzNi4xNjcxIDM4LjAzOTkgMzYuMDU0NUMzNy45NzUyIDM1Ljk0MzQgMzcuOTEzMyAzNS44NjA0IDM3LjcxNSAzNS43NTQ5QzM3LjcxNSAzNS43NTQ5IDM3Ljg1NTYgMzUuNzA1NiAzOC4wMzg1IDM1LjU4NDdDMzguMjY5MiAzNS40MzI3IDM4LjQ2MzQgMzUuMjg5MiAzOC40MTEzIDM1LjAzNkMzOC4zODYgMzQuOTEyMiAzOC4yODE5IDM0LjY5ODQgMzguMTUzOSAzNC40MDNDMzguMDUyNiAzNC4xNjk1IDM4LjExNDUgMzMuNzk4MSAzOC4yNDM5IDMzLjYzMDdDMzguNDM5NCAzMy4zNzQ2IDM4Ljc3NDIgMzMuMzE3IDM4Ljk3NjggMzMuMTc2M0MzOS4xODA4IDMzLjAzNTYgMzkuMzcwNyAzMi44OTkyIDM5LjQ4ODkgMzIuNDc4NUMzOS42MDcgMzIuMDU2NSAzOS4yMDc1IDMxLjY1ODQgMzguNzg4MyAzMS4wNzQ2QzM4LjQyNTQgMzAuNTY4MiAzOC4wMjMgMzAuMDUxOSAzNy43MTkyIDI5LjU2MzdDMzcuMTg3NCAyOC43MDg0IDM3LjgxMDYgMjguNDM4MyAzNy45MzQ0IDI3LjgzMzRDMzguMDU5NiAyNy4yMjk5IDM3LjU5MjYgMjYuMzA5OSAzNy40MzA4IDI1Ljc0NzJDMzcuMjQ1MSAyNS4wOTg3IDM3LjA1MzggMjQuNjQyOSAzNi41NiAyNEgzNC40MTE5VjM5Ljk2OTVIMzQuNDE0N1oiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=
 description: "SCIM 2.0 as a System of Record"
 address: "{{Input Required: SCIM URL}}"
 defaultSyncFrequency: HOURLY
@@ -70,7 +70,7 @@ entities:
       - name: honorificPrefix
         externalId: $.name.honorificPrefix
         type: String
-      - name: honorificSuffix 
+      - name: honorificSuffix
         externalId: $.name.honorificSuffix
         type: String
       - name: displayName
@@ -80,18 +80,18 @@ entities:
         externalId: nickName
         type: String
       - name: profileUrl
-        externalId: profileUrl    
+        externalId: profileUrl
         type: String
       - name: userType
         externalId: userType
-        type: String  
+        type: String
       - name: title
         externalId: title
         type: String
       - name: preferredLanguage
         externalId: preferredLanguage
         type: String
-      - name: locale  
+      - name: locale
         externalId: locale
         type: String
       - name: timezone
@@ -99,8 +99,8 @@ entities:
         type: String
       - name: active
         externalId: active
-        type: Bool 
-      
+        type: Bool
+
       # Enterprise User Extension
       - name: employeeNumber
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].employeeNumber
@@ -120,12 +120,12 @@ entities:
         type: String
       - name: managerId
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.value
-        type: String  
+        type: String
         indexed: true
       - name: managerDisplayName
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.displayName
         type: String
-      
+
       # Meta
       - name: resourceType
         externalId: $.meta.resourceType
@@ -136,9 +136,9 @@ entities:
       - name: lastModified
         externalId: $.meta.lastModified
         type: DateTime
-      - name: version 
+      - name: version
         externalId: $.meta.version
-        type: String  
+        type: String
       - name: location
         externalId: $.meta.location
         type: String
@@ -170,7 +170,7 @@ entities:
         type: String
 
   GroupMember:
-    parent: Users  
+    parent: Users
     displayName: SCIMGroupMember
     externalId: groups
     description: Entity representing the SCIM groups each user belongs to
@@ -195,9 +195,9 @@ entities:
       - name: ref
         externalId: '$..["$ref"]'
         type: String
-  
+
   Email:
-    parent: Users  
+    parent: Users
     displayName: SCIMUserEmail
     externalId: emails
     description: Entity representing SCIM user emails
@@ -220,7 +220,7 @@ entities:
         type: Bool
 
   Address:
-    parent: Users  
+    parent: Users
     displayName: SCIMUserAddress
     externalId: addresses
     description: Entity representing SCIM user addresses
@@ -252,7 +252,7 @@ entities:
         type: String
 
   PhoneNumber:
-    parent: Users  
+    parent: Users
     displayName: SCIMUserPhoneNumber
     externalId: phoneNumbers
     description: Entity representing SCIM user phone numbers
@@ -275,7 +275,7 @@ entities:
         type: Bool
 
   IMS:
-    parent: Users  
+    parent: Users
     displayName: SCIMUserIMS
     externalId: ims
     description: Entity representing SCIM user ims
@@ -289,7 +289,7 @@ entities:
         uniqueId: true
       - name: display
         externalId: display
-        type: String  
+        type: String
       - name: type
         externalId: type
         type: String
@@ -298,7 +298,7 @@ entities:
         type: Bool
 
   Entitlement:
-    parent: Users  
+    parent: Users
     displayName: SCIMUserEntitlement
     externalId: entitlements
     description: Entity representing SCIM user entitlements
@@ -312,16 +312,16 @@ entities:
         uniqueId: true
       - name: display
         externalId: display
-        type: String  
+        type: String
       - name: type
         externalId: type
         type: String
       - name: primary
         externalId: primary
         type: Bool
-  
+
   Roles:
-    parent: Users  
+    parent: Users
     displayName: SCIMUserRole
     externalId: roles
     description: Entity representing SCIM user roles
@@ -335,7 +335,7 @@ entities:
         uniqueId: true
       - name: display
         externalId: display
-        type: String  
+        type: String
       - name: type
         externalId: type
         type: String
@@ -344,7 +344,7 @@ entities:
         type: Bool
 
   Photo:
-    parent: Users  
+    parent: Users
     displayName: SCIMUserPhoto
     externalId: photos
     description: Entity representing SCIM user photos
@@ -358,16 +358,16 @@ entities:
         uniqueId: true
       - name: display
         externalId: display
-        type: String  
+        type: String
       - name: type
         externalId: type
         type: String
       - name: primary
         externalId: primary
         type: Bool
-  
+
   Certificate:
-    parent: Users  
+    parent: Users
     displayName: SCIMUserCertificate
     externalId: certificates
     description: Entity representing SCIM user certificates
@@ -381,7 +381,7 @@ entities:
         uniqueId: true
       - name: display
         externalId: display
-        type: String  
+        type: String
       - name: type
         externalId: type
         type: String
@@ -395,15 +395,8 @@ relationships:
     name: Manager
     fromAttribute: Users.$..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.value
     toAttribute: Users.id
-  
-  # The internal `parent` relationship cannot be directly referenced in `path` relationship.
-  # Create a dummy relationship to represent the `parent` relationship.
-  # The fromAttribute and toAttribute does not matter. Only entities should be specified correctly.
-  # We rely on the `parent` relationship already created during ingestion.
-  ParentOfGroupMember: 
-    name: parent
-    fromAttribute: groups.displayName
-    toAttribute: Users.id
+  ParentOfGroupMember:
+    childEntity: groups
   MemberOf:
     name: MemberOf
     fromAttribute: groups.value
@@ -415,4 +408,3 @@ relationships:
         direction: Backward
       - relationship: MemberOf
         direction: Forward
-  
