@@ -1,11 +1,11 @@
-# Sailpoint 2.0 Configuration YAML for DS2.0
+# Sailpoint IIQ SCIM 2.0 Configuration YAML for DS2.0
 # Note: The externalId for each entity must match the endpoint for this resource i.e.
 # - External ID for an User entity representing a User resource (/Users) is "Users"
 # - External ID for a Group entity representing a Group resource (/Groups) is "Groups"
 
-displayName: "Sailpoint"
+displayName: "Sailpoint (IdentityIQ)"
 icon: PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQwLjQxMTggNDIuMTM3M0gxMEwzNS4yMzUzIDEwTDQwLjQxMTggNDIuMTM3M1oiIGZpbGw9IiMwMDMzQTEiLz4KPHBhdGggZD0iTTQwLjQxMTggNDIuMTM3M0g1NEwzNS4yMzUzIDEwTDQwLjQxMTggNDIuMTM3M1oiIGZpbGw9IiNDQzI3QjAiLz4KPHBhdGggZD0iTTQwLjQxMTggNDIuMTM3M0gxMEw0Mi4zNTI5IDUzLjc4NDNMNDAuNDExOCA0Mi4xMzczWiIgZmlsbD0iIzAwNzFDRSIvPgo8cGF0aCBkPSJNNDAuNDExOCA0Mi4xMzczSDU0TDQyLjM1MjkgNTMuNzg0M0w0MC40MTE4IDQyLjEzNzNaIiBmaWxsPSIjRTE3RkQyIi8+Cjwvc3ZnPgo=
-description: "Sailpoint as a System of Record"
+description: "Sailpoint Identity IQ as a System of Record"
 address: "{{Input Required: Sailpoint URL}}"
 defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
