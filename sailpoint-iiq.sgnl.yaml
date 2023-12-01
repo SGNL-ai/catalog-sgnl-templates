@@ -24,7 +24,7 @@ auth:
       password: "{{Input Required: API Token}}"
 entities:
   Account:
-    displayName: SailpointAccount
+    displayName: Account
     externalId: Accounts
     description: Entity representing a Sailpoint Identity IQ Account.
     syncFrequency: HOURLY
@@ -110,7 +110,7 @@ entities:
         type: String
 
   Alert:
-    displayName: SailpointAlert
+    displayName: Alert
     externalId: Alerts
     description: Entity representing a Sailpoint Identity IQ Alert.
     syncFrequency: HOURLY
@@ -181,7 +181,7 @@ entities:
 
   AlertAttribute:
     parent: Alerts
-    displayName: SailpointAlertAttributes
+    displayName: Attributes
     externalId: attributes
     description: Entity representing the attibutes associated with the Sailpoint Identity IQ Alert.
     pageSize: 100
@@ -198,7 +198,7 @@ entities:
 
   AlertAction:
     parent: Alerts
-    displayName: SailpointAlertActions
+    displayName: AlertActions
     externalId: actions
     description: Entity representing the actions associated with the Sailpoint Identity IQ Alert.
     pageSize: 100
@@ -218,7 +218,7 @@ entities:
 
   AlertActionResult:
     parent: actions
-    displayName: SailpointAlertActionResultNotifications
+    displayName: AlertActionResultNotifications
     externalId: result
     description: Entity representing the result associated with the Sailpoint Identity IQ Alert Action.
     pageSize: 100
@@ -235,7 +235,7 @@ entities:
 
   AlertActionResultNotification:
     parent: result
-    displayName: SailpointAlertActionResultNotifications
+    displayName: AlertActionResultNotifications
     externalId: notifications
     description: Entity representing the notifications associated with the Sailpoint Identity IQ Alert Action Result.
     pageSize: 100
@@ -254,7 +254,7 @@ entities:
         type: String
 
   Applications:
-    displayName: SailpointApplication
+    displayName: Application
     externalId: Applications
     description: Entity representing a Sailpoint Identity IQ Application.
     syncFrequency: HOURLY
@@ -308,7 +308,7 @@ entities:
 
   ApplicationSchema:
     parent: Applications
-    displayName: SailpointApplicationSchemas
+    displayName: ApplicationSchemas
     externalId: applicationSchemas
     description: Entity representing the schema associated with a Sailpoint Identity IQ Application.
     pageSize: 100
@@ -328,7 +328,7 @@ entities:
 
   ApplicationLocalizedDescription:
     parent: Applications
-    displayName: SailpointApplicationLocalizedDescriptions
+    displayName: ApplicationLocalizedDescriptions
     externalId: descriptions
     description: Entity representing the localized descriptions associated with a Sailpoint Identity IQ Application.
     pageSize: 100
@@ -344,7 +344,7 @@ entities:
         type: String
 
   Entitlement:
-    displayName: SailpointEntitlement
+    displayName: Entitlement
     externalId: Entitlements
     description: Entity representing a Sailpoint Identity IQ Entitlement.
     syncFrequency: HOURLY
@@ -448,7 +448,7 @@ entities:
 
   EntitlementLocalizedDescription:
     parent: Entitlements
-    displayName: SailpointEntitlementLocalizedDescriptions
+    displayName: EntitlementLocalizedDescriptions
     externalId: descriptions
     description: Entity representing the localized descriptions associated with a Sailpoint Identity IQ Entitlement.
     pageSize: 100
@@ -465,7 +465,7 @@ entities:
 
   EntitlementApplication:
     parent: Entitlements
-    displayName: SailpointEntitlementApplications
+    displayName: EntitlementApplications
     externalId: application
     description: Entity representing the application associated with a Sailpoint Identity IQ Entitlement.
     pageSize: 100
@@ -485,7 +485,7 @@ entities:
 
   EntitlementOwner:
     parent: Entitlements
-    displayName: SailpointEntitlementOwner
+    displayName: EntitlementOwner
     externalId: owner
     description: Entity representing the owner associated with a Sailpoint Identity IQ Entitlement.
     pageSize: 100
@@ -504,7 +504,7 @@ entities:
         type: String
 
   LaunchedWorkflow:
-    displayName: SailpointLaunchedWorkflow
+    displayName: LaunchedWorkflow
     externalId: LaunchedWorkflows
     description: Entity representing a Sailpoint Identity IQ Launched Workflow.
     syncFrequency: HOURLY
@@ -597,7 +597,7 @@ entities:
 
   LaunchedWorkflowInput:
     parent: LaunchedWorkflows
-    displayName: SailpointLaunchedWorkflowInput
+    displayName: LaunchedWorkflowInput
     externalId: input
     description: Entity representing the inputs associated with a Sailpoint Identity IQ Launched Workflow.
     pageSize: 100
@@ -617,7 +617,7 @@ entities:
 
   LaunchedWorkflowOutput:
     parent: LaunchedWorkflows
-    displayName: SailpointLaunchedWorkflowOutput
+    displayName: LaunchedWorkflowOutput
     externalId: output
     description: Entity representing the outputs associated with a Sailpoint Identity IQ Launched Workflow.
     pageSize: 100
@@ -637,7 +637,7 @@ entities:
 
   LaunchedWorkflowAttribute:
     parent: LaunchedWorkflows
-    displayName: SailpointLaunchedWorkflowAttributes
+    displayName: LaunchedWorkflowAttributes
     externalId: attributes
     description: Entity representing the attributes associated with a Sailpoint Identity IQ Launched Workflow.
     pageSize: 100
@@ -653,7 +653,7 @@ entities:
         type: String
 
   ObjectConfig:
-    displayName: SailpointObjectConfig
+    displayName: ObjectConfig
     externalId: ObjectConfigs
     description: Entity representing a Sailpoint Identity IQ ObjectConfig.
     syncFrequency: HOURLY
@@ -691,7 +691,7 @@ entities:
 
   ObjectConfigAttribute:
     parent: ObjectConfigs
-    displayName: SailpointObjectConfigAttributes
+    displayName: ObjectConfigAttributes
     externalId: objectAttributes
     description: Entity representing the attributes associated with a Sailpoint Identity IQ ObjectConfig.
     pageSize: 100
@@ -738,7 +738,7 @@ entities:
 
   ObjectAttributeSource:
     parent: objectAttributes
-    displayName: SailpointObjectAttributeSources
+    displayName: ObjectAttributeSources
     externalId: attributeSources
     description: Entity representing the attribute sources associated with a Sailpoint Identity IQ ObjectConfig.
     pageSize: 100
@@ -761,7 +761,7 @@ entities:
 
   ObjectAttributeTarget:
     parent: objectAttributes
-    displayName: SailpointObjectAttributeTargets
+    displayName: ObjectAttributeTargets
     externalId: attributeTargets
     description: Entity representing the attribute targets associated with a Sailpoint Identity IQ ObjectConfig.
     pageSize: 100
@@ -786,7 +786,7 @@ entities:
         type: Bool
 
   PolicyViolation:
-    displayName: SailpointPolicyViolation
+    displayName: PolicyViolation
     externalId: PolicyViolations
     description: Entity representing a Sailpoint Identity IQ Policy Violation.
     syncFrequency: HOURLY
@@ -850,7 +850,7 @@ entities:
         type: String
 
   Role:
-    displayName: SailpointRole
+    displayName: Role
     externalId: Roles
     description: Entity representing a Sailpoint Identity IQ Role.
     syncFrequency: HOURLY
@@ -933,7 +933,7 @@ entities:
 
   RoleLocalizedDescription:
     parent: Roles
-    displayName: SailpointEntitlementLocalizedDescriptions
+    displayName: EntitlementLocalizedDescriptions
     externalId: descriptions
     description: Entity representing the localized descriptions associated with a Sailpoint Identity IQ Role.
     pageSize: 100
@@ -950,7 +950,7 @@ entities:
 
   RoleInheritance:
     parent: Roles
-    displayName: SailpointRoleInheritance
+    displayName: RoleInheritance
     externalId: inheritance
     description: Entity representing the inheritance associated with a Sailpoint Identity IQ Role.
     pageSize: 100
@@ -970,7 +970,7 @@ entities:
 
   RoleRequirement:
     parent: Roles
-    displayName: SailpointRoleRequirements
+    displayName: RoleRequirements
     externalId: requirements
     description: Entity representing the requirements associated with a Sailpoint Identity IQ Role.
     pageSize: 100
@@ -990,7 +990,7 @@ entities:
 
   RolePermit:
     parent: Roles
-    displayName: SailpointRolePermits
+    displayName: RolePermits
     externalId: permits
     description: Entity representing the permits associated with a Sailpoint Identity IQ Role.
     pageSize: 100
@@ -1010,7 +1010,7 @@ entities:
 
   RoleClassfication:
     parent: Roles
-    displayName: SailpointRoleClassfications
+    displayName: RoleClassfications
     externalId: classifications
     description: Entity representing the classifications associated with a Sailpoint Identity IQ Role.
     pageSize: 100
@@ -1038,7 +1038,7 @@ entities:
         type: Bool
 
   TaskResult:
-    displayName: SailpointTaskResult
+    displayName: TaskResult
     externalId: TaskResults
     description: Entity representing a Sailpoint Identity IQ Task Results.
     syncFrequency: HOURLY
@@ -1129,7 +1129,7 @@ entities:
 
   TaskResultsAttribute:
     parent: TaskResults
-    displayName: SailpointTaskResultAttributes
+    displayName: TaskResultAttributes
     externalId: attributes
     description: Entity representing the attributes associated with a Sailpoint Identity IQ Task Results.
     pageSize: 100
@@ -1145,7 +1145,7 @@ entities:
         type: String
 
   User:
-    displayName: SailpointUser
+    displayName: User
     externalId: Users
     description: Entity representing a Sailpoint Identity IQ User.
     syncFrequency: HOURLY
@@ -1279,7 +1279,7 @@ entities:
 
   SailpointUserEmail:
     parent: Users
-    displayName: SailpointUserEmail
+    displayName: UserEmail
     externalId: emails
     description: Entity representing the email addresses associated with a Sailpoint Identity IQ User.
     pageSize: 100
@@ -1302,7 +1302,7 @@ entities:
 
   SailPointUserAccount:
     parent: Users
-    displayName: SailpointUserAccount
+    displayName: UserAccount
     externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].accounts
     description: Entity representing the account associated with a Sailpoint Identity IQ User.
     pageSize: 100
@@ -1322,7 +1322,7 @@ entities:
 
   SailpointUserEntitlement:
     parent: Users
-    displayName: SailpointUserEntitlements
+    displayName: UserEntitlements
     externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].entitlements
     description: Entity representing the entitlements associated with a Sailpoint Identity IQ User.
     pageSize: 100
@@ -1351,7 +1351,7 @@ entities:
 
   SailpointUserRole:
     parent: Users
-    displayName: SailpointUserRoles
+    displayName: UserRoles
     externalId: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].roles
     description: Entity representing the roles associated with a Sailpoint Identity IQ User.
     pageSize: 100
@@ -1382,7 +1382,7 @@ entities:
         type: String
 
   Workflow:
-    displayName: SailpointWorkflow
+    displayName: Workflow
     externalId: Workflows
     description: Entity representing a Sailpoint Identity IQ Workflow.
     syncFrequency: HOURLY

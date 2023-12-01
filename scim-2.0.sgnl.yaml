@@ -32,7 +32,7 @@ auth:
       authStyle: AutoDetect
 entities:
   User:
-    displayName: SCIMUser
+    displayName: User
     externalId: Users
     description: User entity in SCIM
     syncFrequency: HOURLY
@@ -144,7 +144,7 @@ entities:
         type: String
 
   Group:
-    displayName: SCIMGroup
+    displayName: Group
     externalId: Groups
     description: Group entity in SCIM
     syncFrequency: HOURLY
@@ -171,7 +171,7 @@ entities:
 
   GroupMember:
     parent: Users
-    displayName: SCIMGroupMember
+    displayName: GroupMember
     externalId: groups
     description: Entity representing the SCIM groups each user belongs to
     syncFrequency: HOURLY
@@ -198,7 +198,7 @@ entities:
 
   Email:
     parent: Users
-    displayName: SCIMUserEmail
+    displayName: UserEmail
     externalId: emails
     description: Entity representing SCIM user emails
     pageSize: 100
@@ -221,7 +221,7 @@ entities:
 
   Address:
     parent: Users
-    displayName: SCIMUserAddress
+    displayName: UserAddress
     externalId: addresses
     description: Entity representing SCIM user addresses
     pageSize: 100
@@ -253,7 +253,7 @@ entities:
 
   PhoneNumber:
     parent: Users
-    displayName: SCIMUserPhoneNumber
+    displayName: UserPhoneNumber
     externalId: phoneNumbers
     description: Entity representing SCIM user phone numbers
     pageSize: 100
@@ -276,7 +276,7 @@ entities:
 
   IMS:
     parent: Users
-    displayName: SCIMUserIMS
+    displayName: UserIMS
     externalId: ims
     description: Entity representing SCIM user ims
     pageSize: 100
@@ -299,7 +299,7 @@ entities:
 
   Entitlement:
     parent: Users
-    displayName: SCIMUserEntitlement
+    displayName: UserEntitlement
     externalId: entitlements
     description: Entity representing SCIM user entitlements
     pageSize: 100
@@ -322,7 +322,7 @@ entities:
 
   Roles:
     parent: Users
-    displayName: SCIMUserRole
+    displayName: UserRole
     externalId: roles
     description: Entity representing SCIM user roles
     pageSize: 100
@@ -345,7 +345,7 @@ entities:
 
   Photo:
     parent: Users
-    displayName: SCIMUserPhoto
+    displayName: UserPhoto
     externalId: photos
     description: Entity representing SCIM user photos
     pageSize: 100
@@ -368,7 +368,7 @@ entities:
 
   Certificate:
     parent: Users
-    displayName: SCIMUserCertificate
+    displayName: UserCertificate
     externalId: certificates
     description: Entity representing SCIM user certificates
     pageSize: 100

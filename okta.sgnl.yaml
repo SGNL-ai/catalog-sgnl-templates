@@ -24,7 +24,7 @@ auth:
       authToken: "SSWS {{Input Required: token}}"
 entities:
   User:
-    displayName: OktaUser
+    displayName: User
     externalId: User
     description: User entity in Okta
     syncFrequency: HOURLY
@@ -162,7 +162,7 @@ entities:
         externalId: profile__manager
         type: String
   Group:
-    displayName: OktaGroup
+    displayName: Group
     externalId: Group
     description: Group entity in Okta
     syncFrequency: HOURLY

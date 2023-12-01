@@ -23,7 +23,7 @@ entities:
   User:
     # https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-user-search/#api-rest-api-3-user-search-get
     # applicationRoles and groups are not included.
-    displayName: JiraUser
+    displayName: User
     externalId: User
     description: User entity in Jira
     syncFrequency: HOURLY
@@ -60,7 +60,7 @@ entities:
 
   Issue:
     # https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issue-search/#api-rest-api-3-search-post
-    displayName: JiraIssue
+    displayName: Issue
     externalId: Issue
     description: Issue entity in Jira
     syncFrequency: HOURLY
@@ -340,7 +340,7 @@ entities:
 
   Group:
     # https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-groups/#api-rest-api-3-group-bulk-get
-    displayName: JiraGroup
+    displayName: Group
     externalId: Group
     description: Group entity in Jira
     syncFrequency: HOURLY
@@ -360,7 +360,7 @@ entities:
         type: String
 
   GroupMember:
-    displayName: JiraGroupMember
+    displayName: GroupMember
     externalId: GroupMember
     description: Group Member entity in Jira
     syncFrequency: HOURLY
@@ -386,7 +386,7 @@ entities:
 
   Workspace:
     # https://developer.atlassian.com/cloud/jira/service-desk/rest/api-group-assets/#api-rest-servicedeskapi-assets-workspace-get.
-    displayName: JiraWorkspace
+    displayName: Workspace
     externalId: Workspace
     description: Workspace entity in Jira
     syncFrequency: HOURLY
@@ -406,7 +406,7 @@ entities:
   # otherwise Jira will return 400.
   Object:
     # https://developer.atlassian.com/cloud/assets/rest/api-group-object/#api-object-aql-post.
-    displayName: JiraObject
+    displayName: Object
     externalId: Object
     description: Object entity in Jira
     syncFrequency: HOURLY

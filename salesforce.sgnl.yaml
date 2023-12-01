@@ -21,7 +21,7 @@ auth:
       clientSecret: "{{Input Required: Client-Secret}}"
 entities:
   Account:
-    displayName: SFDCAccount
+    displayName: Account
     externalId: Account
     description: Account entity in Salesforce
     syncFrequency: HOURLY
@@ -260,7 +260,7 @@ entities:
         description: "YearStarted attribute"
         type: String
   Case:
-    displayName: SFDCCase
+    displayName: Case
     externalId: Case
     description: Case entity in Salesforce
     syncFrequency: HOURLY
@@ -419,7 +419,7 @@ entities:
         description: "Type attribute"
         type: String
   Customer:
-    displayName: SFDCCustomer
+    displayName: Customer
     externalId: Customer
     description: Customer entity in Salesforce
     syncFrequency: HOURLY
@@ -491,7 +491,7 @@ entities:
         description: "TotalLifetimeValue attribute"
         type: Int64
   User:
-    displayName: SFDCUser
+    displayName: User
     externalId: User
     description: User entity in Salesforce
     syncFrequency: HOURLY
@@ -927,7 +927,7 @@ entities:
         description: "UserType attribute"
         type: String
   PublicGroup:
-    displayName: SFDCGroup
+    displayName: Group
     externalId: Group
     description: Public Group entity in Salesforce
     syncFrequency: HOURLY
