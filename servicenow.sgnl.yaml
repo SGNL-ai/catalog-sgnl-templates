@@ -18,7 +18,7 @@ auth:
       password: "{{Input Required: Password}}"
 entities:
   User:
-    displayName: SNOWUser
+    displayName: User
     externalId: sys_user
     description: User Entity in ServiceNow
     syncFrequency: HOURLY
@@ -232,7 +232,7 @@ entities:
         externalId: web_service_access_only
         type: Bool
   Case:
-    displayName: SNOWCase
+    displayName: Case
     externalId: sn_customerservice_case
     description: Case Entity in ServiceNow
     syncFrequency: HOURLY
@@ -619,7 +619,7 @@ entities:
         externalId: work_start
         type: DateTime
   Account:
-    displayName: SNOWAccount
+    displayName: Account
     externalId: customer_account
     description: Account Entity in ServiceNow
     syncFrequency: HOURLY
@@ -795,7 +795,7 @@ entities:
         externalId: registration_code
         type: String
   Group:
-    displayName: SNOWGroup
+    displayName: Group
     externalId: sys_user_group
     description: Group Entity in ServiceNow
     syncFrequency: HOURLY
@@ -873,7 +873,7 @@ entities:
         externalId: include_members
         type: Bool
   GroupMember:
-    displayName: SNOWGroupMember
+    displayName: GroupMember
     externalId: sys_user_grmember
     description: GroupMember Entity in ServiceNow
     syncFrequency: HOURLY

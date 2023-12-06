@@ -27,7 +27,7 @@ auth:
       authStyle: AutoDetect
 entities:
   User:
-    displayName: CurityUser
+    displayName: User
     externalId: Users
     description: User entity in Curity
     syncFrequency: HOURLY
@@ -140,7 +140,7 @@ entities:
 
   Email:
     parent: Users  
-    displayName: CurityUserEmail
+    displayName: UserEmail
     externalId: emails
     description: Entity representing Curity user emails
     pageSize: 100
@@ -163,7 +163,7 @@ entities:
 
   Address:
     parent: Users  
-    displayName: CurityUserAddress
+    displayName: UserAddress
     externalId: addresses
     description: Entity representing Curity user addresses
     pageSize: 100
@@ -195,7 +195,7 @@ entities:
 
   PhoneNumber:
     parent: Users  
-    displayName: CurityUserPhoneNumber
+    displayName: UserPhoneNumber
     externalId: phoneNumbers
     description: Entity representing Curity user phone numbers
     pageSize: 100
