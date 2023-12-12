@@ -97,10 +97,6 @@ entities:
       - name: hasEntitlements
         externalId: hasEntitlements
         type: Bool
-      - name: groups
-        externalId: $.attributes.groups
-        type: String
-        list: true
   Entitlement:
     displayName: Entitlement
     externalId: entitlements
@@ -218,3 +214,24 @@ entities:
       - name: lastRefresh
         externalId: lastRefresh
         type: DateTime
+
+relationships:
+  # (Entitlement) -[EntitlementMember]-> (AccountEntitlement)
+  EntitlementMember:
+    name: EntitlementMember
+    fromAttribute: entitlements.id
+    toAttribute: accountEntitlements.entitlementId
+  # (AccountEntitlement) -[AccountMember]-> (Account)
+  AccountMember:
+    name: AccountMember
+    fromAttribute: accountEntitlements.accountId
+    toAttribute: accounts.id
+  # Path relationship based on the previous two join relationships.
+  # (Entitlement) -[Member]-> (Account)
+  Member:
+    name: Member
+    path:
+      - relationship: EntitlementMember
+        direction: Forward
+      - relationship: AccountMember
+        direction: Forward
