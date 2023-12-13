@@ -18,7 +18,7 @@ type: "IdentityNow-1.0.0"
 #     },
 #     "entitlements": {
 #       "uniqueIDAttribute": "id",
-#       "apiVersion": "beta"
+#       "apiVersion": "beta" // overrides the top level apiVersion.
 #     },
 #     "accountEntitlements": {
 #       "uniqueIDAttribute": "id",
@@ -35,7 +35,7 @@ adapterConfig: "ewogICJhcGlWZXJzaW9uIjogInYzIiwKICAiZW50aXR5Q29uZmlnIjogewogICAg
 auth:
   - oAuth2ClientCredentials:
       clientId: "{{Input Required: Client-ID}}"
-      tokenUrl: "https://{{Input Required: IdentityNow-Domain}}/oauth2/v1/token"
+      tokenUrl: "https://{{Input Required: IdentityNow-Domain}}/oauth/token"
       authStyle: AutoDetect
       clientSecret: "{{Input Required: Client-Secret}}"
 entities:
@@ -149,6 +149,8 @@ entities:
         list: true
   AccountEntitlement:
     displayName: AccountEntitlement
+    # This externalId does not need to match the IDN's API unlike the rest of the entities. AccountEntitlement is an entity solely used
+    # to create the relationship between Entitlement and Account.
     externalId: accountEntitlements
     description: AccountEntitlement entity in IdentityNow
     syncFrequency: HOURLY
