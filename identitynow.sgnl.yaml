@@ -237,3 +237,8 @@ relationships:
         direction: Forward
       - relationship: AccountMember
         direction: Forward
+  # (Account) -[AccountIdentity]-> (Identity)
+  AccountIdentity:
+    name: AccountIdentity
+    fromAttribute: accounts.identityId
+    toAttribute: identities.id
