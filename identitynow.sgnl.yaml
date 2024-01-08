@@ -67,6 +67,7 @@ entities:
       - name: identityId
         externalId: identityId
         type: String
+        indexed: true
       - name: authoritative
         externalId: authoritative
         type: Bool
