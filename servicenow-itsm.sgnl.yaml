@@ -377,6 +377,7 @@ entities:
       - name: number
         externalId: number
         type: String
+        indexed: true
       - name: caller_id
         externalId: caller_id__value
         type: String
@@ -384,8 +385,17 @@ entities:
       - name: category
         externalId: category
         type: String
+        indexed: true
       - name: subcategory
         externalId: subcategory
+        type: String
+      - name: cmdb_ci
+        externalId: cmdb_ci
+        type: String
+        indexed: true
+      - name: configuration_items
+        externalId: u_configuration_items
+        indexed: true
         type: String
       - name: business_impact
         externalId: business_impact
@@ -449,6 +459,18 @@ entities:
       - name: severity
         externalId: severity
         type: String
+      - name: active
+        externalId: active
+        type: String
+        indexed: true
+      - name: state
+        externalId: state
+        type: String
+        indexed: true
+      - name: sys_created_on
+        externalId: sys_created_on
+        type: DateTime
+        indexed: true
 
   ChangeRequest:
     displayName: ChangeRequest
@@ -467,9 +489,14 @@ entities:
         type: String
         indexed: true
         uniqueId: true
+      - name: active
+        externalId: active
+        type: String
+        indexed: true
       - name: number
         externalId: number
         type: String
+        indexed: true
       - name: requested_by
         externalId: requested_by__value
         type: String
@@ -495,6 +522,7 @@ entities:
       - name: state
         externalId: state
         type: String
+        indexed: true
       - name: assignedTo
         externalId: assigned_to__value
         type: String
@@ -521,6 +549,52 @@ entities:
       - name: sysCreatedBy
         externalId: sys_created_by
         type: String
+      - name: type
+        externalId: type
+        type: String
+        indexed: true
+
+  ChangeTask:
+    displayName: ChangeTask
+    external_id: change_task
+    description: Change Task Entity in ServiceNow
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 350
+    pagesOrderedById: true
+    attributes:
+      - name: sysId
+        externalId: sys_id
+        description: ID of the change task
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: active
+        externalId: active
+        type: String
+        indexed: true
+      - name: assignedTo
+        externalId: assigned_to__value
+        type: String
+        indexed: true
+      - name: assignmentGroup
+        externalId: assignment_group__value
+        type: String
+        indexed: true
+      - name: changeTaskType
+        externalId: change_task_type
+        type: String
+        indexed: true
+      - name: number
+        externalId: number
+        type: String
+        indexed: true
+      - name: state
+        externalId: state
+        type: String
+        indexed: true
 
   Problem:
     displayName: Problem
@@ -535,13 +609,30 @@ entities:
     attributes:
       - name: sysId
         externalId: sys_id
-        description: ID of the incident
+        description: ID of the problem
         type: String
         indexed: true
         uniqueId: true
       - name: number
         externalId: number
         type: String
+        indexed: true
+      - name: cmdb_ci
+        externalId: cmdb_ci
+        type: String
+        indexed: true
+      - name: state
+        externalId: state
+        type: String
+        indexed: true
+      - name: u_area
+        external_id: u_area
+        type: String
+        indexed: true
+      - name: u_phase
+        externalId: u_phase
+        type: String
+        indexed: true
       - name: category
         externalId: category
         type: String
@@ -583,6 +674,9 @@ entities:
       - name: escalation
         externalId: escalation
         type: String
+      - name: opened_at
+        externalId: opened_at
+        type: DateTime
       - name: closedAt
         externalId: closed_at
         type: DateTime
@@ -609,6 +703,28 @@ entities:
         externalId: due_date
         type: DateTime
 
+  CMDBBusinessApp:
+    displayName: CMDB Business App
+    externalId: cmdb_ci_business_app
+    description: CMDB Business App Entity in ServiceNow
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 350
+    pagesOrderedById: true
+    attributes:
+      - name: sysId
+        externalId: sys_id
+        description: ID of the problem
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: number
+        externalId: number
+        type: String
+        indexed: true
+
 relationships:
   UserManager:
     name: Manager
@@ -627,13 +743,21 @@ relationships:
     fromAttribute: sys_user_group.default_assignee
     toAttribute: sys_user.sys_id
   IncidentAssignedTo:
-    name: AssignedTo
+    name: IncudentAssignedToUser
     fromAttribute: incident.assigned_to__value
     toAttribute: sys_user.sys_id
   IncidentAssignedToGroup:
-    name: AssignedToGroup
+    name: IncidentAssignedToGroup
     fromAttribute: incident.assignment_group__value
     toAttribute: sys_user_group.sys_id
+  IncidentBusinessApp:
+    name: IncidentBusinessApp
+    fromAttribute: incident.cmdb_ci
+    toAttribute: cmdb_ci_business_app.sys_id
+  GroupAssignedToIncident:
+    name: GroupAssignedToIncident
+    fromAttribute: sys_user_group.sys_id
+    toAttribute: incident.assignment_group__value
   IncidentCaller:
     name: CalledBy
     fromAttribute: incident.caller_id__value
