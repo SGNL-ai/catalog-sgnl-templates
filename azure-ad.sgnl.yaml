@@ -593,8 +593,39 @@ entities:
       - name: trustType
         externalId: trustType
         type: String
-
+  Role:
+    # https://learn.microsoft.com/en-us/graph/api/resources/directoryrole?view=graph-rest-1.0
+    description: "DirectoryRole Entity in Azure AD"
+    displayName: Role
+    externalId: Role
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 999
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: description
+        externalId: description
+        type: String
+      - name: displayName
+        externalId: displayName
+        type: String
+      - name: roleTemplateId
+        externalId: roleTemplateId
+        type: String
+      - name: deletedDateTime
+        externalId: deletedDateTime
+        type: String
 relationships:
+  UserRole:
+    name: UserRole
+    fromAttribute: User.id
   UserManager:
     name: Manager
     fromAttribute: User.manager__id
