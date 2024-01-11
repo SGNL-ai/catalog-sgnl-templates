@@ -331,7 +331,7 @@ entities:
         externalId: licenseProcessingState
         type: String
   GroupMember:
-    description: "Group Member Entity in Azure AD"
+    description: "GroupMember is an auxillary entity created using fields from the Group and User entities in AzureAD"
     displayName: GroupMember
     externalId: GroupMember
     syncFrequency: HOURLY
@@ -622,39 +622,75 @@ entities:
       - name: deletedDateTime
         externalId: deletedDateTime
         type: String
+  RoleMember:
+    description: "RoleMember is an auxillary entity created using fields from the Role and User entities in AzureAD"
+    displayName: RoleMember
+    externalId: RoleMember
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 999
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: roleId
+        externalId: roleId
+        type: String
+        indexed: true
+      - name: memberId
+        externalId: memberId
+        type: String
+        indexed: true
 relationships:
-  UserRole:
-    name: UserRole
-    fromAttribute: User.id
+  UserRoleMember:
+    name: Member
+    fromAttribute: RoleMember.memberId
+    toAttribute: User.id
+  MemberOfRole:
+    name: MemberOf
+    fromAttribute: RoleMember.roleId
+    toAttribute: Role.id
   UserManager:
     name: Manager
     fromAttribute: User.manager__id
     toAttribute: User.id
     # [TODO sc-11020] Give these a unique ID, rename both of these to Member,
     # and keep corresponding path relationships unique below
-  UserMember:
+  UserGroupMember:
     name: Member
     fromAttribute: GroupMember.memberId
     toAttribute: User.id
-  GroupMember:
-    name: Member
-    fromAttribute: GroupMember.memberId
-    toAttribute: Group.id
-  MemberOf:
+  # GroupMember:
+  #   name: Member
+  #   fromAttribute: GroupMember.memberId
+  #   toAttribute: Group.id
+  MemberOfGroup:
     name: MemberOf
     fromAttribute: GroupMember.groupId
     toAttribute: Group.id
   UserMemberGroup:
     name: Group
     path:
-      - relationship: UserMember
+      - relationship: UserGroupMember
         direction: Backward
-      - relationship: MemberOf
+      - relationship: MemberOfGroup
         direction: Forward
-  GroupMemberGroup:
-    name: Group
+  UserMemberRole:
+    name: Role
     path:
-      - relationship: GroupMember
+      - relationship: UserRoleMember
         direction: Backward
-      - relationship: MemberOf
+      - relationship: MemberOfRole
         direction: Forward
+  # GroupMemberGroup:
+  #   name: Group
+  #   path:
+  #     - relationship: GroupMember
+  #       direction: Backward
+  #     - relationship: MemberOfGroup
+  #       direction: Forward
