@@ -950,3 +950,18 @@ relationships:
     name: DefaultAssignee
     fromAttribute: sys_user_group.default_assignee
     toAttribute: sys_user.sys_id
+  MemberOfAssignmentGroup:
+    name: MemberOfAssignmentGroup
+    fromAttribute: sys_user.sys_id
+    toAttribute: sys_user_grmember.user
+  AssignmentGroupToGroupMember:
+    name: AssignmentGroupToGroupMember
+    fromAttribute: sys_user_group.sys_id
+    toAttribute: sys_user_grmember.group
+  UserInGroup:
+    name: UserInGroup
+    path:
+      - relationship: MemberOfAssignmentGroup
+        direction: Forward
+      - relationship: AssignmentGroupToGroupMember
+        direction: Backward
