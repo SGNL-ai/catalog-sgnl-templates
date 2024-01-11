@@ -1,0 +1,821 @@
+# ServiceNow ITSM Configuration YAML for DS2.0
+displayName: "ServiceNow ITSM"
+icon: PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjMDYyRTQ0Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNDMuMTAxNyAzOC4yODY1SDQwLjU5NDlMMzUuNTg3MiAyNS42NjI4SDM4Ljk1MzVMNDEuNjkzMSAzMi44NzNMNDQuMzkwOSAyNS42NjI4SDQ3LjIwMjJMNDkuODcwMiAzMi44NzNMNTIuNjMzNyAyNS42NjI4SDU2TDUwLjk5ODMgMzguMjg2NUg0OC40ODU1TDQ1Ljc5MzYgMzEuMDk0M0w0My4xMDE3IDM4LjI4NjVaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTI5LjEyMzEgMjUuNDEyMUMyNy42NDUyIDI1LjQxMDYgMjYuMjAwOSAyNS44NTI3IDI0Ljk3NyAyNi42ODExQzIzLjc1MzEgMjcuNTA5NSAyMi44MDYgMjguNjg2MiAyMi4yNTgyIDMwLjA1ODhDMjEuNzEwNSAzMS40MzE1IDIxLjU4NzIgMzIuOTM2OSAyMS45MDQ1IDM0LjM4MDRDMjIuMjIxOCAzNS44MjM4IDIyLjk2NDkgMzcuMTM4OCAyNC4wMzc4IDM4LjE1NTJDMjQuMjkwMiAzOC4zOTU1IDI0LjYyMDEgMzguNTM3OCAyNC45NjgxIDM4LjU1NjRDMjUuMzE2MSAzOC41NzUgMjUuNjU5MyAzOC40Njg3IDI1LjkzNTggMzguMjU2N0MyNi44NDQzIDM3LjU3ODUgMjcuOTQ3NiAzNy4yMTIyIDI5LjA4MTMgMzcuMjEyMkMzMC4yMTUgMzcuMjEyMiAzMS4zMTgzIDM3LjU3ODUgMzIuMjI2OCAzOC4yNTY3QzMyLjUwNTcgMzguNDcwNCAzMi44NTIyIDM4LjU3NjUgMzMuMjAyOSAzOC41NTU3QzMzLjU1MzYgMzguNTM0OSAzMy44ODUxIDM4LjM4ODUgMzQuMTM2OCAzOC4xNDMzQzM1LjIwMTEgMzcuMTMwMyAzNS45MzkxIDM1LjgyMjkgMzYuMjU2MSAzNC4zODgxQzM2LjU3MzIgMzIuOTUzNCAzNi40NTQ5IDMxLjQ1NjcgMzUuOTE2NSAzMC4wODk2QzM1LjM3ODEgMjguNzIyNSAzNC40NDQxIDI3LjU0NzEgMzMuMjMzOSAyNi43MTM4QzMyLjAyMzcgMjUuODgwNSAzMC41OTI0IDI1LjQyNzMgMjkuMTIzMSAyNS40MTIxWk0yOS4wODEzIDM2LjQ3OEMyOC4zNTA4IDM2LjQ4MDQgMjcuNjM2IDM2LjI2NTggMjcuMDI3NSAzNS44NjE0QzI2LjQxOTEgMzUuNDU3IDI1Ljk0NDUgMzQuODgxIDI1LjY2MzggMzQuMjA2NUMyNS4zODMyIDMzLjUzMiAyNS4zMDkxIDMyLjc4OTQgMjUuNDUxMSAzMi4wNzI3QzI1LjU5MyAzMS4zNTYxIDI1Ljk0NDYgMzAuNjk3NyAyNi40NjExIDMwLjE4MTJDMjYuOTc3NyAyOS42NjQ2IDI3LjYzNjEgMjkuMzEzIDI4LjM1MjcgMjkuMTcxMUMyOS4wNjkzIDI5LjAyOTEgMjkuODEyIDI5LjEwMzIgMzAuNDg2NSAyOS4zODM4QzMxLjE2MSAyOS42NjQ1IDMxLjczNjkgMzAuMTM5MSAzMi4xNDEzIDMwLjc0NzZDMzIuNTQ1OCAzMS4zNTYgMzIuNzYwNCAzMi4wNzA4IDMyLjc1OCAzMi44MDEzQzMyLjc3MTIgMzMuMjg3NyAzMi42ODUxIDMzLjc3MTcgMzIuNTA1IDM0LjIyMzhDMzIuMzI0OCAzNC42NzU4IDMyLjA1NDUgMzUuMDg2NCAzMS43MTA0IDM1LjQzMDRDMzEuMzY2MyAzNS43NzQ1IDMwLjk1NTggMzYuMDQ0OCAzMC41MDM3IDM2LjIyNUMzMC4wNTE3IDM2LjQwNTEgMjkuNTY3NyAzNi40OTEyIDI5LjA4MTMgMzYuNDc4WiIgZmlsbD0iIzVFREQ1NCIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTggMzguMjgwNlYyNS42NTY4SDExLjI0MVYyNi42NzE1QzEyLjI0OCAyNS44Mzk2IDEzLjUxNiAyNS4zODk0IDE0LjgyMjIgMjUuNDAwMkMxNS42NTMgMjUuMzk3IDE2LjQ3NDMgMjUuNTc3MyAxNy4yMjc1IDI1LjkyODFDMTcuOTgwNiAyNi4yNzg5IDE4LjY0NzEgMjYuNzkxNSAxOS4xNzkzIDI3LjQyOTVDMjAuMDA5IDI4LjQyMDMgMjAuNDc0NSAyOS42OTE3IDIwLjQ3NDUgMzEuODUyM1YzOC4yODA2SDE3LjEwMjJWMzEuNTk1N0MxNy4xMDIyIDMwLjM0MjIgMTYuODE1NyAyOS42OTE3IDE2LjM1MDIgMjkuMjA4MkMxNi4wOTI3IDI4Ljk3MzYgMTUuNzkxNCAyOC43OTIyIDE1LjQ2MzcgMjguNjc0NEMxNS4xMzU5IDI4LjU1NjcgMTQuNzg4MSAyOC41MDQ4IDE0LjQ0MDIgMjguNTIxOEMxMy44NDY3IDI4LjUzOTIgMTMuMjY0NSAyOC42ODg2IDEyLjczNTkgMjguOTU5MUMxMi4yMDczIDI5LjIyOTYgMTEuNzQ1NiAyOS42MTQ0IDExLjM4NDIgMzAuMDg1NlYzOC4yODA2SDhaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K
+description: "ServiceNow ITSM as a System of Record"
+address: "{{Input Required: Instance-Name}}.service-now.com"
+defaultSyncFrequency: HOURLY
+defaultSyncMinInterval: 1
+defaultApiCallFrequency: SECONDLY
+defaultApiCallMinInterval: 1
+type: "ServiceNow-1.0.0"
+# Example Config:
+# {"version": 1, "config": {"requestTimeout": "10s", "servicenow": {}}}
+adapterConfig: "CnsKCSJ2ZXJzaW9uIjogMSwKCSJjb25maWciOiB7CgkJInJlcXVlc3RUaW1lb3V0IjogIjEwcyIsCgkJInNlcnZpY2Vub3ciOiB7fQoJfQp9Cg=="
+# All auth mechanisms specified below must be supported by the specified Adapter.
+auth:
+  - basic:
+      username: "{{Input Required: Username}}"
+      password: "{{Input Required: Password}}"
+entities:
+  User:
+    displayName: User
+    externalId: sys_user
+    description: User Entity in ServiceNow
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 350
+    pagesOrderedById: true
+    attributes:
+      - name: sysId
+        externalId: sys_id
+        description: ID of the user
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: name
+        externalId: name
+        type: String
+      - name: manager
+        externalId: manager
+        type: String
+        indexed: true
+      - name: employeeNumber
+        externalId: employee_number
+        type: String
+        indexed: true
+      - name: company
+        externalId: company
+        type: String
+        indexed: true
+      - name: email
+        externalId: email
+        type: String
+        indexed: true
+      - name: hashedUserId
+        externalId: hashed_user_id
+        type: String
+        indexed: true
+      - name: sysClassName
+        externalId: sys_class_name
+        type: String
+      - name: sysDomain
+        externalId: sys_domain
+        type: String
+      - name: sysDomainPath
+        externalId: sys_domain_path
+        type: String
+      - name: sysCreatedOn
+        externalId: sys_created_on
+        type: DateTime
+      - name: sysCreatedBy
+        externalId: sys_created_by
+        type: String
+      - name: sysUpdatedOn
+        externalId: sys_updated_on
+        type: DateTime
+      - name: sysUpdatedBy
+        externalId: sys_updated_by
+        type: String
+      - name: sysModCount
+        externalId: sys_mod_count
+        type: String
+      - name: sysTags
+        externalId: sys_tags
+        type: String
+      - name: userName
+        externalId: user_name
+        type: String
+      - name: introduction
+        externalId: introduction
+        type: String
+      - name: firstName
+        externalId: first_name
+        type: String
+      - name: lastName
+        externalId: last_name
+        type: String
+      - name: middleName
+        externalId: middle_name
+        type: String
+      - name: title
+        externalId: title
+        type: String
+      - name: timeZone
+        externalId: time_zone
+        type: String
+      - name: active
+        externalId: active
+        type: Bool
+      - name: costCenter
+        externalId: cost_center
+        type: String
+      - name: department
+        externalId: department
+        type: String
+      - name: phone
+        externalId: phone
+        type: String
+      - name: homePhone
+        externalId: home_phone
+        type: String
+      - name: mobilePhone
+        externalId: mobile_phone
+        type: String
+      - name: avatar
+        externalId: avatar
+        type: String
+      - name: photo
+        externalId: photo
+        type: String
+      - name: city
+        externalId: city
+        type: String
+      - name: street
+        externalId: street
+        type: String
+      - name: state
+        externalId: state
+        type: String
+      - name: zip
+        externalId: zip
+        type: String
+      - name: country
+        externalId: country
+        type: String
+      - name: longitude
+        externalId: longitude
+        type: String
+      - name: latitude
+        externalId: latitude
+        type: String
+      - name: location
+        externalId: location
+        type: String
+      - name: building
+        externalId: building
+        type: String
+      - name: agentStatus
+        externalId: agent_status
+        type: String
+      - name: notification
+        externalId: notification
+        type: String
+      - name: onSchedule
+        externalId: on_schedule
+        type: String
+      - name: schedule
+        externalId: schedule
+        type: String
+      - name: calendarIntegration
+        externalId: calendar_integration
+        type: String
+      - name: defaultPerspective
+        externalId: default_perspective
+        type: String
+      - name: gender
+        externalId: gender
+        type: String
+      - name: eduStatus
+        externalId: edu_status
+        type: String
+      - name: vip
+        externalId: vip
+        type: String
+      - name: preferredLanguage
+        externalId: preferred_language
+        type: String
+      - name: dateFormat
+        externalId: date_format
+        type: String
+      - name: timeFormat
+        externalId: time_format
+        type: String
+      - name: enableMultifactorAuthn
+        externalId: enable_multifactor_authn
+        type: Bool
+      - name: failedAttempts
+        externalId: failed_attempts
+        type: String
+      - name: geolocationTracked
+        externalId: geolocation_tracked
+        type: Bool
+      - name: lastLogin
+        externalId: last_login
+        type: DateTime
+      - name: lastLoginDevice
+        externalId: last_login_device
+        type: String
+      - name: lastLoginTime
+        externalId: last_login_time
+        type: DateTime
+      - name: lastPassword
+        externalId: last_password
+        type: String
+      - name: lastPositionUpdate
+        externalId: last_position_update
+        type: DateTime
+      - name: ldapServer
+        externalId: ldap_server
+        type: String
+      - name: source
+        externalId: source
+        type: String
+      - name: timeSheetPolicy
+        externalId: time_sheet_policy
+        type: String
+      - name: internalIntegrationUser
+        externalId: internal_integration_user
+        type: Bool
+      - name: webServiceAccessOnly
+        externalId: web_service_access_only
+        type: Bool
+
+  Group:
+    displayName: Group
+    externalId: sys_user_group
+    description: Group Entity in ServiceNow
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 350
+    pagesOrderedById: true
+    attributes:
+      - name: sysId
+        externalId: sys_id
+        description: ID of the group
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: parent
+        externalId: parent
+        type: String
+        indexed: true
+      - name: defaultAssignee
+        externalId: default_assignee
+        type: String
+        indexed: true
+      - name: name
+        externalId: name
+        type: String
+        indexed: true
+      - name: manager
+        externalId: manager
+        type: String
+        indexed: true
+      - name: sysCreatedOn
+        externalId: sys_created_on
+        type: DateTime
+      - name: sysCreatedBy
+        externalId: sys_created_by
+        type: String
+      - name: sysUpdatedOn
+        externalId: sys_updated_on
+        type: DateTime
+      - name: sysUpdatedBy
+        externalId: sys_updated_by
+        type: String
+      - name: sysModCount
+        externalId: sys_mod_count
+        type: String
+      - name: sysTags
+        externalId: sys_tags
+        type: String
+      - name: description
+        externalId: description
+        type: String
+      - name: source
+        externalId: source
+        type: String
+      - name: type
+        type: String
+        externalId: type
+      - name: email
+        externalId: email
+        type: String
+      - name: roles
+        externalId: roles
+        type: String
+      - name: costCenter
+        externalId: cost_center
+        type: String
+      - name: active
+        externalId: active
+        type: Bool
+      - name: excludeManager
+        externalId: exclude_manager
+        type: Bool
+      - name: includeMembers
+        externalId: include_members
+        type: Bool
+
+  GroupMember:
+    displayName: GroupMember
+    externalId: sys_user_grmember
+    description: GroupMember Entity in ServiceNow
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 350
+    pagesOrderedById: true
+    attributes:
+      - name: sysId
+        externalId: sys_id
+        description: ID of the group meber
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: user
+        externalId: user
+        type: String
+        indexed: true
+        required: true
+      - name: group
+        externalId: group
+        type: String
+        indexed: true
+        required: true
+      - name: sysCreatedOn
+        externalId: sys_created_on
+        type: DateTime
+      - name: sysCreatedBy
+        externalId: sys_created_by
+        type: String
+      - name: sysUpdatedOn
+        externalId: sys_updated_on
+        type: DateTime
+      - name: sysUpdatedBy
+        externalId: sys_updated_by
+        type: String
+      - name: sysModCount
+        externalId: sys_mod_count
+        type: String
+      - name: sysTags
+        externalId: sys_tags
+        type: String
+
+  Incident:
+    displayName: Incident
+    externalId: incident
+    description: Incident Entity in ServiceNow
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 350
+    pagesOrderedById: true
+    attributes:
+      - name: sysId
+        externalId: sys_id
+        description: ID of the incident
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: number
+        externalId: number
+        type: String
+        indexed: true
+      - name: caller_id
+        externalId: caller_id
+        type: String
+        indexed: true
+      - name: category
+        externalId: category
+        type: String
+        indexed: true
+      - name: subcategory
+        externalId: subcategory
+        type: String
+      - name: cmdb_ci
+        externalId: cmdb_ci
+        type: String
+        indexed: true
+      - name: configuration_items
+        externalId: u_configuration_items
+        indexed: true
+        type: String
+      - name: business_impact
+        externalId: business_impact
+        type: String
+      - name: description
+        externalId: description
+        type: String
+      - name: contact_type
+        externalId: contact_type
+        type: String
+      - name: incident_state
+        externalId: incident_state
+        type: String
+      - name: impact
+        externalId: impact
+        type: String
+      - name: urgency
+        externalId: urgency
+        type: String
+      - name: priority
+        externalId: priority
+        type: String
+      - name: assignedTo
+        externalId: assigned_to
+        type: String
+        indexed: true
+      - name: assignmentGroup
+        externalId: assignment_group
+        indexed: true
+        type: String
+      - name: parentIncident
+        externalId: parent_incident
+        type: String
+        indexed: true
+      - name: causedBy
+        externalId: caused_by
+        type: String
+        indexed: true
+      - name: rfc
+        externalId: rfc
+        type: String
+        indexed: true
+      - name: problem
+        externalId: problem_id
+        type: String
+        indexed: true
+      - name: openedBy
+        externalId: opened_by
+        type: String
+        indexed: true
+      - name: resolvedBy
+        externalId: resolved_by
+        indexed: true
+        type: String
+      - name: resolvedAt
+        externalId: resolved_at
+        type: DateTime
+      - name: closeCode
+        externalId: close_code
+        type: String
+      - name: severity
+        externalId: severity
+        type: String
+      - name: active
+        externalId: active
+        type: String
+        indexed: true
+      - name: state
+        externalId: state
+        type: String
+        indexed: true
+      - name: sys_created_on
+        externalId: sys_created_on
+        type: DateTime
+        indexed: true
+
+  ChangeRequest:
+    displayName: ChangeRequest
+    externalId: change_request
+    description: Change Request Entity in ServiceNow
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 350
+    pagesOrderedById: true
+    attributes:
+      - name: sysId
+        externalId: sys_id
+        description: ID of the change request
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: active
+        externalId: active
+        type: String
+        indexed: true
+      - name: number
+        externalId: number
+        type: String
+        indexed: true
+      - name: requested_by
+        externalId: requested_by
+        type: String
+        indexed: true
+      - name: category
+        externalId: category
+        type: String
+      - name: priority
+        externalId: priority
+        type: String
+      - name: risk
+        externalId: risk
+        type: String
+      - name: impact
+        externalId: impact
+        type: String
+      - name: description
+        externalId: description
+        type: String
+      - name: state
+        externalId: state
+        type: String
+        indexed: true
+      - name: assignedTo
+        externalId: assigned_to
+        type: String
+        indexed: true
+      - name: assignmentGroup
+        externalId: assignment_group
+        type: String
+        indexed: true
+      - name: start_date
+        externalId: start_date
+        type: DateTime
+      - name: sla_due
+        externalId: sla_due
+        type: DateTime
+      - name: escalation
+        externalId: escalation
+        type: String
+      - name: reason
+        externalId: reason
+        type: String
+      - name: sysCreatedOn
+        externalId: sys_created_on
+        type: DateTime
+      - name: sysCreatedBy
+        externalId: sys_created_by
+        type: String
+      - name: type
+        externalId: type
+        type: String
+        indexed: true
+
+  ChangeTask:
+    displayName: ChangeTask
+    externalId: change_task
+    description: Change Task Entity in ServiceNow
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 350
+    pagesOrderedById: true
+    attributes:
+      - name: sysId
+        externalId: sys_id
+        description: ID of the change task
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: active
+        externalId: active
+        type: String
+        indexed: true
+      - name: assignedTo
+        externalId: assigned_to
+        type: String
+        indexed: true
+      - name: assignmentGroup
+        externalId: assignment_group
+        type: String
+        indexed: true
+      - name: changeTaskType
+        externalId: change_task_type
+        type: String
+        indexed: true
+      - name: number
+        externalId: number
+        type: String
+        indexed: true
+      - name: state
+        externalId: state
+        type: String
+        indexed: true
+      - name: changeRequest
+        externalId: change_request
+        type: String
+        indexed: true
+
+  Problem:
+    displayName: Problem
+    externalId: problem
+    description: Problem Entity in ServiceNow
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 350
+    pagesOrderedById: true
+    attributes:
+      - name: sysId
+        externalId: sys_id
+        description: ID of the problem
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: number
+        externalId: number
+        type: String
+        indexed: true
+      - name: cmdb_ci
+        externalId: cmdb_ci
+        type: String
+        indexed: true
+      - name: state
+        externalId: state
+        type: String
+        indexed: true
+      - name: u_area
+        external_id: u_area
+        type: String
+        indexed: true
+      - name: u_phase
+        externalId: u_phase
+        type: String
+        indexed: true
+      - name: category
+        externalId: category
+        type: String
+      - name: priority
+        externalId: priority
+        type: String
+      - name: problemState
+        externalId: problem_state
+        type: String
+      - name: sysUpdatedOn
+        externalId: sys_updated_on
+        type: DateTime
+      - name: sysCreatedOn
+        externalId: sys_created_on
+        type: DateTime
+      - name: impact
+        externalId: impact
+        type: String
+      - name: active
+        externalId: active
+        type: Bool
+      - name: workStart
+        externalId: work_start
+        type: DateTime
+      - name: assignedTo
+        externalId: assigned_to
+        type: String
+        indexed: true
+      - name: assignmentGroup
+        externalId: assignment_group
+        type: String
+        indexed: true
+      - name: slaDue
+        externalId: sla_due
+        type: DateTime
+      - name: escalation
+        externalId: escalation
+        type: String
+      - name: opened_at
+        externalId: opened_at
+        type: DateTime
+      - name: closedAt
+        externalId: closed_at
+        type: DateTime
+      - name: rfc
+        externalId: rfc
+        type: String
+        indexed: true
+      - name: resolvedAt
+        externalId: resolved_at
+        type: DateTime
+      - name: description
+        externalId: description
+        type: String
+      - name: resolutionCode
+        externalId: resolution_code
+        type: String
+      - name: urgency
+        externalId: urgency
+        type: String
+      - name: approval
+        externalId: approval
+        type: String
+      - name: dueDate
+        externalId: due_date
+        type: DateTime
+
+  CMDBBusinessApp:
+    displayName: CMDB Business App
+    externalId: cmdb_ci_business_app
+    description: CMDB Business App Entity in ServiceNow
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 350
+    pagesOrderedById: true
+    attributes:
+      - name: sysId
+        externalId: sys_id
+        description: ID of the problem
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: number
+        externalId: number
+        type: String
+        indexed: true
+
+relationships:
+  UserManager:
+    name: Manager
+    fromAttribute: sys_user.manager
+    toAttribute: sys_user.sys_id
+  GroupManager:
+    name: Manager
+    fromAttribute: sys_user_group.manager
+    toAttribute: sys_user.sys_id
+  GroupParent:
+    name: Parent
+    fromAttribute: sys_user_group.parent
+    toAttribute: sys_user_group.sys_id
+  GroupDefaultAssignee:
+    name: DefaultAssignee
+    fromAttribute: sys_user_group.default_assignee
+    toAttribute: sys_user.sys_id
+  MemberOfAssignmentGroup:
+    name: MemberOfAssignmentGroup
+    fromAttribute: sys_user.sys_id
+    toAttribute: sys_user_grmember.user
+  AssignmentGroupToGroupMember:
+    name: AssignmentGroupToGroupMember
+    fromAttribute: sys_user_group.sys_id
+    toAttribute: sys_user_grmember.group
+  IncidentAssignedTo:
+    name: AssignedToUser
+    fromAttribute: incident.assigned_to
+    toAttribute: sys_user.sys_id
+  IncidentAssignedToGroup:
+    name: AssignedToGroup
+    fromAttribute: incident.assignment_group
+    toAttribute: sys_user_group.sys_id
+  IncidentBusinessApp:
+    name: IncidentBusinessApp
+    fromAttribute: incident.cmdb_ci
+    toAttribute: cmdb_ci_business_app.sys_id
+  IncidentCalledBy:
+    name: CalledBy
+    fromAttribute: incident.caller_id
+    toAttribute: sys_user.sys_id
+  ParentIncident:
+    name: Parent
+    fromAttribute: incident.parent_incident
+    toAttribute: incident.sys_id
+  IncidentCausedBy:
+    name: CausedBy
+    fromAttribute: incident.caused_by
+    toAttribute: change_request.sys_id
+  IncidentChangeRequest:
+    name: ChangeRequest
+    fromAttribute: incident.rfc
+    toAttribute: change_request.sys_id
+  IncidentProblem:
+    name: Problem
+    fromAttribute: incident.problem_id
+    toAttribute: problem.sys_id
+  IncidentOpenedBy:
+    name: OpenedBy
+    fromAttribute: incident.opened_by
+    toAttribute: sys_user.sys_id
+  IncidentResolvedBy:
+    name: ResolvedBy
+    fromAttribute: incident.resolved_by
+    toAttribute: sys_user.sys_id
+  ChangeRequestedBy:
+    name: RequestedBy
+    fromAttribute: change_request.requested_by
+    toAttribute: sys_user.sys_id
+  ChangeRequestAssignedTo:
+    name: AssignedToUser
+    fromAttribute: change_request.assigned_to
+    toAttribute: sys_user.sys_id
+  ChangeRequestAssignedToGroup:
+    name: AssignedToGroup
+    fromAttribute: change_request.assignment_group
+    toAttribute: sys_user_group.sys_id
+  ProblemAssignedTo:
+    name: AssignedToUser
+    fromAttribute: problem.assigned_to
+    toAttribute: sys_user.sys_id
+  ProblemAssignedToGroup:
+    name: AssignedToGroup
+    fromAttribute: problem.assignment_group
+    toAttribute: sys_user_group.sys_id
+  ProblemChangeRequest:
+    name: ProblemChangeRequest
+    fromAttribute: problem.rfc
+    toAttribute: change_request.sys_id
+  UserInGroup:
+    name: UserInGroup
+    path:
+      - relationship: MemberOfAssignmentGroup
+        direction: Forward
+      - relationship: AssignmentGroupToGroupMember
+        direction: Backward
