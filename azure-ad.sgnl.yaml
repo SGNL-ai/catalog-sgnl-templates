@@ -647,10 +647,12 @@ entities:
         type: String
         indexed: true
 relationships:
+  # (RoleMember) -[Member]-> (User)
   UserRoleMember:
     name: Member
     fromAttribute: RoleMember.memberId
     toAttribute: User.id
+  # (RoleMember) -[MemberOf]-> (Role)
   MemberOfRole:
     name: MemberOf
     fromAttribute: RoleMember.roleId
@@ -673,13 +675,15 @@ relationships:
     name: MemberOf
     fromAttribute: GroupMember.groupId
     toAttribute: Group.id
+  # (User) -[Group]-> (Group)
   UserMemberGroup:
     name: Group
     path:
       - relationship: UserGroupMember
         direction: Backward
       - relationship: MemberOfGroup
-        direction: Forward
+        direction: Forward5
+  # (User) -[Role]-> (Role)
   UserMemberRole:
     name: Role
     path:
