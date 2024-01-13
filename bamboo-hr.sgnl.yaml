@@ -1,0 +1,49 @@
+displayName: "Bamboo HR"
+icon:
+description: "Bamboo HR as a System of Record"
+# The subdomain used to access your account (If you access BambooHR at https://mycompany.bamboohr.com, 
+# then the subdomain is "mycompany")
+address: "https://api.bamboohr.com/api/gateway.php/{subdomain}" 
+defaultSyncFrequency: HOURLY
+defaultSyncMinInterval: 1
+defaultApiCallFrequency: SECONDLY
+defaultApiCallMinInterval: 1
+type: 
+adapterConfig: 
+auth: # https://documentation.bamboohr.com/docs/getting-started#authentication
+  - basic:
+      username: "{{Input Required: Secret/API key}}"
+      password: "{{Input Required: Random String}}"
+entities:
+  # Configuring complex attributes will cap the page size in AAD's API response to 100.
+  # See: https://learn.microsoft.com/en-us/graph/known-issues?view=graph-rest-1.0#some-limitations-apply-to-query-parameters
+  # We use the `$expand` filter to retrieve complex attributes.
+  User:
+    displayName: User
+    externalId: User
+    description: User Entity in Azure AD
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 999
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        description: ID of the user
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: userPrincipalName
+        externalId: userPrincipalName
+        type: String
+        indexed: true
+      - name: displayName
+
+relationships:
+  UserManager:
+    name: Manager
+    fromAttribute: User.manager__id
+    toAttribute: User.id
+
