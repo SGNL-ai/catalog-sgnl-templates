@@ -1,6 +1,6 @@
 # Duo Configuration YAML
 displayName: "Duo"
-icon: 
+icon: "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"
 description: "Duo as a System of Record"
 address: "api-{{Input Required: Duo Hostname}}.duosecurity.com" # https://duo.com/docs/adminapi#api-details
 defaultSyncFrequency: HOURLY
@@ -8,7 +8,7 @@ defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: "Duo-1.0.0"
-adapterConfig: "e30=" # {}
+adapterConfig: "ewogImFwaVZlcnNpb24iOiAidjEiIAp9=" # {"apiVersion": "v1"}
 auth:
   - basic: # https://duo.com/docs/adminapi#authentication
       username: "{{Input Required: Duo Integration Key}}"
@@ -16,7 +16,7 @@ auth:
 entities:
   User: # https://duo.com/docs/adminapi#retrieve-users
     displayName: User
-    externalId: users
+    externalId: User
     description: User entity in Duo
     syncFrequency: HOURLY
     syncMinInterval: 1
@@ -44,7 +44,7 @@ entities:
         type: String
       - name: created
         externalId: created
-        type: Int64 # UNIX Timestamp
+        type: DateTime # UNIX Timestamp
       - name: email
         externalId: email
         type: String
@@ -53,10 +53,10 @@ entities:
         type: String
       - name: last_directory_sync
         externalId: last_directory_sync
-        type: Int64 # UNIX Timestamp
+        type: DateTime # UNIX Timestamp
       - name: last_login
         externalId: last_login
-        type: Int64 # UNIX Timestamp
+        type: DateTime # UNIX Timestamp
       - name: lastname
         externalId: lastname
         type: String
@@ -75,9 +75,9 @@ entities:
       - name: username
         externalId: username
         type: String
-  Group:
+  Group: # https://duo.com/docs/adminapi#groups
     displayName: Group
-    externalId: groups
+    externalId: Group
     description: Group entity in Duo
     syncFrequency: HOURLY
     syncMinInterval: 1
@@ -113,7 +113,7 @@ entities:
       - name: voice_enabled
         externalId: voice_enabled
         type: Bool
-  GroupMember:
+  GroupMember: # Fetched from the 'groups' attribute belonging to the Users entity.
     parent: users
     displayName: GroupMember
     externalId: groups
@@ -133,9 +133,9 @@ entities:
       - name: name
         externalId: name
         type: String
-  Phone:
+  Phone: # https://duo.com/docs/adminapi#phones
     displayName: Phone
-    externalId: phones
+    externalId: Phone
     description: Duo Phone Entity
     pageSize: 300
     pagesOrderedById: false
@@ -161,9 +161,9 @@ entities:
       - name: fingerprint
         externalId: fingerprint
         type: String
-      - name: last_seen
+      - name: last_seen 
         externalId: last_seen
-        type: DateTime
+        type: DateTime # RFC3339 Format
       - name: model
         externalId: model
         type: String
@@ -194,7 +194,7 @@ entities:
       - name: type
         externalId: type
         type: String
-  PhoneOwner:
+  PhoneOwner: # Fetched from the 'phones' attribute belonging to the Users entity.
     parent: users
     displayName: PhoneOwner
     externalId: phones
@@ -222,22 +222,22 @@ relationships:
   MemberOfGroup:
     name: MemberOf
     fromAttribute: groups.group_id
-    toAttribute: Groups.group_id
+    toAttribute: Group.group_id
   OwnerOfPhone:
     name: MemberOf
-    fromAttribute: groups.value
-    toAttribute: Groups.id
+    fromAttribute: phones.phone_id
+    toAttribute: Phone.phone_id
   UserMemberGroup:
     name: Group
     path:
       - relationship: ParentOfGroupMember
         direction: Backward
-      - relationship: MemberOf
+      - relationship: MemberOfGroup
         direction: Forward
   UserPhoneOwner:
     name: Phone
     path:
-      - relationship: ParentOfPhoneOwnerMember
+      - relationship: ParentOfPhoneOwner
         direction: Backward
-      - relationship: MemberOf
+      - relationship: OwnerOfPhone
         direction: Forward
