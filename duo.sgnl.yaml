@@ -14,7 +14,8 @@ auth:
       username: "{{Input Required: Duo Integration Key}}"
       password: "{{Input Required: Duo Secret Key}}"
 entities:
-  User: # https://duo.com/docs/adminapi#retrieve-users
+  # https://duo.com/docs/adminapi#retrieve-users
+  User:
     displayName: User
     externalId: User
     description: User entity in Duo
@@ -75,7 +76,50 @@ entities:
       - name: username
         externalId: username
         type: String
-  Group: # https://duo.com/docs/adminapi#groups
+  # Fetched from the 'groups' attribute belonging to the Users entity.
+  GroupMember:
+    parent: users
+    displayName: GroupMember
+    externalId: groups
+    description: Entity representing DUO's user and group membership
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 300
+    pagesOrderedById: false
+    attributes:
+      - name: group_id
+        externalId: group_id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: name
+        externalId: name
+        type: String
+  # Fetched from the 'phones' attribute belonging to the Users entity.
+  PhoneOwner:
+    parent: users
+    displayName: PhoneOwner
+    externalId: phones
+    description: Entity representing DUO's user and phone ownership
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 300
+    pagesOrderedById: false
+    attributes:
+      - name: phone_id
+        externalId: phone_id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: name
+        externalId: name
+        type: String
+  # https://duo.com/docs/adminapi#groups
+  Group:
     displayName: Group
     externalId: Group
     description: Group entity in Duo
@@ -85,7 +129,6 @@ entities:
     apiCallMinInterval: 1
     pageSize: 300
     pagesOrderedById: false
-    attributes:
     attributes:
       - name: group_id
         externalId: group_id
@@ -113,27 +156,8 @@ entities:
       - name: voice_enabled
         externalId: voice_enabled
         type: Bool
-  GroupMember: # Fetched from the 'groups' attribute belonging to the Users entity.
-    parent: users
-    displayName: GroupMember
-    externalId: groups
-    description: Entity representing DUO's user and group membership
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
-    pageSize: 300
-    pagesOrderedById: false
-    attributes:
-      - name: group_id
-        externalId: group_id
-        type: String
-        indexed: true
-        uniqueId: true
-      - name: name
-        externalId: name
-        type: String
-  Phone: # https://duo.com/docs/adminapi#phones
+  # https://duo.com/docs/adminapi#phones
+  Phone:
     displayName: Phone
     externalId: Phone
     description: Duo Phone Entity
@@ -147,7 +171,7 @@ entities:
         uniqueId: true
       - name: activated
         externalId: activated
-        type: Boolean
+        type: Bool
       - name: capabilities
         externalId: capabilities
         type: String
@@ -187,32 +211,103 @@ entities:
         type: String
       - name: sms_passcodes_sent
         externalId: sms_passcodes_sent
-        type: Boolean
+        type: Bool
       - name: tampered
         externalId: tampered
         type: String
       - name: type
         externalId: type
         type: String
-  PhoneOwner: # Fetched from the 'phones' attribute belonging to the Users entity.
-    parent: users
-    displayName: PhoneOwner
-    externalId: phones
-    description: Entity representing DUO's user and phone ownership
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
+  # https://duo.com/docs/adminapi#retrieve-endpoints
+  Endpoint:
+    displayName: Endpoint
+    externalId: Endpoint
+    description: Duo Endpoint Entity
     pageSize: 300
     pagesOrderedById: false
     attributes:
-      - name: phone_id
-        externalId: phone_id
+      - name: epkey
+        externalId: epkey
         type: String
         indexed: true
-        uniqueId: true
-      - name: name
-        externalId: name
+        unique: true
+      - name: computer_sid
+        externalId: computer_sid
+        type: String
+      - name: cpu_id
+        externalId: cpu_id
+        type: String
+      - name: device_id
+        externalId: device_id
+        type: String
+      - name: device_identifier
+        externalId: device_identifier
+        type: String
+      - name: device_identifier_type
+        externalId: device_identifier_type
+        type: String
+      - name: device_name
+        externalId: device_name
+        type: String
+      - name: device_udid
+        externalId: device_udid
+        type: String
+      - name: device_username
+        externalId: device_username
+        type: String
+      - name: device_username_type
+        externalId: device_username_type
+        type: String
+      - name: disk_encryption_status
+        externalId: disk_encryption_status
+        type: String
+      - name: domain_sid
+        externalId: domain_sid
+        type: String
+      - name: email
+        externalId: email
+        type: String
+      - name: firewall_status
+        externalId: firewall_status
+        type: String
+      - name: hardware_uuid
+        externalId: hardware_uuid
+        type: String
+      - name: health_app_client_version
+        externalId: health_app_client_version
+        type: String
+      - name: health_data_last_collected
+        externalId: health_data_last_collected
+        type: DateTime # Unix Timestamp
+      - name: last_updated
+        externalId: last_updated
+        type: DateTime # Unix Timestamp
+      - name: machine_guid
+        externalId: machine_guid
+        type: String
+      - name: model
+        externalId: model
+        type: String
+      - name: os_build
+        externalId: os_build
+        type: String
+      - name: os_family
+        externalId: os_family
+        type: String
+      - name: os_version
+        externalId: os_version
+        type: String
+      - name: password_status
+        externalId: password_status
+        type: String
+      - name: trusted_endpoint
+        externalId: trusted_endpoint
+        type: String
+      - name: type
+        externalId: type
+        type: String
+      - name: username
+        externalId: username
         type: String
 relationships:
   ParentOfGroupMember:
