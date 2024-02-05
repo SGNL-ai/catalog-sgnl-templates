@@ -23,11 +23,11 @@ entities:
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
     apiCallMinInterval: 1
-    pageSize: 300
+    pageSize: 100
     pagesOrderedById: false
     attributes:
-      - name: id
-        externalId: id
+      - name: user_id
+        externalId: user_id
         type: String
         indexed: true
         uniqueId: true
@@ -52,6 +52,9 @@ entities:
       - name: firstname
         externalId: firstname
         type: String
+      - name: is_enrolled
+        externalId: is_enrolled
+        type: Bool
       - name: last_directory_sync
         externalId: last_directory_sync
         type: DateTime # UNIX Timestamp
@@ -64,21 +67,21 @@ entities:
       - name: lockout_reason
         externalId: lockout_reason
         type: String
+      - name: notes
+        externalId: notes
+        type: String
       - name: realname
         externalId: realname
         type: String
       - name: status
         externalId: status
         type: String
-      - name: user_id
-        externalId: user_id
-        type: String
       - name: username
         externalId: username
         type: String
   # Fetched from the 'groups' attribute belonging to the Users entity.
   GroupMember:
-    parent: users
+    parent: User
     displayName: GroupMember
     externalId: groups
     description: Entity representing DUO's user and group membership
@@ -86,7 +89,7 @@ entities:
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
     apiCallMinInterval: 1
-    pageSize: 300
+    pageSize: 100
     pagesOrderedById: false
     attributes:
       - name: group_id
@@ -99,7 +102,7 @@ entities:
         type: String
   # Fetched from the 'phones' attribute belonging to the Users entity.
   PhoneOwner:
-    parent: users
+    parent: User
     displayName: PhoneOwner
     externalId: phones
     description: Entity representing DUO's user and phone ownership
@@ -107,7 +110,7 @@ entities:
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
     apiCallMinInterval: 1
-    pageSize: 300
+    pageSize: 100
     pagesOrderedById: false
     attributes:
       - name: phone_id
@@ -127,7 +130,7 @@ entities:
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
     apiCallMinInterval: 1
-    pageSize: 300
+    pageSize: 100
     pagesOrderedById: false
     attributes:
       - name: group_id
@@ -161,7 +164,7 @@ entities:
     displayName: Phone
     externalId: Phone
     description: Duo Phone Entity
-    pageSize: 300
+    pageSize: 100
     pagesOrderedById: false
     attributes:
       - name: phone_id
@@ -223,14 +226,14 @@ entities:
     displayName: Endpoint
     externalId: Endpoint
     description: Duo Endpoint Entity
-    pageSize: 300
+    pageSize: 100
     pagesOrderedById: false
     attributes:
       - name: epkey
         externalId: epkey
         type: String
         indexed: true
-        unique: true
+        uniqueId: true
       - name: computer_sid
         externalId: computer_sid
         type: String
