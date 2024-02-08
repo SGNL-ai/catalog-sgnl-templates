@@ -84,7 +84,7 @@ entities:
     parent: User
     displayName: GroupMember
     externalId: groups
-    description: Entity representing DUO's user and group membership
+    description: Entity representing the Duo groups each user belongs to
     syncFrequency: HOURLY
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
@@ -105,7 +105,7 @@ entities:
     parent: User
     displayName: PhoneOwner
     externalId: phones
-    description: Entity representing DUO's user and phone ownership
+    description: Entity representing the Duo phones owned by the User
     syncFrequency: HOURLY
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
