@@ -163,7 +163,7 @@ entities:
   Phone:
     displayName: Phone
     externalId: Phone
-    description: Duo Phone Entity
+    description: Phone entity in Duo
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -225,7 +225,7 @@ entities:
   Endpoint:
     displayName: Endpoint
     externalId: Endpoint
-    description: Duo Endpoint Entity
+    description: Endpoint entity in Duo
     pageSize: 100
     pagesOrderedById: false
     attributes:
