@@ -1,0 +1,341 @@
+# Duo Configuration YAML
+displayName: "Duo"
+icon: "PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjNkRCRTUwIi8+CjxnIG9wYWNpdHk9IjAuODUiPgo8cGF0aCBkPSJNMjMuNDcyIDMxLjc2OEg4VjM5LjcwNEgxNS43NDRDMTkuODg4IDM5LjcwNCAyMy4yNzIgMzYuMTkyIDIzLjQ3MiAzMS43NjhaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjxwYXRoIGQ9Ik0xNS43NDQgMjNIOFYzMC45MzZIMjMuNDhDMjMuMjcyIDI2LjUxMiAxOS44ODggMjMgMTUuNzQ0IDIzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ4LjI2NCAyM0M0NC4xMiAyMyA0MC43MjggMjYuNTIgNDAuNTI4IDMwLjkzNkg1NS45OTJDNTUuOCAyNi41MTIgNTIuNDA4IDIzIDQ4LjI2NCAyM1oiIGZpbGw9IndoaXRlIi8+CjxnIG9wYWNpdHk9IjAuODUiPgo8cGF0aCBkPSJNNTYgMzEuNzY4SDQwLjUyOEM0MC43MjggMzYuMTkyIDQ0LjExMiAzOS43MDQgNDguMjY0IDM5LjcwNEM1Mi40MDggMzkuNzA0IDU1LjggMzYuMTkyIDU2IDMxLjc2OFoiIGZpbGw9IndoaXRlIi8+CjwvZz4KPHBhdGggZD0iTTI0LjI1NiAyM1YzMS4zNTJDMjQuMjU2IDM1LjgyNCAyNy41MTIgMzkuNDggMzEuNjE2IDM5LjY5NlYyM0gyNC4yNTZaIiBmaWxsPSJ3aGl0ZSIvPgo8ZyBvcGFjaXR5PSIwLjg1Ij4KPHBhdGggZD0iTTM5Ljc0NCAyM0gzMi4zOTJWMzkuNzA0SDM5Ljc0NFYzMS4zNTJWMjNaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+Cjwvc3ZnPg=="
+description: "Duo as a System of Record"
+address: "api-{{Input Required: Duo Hostname}}.duosecurity.com" # https://duo.com/docs/adminapi#api-details
+defaultSyncFrequency: HOURLY
+defaultSyncMinInterval: 1
+defaultApiCallFrequency: SECONDLY
+defaultApiCallMinInterval: 1
+type: "Duo-1.0.0"
+adapterConfig: "ewogICAgImFwaVZlcnNpb24iOiAidjEiCn0=" # {"apiVersion": "v1"}
+auth:
+  - basic: # https://duo.com/docs/adminapi#authentication
+      username: "{{Input Required: Duo Integration Key}}"
+      password: "{{Input Required: Duo Secret Key}}"
+entities:
+  # https://duo.com/docs/adminapi#retrieve-users
+  User:
+    displayName: User
+    externalId: User
+    description: User entity in Duo
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: user_id
+        externalId: user_id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: alias1
+        externalId: alias1
+        type: String
+      - name: alias2
+        externalId: alias2
+        type: String
+      - name: alias3
+        externalId: alias3
+        type: String
+      - name: alias4
+        externalId: alias4
+        type: String
+      - name: created
+        externalId: created
+        type: DateTime # UNIX Timestamp
+      - name: email
+        externalId: email
+        type: String
+      - name: firstname
+        externalId: firstname
+        type: String
+      - name: is_enrolled
+        externalId: is_enrolled
+        type: Bool
+      - name: last_directory_sync
+        externalId: last_directory_sync
+        type: DateTime # UNIX Timestamp
+      - name: last_login
+        externalId: last_login
+        type: DateTime # UNIX Timestamp
+      - name: lastname
+        externalId: lastname
+        type: String
+      - name: lockout_reason
+        externalId: lockout_reason
+        type: String
+      - name: notes
+        externalId: notes
+        type: String
+      - name: realname
+        externalId: realname
+        type: String
+      - name: status
+        externalId: status
+        type: String
+      - name: username
+        externalId: username
+        type: String
+  # Fetched from the 'groups' attribute belonging to the Users entity.
+  GroupMember:
+    parent: User
+    displayName: GroupMember
+    externalId: groups
+    description: Entity representing the Duo groups each user belongs to
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: group_id
+        externalId: group_id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: name
+        externalId: name
+        type: String
+  # Fetched from the 'phones' attribute belonging to the Users entity.
+  PhoneOwner:
+    parent: User
+    displayName: PhoneOwner
+    externalId: phones
+    description: Entity representing the Duo phones owned by the User
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: phone_id
+        externalId: phone_id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: name
+        externalId: name
+        type: String
+  # https://duo.com/docs/adminapi#groups
+  Group:
+    displayName: Group
+    externalId: Group
+    description: Group entity in Duo
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: group_id
+        externalId: group_id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: desc
+        externalId: desc
+        type: String
+      - name: mobile_otp_enabled
+        externalId: mobile_otp_enabled
+        type: Bool
+      - name: name
+        externalId: name
+        type: String
+      - name: push_enabled
+        externalId: push_enabled
+        type: Bool
+      - name: sms_enabled
+        externalId: sms_enabled
+        type: Bool
+      - name: status
+        externalId: status
+        type: String
+      - name: voice_enabled
+        externalId: voice_enabled
+        type: Bool
+  # https://duo.com/docs/adminapi#phones
+  Phone:
+    displayName: Phone
+    externalId: Phone
+    description: Phone entity in Duo
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: phone_id
+        externalId: phone_id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: activated
+        externalId: activated
+        type: Bool
+      - name: capabilities
+        externalId: capabilities
+        type: String
+        list: true
+      - name: encrypted
+        externalId: encrypted
+        type: String
+      - name: extension
+        externalId: extension
+        type: String
+      - name: fingerprint
+        externalId: fingerprint
+        type: String
+      - name: last_seen 
+        externalId: last_seen
+        type: DateTime # RFC3339 Format
+      - name: model
+        externalId: model
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: number
+        externalId: number
+        type: String
+      - name: platform
+        externalId: platform
+        type: String
+      - name: postdelay
+        externalId: postdelay
+        type: String
+      - name: predelay
+        externalId: predelay
+        type: String
+      - name: screenlock
+        externalId: screenlock
+        type: String
+      - name: sms_passcodes_sent
+        externalId: sms_passcodes_sent
+        type: Bool
+      - name: tampered
+        externalId: tampered
+        type: String
+      - name: type
+        externalId: type
+        type: String
+  # https://duo.com/docs/adminapi#retrieve-endpoints
+  Endpoint:
+    displayName: Endpoint
+    externalId: Endpoint
+    description: Endpoint entity in Duo
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: epkey
+        externalId: epkey
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: computer_sid
+        externalId: computer_sid
+        type: String
+      - name: cpu_id
+        externalId: cpu_id
+        type: String
+      - name: device_id
+        externalId: device_id
+        type: String
+      - name: device_identifier
+        externalId: device_identifier
+        type: String
+      - name: device_identifier_type
+        externalId: device_identifier_type
+        type: String
+      - name: device_name
+        externalId: device_name
+        type: String
+      - name: device_udid
+        externalId: device_udid
+        type: String
+      - name: device_username
+        externalId: device_username
+        type: String
+      - name: device_username_type
+        externalId: device_username_type
+        type: String
+      - name: disk_encryption_status
+        externalId: disk_encryption_status
+        type: String
+      - name: domain_sid
+        externalId: domain_sid
+        type: String
+      - name: email
+        externalId: email
+        type: String
+      - name: firewall_status
+        externalId: firewall_status
+        type: String
+      - name: hardware_uuid
+        externalId: hardware_uuid
+        type: String
+      - name: health_app_client_version
+        externalId: health_app_client_version
+        type: String
+      - name: health_data_last_collected
+        externalId: health_data_last_collected
+        type: DateTime # Unix Timestamp
+      - name: last_updated
+        externalId: last_updated
+        type: DateTime # Unix Timestamp
+      - name: machine_guid
+        externalId: machine_guid
+        type: String
+      - name: model
+        externalId: model
+        type: String
+      - name: os_build
+        externalId: os_build
+        type: String
+      - name: os_family
+        externalId: os_family
+        type: String
+      - name: os_version
+        externalId: os_version
+        type: String
+      - name: password_status
+        externalId: password_status
+        type: String
+      - name: trusted_endpoint
+        externalId: trusted_endpoint
+        type: String
+      - name: type
+        externalId: type
+        type: String
+      - name: username
+        externalId: username
+        type: String
+relationships:
+  ParentOfGroupMember:
+    childEntity: groups
+  ParentOfPhoneOwner:
+    childEntity: phones
+  MemberOfGroup:
+    name: MemberOf
+    fromAttribute: groups.group_id
+    toAttribute: Group.group_id
+  OwnerOfPhone:
+    name: MemberOf
+    fromAttribute: phones.phone_id
+    toAttribute: Phone.phone_id
+  UserMemberGroup:
+    name: Group
+    path:
+      - relationship: ParentOfGroupMember
+        direction: Backward
+      - relationship: MemberOfGroup
+        direction: Forward
+  UserPhoneOwner:
+    name: Phone
+    path:
+      - relationship: ParentOfPhoneOwner
+        direction: Backward
+      - relationship: OwnerOfPhone
+        direction: Forward
