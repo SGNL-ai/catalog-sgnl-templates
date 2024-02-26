@@ -1,0 +1,997 @@
+# Duo Configuration YAML
+displayName: "Duo"
+icon: "PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjNkRCRTUwIi8+CjxnIG9wYWNpdHk9IjAuODUiPgo8cGF0aCBkPSJNMjMuNDcyIDMxLjc2OEg4VjM5LjcwNEgxNS43NDRDMTkuODg4IDM5LjcwNCAyMy4yNzIgMzYuMTkyIDIzLjQ3MiAzMS43NjhaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjxwYXRoIGQ9Ik0xNS43NDQgMjNIOFYzMC45MzZIMjMuNDhDMjMuMjcyIDI2LjUxMiAxOS44ODggMjMgMTUuNzQ0IDIzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ4LjI2NCAyM0M0NC4xMiAyMyA0MC43MjggMjYuNTIgNDAuNTI4IDMwLjkzNkg1NS45OTJDNTUuOCAyNi41MTIgNTIuNDA4IDIzIDQ4LjI2NCAyM1oiIGZpbGw9IndoaXRlIi8+CjxnIG9wYWNpdHk9IjAuODUiPgo8cGF0aCBkPSJNNTYgMzEuNzY4SDQwLjUyOEM0MC43MjggMzYuMTkyIDQ0LjExMiAzOS43MDQgNDguMjY0IDM5LjcwNEM1Mi40MDggMzkuNzA0IDU1LjggMzYuMTkyIDU2IDMxLjc2OFoiIGZpbGw9IndoaXRlIi8+CjwvZz4KPHBhdGggZD0iTTI0LjI1NiAyM1YzMS4zNTJDMjQuMjU2IDM1LjgyNCAyNy41MTIgMzkuNDggMzEuNjE2IDM5LjY5NlYyM0gyNC4yNTZaIiBmaWxsPSJ3aGl0ZSIvPgo8ZyBvcGFjaXR5PSIwLjg1Ij4KPHBhdGggZD0iTTM5Ljc0NCAyM0gzMi4zOTJWMzkuNzA0SDM5Ljc0NFYzMS4zNTJWMjNaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+Cjwvc3ZnPg=="
+description: "Duo as a System of Record"
+address: "api-{{Input Required: Duo Hostname}}.duosecurity.com" # https://duo.com/docs/adminapi#api-details
+defaultSyncFrequency: HOURLY
+defaultSyncMinInterval: 1
+defaultApiCallFrequency: SECONDLY
+defaultApiCallMinInterval: 1
+type: "Duo-1.0.0"
+adapterConfig: "ewogICAgImFwaVZlcnNpb24iOiAidjEiCn0=" # {"apiVersion": "v1"}
+auth:
+  - basic: # https://duo.com/docs/adminapi#authentication
+      username: "{{Input Required: Duo Integration Key}}"
+      password: "{{Input Required: Duo Secret Key}}"
+entities:
+  # https://docs.github.com/en/graphql/reference/objects#organization
+  Organization:
+    displayName: Organization
+    externalId: Organization
+    description: Organization entity in GitHub.
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      # Note: This attribute has been added in post-processing and is not part of the Organization entity.
+      - name: enterpriseId
+        externalId: enterpriseId
+        type: String
+      - name: announcement
+        externalId: announcement
+        type: String
+      - name: announcementExpiresAt
+        externalId: announcementExpiresAt
+        type: DateTime
+      - name: announcementUserDismissible
+        externalId: announcementUserDismissible
+        type: Bool
+      - name: anyPinnableItems
+        externalId: anyPinnableItems
+        type: Bool
+      - name: archivedAt
+        externalId: archivedAt
+        type: DateTime
+      - name: avatarUrl
+        externalId: avatarUrl
+        type: String
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: databaseId
+        externalId: databaseId
+        type: Int
+      - name: description
+        externalId: description
+        type: String
+      - name: descriptionHTML
+        externalId: descriptionHTML
+        type: String
+      - name: email
+        externalId: email
+        type: String
+      - name: login
+        externalId: login
+        type: String
+      - name: ipAllowListEnabledSetting
+        externalId: ipAllowListEnabledSetting
+        type: String
+      - name: isVerified
+        externalId: isVerified
+        type: Bool
+      - name: location
+        externalId: location
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: newTeamResourcePath
+        externalId: newTeamResourcePath
+        type: String
+      - name: newTeamUrl
+        externalId: newTeamUrl
+        type: String
+      - name: organizationBillingEmail
+        externalId: organizationBillingEmail
+        type: String 
+      - name: pinnedItemsRemaining
+        externalId: pinnedItemsRemaining
+        type: Int
+      - name: projectsResourcePath
+        externalId: projectsResourcePath
+        type: String
+      - name: projectsUrl
+        externalId: projectsUrl
+        type: String
+      - name: requiresTwoFactorAuthentication
+        externalId: requiresTwoFactorAuthentication
+        type: Bool
+      - name: resourcePath
+        externalId: resourcePath
+        type: String
+      - name: teamsResourcePath
+        externalId: teamsResourcePath
+        type: String
+      - name: teamsUrl
+        externalId: teamsUrl
+        type: String
+      - name: twitterUsername
+        externalId: twitterUsername
+        type: String
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+      - name: url
+        externalId: url
+        type: String
+      - name: viewerCanAdminister
+        externalId: viewerCanAdminister
+        type: Bool
+      - name: viewerCanChangePinnedItems
+        externalId: viewerCanChangePinnedItems
+        type: Bool
+      - name: viewerCanCreateProjects
+        externalId: viewerCanCreateProjects
+        type: Bool
+      - name: viewerCanCreateRepositories
+        externalId: viewerCanCreateRepositories
+        type: Bool
+      - name: viewerCanCreateTeams
+        externalId: viewerCanCreateTeams
+        type: Bool
+      - name: viewerIsAMember
+        externalId: viewerIsAMember
+        type: Bool
+      - name: websiteUrl
+        externalId: websiteUrl
+        type: String
+  # https://docs.github.com/en/graphql/reference/objects#user
+  User:
+    displayName: User
+    externalId: User
+    description: User entity in GitHub.
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      # Note: This attribute has been added in post-processing and is not part of the User entity.
+      - name: orgId
+        externalId: orgId
+        type: String
+      - name: avatarUrl
+        externalId: avatarUrl
+        type: String
+      - name: bio
+        externalId: bio
+        type: String
+      - name: bioHTML
+        externalId: bioHTML
+        type: String
+      - name: company
+        externalId: company
+        type: String
+      - name: companyHTML
+        externalId: companyHTML
+        type: String
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: databaseId
+        externalId: databaseId
+        type: Int
+      - name: email
+        externalId: email
+        type: String
+      - name: login
+        externalId: login
+        type: String
+      - name: isBountyHunter
+        externalId: isBountyHunter
+        type: Bool
+      - name: isCampusExpert
+        externalId: isCampusExpert
+        type: Bool
+      - name: isDeveloperProgramMember
+        externalId: isDeveloperProgramMember
+        type: Bool
+      - name: isEmployee
+        externalId: isEmployee
+        type: Bool
+      - name: isFollowingViewer
+        externalId: isFollowingViewer
+        type: Bool
+      - name: isHireable
+        externalId: isHireable
+        type: Bool
+      - name: isSiteAdmin
+        externalId: isSiteAdmin
+        type: Bool
+      - name: isViewer
+        externalId: isViewer
+        type: Bool
+      - name: location
+        externalId: location
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: organizationVerifiedDomainEmails
+        externalId: organizationVerifiedDomainEmails
+        type: String
+        list: true
+      - name: pinnedItemsRemaining
+        externalId: pinnedItemsRemaining
+        type: Int
+      - name: projectsResourcePath
+        externalId: projectsResourcePath
+        type: String
+      - name: projectsUrl
+        externalId: projectsUrl
+        type: String
+      - name: resourcePath
+        externalId: resourcePath
+        type: String
+      - name: twitterUsername
+        externalId: twitterUsername
+        type: String
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+      - name: url
+        externalId: url
+        type: String
+      - name: viewerCanChangePinnedItems
+        externalId: viewerCanChangePinnedItems
+        type: Bool
+      - name: viewerCanCreateProjects
+        externalId: viewerCanCreateProjects
+        type: Bool
+      - name: viewerCanFollow
+        externalId: viewerCanFollow
+        type: Bool
+      - name: viewerIsFollowing
+        externalId: viewerIsFollowing
+        type: Bool
+      - name: websiteUrl
+        externalId: websiteUrl
+        type: String
+  # https://docs.github.com/en/graphql/reference/objects#team  
+  Team:
+    displayName: Team
+    externalId: Team
+    description: Team entity in GitHub.
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      # Note: This attribute has been added in post-processing and is not part of the Team entity.
+      - name: enterpriseId
+        externalId: enterpriseId
+        type: String
+      # Note: This attribute has been added in post-processing and is not part of the Team entity.
+      - name: orgId
+        externalId: orgId
+        type: String
+      - name: avatarUrl
+        externalId: avatarUrl
+        type: String
+      - name: combinedSlug
+        externalId: combinedSlug
+        type: String
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: databaseId
+        externalId: databaseId
+        type: Int
+      - name: description
+        externalId: description
+        type: String
+      - name: discussionsResourcePath
+        externalId: discussionsResourcePath
+        type: String
+      - name: discussionsUrl
+        externalId: discussionsUrl
+        type: String
+      - name: editTeamResourcePath
+        externalId: editTeamResourcePath
+        type: String
+      - name: editTeamUrl
+        externalId: editTeamUrl
+        type: String
+      - name: membersResourcePath
+        externalId: membersResourcePath
+        type: String
+      - name: membersUrl
+        externalId: membersUrl
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: newTeamResourcePath
+        externalId: newTeamResourcePath
+        type: String
+      - name: newTeamUrl
+        externalId: newTeamUrl
+        type: String
+      - name: repositoriesResourcePath
+        externalId: repositoriesResourcePath
+        type: String
+      - name: repositoriesUrl
+        externalId: repositoriesUrl
+        type: String
+      - name: resourcePath
+        externalId: resourcePath
+        type: String
+      - name: slug
+        externalId: slug
+        type: String
+      - name: teamsResourcePath
+        externalId: teamsResourcePath
+        type: String
+      - name: teamsUrl
+        externalId: teamsUrl
+        type: String
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+      - name: url
+        externalId: url
+        type: String
+      - name: viewerCanAdminister 
+        externalId: viewerCanAdminister
+        type: Bool
+      - name: viewerCanSubscribe
+        externalId: viewerCanSubscribe
+        type: Bool
+  # Fetched from the 'members' attribute belonging to the Teams entity.
+  # TeamMember entity is for creating relationships between Users and Teams and does not support organizationVerifiedDomainEmails.
+  # To retrieve organizationVerifiedDomainEmails, declare it as an attribute for the User entity.
+  # TeamMember is a User entity type: https://docs.github.com/en/graphql/reference/objects#user
+  TeamMember:
+    parent: Team
+    displayName: TeamMember
+    externalId: members
+    description: Entity representing a GitHub team each user belongs to.
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: avatarUrl
+        externalId: avatarUrl
+        type: String
+      - name: bio
+        externalId: bio
+        type: String
+      - name: bioHTML
+        externalId: bioHTML
+        type: String
+      - name: company
+        externalId: company
+        type: String
+      - name: companyHTML
+        externalId: companyHTML
+        type: String
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: databaseId
+        externalId: databaseId
+        type: Int
+      - name: email
+        externalId: email
+        type: String
+      - name: login
+        externalId: login
+        type: String
+      - name: isBountyHunter
+        externalId: isBountyHunter
+        type: Bool
+      - name: isCampusExpert
+        externalId: isCampusExpert
+        type: Bool
+      - name: isDeveloperProgramMember
+        externalId: isDeveloperProgramMember
+        type: Bool
+      - name: isEmployee
+        externalId: isEmployee
+        type: Bool
+      - name: isFollowingViewer
+        externalId: isFollowingViewer
+        type: Bool
+      - name: isHireable
+        externalId: isHireable
+        type: Bool
+      - name: isSiteAdmin
+        externalId: isSiteAdmin
+        type: Bool
+      - name: isViewer
+        externalId: isViewer
+        type: Bool
+      - name: location
+        externalId: location
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: pinnedItemsRemaining
+        externalId: pinnedItemsRemaining
+        type: Int
+      - name: projectsResourcePath
+        externalId: projectsResourcePath
+        type: String
+      - name: projectsUrl
+        externalId: projectsUrl
+        type: String
+      - name: resourcePath
+        externalId: resourcePath
+        type: String
+      - name: twitterUsername
+        externalId: twitterUsername
+        type: String
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+      - name: url
+        externalId: url
+        type: String
+      - name: viewerCanChangePinnedItems
+        externalId: viewerCanChangePinnedItems
+        type: Bool
+      - name: viewerCanCreateProjects
+        externalId: viewerCanCreateProjects
+        type: Bool
+      - name: viewerCanFollow
+        externalId: viewerCanFollow
+        type: Bool
+      - name: viewerIsFollowing
+        externalId: viewerIsFollowing
+        type: Bool
+      - name: websiteUrl
+        externalId: websiteUrl
+        type: String
+  # Fetched from the 'repositories' attribute belonging to the Teams entity.
+  # TeamRepository is a Repository entity type: https://docs.github.com/en/graphql/reference/objects#repository
+  TeamRepository:
+    parent: Team
+    displayName: TeamRepository
+    externalId: repositories
+    description: Entity representing a GitHub repository assigned to a team.
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: allowUpdateBranch
+        externalId: allowUpdateBranch
+        type: Bool
+      - name: archivedAt
+        externalId: archivedAt
+        type: DateTime
+      - name: autoMergeAllowed
+        externalId: autoMergeAllowed
+        type: Bool
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: databaseId
+        externalId: databaseId
+        type: Int
+      - name: deleteBranchOnMerge
+        externalId: deleteBranchOnMerge
+        type: Bool
+      - name: description
+        externalId: description
+        type: String
+      - name: descriptionHTML
+        externalId: descriptionHTML
+        type: String
+      - name: diskUsage
+        externalId: diskUsage
+        type: Int
+      - name: forkCount
+        externalId: forkCount
+        type: Int
+      - name: forkingAllowed
+        externalId: forkingAllowed
+        type: Bool
+      - name: hasDiscussionsEnabled
+        externalId: hasDiscussionsEnabled
+        type: Bool
+      - name: hasIssuesEnabled
+        externalId: hasIssuesEnabled
+        type: Bool
+      - name: hasProjectsEnabled
+        externalId: hasProjectsEnabled
+        type: Bool
+      - name: hasVulnerabilityAlertsEnabled
+        externalId: hasVulnerabilityAlertsEnabled
+        type: Bool
+      - name: hasWikiEnabled
+        externalId: hasWikiEnabled
+        type: Bool
+      - name: homepageUrl
+        externalId: homepageUrl
+        type: String
+      - name: isArchived
+        externalId: isArchived
+        type: Bool
+      - name: isBlankIssuesEnabled
+        externalId: isBlankIssuesEnabled
+        type: Bool
+      - name: isDisabled
+        externalId: isDisabled
+        type: Bool
+      - name: isEmpty
+        externalId: isEmpty
+        type: Bool
+      - name: isInOrganization
+        externalId: isInOrganization
+        type: Bool
+      - name: isFork
+        externalId: isFork
+        type: Bool
+      - name: isLocked
+        externalId: isLocked
+        type: Bool
+      - name: isMirror
+        externalId: isMirror
+        type: Bool
+      - name: isPrivate
+        externalId: isPrivate
+        type: Bool
+      - name: isSecurityPolicyEnabled
+        externalId: isSecurityPolicyEnabled
+        type: Bool
+      - name: isTemplate
+        externalId: isTemplate
+        type: Bool
+      - name: isUserConfigurationRepository
+        externalId: isUserConfigurationRepository
+        type: Bool
+      - name: mergeCommitAllowed
+        externalId: mergeCommitAllowed
+        type: Bool
+      - name: mirrorUrl
+        externalId: mirrorUrl
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: nameWithOwner
+        externalId: nameWithOwner
+        type: String
+      - name: openGraphImageUrl
+        externalId: openGraphImageUrl
+        type: String
+      - name: projectsResourcePath
+        externalId: projectsResourcePath
+        type: String
+      - name: projectsUrl
+        externalId: projectsUrl
+        type: String
+      - name: pushedAt
+        externalId: pushedAt
+        type: DateTime
+      - name: rebaseMergeAllowed
+        externalId: rebaseMergeAllowed
+        type: Bool
+      - name: resourcePath
+        externalId: resourcePath
+        type: String
+      - name: securityPolicyUrl
+        externalId: securityPolicyUrl
+        type: String
+      - name: shortDescriptionHTML
+        externalId: shortDescriptionHTML
+        type: String
+      - name: squashMergeAllowed
+        externalId: squashMergeAllowed
+        type: Bool
+      - name: stargazerCount
+        externalId: stargazerCount
+        type: Int
+      - name: tempCloneToken
+        externalId: tempCloneToken
+        type: String
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+      - name: url
+        externalId: url
+        type: String
+      - name: usesCustomOpenGraphImage
+        externalId: usesCustomOpenGraphImage
+        type: Bool
+      - name: viewerCanAdminister
+        externalId: viewerCanAdminister
+        type: Bool
+      - name: viewerCanCreateProjects
+        externalId: viewerCanCreateProjects
+        type: Bool
+      - name: viewerCanSubscribe
+        externalId: viewerCanSubscribe
+        type: Bool
+      - name: viewerCanUpdateTopics
+        externalId: viewerCanUpdateTopics
+        type: Bool
+      - name: viewerDefaultCommitEmail
+        externalId: viewerDefaultCommitEmail
+        type: String
+      - name: viewerHasStarred
+        externalId: viewerHasStarred
+        type: Bool
+      - name: viewerPossibleCommitEmails
+        externalId: viewerPossibleCommitEmails
+        type: String
+      - name: webCommitSignoffRequired
+        externalId: webCommitSignoffRequired
+        type: Bool
+  # https://docs.github.com/en/graphql/reference/objects#repository
+  Repository:
+    displayName: Repository
+    externalId: Repository
+    description: Repository entity in GitHub
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      # Note: This attribute has been added in post-processing and is not part of the Team entity.
+      - name: enterpriseId
+        externalId: enterpriseId
+        type: String
+      # Note: This attribute has been added in post-processing and is not part of the Team entity.
+      - name: orgId
+        externalId: orgId
+        type: String
+      - name: allowUpdateBranch
+        externalId: allowUpdateBranch
+        type: Bool
+      - name: archivedAt
+        externalId: archivedAt
+        type: DateTime
+      - name: autoMergeAllowed
+        externalId: autoMergeAllowed
+        type: Bool
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: databaseId
+        externalId: databaseId
+        type: Int
+      - name: deleteBranchOnMerge
+        externalId: deleteBranchOnMerge
+        type: Bool
+      - name: description
+        externalId: description
+        type: String
+      - name: descriptionHTML
+        externalId: descriptionHTML
+        type: String
+      - name: diskUsage
+        externalId: diskUsage
+        type: Int
+      - name: forkCount
+        externalId: forkCount
+        type: Int
+      - name: forkingAllowed
+        externalId: forkingAllowed
+        type: Bool
+      - name: hasDiscussionsEnabled
+        externalId: hasDiscussionsEnabled
+        type: Bool
+      - name: hasIssuesEnabled
+        externalId: hasIssuesEnabled
+        type: Bool
+      - name: hasProjectsEnabled
+        externalId: hasProjectsEnabled
+        type: Bool
+      - name: hasVulnerabilityAlertsEnabled
+        externalId: hasVulnerabilityAlertsEnabled
+        type: Bool
+      - name: hasWikiEnabled
+        externalId: hasWikiEnabled
+        type: Bool
+      - name: homepageUrl
+        externalId: homepageUrl
+        type: String
+      - name: isArchived
+        externalId: isArchived
+        type: Bool
+      - name: isBlankIssuesEnabled
+        externalId: isBlankIssuesEnabled
+        type: Bool
+      - name: isDisabled
+        externalId: isDisabled
+        type: Bool
+      - name: isEmpty
+        externalId: isEmpty
+        type: Bool
+      - name: isInOrganization
+        externalId: isInOrganization
+        type: Bool
+      - name: isFork
+        externalId: isFork
+        type: Bool
+      - name: isLocked
+        externalId: isLocked
+        type: Bool
+      - name: isMirror
+        externalId: isMirror
+        type: Bool
+      - name: isPrivate
+        externalId: isPrivate
+        type: Bool
+      - name: isSecurityPolicyEnabled
+        externalId: isSecurityPolicyEnabled
+        type: Bool
+      - name: isTemplate
+        externalId: isTemplate
+        type: Bool
+      - name: isUserConfigurationRepository
+        externalId: isUserConfigurationRepository
+        type: Bool
+      - name: mergeCommitAllowed
+        externalId: mergeCommitAllowed
+        type: Bool
+      - name: mirrorUrl
+        externalId: mirrorUrl
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: nameWithOwner
+        externalId: nameWithOwner
+        type: String
+      - name: openGraphImageUrl
+        externalId: openGraphImageUrl
+        type: String
+      - name: projectsResourcePath
+        externalId: projectsResourcePath
+        type: String
+      - name: projectsUrl
+        externalId: projectsUrl
+        type: String
+      - name: pushedAt
+        externalId: pushedAt
+        type: DateTime
+      - name: rebaseMergeAllowed
+        externalId: rebaseMergeAllowed
+        type: Bool
+      - name: resourcePath
+        externalId: resourcePath
+        type: String
+      - name: securityPolicyUrl
+        externalId: securityPolicyUrl
+        type: String
+      - name: shortDescriptionHTML
+        externalId: shortDescriptionHTML
+        type: String
+      - name: squashMergeAllowed
+        externalId: squashMergeAllowed
+        type: Bool
+      - name: stargazerCount
+        externalId: stargazerCount
+        type: Int
+      - name: tempCloneToken
+        externalId: tempCloneToken
+        type: String
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+      - name: url
+        externalId: url
+        type: String
+      - name: usesCustomOpenGraphImage
+        externalId: usesCustomOpenGraphImage
+        type: Bool
+      - name: viewerCanAdminister
+        externalId: viewerCanAdminister
+        type: Bool
+      - name: viewerCanCreateProjects
+        externalId: viewerCanCreateProjects
+        type: Bool
+      - name: viewerCanSubscribe
+        externalId: viewerCanSubscribe
+        type: Bool
+      - name: viewerCanUpdateTopics
+        externalId: viewerCanUpdateTopics
+        type: Bool
+      - name: viewerDefaultCommitEmail
+        externalId: viewerDefaultCommitEmail
+        type: String
+      - name: viewerHasStarred
+        externalId: viewerHasStarred
+        type: Bool
+      - name: viewerPossibleCommitEmails
+        externalId: viewerPossibleCommitEmails
+        type: String
+      - name: webCommitSignoffRequired
+        externalId: webCommitSignoffRequired
+        type: Bool
+  # Collaborator is a User entity type: https://docs.github.com/en/graphql/reference/objects#repositorycollaboratoredge
+  Collaborator:
+    displayName: Collaborator
+    externalId: Collaborator
+    description: Entity representing a GitHub user assigned to some Repository.
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      # Note: This attribute has been added in post-processing and is not part of the User entity.
+      - name: orgId
+        externalId: orgId
+        type: String
+      # Note: This attribute has been added in post-processing and is not part of the User entity.
+      - name: repositoryId
+        externalId: repositoryId
+        type: String
+      - name: avatarUrl
+        externalId: avatarUrl
+        type: String
+      - name: bio
+        externalId: bio
+        type: String
+      - name: bioHTML
+        externalId: bioHTML
+        type: String
+      - name: company
+        externalId: company
+        type: String
+      - name: companyHTML
+        externalId: companyHTML
+        type: String
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: databaseId
+        externalId: databaseId
+        type: Int
+      - name: email
+        externalId: email
+        type: String
+      - name: login
+        externalId: login
+        type: String
+      - name: isBountyHunter
+        externalId: isBountyHunter
+        type: Bool
+      - name: isCampusExpert
+        externalId: isCampusExpert
+        type: Bool
+      - name: isDeveloperProgramMember
+        externalId: isDeveloperProgramMember
+        type: Bool
+      - name: isEmployee
+        externalId: isEmployee
+        type: Bool
+      - name: isFollowingViewer
+        externalId: isFollowingViewer
+        type: Bool
+      - name: isHireable
+        externalId: isHireable
+        type: Bool
+      - name: isSiteAdmin
+        externalId: isSiteAdmin
+        type: Bool
+      - name: isViewer
+        externalId: isViewer
+        type: Bool
+      - name: location
+        externalId: location
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: organizationVerifiedDomainEmails
+        externalId: organizationVerifiedDomainEmails
+        type: String
+        list: true
+      - name: pinnedItemsRemaining
+        externalId: pinnedItemsRemaining
+        type: Int
+      - name: projectsResourcePath
+        externalId: projectsResourcePath
+        type: String
+      - name: projectsUrl
+        externalId: projectsUrl
+        type: String
+      - name: resourcePath
+        externalId: resourcePath
+        type: String
+      - name: twitterUsername
+        externalId: twitterUsername
+        type: String
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+      - name: url
+        externalId: url
+        type: String
+      - name: viewerCanChangePinnedItems
+        externalId: viewerCanChangePinnedItems
+        type: Bool
+      - name: viewerCanCreateProjects
+        externalId: viewerCanCreateProjects
+        type: Bool
+      - name: viewerCanFollow
+        externalId: viewerCanFollow
+        type: Bool
+      - name: viewerIsFollowing
+        externalId: viewerIsFollowing
+        type: Bool
+      - name: websiteUrl
+        externalId: websiteUrl
+        type: String
+relationships:
+  ParentOfGroupMember:
+    childEntity: groups
+  ParentOfPhoneOwner:
+    childEntity: phones
+  MemberOfGroup:
+    name: MemberOf
+    fromAttribute: groups.group_id
+    toAttribute: Group.group_id
+  OwnerOfPhone:
+    name: MemberOf
+    fromAttribute: phones.phone_id
+    toAttribute: Phone.phone_id
+  UserMemberGroup:
+    name: Group
+    path:
+      - relationship: ParentOfGroupMember
+        direction: Backward
+      - relationship: MemberOfGroup
+        direction: Forward
+  UserPhoneOwner:
+    name: Phone
+    path:
+      - relationship: ParentOfPhoneOwner
+        direction: Backward
+      - relationship: OwnerOfPhone
+        direction: Forward
