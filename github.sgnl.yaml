@@ -1,14 +1,14 @@
-# Duo Configuration YAML
-displayName: "Duo"
+# GitHub Configuration YAML
+displayName: "GitHub"
 icon: "PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjNkRCRTUwIi8+CjxnIG9wYWNpdHk9IjAuODUiPgo8cGF0aCBkPSJNMjMuNDcyIDMxLjc2OEg4VjM5LjcwNEgxNS43NDRDMTkuODg4IDM5LjcwNCAyMy4yNzIgMzYuMTkyIDIzLjQ3MiAzMS43NjhaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjxwYXRoIGQ9Ik0xNS43NDQgMjNIOFYzMC45MzZIMjMuNDhDMjMuMjcyIDI2LjUxMiAxOS44ODggMjMgMTUuNzQ0IDIzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ4LjI2NCAyM0M0NC4xMiAyMyA0MC43MjggMjYuNTIgNDAuNTI4IDMwLjkzNkg1NS45OTJDNTUuOCAyNi41MTIgNTIuNDA4IDIzIDQ4LjI2NCAyM1oiIGZpbGw9IndoaXRlIi8+CjxnIG9wYWNpdHk9IjAuODUiPgo8cGF0aCBkPSJNNTYgMzEuNzY4SDQwLjUyOEM0MC43MjggMzYuMTkyIDQ0LjExMiAzOS43MDQgNDguMjY0IDM5LjcwNEM1Mi40MDggMzkuNzA0IDU1LjggMzYuMTkyIDU2IDMxLjc2OFoiIGZpbGw9IndoaXRlIi8+CjwvZz4KPHBhdGggZD0iTTI0LjI1NiAyM1YzMS4zNTJDMjQuMjU2IDM1LjgyNCAyNy41MTIgMzkuNDggMzEuNjE2IDM5LjY5NlYyM0gyNC4yNTZaIiBmaWxsPSJ3aGl0ZSIvPgo8ZyBvcGFjaXR5PSIwLjg1Ij4KPHBhdGggZD0iTTM5Ljc0NCAyM0gzMi4zOTJWMzkuNzA0SDM5Ljc0NFYzMS4zNTJWMjNaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+Cjwvc3ZnPg=="
-description: "Duo as a System of Record"
+description: "GitHub as a System of Record"
 address: "api-{{Input Required: Duo Hostname}}.duosecurity.com" # https://duo.com/docs/adminapi#api-details
 defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
-type: "Duo-1.0.0"
-adapterConfig: "ewogICAgImFwaVZlcnNpb24iOiAidjEiCn0=" # {"apiVersion": "v1"}
+type: "GitHub-1.0.0"
+adapterConfig: 
 auth:
   - basic: # https://duo.com/docs/adminapi#authentication
       username: "{{Input Required: Duo Integration Key}}"
@@ -969,29 +969,4 @@ entities:
         externalId: websiteUrl
         type: String
 relationships:
-  ParentOfGroupMember:
-    childEntity: groups
-  ParentOfPhoneOwner:
-    childEntity: phones
-  MemberOfGroup:
-    name: MemberOf
-    fromAttribute: groups.group_id
-    toAttribute: Group.group_id
-  OwnerOfPhone:
-    name: MemberOf
-    fromAttribute: phones.phone_id
-    toAttribute: Phone.phone_id
-  UserMemberGroup:
-    name: Group
-    path:
-      - relationship: ParentOfGroupMember
-        direction: Backward
-      - relationship: MemberOfGroup
-        direction: Forward
-  UserPhoneOwner:
-    name: Phone
-    path:
-      - relationship: ParentOfPhoneOwner
-        direction: Backward
-      - relationship: OwnerOfPhone
-        direction: Forward
+
