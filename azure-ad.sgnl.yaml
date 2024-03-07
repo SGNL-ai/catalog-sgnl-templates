@@ -603,18 +603,22 @@ relationships:
     # and keep corresponding path relationships unique below
   UserMember:
     name: Member
+    displayName: User Member
     fromAttribute: GroupMember.memberId
     toAttribute: User.id
   GroupMember:
     name: Member
+    displayName: Group Member
     fromAttribute: GroupMember.memberId
     toAttribute: Group.id
   MemberOf:
     name: MemberOf
+    displayName: Member Of
     fromAttribute: GroupMember.groupId
     toAttribute: Group.id
   UserMemberGroup:
     name: Group
+    displayName: User Member Group
     path:
       - relationship: UserMember
         direction: Backward
@@ -622,6 +626,7 @@ relationships:
         direction: Forward
   GroupMemberGroup:
     name: Group
+    displayName: Group Member Group
     path:
       - relationship: GroupMember
         direction: Backward

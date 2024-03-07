@@ -582,17 +582,20 @@ relationships:
   # (User) -[UserMember]-> (TeamMember)
   UserMember:
     name: UserMember
+    displayName: User Member
     fromAttribute: users.id
     toAttribute: members.userId
   # (TeamMember) -[TeamMember]-> (Team)
   TeamMember:
     name: TeamMember
+    displayName: Team Member
     fromAttribute: members.teamId
     toAttribute: teams.id
   # Path relationship based on the previous two relationships.
   # (User) -[Team]-> (Team)
   Team:
     name: Team
+    displayName: Team
     path:
       - relationship: UserMember
         direction: Forward
@@ -600,5 +603,6 @@ relationships:
         direction: Forward
   OnCall:
     name: OnCall
+    displayName: On Call
     fromAttribute: users.id
     toAttribute: oncalls.user__id

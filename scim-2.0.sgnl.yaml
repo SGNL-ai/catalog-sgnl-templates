@@ -393,16 +393,19 @@ relationships:
   # Manager relationship
   UserManager:
     name: Manager
+    displayName: User Manager
     fromAttribute: Users.$..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.value
     toAttribute: Users.id
   ParentOfGroupMember:
     childEntity: groups
   MemberOf:
     name: MemberOf
+    displayName: Member Of
     fromAttribute: groups.value
     toAttribute: Groups.id
   UserMemberGroup:
     name: Group
+    displayName: User Member Group
     path:
       - relationship: ParentOfGroupMember
         direction: Backward

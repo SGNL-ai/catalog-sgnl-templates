@@ -920,46 +920,57 @@ entities:
 relationships:
   UserManager:
     name: Manager
+    displayName: User Manager
     fromAttribute: sys_user.manager
     toAttribute: sys_user.sys_id
   GroupManager:
     name: Manager
+    displayName: Group Manager
     fromAttribute: sys_user_group.manager
     toAttribute: sys_user.sys_id
   CaseParent:
     name: Parent
+    displayName: Case Parent
     fromAttribute: sn_customerservice_case.parent
     toAttribute: sn_customerservice_case.sys_id
   AccountParent:
     name: Parent
+    displayName: Account Parent
     fromAttribute: customer_account.account_parent
     toAttribute: customer_account.sys_id
   GroupParent:
     name: Parent
+    displayName: Group Parent
     fromAttribute: sys_user_group.parent
     toAttribute: sys_user_group.sys_id
   CaseAssignedTo:
     name: AssignedTo
+    displayName: Case Assigned To
     fromAttribute: sn_customerservice_case.assigned_to
     toAttribute: sys_user.sys_id
   CaseAccount:
     name: Account
+    displayName: Case Account
     fromAttribute: sn_customerservice_case.account
     toAttribute: customer_account.sys_id
   GroupDefaultAssignee:
     name: DefaultAssignee
+    displayName: Group Default Assignee
     fromAttribute: sys_user_group.default_assignee
     toAttribute: sys_user.sys_id
   MemberOfAssignmentGroup:
     name: MemberOfAssignmentGroup
+    displayName: Member Of Assignment Group
     fromAttribute: sys_user.sys_id
     toAttribute: sys_user_grmember.user
   AssignmentGroupToGroupMember:
     name: AssignmentGroupToGroupMember
+    displayName: Assignment Group To Group Member
     fromAttribute: sys_user_group.sys_id
     toAttribute: sys_user_grmember.group
   UserInGroup:
     name: UserInGroup
+    displayName: User In Group
     path:
       - relationship: MemberOfAssignmentGroup
         direction: Forward
