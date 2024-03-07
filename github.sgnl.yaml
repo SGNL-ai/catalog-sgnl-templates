@@ -2,17 +2,16 @@
 displayName: "GitHub"
 icon: "PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjNkRCRTUwIi8+CjxnIG9wYWNpdHk9IjAuODUiPgo8cGF0aCBkPSJNMjMuNDcyIDMxLjc2OEg4VjM5LjcwNEgxNS43NDRDMTkuODg4IDM5LjcwNCAyMy4yNzIgMzYuMTkyIDIzLjQ3MiAzMS43NjhaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjxwYXRoIGQ9Ik0xNS43NDQgMjNIOFYzMC45MzZIMjMuNDhDMjMuMjcyIDI2LjUxMiAxOS44ODggMjMgMTUuNzQ0IDIzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ4LjI2NCAyM0M0NC4xMiAyMyA0MC43MjggMjYuNTIgNDAuNTI4IDMwLjkzNkg1NS45OTJDNTUuOCAyNi41MTIgNTIuNDA4IDIzIDQ4LjI2NCAyM1oiIGZpbGw9IndoaXRlIi8+CjxnIG9wYWNpdHk9IjAuODUiPgo8cGF0aCBkPSJNNTYgMzEuNzY4SDQwLjUyOEM0MC43MjggMzYuMTkyIDQ0LjExMiAzOS43MDQgNDguMjY0IDM5LjcwNEM1Mi40MDggMzkuNzA0IDU1LjggMzYuMTkyIDU2IDMxLjc2OFoiIGZpbGw9IndoaXRlIi8+CjwvZz4KPHBhdGggZD0iTTI0LjI1NiAyM1YzMS4zNTJDMjQuMjU2IDM1LjgyNCAyNy41MTIgMzkuNDggMzEuNjE2IDM5LjY5NlYyM0gyNC4yNTZaIiBmaWxsPSJ3aGl0ZSIvPgo8ZyBvcGFjaXR5PSIwLjg1Ij4KPHBhdGggZD0iTTM5Ljc0NCAyM0gzMi4zOTJWMzkuNzA0SDM5Ljc0NFYzMS4zNTJWMjNaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+Cjwvc3ZnPg=="
 description: "GitHub as a System of Record"
-address: "api-{{Input Required: Duo Hostname}}.duosecurity.com" # https://duo.com/docs/adminapi#api-details
+address: "https://api.github.com/graphql" # Enterprise Cloud 
 defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: "GitHub-1.0.0"
-adapterConfig: 
+adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogIlNHTkwtY2xvdWQyIgp9" # { enterpriseSlug: "SGNL-cloud2" }
 auth:
-  - basic: # https://duo.com/docs/adminapi#authentication
-      username: "{{Input Required: Duo Integration Key}}"
-      password: "{{Input Required: Duo Secret Key}}"
+  - bearer: # https://docs.github.com/en/enterprise-server@3.10/authentication/keeping-your-account-and-data-secure/about-authentication-to-github
+      authToken: "Bearer {{input token}}"
 entities:
   # https://docs.github.com/en/graphql/reference/objects#organization
   Organization:
@@ -156,7 +155,7 @@ entities:
     pagesOrderedById: false
     attributes:
       - name: id
-        externalId: id
+        externalId: $.node.id
         type: String
         indexed: true
         uniqueId: true
@@ -164,103 +163,121 @@ entities:
       - name: orgId
         externalId: orgId
         type: String
+      # Note: User.role represents the role of a user in the organization with id 'orgId'.
+      - name: role
+        externalId: role
+        type: String
       - name: avatarUrl
-        externalId: avatarUrl
+        externalId: $.node.avatarUrl
         type: String
       - name: bio
-        externalId: bio
+        externalId: $.node.bio
         type: String
       - name: bioHTML
-        externalId: bioHTML
+        externalId: $.node.bioHTML
         type: String
       - name: company
-        externalId: company
+        externalId: $.node.company
         type: String
       - name: companyHTML
-        externalId: companyHTML
+        externalId: $.node.companyHTML
         type: String
       - name: createdAt
-        externalId: createdAt
+        externalId: $.node.createdAt
         type: DateTime
       - name: databaseId
-        externalId: databaseId
+        externalId: $.node.databaseId
         type: Int
       - name: email
-        externalId: email
+        externalId: $.node.email
         type: String
       - name: login
-        externalId: login
+        externalId: $.node.login
         type: String
       - name: isBountyHunter
-        externalId: isBountyHunter
+        externalId: $.node.isBountyHunter
         type: Bool
       - name: isCampusExpert
-        externalId: isCampusExpert
+        externalId: $.node.isCampusExpert
         type: Bool
       - name: isDeveloperProgramMember
-        externalId: isDeveloperProgramMember
+        externalId: $.node.isDeveloperProgramMember
         type: Bool
       - name: isEmployee
-        externalId: isEmployee
+        externalId: $.node.isEmployee
         type: Bool
       - name: isFollowingViewer
-        externalId: isFollowingViewer
+        externalId: $.node.isFollowingViewer
         type: Bool
       - name: isHireable
-        externalId: isHireable
+        externalId: $.node.isHireable
         type: Bool
       - name: isSiteAdmin
-        externalId: isSiteAdmin
+        externalId: $.node.isSiteAdmin
         type: Bool
       - name: isViewer
-        externalId: isViewer
+        externalId: $.node.isViewer
         type: Bool
       - name: location
-        externalId: location
+        externalId: $.node.location
         type: String
       - name: name
-        externalId: name
+        externalId: $.node.name
         type: String
-      - name: organizationVerifiedDomainEmails
-        externalId: organizationVerifiedDomainEmails
-        type: String
-        list: true
       - name: pinnedItemsRemaining
-        externalId: pinnedItemsRemaining
+        externalId: $.node.pinnedItemsRemaining
         type: Int
       - name: projectsResourcePath
-        externalId: projectsResourcePath
+        externalId: $.node.projectsResourcePath
         type: String
       - name: projectsUrl
-        externalId: projectsUrl
+        externalId: $.node.projectsUrl
         type: String
       - name: resourcePath
-        externalId: resourcePath
+        externalId: $.node.resourcePath
         type: String
       - name: twitterUsername
-        externalId: twitterUsername
+        externalId: $.node.twitterUsername
         type: String
       - name: updatedAt
-        externalId: updatedAt
+        externalId: $.node.updatedAt
         type: DateTime
       - name: url
-        externalId: url
+        externalId: $.node.url
         type: String
       - name: viewerCanChangePinnedItems
-        externalId: viewerCanChangePinnedItems
+        externalId: $.node.viewerCanChangePinnedItems
         type: Bool
       - name: viewerCanCreateProjects
-        externalId: viewerCanCreateProjects
+        externalId: $.node.viewerCanCreateProjects
         type: Bool
       - name: viewerCanFollow
-        externalId: viewerCanFollow
+        externalId: $.node.viewerCanFollow
         type: Bool
       - name: viewerIsFollowing
-        externalId: viewerIsFollowing
+        externalId: $.node.viewerIsFollowing
         type: Bool
       - name: websiteUrl
-        externalId: websiteUrl
+        externalId: $.node.websiteUrl
         type: String
+  # UserOVDE:
+  #   parent: User
+  #   displayName: UserOVDE
+  #   externalId: $.node.organizationVerifiedDomainEmails
+  #   description: Entity representing a GitHub user's organization verified domain emails.
+  #   syncFrequency: HOURLY
+  #   syncMinInterval: 1
+  #   apiCallFrequency: SECONDLY
+  #   apiCallMinInterval: 1
+  #   pageSize: 100
+  #   pagesOrderedById: false
+  #   attributes:
+  #     - name: email
+  #       externalId: email
+  #       type: String
+  #       indexed: true
+  #       uniqueId: true 
+
   # https://docs.github.com/en/graphql/reference/objects#team  
   Team:
     displayName: Team
@@ -365,7 +382,7 @@ entities:
   TeamMember:
     parent: Team
     displayName: TeamMember
-    externalId: members
+    externalId: $.members.edges
     description: Entity representing a GitHub team each user belongs to.
     syncFrequency: HOURLY
     syncMinInterval: 1
@@ -375,109 +392,114 @@ entities:
     pagesOrderedById: false
     attributes:
       - name: id
-        externalId: id
+        externalId: $.node.id
         type: String
         indexed: true
         uniqueId: true
+      # Note: Role represents the TeamMember's role on the team.
+      # https://docs.github.com/en/graphql/reference/enums#teammemberrole
+      - name: role
+        externalId: role
+        type: String
       - name: avatarUrl
-        externalId: avatarUrl
+        externalId: $.node.avatarUrl
         type: String
       - name: bio
-        externalId: bio
+        externalId: $.node.bio
         type: String
       - name: bioHTML
-        externalId: bioHTML
+        externalId: $.node.bioHTML
         type: String
       - name: company
-        externalId: company
+        externalId: $.node.company
         type: String
       - name: companyHTML
-        externalId: companyHTML
+        externalId: $.node.companyHTML
         type: String
       - name: createdAt
-        externalId: createdAt
+        externalId: $.node.createdAt
         type: DateTime
       - name: databaseId
-        externalId: databaseId
+        externalId: $.node.databaseId
         type: Int
       - name: email
-        externalId: email
+        externalId: $.node.email
         type: String
       - name: login
-        externalId: login
+        externalId: $.node.login
         type: String
       - name: isBountyHunter
-        externalId: isBountyHunter
+        externalId: $.node.isBountyHunter
         type: Bool
       - name: isCampusExpert
-        externalId: isCampusExpert
+        externalId: $.node.isCampusExpert
         type: Bool
       - name: isDeveloperProgramMember
-        externalId: isDeveloperProgramMember
+        externalId: $.node.isDeveloperProgramMember
         type: Bool
       - name: isEmployee
-        externalId: isEmployee
+        externalId: $.node.isEmployee
         type: Bool
       - name: isFollowingViewer
-        externalId: isFollowingViewer
+        externalId: $.node.isFollowingViewer
         type: Bool
       - name: isHireable
-        externalId: isHireable
+        externalId: $.node.isHireable
         type: Bool
       - name: isSiteAdmin
-        externalId: isSiteAdmin
+        externalId: $.node.isSiteAdmin
         type: Bool
       - name: isViewer
-        externalId: isViewer
+        externalId: $.node.isViewer
         type: Bool
       - name: location
-        externalId: location
+        externalId: $.node.location
         type: String
       - name: name
-        externalId: name
+        externalId: $.node.name
         type: String
       - name: pinnedItemsRemaining
-        externalId: pinnedItemsRemaining
+        externalId: $.node.pinnedItemsRemaining
         type: Int
       - name: projectsResourcePath
-        externalId: projectsResourcePath
+        externalId: $.node.projectsResourcePath
         type: String
       - name: projectsUrl
-        externalId: projectsUrl
+        externalId: $.node.projectsUrl
         type: String
       - name: resourcePath
-        externalId: resourcePath
+        externalId: $.node.resourcePath
         type: String
       - name: twitterUsername
-        externalId: twitterUsername
+        externalId: $.node.twitterUsername
         type: String
       - name: updatedAt
-        externalId: updatedAt
+        externalId: $.node.updatedAt
         type: DateTime
       - name: url
-        externalId: url
+        externalId: $.node.url
         type: String
       - name: viewerCanChangePinnedItems
-        externalId: viewerCanChangePinnedItems
+        externalId: $.node.viewerCanChangePinnedItems
         type: Bool
       - name: viewerCanCreateProjects
-        externalId: viewerCanCreateProjects
+        externalId: $.node.viewerCanCreateProjects
         type: Bool
       - name: viewerCanFollow
-        externalId: viewerCanFollow
+        externalId: $.node.viewerCanFollow
         type: Bool
       - name: viewerIsFollowing
-        externalId: viewerIsFollowing
+        externalId: $.node.viewerIsFollowing
         type: Bool
       - name: websiteUrl
-        externalId: websiteUrl
+        externalId: $.node.websiteUrl
         type: String
   # Fetched from the 'repositories' attribute belonging to the Teams entity.
   # TeamRepository is a Repository entity type: https://docs.github.com/en/graphql/reference/objects#repository
   TeamRepository:
     parent: Team
     displayName: TeamRepository
-    externalId: repositories
+    externalId: $.repositories.edges
     description: Entity representing a GitHub repository assigned to a team.
     syncFrequency: HOURLY
     syncMinInterval: 1
@@ -487,174 +509,179 @@ entities:
     pagesOrderedById: false
     attributes:
       - name: id
-        externalId: id
+        externalId: $.node.id
         type: String
         indexed: true
         uniqueId: true
+        # Permission is the Team's permission level for this repository
+        # https://docs.github.com/en/graphql/reference/enums#repositorypermission
+      - name: permission 
+        externalId: permission
+        type: String
       - name: allowUpdateBranch
-        externalId: allowUpdateBranch
+        externalId: $.node.allowUpdateBranch
         type: Bool
       - name: archivedAt
-        externalId: archivedAt
+        externalId: $.node.archivedAt
         type: DateTime
       - name: autoMergeAllowed
-        externalId: autoMergeAllowed
+        externalId: $.node.autoMergeAllowed
         type: Bool
       - name: createdAt
-        externalId: createdAt
+        externalId: $.node.createdAt
         type: DateTime
       - name: databaseId
-        externalId: databaseId
+        externalId: $.node.databaseId
         type: Int
       - name: deleteBranchOnMerge
-        externalId: deleteBranchOnMerge
+        externalId: $.node.deleteBranchOnMerge
         type: Bool
       - name: description
-        externalId: description
+        externalId: $.node.description
         type: String
       - name: descriptionHTML
-        externalId: descriptionHTML
+        externalId: $.node.descriptionHTML
         type: String
       - name: diskUsage
-        externalId: diskUsage
+        externalId: $.node.diskUsage
         type: Int
       - name: forkCount
-        externalId: forkCount
+        externalId: $.node.forkCount
         type: Int
       - name: forkingAllowed
-        externalId: forkingAllowed
+        externalId: $.node.forkingAllowed
         type: Bool
       - name: hasDiscussionsEnabled
-        externalId: hasDiscussionsEnabled
+        externalId: $.node.hasDiscussionsEnabled
         type: Bool
       - name: hasIssuesEnabled
-        externalId: hasIssuesEnabled
+        externalId: $.node.hasIssuesEnabled
         type: Bool
       - name: hasProjectsEnabled
-        externalId: hasProjectsEnabled
+        externalId: $.node.hasProjectsEnabled
         type: Bool
       - name: hasVulnerabilityAlertsEnabled
-        externalId: hasVulnerabilityAlertsEnabled
+        externalId: $.node.hasVulnerabilityAlertsEnabled
         type: Bool
       - name: hasWikiEnabled
-        externalId: hasWikiEnabled
+        externalId: $.node.hasWikiEnabled
         type: Bool
       - name: homepageUrl
-        externalId: homepageUrl
+        externalId: $.node.homepageUrl
         type: String
       - name: isArchived
-        externalId: isArchived
+        externalId: $.node.isArchived
         type: Bool
       - name: isBlankIssuesEnabled
-        externalId: isBlankIssuesEnabled
+        externalId: $.node.isBlankIssuesEnabled
         type: Bool
       - name: isDisabled
-        externalId: isDisabled
+        externalId: $.node.isDisabled
         type: Bool
       - name: isEmpty
-        externalId: isEmpty
+        externalId: $.node.isEmpty
         type: Bool
       - name: isInOrganization
-        externalId: isInOrganization
+        externalId: $.node.isInOrganization
         type: Bool
       - name: isFork
-        externalId: isFork
+        externalId: $.node.isFork
         type: Bool
       - name: isLocked
-        externalId: isLocked
+        externalId: $.node.isLocked
         type: Bool
       - name: isMirror
-        externalId: isMirror
+        externalId: $.node.isMirror
         type: Bool
       - name: isPrivate
-        externalId: isPrivate
+        externalId: $.node.isPrivate
         type: Bool
       - name: isSecurityPolicyEnabled
-        externalId: isSecurityPolicyEnabled
+        externalId: $.node.isSecurityPolicyEnabled
         type: Bool
       - name: isTemplate
-        externalId: isTemplate
+        externalId: $.node.isTemplate
         type: Bool
       - name: isUserConfigurationRepository
-        externalId: isUserConfigurationRepository
+        externalId: $.node.isUserConfigurationRepository
         type: Bool
       - name: mergeCommitAllowed
-        externalId: mergeCommitAllowed
+        externalId: $.node.mergeCommitAllowed
         type: Bool
       - name: mirrorUrl
-        externalId: mirrorUrl
+        externalId: $.node.mirrorUrl
         type: String
       - name: name
-        externalId: name
+        externalId: $.node.name
         type: String
       - name: nameWithOwner
-        externalId: nameWithOwner
+        externalId: $.node.nameWithOwner
         type: String
       - name: openGraphImageUrl
-        externalId: openGraphImageUrl
+        externalId: $.node.openGraphImageUrl
         type: String
       - name: projectsResourcePath
-        externalId: projectsResourcePath
+        externalId: $.node.projectsResourcePath
         type: String
       - name: projectsUrl
-        externalId: projectsUrl
+        externalId: $.node.projectsUrl
         type: String
       - name: pushedAt
-        externalId: pushedAt
+        externalId: $.node.pushedAt
         type: DateTime
       - name: rebaseMergeAllowed
-        externalId: rebaseMergeAllowed
+        externalId: $.node.rebaseMergeAllowed
         type: Bool
       - name: resourcePath
-        externalId: resourcePath
+        externalId: $.node.resourcePath
         type: String
       - name: securityPolicyUrl
-        externalId: securityPolicyUrl
+        externalId: $.node.securityPolicyUrl
         type: String
       - name: shortDescriptionHTML
-        externalId: shortDescriptionHTML
+        externalId: $.node.shortDescriptionHTML
         type: String
       - name: squashMergeAllowed
-        externalId: squashMergeAllowed
+        externalId: $.node.squashMergeAllowed
         type: Bool
       - name: stargazerCount
-        externalId: stargazerCount
+        externalId: $.node.stargazerCount
         type: Int
       - name: tempCloneToken
-        externalId: tempCloneToken
+        externalId: $.node.tempCloneToken
         type: String
       - name: updatedAt
-        externalId: updatedAt
+        externalId: $.node.updatedAt
         type: DateTime
       - name: url
-        externalId: url
+        externalId: $.node.url
         type: String
       - name: usesCustomOpenGraphImage
-        externalId: usesCustomOpenGraphImage
+        externalId: $.node.usesCustomOpenGraphImage
         type: Bool
       - name: viewerCanAdminister
-        externalId: viewerCanAdminister
+        externalId: $.node.viewerCanAdminister
         type: Bool
       - name: viewerCanCreateProjects
-        externalId: viewerCanCreateProjects
+        externalId: $.node.viewerCanCreateProjects
         type: Bool
       - name: viewerCanSubscribe
-        externalId: viewerCanSubscribe
+        externalId: $.node.viewerCanSubscribe
         type: Bool
       - name: viewerCanUpdateTopics
-        externalId: viewerCanUpdateTopics
+        externalId: $.node.viewerCanUpdateTopics
         type: Bool
       - name: viewerDefaultCommitEmail
-        externalId: viewerDefaultCommitEmail
+        externalId: $.node.viewerDefaultCommitEmail
         type: String
       - name: viewerHasStarred
-        externalId: viewerHasStarred
+        externalId: $.node.viewerHasStarred
         type: Bool
       - name: viewerPossibleCommitEmails
-        externalId: viewerPossibleCommitEmails
+        externalId: $.node.viewerPossibleCommitEmails
         type: String
       - name: webCommitSignoffRequired
-        externalId: webCommitSignoffRequired
+        externalId: $.node.webCommitSignoffRequired
         type: Bool
   # https://docs.github.com/en/graphql/reference/objects#repository
   Repository:
@@ -859,7 +886,7 @@ entities:
     pagesOrderedById: false
     attributes:
       - name: id
-        externalId: id
+        externalId: $.node.id
         type: String
         indexed: true
         uniqueId: true
@@ -868,105 +895,142 @@ entities:
         externalId: orgId
         type: String
       # Note: This attribute has been added in post-processing and is not part of the User entity.
-      - name: repositoryId
-        externalId: repositoryId
+      - name: repoId
+        externalId: repoId
+        type: String
+      # Note: Collaborator.permission represents the permission that this collaborator has in the repository with id 'repoId'
+      - name: permission
+        externalId: permission
         type: String
       - name: avatarUrl
-        externalId: avatarUrl
+        externalId: $.node.avatarUrl
         type: String
       - name: bio
-        externalId: bio
+        externalId: $.node.bio
         type: String
       - name: bioHTML
-        externalId: bioHTML
+        externalId: $.node.bioHTML
         type: String
       - name: company
-        externalId: company
+        externalId: $.node.company
         type: String
       - name: companyHTML
-        externalId: companyHTML
+        externalId: $.node.companyHTML
         type: String
       - name: createdAt
-        externalId: createdAt
+        externalId: $.node.createdAt
         type: DateTime
       - name: databaseId
-        externalId: databaseId
+        externalId: $.node.databaseId
         type: Int
       - name: email
-        externalId: email
+        externalId: $.node.email
         type: String
       - name: login
-        externalId: login
+        externalId: $.node.login
         type: String
       - name: isBountyHunter
-        externalId: isBountyHunter
+        externalId: $.node.isBountyHunter
         type: Bool
       - name: isCampusExpert
-        externalId: isCampusExpert
+        externalId: $.node.isCampusExpert
         type: Bool
       - name: isDeveloperProgramMember
-        externalId: isDeveloperProgramMember
+        externalId: $.node.isDeveloperProgramMember
         type: Bool
       - name: isEmployee
-        externalId: isEmployee
+        externalId: $.node.isEmployee
         type: Bool
       - name: isFollowingViewer
-        externalId: isFollowingViewer
+        externalId: $.node.isFollowingViewer
         type: Bool
       - name: isHireable
-        externalId: isHireable
+        externalId: $.node.isHireable
         type: Bool
       - name: isSiteAdmin
-        externalId: isSiteAdmin
+        externalId: $.node.isSiteAdmin
         type: Bool
       - name: isViewer
-        externalId: isViewer
+        externalId: $.node.isViewer
         type: Bool
       - name: location
-        externalId: location
+        externalId: $.node.location
         type: String
       - name: name
-        externalId: name
+        externalId: $.node.name
         type: String
-      - name: organizationVerifiedDomainEmails
-        externalId: organizationVerifiedDomainEmails
-        type: String
-        list: true
       - name: pinnedItemsRemaining
-        externalId: pinnedItemsRemaining
+        externalId: $.node.pinnedItemsRemaining
         type: Int
       - name: projectsResourcePath
-        externalId: projectsResourcePath
+        externalId: $.node.projectsResourcePath
         type: String
       - name: projectsUrl
-        externalId: projectsUrl
+        externalId: $.node.projectsUrl
         type: String
       - name: resourcePath
-        externalId: resourcePath
+        externalId: $.node.resourcePath
         type: String
       - name: twitterUsername
-        externalId: twitterUsername
+        externalId: $.node.twitterUsername
         type: String
       - name: updatedAt
-        externalId: updatedAt
+        externalId: $.node.updatedAt
         type: DateTime
       - name: url
-        externalId: url
+        externalId: $.node.url
         type: String
       - name: viewerCanChangePinnedItems
-        externalId: viewerCanChangePinnedItems
+        externalId: $.node.viewerCanChangePinnedItems
         type: Bool
       - name: viewerCanCreateProjects
-        externalId: viewerCanCreateProjects
+        externalId: $.node.viewerCanCreateProjects
         type: Bool
       - name: viewerCanFollow
-        externalId: viewerCanFollow
+        externalId: $.node.viewerCanFollow
         type: Bool
       - name: viewerIsFollowing
-        externalId: viewerIsFollowing
+        externalId: $.node.viewerIsFollowing
         type: Bool
       - name: websiteUrl
-        externalId: websiteUrl
+        externalId: $.node.websiteUrl
         type: String
+  # CollaboratorOVDE:
+  #   parent: Collaborator
+  #   displayName: CollaboratorOVDE
+  #   externalId: $.node.organizationVerifiedDomainEmails
+  #   description: Entity representing a GitHub user's organization verified domain emails.
+  #   syncFrequency: HOURLY
+  #   syncMinInterval: 1
+  #   apiCallFrequency: SECONDLY
+  #   apiCallMinInterval: 1
+  #   pageSize: 100
+  #   pagesOrderedById: false
+  #   attributes:
+  #     - name: email
+  #       externalId: email
+  #       type: String
+  #       indexed: true
+  #       uniqueId: true
 relationships:
+  OrganizationToUser:
+    name: MemberOf
+    fromAttribute: Organization.id
+    toAttribute: User.orgId
+  OrganizationToRepository:
+    name: MemberOf
+    fromAttribute: Organization.id
+    toAttribute: Repository.orgId 
+  OrganizationToTeam:
+    name: MemberOf
+    fromAttribute: Organization.id
+    toAttribute: Team.orgId   
+  UserToCollaborator:
+    name: SameAs
+    fromAttribute: User.id
+    toAttribute: Collaborator.id
+  UserToTeamMember:
+    name: SameAs
+    fromAttribute: User.id
+    toAttribute: $.members.edges.id
 
