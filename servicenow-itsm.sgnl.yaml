@@ -726,94 +726,117 @@ entities:
 relationships:
   UserManager:
     name: Manager
+    displayName: User Manager
     fromAttribute: sys_user.manager
     toAttribute: sys_user.sys_id
   GroupManager:
     name: Manager
+    displayName: Group Manager
     fromAttribute: sys_user_group.manager
     toAttribute: sys_user.sys_id
   GroupParent:
     name: Parent
+    displayName: Group Parent
     fromAttribute: sys_user_group.parent
     toAttribute: sys_user_group.sys_id
   GroupDefaultAssignee:
     name: DefaultAssignee
+    displayName: Group Default Assignee
     fromAttribute: sys_user_group.default_assignee
     toAttribute: sys_user.sys_id
   MemberOfAssignmentGroup:
     name: MemberOfAssignmentGroup
+    displayName: Member Of Assignment Group
     fromAttribute: sys_user.sys_id
     toAttribute: sys_user_grmember.user
   AssignmentGroupToGroupMember:
     name: AssignmentGroupToGroupMember
+    displayName: Assignment Group To Group Member
     fromAttribute: sys_user_group.sys_id
     toAttribute: sys_user_grmember.group
   IncidentAssignedTo:
     name: AssignedToUser
+    displayName: Incident Assigned To
     fromAttribute: incident.assigned_to
     toAttribute: sys_user.sys_id
   IncidentAssignedToGroup:
     name: AssignedToGroup
+    displayName: Incident Assigned To Group
     fromAttribute: incident.assignment_group
     toAttribute: sys_user_group.sys_id
   IncidentBusinessApp:
     name: IncidentBusinessApp
+    displayName: Incident Business App
     fromAttribute: incident.cmdb_ci
     toAttribute: cmdb_ci_business_app.sys_id
   IncidentCalledBy:
     name: CalledBy
+    displayName: Incident Called By
     fromAttribute: incident.caller_id
     toAttribute: sys_user.sys_id
   ParentIncident:
     name: Parent
+    displayName: Parent Incident
     fromAttribute: incident.parent_incident
     toAttribute: incident.sys_id
   IncidentCausedBy:
     name: CausedBy
+    displayName: Incident Caused By
     fromAttribute: incident.caused_by
     toAttribute: change_request.sys_id
   IncidentChangeRequest:
     name: ChangeRequest
+    displayName: Incident Change Request
     fromAttribute: incident.rfc
     toAttribute: change_request.sys_id
   IncidentProblem:
     name: Problem
+    displayName: Incident Problem
     fromAttribute: incident.problem_id
     toAttribute: problem.sys_id
   IncidentOpenedBy:
     name: OpenedBy
+    displayName: Incident Opened By
     fromAttribute: incident.opened_by
     toAttribute: sys_user.sys_id
   IncidentResolvedBy:
     name: ResolvedBy
+    displayName: Incident Resolved By
     fromAttribute: incident.resolved_by
     toAttribute: sys_user.sys_id
   ChangeRequestedBy:
     name: RequestedBy
+    displayName: Change Requested By
     fromAttribute: change_request.requested_by
     toAttribute: sys_user.sys_id
   ChangeRequestAssignedTo:
     name: AssignedToUser
+    displayName: Change Request Assigned To
     fromAttribute: change_request.assigned_to
     toAttribute: sys_user.sys_id
   ChangeRequestAssignedToGroup:
     name: AssignedToGroup
+    displayName: Change Request Assigned To Group
     fromAttribute: change_request.assignment_group
     toAttribute: sys_user_group.sys_id
   ProblemAssignedTo:
     name: AssignedToUser
+    displayName: Problem Assigned To
     fromAttribute: problem.assigned_to
     toAttribute: sys_user.sys_id
   ProblemAssignedToGroup:
     name: AssignedToGroup
+    displayName: Problem Assigned To Group
     fromAttribute: problem.assignment_group
     toAttribute: sys_user_group.sys_id
   ProblemChangeRequest:
     name: ProblemChangeRequest
+    displayName: Problem Change Request
     fromAttribute: problem.rfc
     toAttribute: change_request.sys_id
   UserInGroup:
     name: UserInGroup
+    displayName: User In Group
     path:
       - relationship: MemberOfAssignmentGroup
         direction: Forward

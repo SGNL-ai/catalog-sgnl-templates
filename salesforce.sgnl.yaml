@@ -965,77 +965,96 @@ entities:
 relationships:
   UserAccount:
     name: Account
+    displayName: User Account
     fromAttribute: User.AccountId
     toAttribute: Account.Id
   CaseAccount:
     name: Account
+    displayName: Case Account
     fromAttribute: Case.AccountId
     toAttribute: Account.Id
   AccountCreatedBy:
     name: CreatedBy
+    displayName: Account Created By
     fromAttribute: Account.CreatedById
     toAttribute: User.Id
   CaseCreatedBy:
     name: CreatedBy
+    displayName: Case Created By
     fromAttribute: Case.CreatedById
     toAttribute: User.Id
   CustomerCreatedBy:
     name: CreatedBy
+    displayName: Customer Created By
     fromAttribute: Customer.CreatedById
     toAttribute: User.Id
   UserCreatedBy:
     name: CreatedBy
+    displayName: User Created By
     fromAttribute: User.CreatedById
     toAttribute: User.Id
   AccountLastModifiedBy:
     name: LastModifiedBy
+    displayName: Account Last Modified By
     fromAttribute: Account.LastModifiedById
     toAttribute: User.Id
   CaseLastModifiedBy:
     name: LastModifiedBy
+    displayName: Case Last Modified By
     fromAttribute: Case.LastModifiedById
     toAttribute: User.Id
   CustomerLastModifiedBy:
     name: LastModifiedBy
+    displayName: Customer Last Modified By
     fromAttribute: Customer.LastModifiedById
     toAttribute: User.Id
   UserLastModifiedBy:
     name: LastModifiedBy
+    displayName: User Last Modified By
     fromAttribute: User.LastModifiedById
     toAttribute: User.Id
   UserManager:
     name: Manager
+    displayName: User Manager
     fromAttribute: User.ManagerId
     toAttribute: User.Id
   AccountParent:
     name: Parent
+    displayName: Account Parent
     fromAttribute: Account.ParentId
     toAttribute: Account.Id
   CaseParent:
     name: Parent
+    displayName: Case Parent
     fromAttribute: Case.ParentId
     toAttribute: Case.Id
   AccountOwner:
     name: Owner
+    displayName: Account Owner
     fromAttribute: Account.OwnerId
     toAttribute: User.Id
   CaseOwner:
     name: Owner
+    displayName: Case Owner
     fromAttribute: Case.OwnerId
     toAttribute: User.Id
   CustomerOwner:
     name: Owner
+    displayName: Customer Owner
     fromAttribute: Customer.OwnerId
     toAttribute: User.Id
   UserDelegatedApprover:
     name: DelegatedApprover
+    displayName: User Delegated Approver
     fromAttribute: User.DelegatedApproverId
     toAttribute: User.Id
   AccountMasterRecord:
     name: MasterRecord
+    displayName: Account Master Record
     fromAttribute: Account.MasterRecordId
     toAttribute: Account.Id
   CaseMasterRecord:
     name: MasterRecord
+    displayName: Case Master Record
     fromAttribute: Case.MasterRecordId
     toAttribute: Case.Id

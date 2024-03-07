@@ -222,17 +222,20 @@ relationships:
   # (Entitlement) -[EntitlementMember]-> (AccountEntitlement)
   EntitlementMember:
     name: EntitlementMember
+    displayName: Entitlement Member
     fromAttribute: entitlements.id
     toAttribute: accountEntitlements.entitlementId
   # (AccountEntitlement) -[AccountMember]-> (Account)
   AccountMember:
     name: AccountMember
+    displayName: Account Member
     fromAttribute: accountEntitlements.accountId
     toAttribute: accounts.id
   # Path relationship based on the previous two join relationships.
   # (Entitlement) -[Member]-> (Account)
   Member:
     name: Member
+    displayName: Member
     path:
       - relationship: EntitlementMember
         direction: Forward
@@ -241,5 +244,6 @@ relationships:
   # (Account) -[AccountIdentity]-> (Identity)
   AccountIdentity:
     name: AccountIdentity
+    displayName: Account Identity
     fromAttribute: accounts.identityId
     toAttribute: identities.id

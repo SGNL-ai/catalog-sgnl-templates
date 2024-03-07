@@ -319,14 +319,17 @@ relationships:
     childEntity: phones
   MemberOfGroup:
     name: MemberOf
+    displayName: Member Of Group
     fromAttribute: groups.group_id
     toAttribute: Group.group_id
   OwnerOfPhone:
     name: MemberOf
+    displayName: Owner Of Phone
     fromAttribute: phones.phone_id
     toAttribute: Phone.phone_id
   UserMemberGroup:
     name: Group
+    displayName: User Member Group
     path:
       - relationship: ParentOfGroupMember
         direction: Backward
@@ -334,6 +337,7 @@ relationships:
         direction: Forward
   UserPhoneOwner:
     name: Phone
+    displayName: User Phone Owner
     path:
       - relationship: ParentOfPhoneOwner
         direction: Backward

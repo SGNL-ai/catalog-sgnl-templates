@@ -228,18 +228,22 @@ entities:
 relationships:
   Member:
     name: Member
+    displayName: Member
     fromAttribute: GroupMember.userId
     toAttribute: User.id
   GroupMembership:
     name: GroupMembership
+    displayName: Group Membership
     fromAttribute: GroupMember.groupId
     toAttribute: Group.id
   UserManager:
     name: Manager
+    displayName: User Manager
     fromAttribute: User.profile__managerId
     toAttribute: User.id
   UserMemberGroup:
     name: Group
+    displayName: User Member Group
     path:
       - relationship: Member
         direction: Backward

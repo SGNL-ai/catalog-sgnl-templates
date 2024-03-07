@@ -490,17 +490,20 @@ relationships:
   # (User) -[UserMember]-> (GroupMember)
   UserMember:
     name: UserMember
+    displayName: User Member
     fromAttribute: User.accountId
     toAttribute: GroupMember.accountId
   # (GroupMember) -[GroupMember]-> (Group)
   GroupMember:
     name: GroupMember
+    displayName: Group Member
     fromAttribute: GroupMember.groupId
     toAttribute: Group.groupId
   # Path relationship based on the previous two relationships.
   # (User) -[Group]-> (Group)
   UserMemberGroup:
     name: Group
+    displayName: User Member Group
     path:
       - relationship: UserMember
         direction: Forward
@@ -509,20 +512,24 @@ relationships:
   # (Object) -[ObjectMember]-> (Workspace)
   ObjectMember:
     name: ObjectMember
+    displayName: Object Member
     fromAttribute: Object.workspaceId
     toAttribute: Workspace.workspaceId
   # (Issue) -[AssignedTo]-> (User)
   IssueAssignee:
     name: AssignedTo
+    displayName: Issue Assignee
     fromAttribute: Issue.fields__assignee__accountId
     toAttribute: User.accountId
   # (Issue) -[CreatedBy]-> (User)
   IssueCreator:
     name: CreatedBy
+    displayName: Issue Creator
     fromAttribute: Issue.fields__creator__accountId
     toAttribute: User.accountId
   # (Issue) -[ReportedBy]-> (User)
   IssueReporter:
     name: ReportedBy
+    displayName: Issue Reporter
     fromAttribute: Issue.fields__reporter__accountId
     toAttribute: User.accountId
