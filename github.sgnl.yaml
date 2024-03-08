@@ -1,14 +1,16 @@
 # GitHub Configuration YAML
 displayName: "GitHub"
-icon: "PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjNkRCRTUwIi8+CjxnIG9wYWNpdHk9IjAuODUiPgo8cGF0aCBkPSJNMjMuNDcyIDMxLjc2OEg4VjM5LjcwNEgxNS43NDRDMTkuODg4IDM5LjcwNCAyMy4yNzIgMzYuMTkyIDIzLjQ3MiAzMS43NjhaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjxwYXRoIGQ9Ik0xNS43NDQgMjNIOFYzMC45MzZIMjMuNDhDMjMuMjcyIDI2LjUxMiAxOS44ODggMjMgMTUuNzQ0IDIzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ4LjI2NCAyM0M0NC4xMiAyMyA0MC43MjggMjYuNTIgNDAuNTI4IDMwLjkzNkg1NS45OTJDNTUuOCAyNi41MTIgNTIuNDA4IDIzIDQ4LjI2NCAyM1oiIGZpbGw9IndoaXRlIi8+CjxnIG9wYWNpdHk9IjAuODUiPgo8cGF0aCBkPSJNNTYgMzEuNzY4SDQwLjUyOEM0MC43MjggMzYuMTkyIDQ0LjExMiAzOS43MDQgNDguMjY0IDM5LjcwNEM1Mi40MDggMzkuNzA0IDU1LjggMzYuMTkyIDU2IDMxLjc2OFoiIGZpbGw9IndoaXRlIi8+CjwvZz4KPHBhdGggZD0iTTI0LjI1NiAyM1YzMS4zNTJDMjQuMjU2IDM1LjgyNCAyNy41MTIgMzkuNDggMzEuNjE2IDM5LjY5NlYyM0gyNC4yNTZaIiBmaWxsPSJ3aGl0ZSIvPgo8ZyBvcGFjaXR5PSIwLjg1Ij4KPHBhdGggZD0iTTM5Ljc0NCAyM0gzMi4zOTJWMzkuNzA0SDM5Ljc0NFYzMS4zNTJWMjNaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+Cjwvc3ZnPg=="
+icon: "PHN2ZyB3aWR0aD0iMTAyNCIgaGVpZ2h0PSIxMDI0IiB2aWV3Qm94PSIwIDAgMTAyNCAxMDI0IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTggMEMzLjU4IDAgMCAzLjU4IDAgOEMwIDExLjU0IDIuMjkgMTQuNTMgNS40NyAxNS41OUM1Ljg3IDE1LjY2IDYuMDIgMTUuNDIgNi4wMiAxNS4yMUM2LjAyIDE1LjAyIDYuMDEgMTQuMzkgNi4wMSAxMy43MkM0IDE0LjA5IDMuNDggMTMuMjMgMy4zMiAxMi43OEMzLjIzIDEyLjU1IDIuODQgMTEuODQgMi41IDExLjY1QzIuMjIgMTEuNSAxLjgyIDExLjEzIDIuNDkgMTEuMTJDMy4xMiAxMS4xMSAzLjU3IDExLjcgMy43MiAxMS45NEM0LjQ0IDEzLjE1IDUuNTkgMTIuODEgNi4wNSAxMi42QzYuMTIgMTIuMDggNi4zMyAxMS43MyA2LjU2IDExLjUzQzQuNzggMTEuMzMgMi45MiAxMC42NCAyLjkyIDcuNThDMi45MiA2LjcxIDMuMjMgNS45OSAzLjc0IDUuNDNDMy42NiA1LjIzIDMuMzggNC40MSAzLjgyIDMuMzFDMy44MiAzLjMxIDQuNDkgMy4xIDYuMDIgNC4xM0M2LjY2IDMuOTUgNy4zNCAzLjg2IDguMDIgMy44NkM4LjcgMy44NiA5LjM4IDMuOTUgMTAuMDIgNC4xM0MxMS41NSAzLjA5IDEyLjIyIDMuMzEgMTIuMjIgMy4zMUMxMi42NiA0LjQxIDEyLjM4IDUuMjMgMTIuMyA1LjQzQzEyLjgxIDUuOTkgMTMuMTIgNi43IDEzLjEyIDcuNThDMTMuMTIgMTAuNjUgMTEuMjUgMTEuMzMgOS40NyAxMS41M0M5Ljc2IDExLjc4IDEwLjAxIDEyLjI2IDEwLjAxIDEzLjAxQzEwLjAxIDE0LjA4IDEwIDE0Ljk0IDEwIDE1LjIxQzEwIDE1LjQyIDEwLjE1IDE1LjY3IDEwLjU1IDE1LjU5QzEzLjcxIDE0LjUzIDE2IDExLjUzIDE2IDhDMTYgMy41OCAxMi40MiAwIDggMFoiIHRyYW5zZm9ybT0ic2NhbGUoNjQpIiBmaWxsPSIjMUIxRjIzIi8+Cjwvc3ZnPgo="
 description: "GitHub as a System of Record"
-address: "https://api.github.com/graphql" # Enterprise Cloud 
+# Enterprise Cloud: https://api.github.com/graphql 
+# Enterprise Server: {hostname}/api/graphql
+address: "https://github-enterprise-server.sgnldemos.com/api/graphql"
 defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: "GitHub-1.0.0"
-adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogIlNHTkwtY2xvdWQyIgp9" # { enterpriseSlug: "SGNL-cloud2" }
+adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogIlNHTkwiCn0=" # { enterpriseSlug: "SGNL" }
 auth:
   - bearer: # https://docs.github.com/en/enterprise-server@3.10/authentication/keeping-your-account-and-data-secure/about-authentication-to-github
       authToken: "Bearer {{input token}}"
@@ -57,7 +59,7 @@ entities:
         type: DateTime
       - name: databaseId
         externalId: databaseId
-        type: Int
+        type: Int64
       - name: description
         externalId: description
         type: String
@@ -93,7 +95,7 @@ entities:
         type: String 
       - name: pinnedItemsRemaining
         externalId: pinnedItemsRemaining
-        type: Int
+        type: Int64
       - name: projectsResourcePath
         externalId: projectsResourcePath
         type: String
@@ -163,6 +165,7 @@ entities:
       - name: orgId
         externalId: orgId
         type: String
+        indexed: true
       # Note: User.role represents the role of a user in the organization with id 'orgId'.
       - name: role
         externalId: role
@@ -187,7 +190,7 @@ entities:
         type: DateTime
       - name: databaseId
         externalId: $.node.databaseId
-        type: Int
+        type: Int64
       - name: email
         externalId: $.node.email
         type: String
@@ -226,7 +229,7 @@ entities:
         type: String
       - name: pinnedItemsRemaining
         externalId: $.node.pinnedItemsRemaining
-        type: Int
+        type: Int64
       - name: projectsResourcePath
         externalId: $.node.projectsResourcePath
         type: String
@@ -260,24 +263,23 @@ entities:
       - name: websiteUrl
         externalId: $.node.websiteUrl
         type: String
-  # UserOVDE:
-  #   parent: User
-  #   displayName: UserOVDE
-  #   externalId: $.node.organizationVerifiedDomainEmails
-  #   description: Entity representing a GitHub user's organization verified domain emails.
-  #   syncFrequency: HOURLY
-  #   syncMinInterval: 1
-  #   apiCallFrequency: SECONDLY
-  #   apiCallMinInterval: 1
-  #   pageSize: 100
-  #   pagesOrderedById: false
-  #   attributes:
-  #     - name: email
-  #       externalId: email
-  #       type: String
-  #       indexed: true
-  #       uniqueId: true 
-
+  UserOVDE:
+    parent: User
+    displayName: UserOVDE
+    externalId: $.node.organizationVerifiedDomainEmails
+    description: Entity representing a GitHub user's organization verified domain emails.
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: email
+        externalId: email
+        type: String
+        indexed: true
+        uniqueId: true 
   # https://docs.github.com/en/graphql/reference/objects#team  
   Team:
     displayName: Team
@@ -303,6 +305,7 @@ entities:
       - name: orgId
         externalId: orgId
         type: String
+        indexed: true
       - name: avatarUrl
         externalId: avatarUrl
         type: String
@@ -314,7 +317,7 @@ entities:
         type: DateTime
       - name: databaseId
         externalId: databaseId
-        type: Int
+        type: Int64
       - name: description
         externalId: description
         type: String
@@ -421,7 +424,7 @@ entities:
         type: DateTime
       - name: databaseId
         externalId: $.node.databaseId
-        type: Int
+        type: Int64
       - name: email
         externalId: $.node.email
         type: String
@@ -460,7 +463,7 @@ entities:
         type: String
       - name: pinnedItemsRemaining
         externalId: $.node.pinnedItemsRemaining
-        type: Int
+        type: Int64
       - name: projectsResourcePath
         externalId: $.node.projectsResourcePath
         type: String
@@ -532,7 +535,7 @@ entities:
         type: DateTime
       - name: databaseId
         externalId: $.node.databaseId
-        type: Int
+        type: Int64
       - name: deleteBranchOnMerge
         externalId: $.node.deleteBranchOnMerge
         type: Bool
@@ -544,10 +547,10 @@ entities:
         type: String
       - name: diskUsage
         externalId: $.node.diskUsage
-        type: Int
+        type: Int64
       - name: forkCount
         externalId: $.node.forkCount
-        type: Int
+        type: Int64
       - name: forkingAllowed
         externalId: $.node.forkingAllowed
         type: Bool
@@ -646,7 +649,7 @@ entities:
         type: Bool
       - name: stargazerCount
         externalId: $.node.stargazerCount
-        type: Int
+        type: Int64
       - name: tempCloneToken
         externalId: $.node.tempCloneToken
         type: String
@@ -708,6 +711,7 @@ entities:
       - name: orgId
         externalId: orgId
         type: String
+        indexed: true
       - name: allowUpdateBranch
         externalId: allowUpdateBranch
         type: Bool
@@ -722,7 +726,7 @@ entities:
         type: DateTime
       - name: databaseId
         externalId: databaseId
-        type: Int
+        type: Int64
       - name: deleteBranchOnMerge
         externalId: deleteBranchOnMerge
         type: Bool
@@ -734,10 +738,10 @@ entities:
         type: String
       - name: diskUsage
         externalId: diskUsage
-        type: Int
+        type: Int64
       - name: forkCount
         externalId: forkCount
-        type: Int
+        type: Int64
       - name: forkingAllowed
         externalId: forkingAllowed
         type: Bool
@@ -836,7 +840,7 @@ entities:
         type: Bool
       - name: stargazerCount
         externalId: stargazerCount
-        type: Int
+        type: Int64
       - name: tempCloneToken
         externalId: tempCloneToken
         type: String
@@ -870,6 +874,7 @@ entities:
       - name: viewerPossibleCommitEmails
         externalId: viewerPossibleCommitEmails
         type: String
+        list: true
       - name: webCommitSignoffRequired
         externalId: webCommitSignoffRequired
         type: Bool
@@ -894,10 +899,12 @@ entities:
       - name: orgId
         externalId: orgId
         type: String
+        indexed: true
       # Note: This attribute has been added in post-processing and is not part of the User entity.
       - name: repoId
         externalId: repoId
         type: String
+        indexed: true
       # Note: Collaborator.permission represents the permission that this collaborator has in the repository with id 'repoId'
       - name: permission
         externalId: permission
@@ -922,7 +929,7 @@ entities:
         type: DateTime
       - name: databaseId
         externalId: $.node.databaseId
-        type: Int
+        type: Int64
       - name: email
         externalId: $.node.email
         type: String
@@ -961,7 +968,7 @@ entities:
         type: String
       - name: pinnedItemsRemaining
         externalId: $.node.pinnedItemsRemaining
-        type: Int
+        type: Int64
       - name: projectsResourcePath
         externalId: $.node.projectsResourcePath
         type: String
@@ -995,42 +1002,68 @@ entities:
       - name: websiteUrl
         externalId: $.node.websiteUrl
         type: String
-  # CollaboratorOVDE:
-  #   parent: Collaborator
-  #   displayName: CollaboratorOVDE
-  #   externalId: $.node.organizationVerifiedDomainEmails
-  #   description: Entity representing a GitHub user's organization verified domain emails.
-  #   syncFrequency: HOURLY
-  #   syncMinInterval: 1
-  #   apiCallFrequency: SECONDLY
-  #   apiCallMinInterval: 1
-  #   pageSize: 100
-  #   pagesOrderedById: false
-  #   attributes:
-  #     - name: email
-  #       externalId: email
-  #       type: String
-  #       indexed: true
-  #       uniqueId: true
+  CollaboratorOVDE:
+    parent: Collaborator
+    displayName: CollaboratorOVDE
+    externalId: $.node.organizationVerifiedDomainEmails
+    description: Entity representing a GitHub user's organization verified domain emails.
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: email
+        externalId: email
+        type: String
+        indexed: true
+        uniqueId: true
 relationships:
-  OrganizationToUser:
+  ParentOfTeamMember:
+    childEntity: $.members.edges
+  ParentOfTeamRepository:
+    childEntity: $.repositories.edges
+  ParentOfCollaboratorOVDE:
+    childEntity: $.node.organizationVerifiedDomainEmails
+  ParentOfUserOVDE:
+    childEntity: $.node.organizationVerifiedDomainEmails
+  UserToOrganization:
     name: MemberOf
-    fromAttribute: Organization.id
-    toAttribute: User.orgId
-  OrganizationToRepository:
+    displayName: UserToOrganization
+    fromAttribute: User.orgId
+    toAttribute: Organization.id
+  RepositoryToOrganization:
+    displayName: RepositoryToOrganization
     name: MemberOf
-    fromAttribute: Organization.id
-    toAttribute: Repository.orgId 
-  OrganizationToTeam:
+    fromAttribute: Repository.orgId 
+    toAttribute: Organization.id
+  TeamToOrganization:
+    displayName: TeamToOrganization
     name: MemberOf
-    fromAttribute: Organization.id
-    toAttribute: Team.orgId   
+    fromAttribute: Team.orgId
+    toAttribute: Organization.id
+  CollaboratorToOrganization:
+    displayName: CollaboratorToOrganization
+    name: MemberOf
+    fromAttribute: Collaborator.orgId
+    toAttribute: Organization.id
+  CollaboratorToRepository:
+    displayName: CollaboratorToRepository
+    name: MemberOf
+    fromAttribute: Collaborator.repoId
+    toAttribute: Repository.id
   UserToCollaborator:
+    displayName: UserToCollaborator
     name: SameAs
-    fromAttribute: User.id
-    toAttribute: Collaborator.id
+    fromAttribute: User.$.node.id
+    toAttribute: Collaborator.$.node.id
   UserToTeamMember:
     name: SameAs
-    fromAttribute: User.id
-    toAttribute: $.members.edges.id
+    fromAttribute: User.$.node.id
+    toAttribute: $.members.edges.$.node.id
+  RepositoryToTeamRepository:
+    name: SameAs
+    fromAttribute: Repository.$.node.id
+    toAttribute: $.repositories.edges.$.node.id
 
