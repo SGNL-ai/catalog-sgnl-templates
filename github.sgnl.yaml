@@ -32,7 +32,6 @@ entities:
         type: String
         indexed: true
         uniqueId: true
-        relationshipAttributeId: Organization-id
       # Note: This attribute has been added in post-processing and is not part of the Organization entity.
       - name: enterpriseId
         externalId: enterpriseId
@@ -186,7 +185,6 @@ entities:
         type: String
         indexed: true
         uniqueId: true
-        relationshipAttributeId: User-id
       # Note: User.role represents the role of a user in the organization with id 'orgId'.
       - name: role
         externalId: role
@@ -420,7 +418,6 @@ entities:
         type: String
         indexed: true
         uniqueId: true
-        relationshipAttributeId: TeamMember-id
       # Note: Role represents the TeamMember's role on the team.
       # https://docs.github.com/en/graphql/reference/enums#teammemberrole
       - name: role
@@ -538,7 +535,6 @@ entities:
         type: String
         indexed: true
         uniqueId: true
-        relationshipAttributeId: TeamRepository-id
         # Permission is the Team's permission level for this repository
         # https://docs.github.com/en/graphql/reference/enums#repositorypermission
       - name: permission
@@ -726,7 +722,6 @@ entities:
         type: String
         indexed: true
         uniqueId: true
-        relationshipAttributeId: Repository-id
       # Note: This attribute has been added in post-processing and is not part of the Team entity.
       - name: enterpriseId
         externalId: enterpriseId
@@ -736,7 +731,6 @@ entities:
         externalId: orgId
         type: String
         indexed: true
-        relationshipAttributeId: Repository-orgId
       - name: allowUpdateBranch
         externalId: allowUpdateBranch
         type: Bool
@@ -937,7 +931,6 @@ entities:
         type: String
         indexed: true
         uniqueId: true
-        relationshipAttributeId: Collaborator-id
       # Note: This attribute has been added in post-processing and is not part of the User entity.
       - name: orgId
         externalId: orgId
@@ -1069,23 +1062,23 @@ relationships:
   RepositoryToOrganization:
     displayName: RepositoryToOrganization
     name: MemberOf
-    fromAttribute: Repository-orgId
-    toAttribute: Organization-id
+    fromAttribute: Repository.orgId
+    toAttribute: Organization.id
   TeamToOrganization:
     displayName: TeamToOrganization
     name: MemberOf
     fromAttribute: Team.orgId
-    toAttribute: Organization-id
+    toAttribute: Organization.id
   UserToOrganizationUser:
     displayName: UserToOrganizationUser
     name: MemberOf
-    fromAttribute: User-id
+    fromAttribute: User.id
     toAttribute: OrganizationUser.userId
   OrganizationUserToOrganization:
     displayName: OrganizationUserToOrganization
     name: MemberOf
     fromAttribute: OrganizationUser.orgId
-    toAttribute: Organization-id
+    toAttribute: Organization.id
   OrganizationToUser:
     displayName: OrganizationToUser
     name: MemberOf
@@ -1112,13 +1105,13 @@ relationships:
   UserToCollaborator:
     displayName: UserToCollaborator
     name: SameAs
-    fromAttribute: User-id
-    toAttribute: Collaborator-id
-  UserToTeamMember:
-    name: SameAs
-    fromAttribute: User-id
-    toAttribute: TeamMember-id
-  RepositoryToTeamRepository:
-    name: SameAs
-    fromAttribute: Repository-id
-    toAttribute: TeamRepository-id
+    fromAttribute: User.$.node.id
+    toAttribute: Collaborator.$.node.id
+  # UserToTeamMember:
+  #   name: SameAs
+  #   fromAttribute: User.$.node.id
+  #   toAttribute: $.members.edges.$.node.id
+  # RepositoryToTeamRepository:
+  #   name: SameAs
+  #   fromAttribute: Repository.$.node.id
+  #   toAttribute: $.repositories.edges.$.node.id
