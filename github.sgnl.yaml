@@ -144,6 +144,30 @@ entities:
       - name: websiteUrl
         externalId: websiteUrl
         type: String
+  OrganizationUser:
+    displayName: OrganizationUser
+    externalId: OrganizationUser
+    description: Entity representing the relationship between an Organization and User entity in GitHub
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: orgId
+        externalId: orgId
+        type: String
+        indexed: true
+      - name: userId
+        externalId: userId
+        type: String
+        indexed: true
   # https://docs.github.com/en/graphql/reference/objects#user
   User:
     displayName: User
@@ -161,11 +185,6 @@ entities:
         type: String
         indexed: true
         uniqueId: true
-      # Note: This attribute has been added in post-processing and is not part of the User entity.
-      - name: orgId
-        externalId: orgId
-        type: String
-        indexed: true
       # Note: User.role represents the role of a user in the organization with id 'orgId'.
       - name: role
         externalId: role
@@ -878,6 +897,23 @@ entities:
       - name: webCommitSignoffRequired
         externalId: webCommitSignoffRequired
         type: Bool
+  RepositoryCollaborator:
+    parent: Repository
+    displayName: RepositoryCollaborator
+    externalId: $.collaborators.nodes
+    description: Entity representing the relationship between a Repository and Collaborator entity in GitHub
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false 
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
   # Collaborator is a User entity type: https://docs.github.com/en/graphql/reference/objects#repositorycollaboratoredge
   Collaborator:
     displayName: Collaborator
@@ -1020,19 +1056,9 @@ entities:
         indexed: true
         uniqueId: true
 relationships:
-  ParentOfTeamMember:
-    childEntity: $.members.edges
-  ParentOfTeamRepository:
-    childEntity: $.repositories.edges
-  ParentOfCollaboratorOVDE:
-    childEntity: $.node.organizationVerifiedDomainEmails
-  ParentOfUserOVDE:
-    childEntity: $.node.organizationVerifiedDomainEmails
-  UserToOrganization:
-    name: MemberOf
-    displayName: UserToOrganization
-    fromAttribute: User.orgId
-    toAttribute: Organization.id
+  ParentOfRepositoryCollaborator:
+    displayName: ParentOfRepositoryCollaborator
+    childEntity: $.collaborators.nodes
   RepositoryToOrganization:
     displayName: RepositoryToOrganization
     name: MemberOf
@@ -1043,27 +1069,50 @@ relationships:
     name: MemberOf
     fromAttribute: Team.orgId
     toAttribute: Organization.id
-  CollaboratorToOrganization:
-    displayName: CollaboratorToOrganization
+  UserToOrganizationUser:
+    displayName: UserToOrganizationUser
     name: MemberOf
-    fromAttribute: Collaborator.orgId
+    fromAttribute: User.id
+    toAttribute: OrganizationUser.userId
+  OrganizationUserToOrganization:
+    displayName: OrganizationUserToOrganization
+    name: MemberOf
+    fromAttribute: OrganizationUser.orgId
     toAttribute: Organization.id
-  CollaboratorToRepository:
-    displayName: CollaboratorToRepository
+  OrganizationToUser:
+    displayName: OrganizationToUser
     name: MemberOf
-    fromAttribute: Collaborator.repoId
-    toAttribute: Repository.id
+    path:
+      - relationship: UserToOrganizationUser
+        direction: Forward
+      - relationship: OrganizationUserToOrganization
+        direction: Forward
+  # # Due to limitations, the relationships below can't be defined on the catalog. However, they can be 
+  # # defined manually in the console after the initial SoR creation.
+  # RepositoryCollaboratorToCollaborator:
+  #   displayName: RepositoryCollaboratorToCollaborator
+  #   name: MemberOf
+  #   fromAttribute: $.collaborators.edges.$.nodes.id
+  #   toAttribute: Collaborator.$.node.id
+  # CollaboratorToRepositoryPath:
+  #   displayName: CollaboratorToRepositoryPath
+  #   name: CollaboratorToRepositoryPath
+  #   path:
+  #     - relationship: ParentOfRepositoryCollaborator
+  #       direction: Backward
+  #     - relationship: CollaboratorToRepository
+  #       direction: Forward
   UserToCollaborator:
     displayName: UserToCollaborator
     name: SameAs
     fromAttribute: User.$.node.id
     toAttribute: Collaborator.$.node.id
-  UserToTeamMember:
-    name: SameAs
-    fromAttribute: User.$.node.id
-    toAttribute: $.members.edges.$.node.id
-  RepositoryToTeamRepository:
-    name: SameAs
-    fromAttribute: Repository.$.node.id
-    toAttribute: $.repositories.edges.$.node.id
+  # UserToTeamMember:
+  #   name: SameAs
+  #   fromAttribute: User.$.node.id
+  #   toAttribute: $.members.edges.$.node.id
+  # RepositoryToTeamRepository:
+  #   name: SameAs
+  #   fromAttribute: Repository.$.node.id
+  #   toAttribute: $.repositories.edges.$.node.id
 
