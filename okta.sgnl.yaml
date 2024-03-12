@@ -8,10 +8,10 @@ defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
-type: "Okta-1.0.0"
+type: "Okta-1.0.1"
 # Example Config:
-# {"version": 1, "config": {"requestTimeout": "10s", "okta": {"apiVersion": "v1"}}}
-adapterConfig: "ewogICAgInZlcnNpb24iOiAxLAogICAgImNvbmZpZyI6IHsKICAgICAgICAicmVxdWVzdFRpbWVvdXQiOiAiMTBzIiwKICAgICAgICAib2t0YSI6IHsKICAgICAgICAgICAgImFwaVZlcnNpb24iOiAidjEiCiAgICAgICAgfQogICAgfQp9"
+# {"requestTimeoutSeconds": 10, "apiVersion": "v1"}
+adapterConfig: "eyJyZXF1ZXN0VGltZW91dFNlY29uZHMiOiAxMCwgImFwaVZlcnNpb24iOiAidjEifQ=="
 # All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
   - oAuth2ClientCredentials:

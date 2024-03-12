@@ -8,10 +8,10 @@ defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
-type: "Salesforce-1.0.0"
+type: "Salesforce-1.0.1"
 # Example Config:
-# {"version": 1, "config": {"requestTimeout": "10s", "salesforce": {"apiVersion":"56.0"}}}
-adapterConfig: "ewoJInZlcnNpb24iOiAxLAoJImNvbmZpZyI6IHsKCQkicmVxdWVzdFRpbWVvdXQiOiAiMTBzIiwKCQkic2FsZXNmb3JjZSI6IHsiYXBpVmVyc2lvbiI6IjU2LjAifQoJfQp9"
+# {"requestTimeoutSeconds": 10, "apiVersion": "56.0"}
+adapterConfig: "eyJyZXF1ZXN0VGltZW91dFNlY29uZHMiOiAxMCwgImFwaVZlcnNpb24iOiAiNTYuMCJ9"
 # All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
   - oAuth2ClientCredentials:
