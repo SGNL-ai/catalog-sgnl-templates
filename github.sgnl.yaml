@@ -32,6 +32,7 @@ entities:
         type: String
         indexed: true
         uniqueId: true
+        relationshipAttributeId: Organization-id
       # Note: This attribute has been added in post-processing and is not part of the Organization entity.
       - name: enterpriseId
         externalId: enterpriseId
@@ -156,7 +157,7 @@ entities:
     pagesOrderedById: false
     attributes:
       - name: id
-        externalId: id
+        externalId: uniqueId
         type: String
         indexed: true
         uniqueId: true
@@ -164,10 +165,12 @@ entities:
         externalId: orgId
         type: String
         indexed: true
+        relationshipAttributeId: OrganizationUser-orgId
       - name: userId
-        externalId: userId
+        externalId: $.node.id
         type: String
         indexed: true
+        relationshipAttributeId: OrganizationUser-userId
       - name: role
         externalId: role
         type: String
@@ -188,6 +191,7 @@ entities:
         type: String
         indexed: true
         uniqueId: true
+        relationshipAttributeId: User-id
       - name: avatarUrl
         externalId: avatarUrl
         type: String
@@ -282,9 +286,9 @@ entities:
         externalId: websiteUrl
         type: String
   UserOVDE:
-    parent: User
+    parent: OrganizationUser
     displayName: UserOVDE
-    externalId: organizationVerifiedDomainEmails
+    externalId: $.node.organizationVerifiedDomainEmails
     description: Entity representing a GitHub user's organization verified domain emails.
     syncFrequency: HOURLY
     syncMinInterval: 1
@@ -324,6 +328,7 @@ entities:
         externalId: orgId
         type: String
         indexed: true
+        relationshipAttributeId: Team-orgId
       - name: avatarUrl
         externalId: avatarUrl
         type: String
@@ -417,6 +422,7 @@ entities:
         type: String
         indexed: true
         uniqueId: true
+        relationshipAttributeId: TeamMember-id
       # Note: Role represents the TeamMember's role on the team.
       # https://docs.github.com/en/graphql/reference/enums#teammemberrole
       - name: role
@@ -534,6 +540,7 @@ entities:
         type: String
         indexed: true
         uniqueId: true
+        relationshipAttributeId: TeamRepository-id
         # Permission is the Team's permission level for this repository
         # https://docs.github.com/en/graphql/reference/enums#repositorypermission
       - name: permission 
@@ -721,6 +728,7 @@ entities:
         type: String
         indexed: true
         uniqueId: true
+        relationshipAttributeId: Repository-id
       # Note: This attribute has been added in post-processing and is not part of the Team entity.
       - name: enterpriseId
         externalId: enterpriseId
@@ -730,6 +738,7 @@ entities:
         externalId: orgId
         type: String
         indexed: true
+        relationshipAttributeId: Repository-orgId
       - name: allowUpdateBranch
         externalId: allowUpdateBranch
         type: Bool
@@ -908,11 +917,12 @@ entities:
     pageSize: 100
     pagesOrderedById: false 
     attributes:
-      - name: id
+      - name: collaboratorId
         externalId: $.node.id
         type: String
         indexed: true
         uniqueId: true
+        relationshipAttributeId: RepositoryCollaborator-collaboratorId
       - name: permission
         externalId: permission
         type: String
@@ -933,6 +943,7 @@ entities:
         type: String
         indexed: true
         uniqueId: true
+        relationshipAttributeId: Collaborator-id
       - name: avatarUrl
         externalId: avatarUrl
         type: String
@@ -1026,81 +1037,63 @@ entities:
       - name: websiteUrl
         externalId: websiteUrl
         type: String
-  CollaboratorOVDE:
-    parent: Collaborator
-    displayName: CollaboratorOVDE
-    externalId: organizationVerifiedDomainEmails
-    description: Entity representing a GitHub user's organization verified domain emails.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
-    pageSize: 100
-    pagesOrderedById: false
-    attributes:
-      - name: email
-        externalId: email
-        type: String
-        indexed: true
-        uniqueId: true
 relationships:
-  ParentOfRepositoryCollaborator:
-    displayName: ParentOfRepositoryCollaborator
-    childEntity: $.collaborators.edges
   RepositoryToOrganization:
-    displayName: RepositoryToOrganization
+    displayName: OrganizationRepository
     name: MemberOf
-    fromAttribute: Repository.orgId 
-    toAttribute: Organization.id
+    fromAttribute: Repository-orgId 
+    toAttribute: Organization-id
   TeamToOrganization:
-    displayName: TeamToOrganization
+    displayName: OrganizationTeam
     name: MemberOf
-    fromAttribute: Team.orgId
-    toAttribute: Organization.id
+    fromAttribute: Team-orgId
+    toAttribute: Organization-id
   UserToOrganizationUser:
-    displayName: UserToOrganizationUser
+    displayName: UserMember
     name: MemberOf
-    fromAttribute: User.id
-    toAttribute: OrganizationUser.userId
+    fromAttribute: User-id
+    toAttribute: OrganizationUser-userId
   OrganizationUserToOrganization:
-    displayName: OrganizationUserToOrganization
+    displayName: OrganizationMember
     name: MemberOf
-    fromAttribute: OrganizationUser.orgId
-    toAttribute: Organization.id
+    fromAttribute: OrganizationUser-orgId
+    toAttribute: Organization-id
   OrganizationToUser:
-    displayName: OrganizationToUser
+    displayName: OrganizationUser
     name: MemberOf
     path:
       - relationship: UserToOrganizationUser
         direction: Forward
       - relationship: OrganizationUserToOrganization
         direction: Forward
-  # # Due to limitations, the relationships below can't be defined on the catalog. However, they can be 
-  # # defined manually in the console after the initial SoR creation.
-  # RepositoryCollaboratorToCollaborator:
-  #   displayName: RepositoryCollaboratorToCollaborator
-  #   name: MemberOf
-  #   fromAttribute: $.collaborators.nodes.$.nodes.id
-  #   toAttribute: Collaborator.id
-  # CollaboratorToRepositoryPath:
-  #   displayName: CollaboratorToRepositoryPath
-  #   name: CollaboratorToRepositoryPath
-  #   path:
-  #     - relationship: ParentOfRepositoryCollaborator
-  #       direction: Backward
-  #     - relationship: RepositoryCollaboratorToCollaborator
-  #       direction: Forward
+  ParentOfRepositoryCollaborator:
+    displayName: RepositoryMember
+    childEntity: $.collaborators.edges
+  RepositoryCollaboratorToCollaborator:
+    displayName: CollaboratorMember
+    name: MemberOf
+    fromAttribute: RepositoryCollaborator-collaboratorId
+    toAttribute: Collaborator-id
+  CollaboratorToRepositoryPath:
+    displayName: RepositoryCollaborator
+    name: MemberOf
+    path:
+      - relationship: ParentOfRepositoryCollaborator
+        direction: Backward
+      - relationship: RepositoryCollaboratorToCollaborator
+        direction: Forward
   UserToCollaborator:
-    displayName: UserToCollaborator
+    displayName: UserCollaborator
     name: SameAs
-    fromAttribute: User.id
-    toAttribute: Collaborator.id
-  # UserToTeamMember:
-  #   name: SameAs
-  #   fromAttribute: User.id
-  #   toAttribute: $.members.edges.$.node.id
-  # RepositoryToTeamRepository:
-  #   name: SameAs
-  #   fromAttribute: Repository.$.node.id
-  #   toAttribute: $.repositories.edges.$.node.id
-
+    fromAttribute: User-id
+    toAttribute: Collaborator-id
+  UserToTeamMember:
+    displayName: UserTeamMember
+    name: SameAs
+    fromAttribute: User-id
+    toAttribute: TeamMember-id
+  RepositoryToTeamRepository:
+    displayName: RepositoryTeamRepository
+    name: SameAs
+    fromAttribute: Repository-id
+    toAttribute: TeamRepository-id
