@@ -43,10 +43,6 @@ entities:
     displayName: Account
     externalId: accounts
     description: Account entity in IdentityNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 250
     pagesOrderedById: false
     attributes:
@@ -102,10 +98,6 @@ entities:
     displayName: Entitlement
     externalId: entitlements
     description: Entitlement entity in IdentityNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 250
     pagesOrderedById: false
     attributes:
@@ -154,10 +146,6 @@ entities:
     # to create the relationship between Entitlement and Account.
     externalId: accountEntitlements
     description: AccountEntitlement entity in IdentityNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 250
     pagesOrderedById: false
     attributes:
@@ -178,10 +166,6 @@ entities:
     displayName: Identity
     externalId: identities
     description: Identity entity in IdentityNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 250
     pagesOrderedById: false
     attributes:

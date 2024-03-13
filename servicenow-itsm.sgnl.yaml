@@ -21,10 +21,6 @@ entities:
     displayName: User
     externalId: sys_user
     description: User Entity in ServiceNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 350
     pagesOrderedById: true
     attributes:
@@ -236,10 +232,6 @@ entities:
     displayName: Group
     externalId: sys_user_group
     description: Group Entity in ServiceNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 350
     pagesOrderedById: true
     attributes:
@@ -315,10 +307,6 @@ entities:
     displayName: GroupMember
     externalId: sys_user_grmember
     description: GroupMember Entity in ServiceNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 350
     pagesOrderedById: true
     attributes:
@@ -361,10 +349,6 @@ entities:
     displayName: Incident
     externalId: incident
     description: Incident Entity in ServiceNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 350
     pagesOrderedById: true
     attributes:
@@ -476,10 +460,6 @@ entities:
     displayName: ChangeRequest
     externalId: change_request
     description: Change Request Entity in ServiceNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 350
     pagesOrderedById: true
     attributes:
@@ -555,10 +535,6 @@ entities:
     displayName: ChangeTask
     externalId: change_task
     description: Change Task Entity in ServiceNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 350
     pagesOrderedById: true
     attributes:
@@ -601,10 +577,6 @@ entities:
     displayName: Problem
     externalId: problem
     description: Problem Entity in ServiceNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 350
     pagesOrderedById: true
     attributes:
@@ -705,10 +677,6 @@ entities:
     displayName: CMDB Business App
     externalId: cmdb_ci_business_app
     description: CMDB Business App Entity in ServiceNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 350
     pagesOrderedById: true
     attributes:

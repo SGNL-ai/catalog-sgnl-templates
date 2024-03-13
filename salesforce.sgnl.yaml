@@ -24,10 +24,6 @@ entities:
     displayName: Account
     externalId: Account
     description: Account entity in Salesforce
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 200 # Current minimum enforced by Salesforce API
     pagesOrderedById: true
     attributes:
@@ -263,10 +259,6 @@ entities:
     displayName: Case
     externalId: Case
     description: Case entity in Salesforce
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 200 # Current minimum enforced by Salesforce API
     pagesOrderedById: true
     attributes:
@@ -422,10 +414,6 @@ entities:
     displayName: Customer
     externalId: Customer
     description: Customer entity in Salesforce
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 200 # Current minimum enforced by Salesforce API
     pagesOrderedById: true
     attributes:
@@ -494,10 +482,6 @@ entities:
     displayName: User
     externalId: User
     description: User entity in Salesforce
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 200 # Current minimum enforced by Salesforce API
     pagesOrderedById: true
     attributes:
@@ -930,10 +914,6 @@ entities:
     displayName: Group
     externalId: Group
     description: Public Group entity in Salesforce
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 200 # Current minimum enforced by Salesforce API
     pagesOrderedById: true
     attributes:

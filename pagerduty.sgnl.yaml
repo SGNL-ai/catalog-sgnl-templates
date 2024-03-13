@@ -30,10 +30,6 @@ entities:
     displayName: User
     externalId: users
     description: User entity in PagerDuty
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -99,10 +95,6 @@ entities:
     displayName: Team
     externalId: teams
     description: Team entity in PagerDuty
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -138,10 +130,6 @@ entities:
     displayName: TeamMember
     externalId: members
     description: TeamMember entity in PagerDuty
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -167,10 +155,6 @@ entities:
     displayName: Incident
     externalId: incidents
     description: Incident entity in PagerDuty
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -335,10 +319,6 @@ entities:
     displayName: Service
     externalId: services
     description: Service entity in PagerDuty
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -462,10 +442,6 @@ entities:
     displayName: Schedule
     externalId: schedules
     description: Schedule entity in PagerDuty
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -513,10 +489,6 @@ entities:
     displayName: OnCall
     externalId: oncalls
     description: OnCall entity in PagerDuty
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:

@@ -30,10 +30,6 @@ entities:
     displayName: User
     externalId: Users
     description: User entity in Curity
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:

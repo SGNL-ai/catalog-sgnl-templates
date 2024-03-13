@@ -28,10 +28,6 @@ entities:
     displayName: User
     externalId: User
     description: User Entity in Azure AD
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 999
     pagesOrderedById: false
     attributes:
@@ -216,10 +212,6 @@ entities:
     description: "Group Entity in Azure AD"
     displayName: Group
     externalId: Group
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 999
     pagesOrderedById: false
     attributes:
@@ -334,10 +326,6 @@ entities:
     description: "Group Member Entity in Azure AD"
     displayName: GroupMember
     externalId: GroupMember
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 999
     pagesOrderedById: false
     attributes:
@@ -359,10 +347,6 @@ entities:
     description: "Application Entity in Azure AD"
     displayName: Application
     externalId: Application
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 999
     pagesOrderedById: false
     attributes:
@@ -506,10 +490,6 @@ entities:
     description: "Device Entity in Azure AD"
     displayName: Device
     externalId: Device
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 999
     pagesOrderedById: false
     attributes:

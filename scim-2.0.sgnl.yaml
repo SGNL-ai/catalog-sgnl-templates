@@ -35,10 +35,6 @@ entities:
     displayName: User
     externalId: Users
     description: User entity in SCIM
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -147,10 +143,6 @@ entities:
     displayName: Group
     externalId: Groups
     description: Group entity in SCIM
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -174,10 +166,6 @@ entities:
     displayName: GroupMember
     externalId: groups
     description: Entity representing the SCIM groups each user belongs to
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:

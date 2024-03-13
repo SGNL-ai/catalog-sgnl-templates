@@ -26,10 +26,6 @@ entities:
     displayName: User
     externalId: User
     description: User entity in Jira
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -63,10 +59,6 @@ entities:
     displayName: Issue
     externalId: Issue
     description: Issue entity in Jira
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -343,10 +335,6 @@ entities:
     displayName: Group
     externalId: Group
     description: Group entity in Jira
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -363,10 +351,6 @@ entities:
     displayName: GroupMember
     externalId: GroupMember
     description: Group Member entity in Jira
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -389,10 +373,6 @@ entities:
     displayName: Workspace
     externalId: Workspace
     description: Workspace entity in Jira
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -409,10 +389,6 @@ entities:
     displayName: Object
     externalId: Object
     description: Object entity in Jira
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:

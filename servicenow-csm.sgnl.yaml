@@ -21,10 +21,6 @@ entities:
     displayName: User
     externalId: sys_user
     description: User Entity in ServiceNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 350
     pagesOrderedById: true
     attributes:
@@ -235,10 +231,6 @@ entities:
     displayName: Case
     externalId: sn_customerservice_case
     description: Case Entity in ServiceNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 350
     pagesOrderedById: true
     attributes:
@@ -622,10 +614,6 @@ entities:
     displayName: Account
     externalId: customer_account
     description: Account Entity in ServiceNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 350
     pagesOrderedById: true
     attributes:
@@ -798,10 +786,6 @@ entities:
     displayName: Group
     externalId: sys_user_group
     description: Group Entity in ServiceNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 350
     pagesOrderedById: true
     attributes:
@@ -876,10 +860,6 @@ entities:
     displayName: GroupMember
     externalId: sys_user_grmember
     description: GroupMember Entity in ServiceNow
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 350
     pagesOrderedById: true
     attributes:

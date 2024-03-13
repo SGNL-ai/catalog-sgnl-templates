@@ -27,10 +27,6 @@ entities:
     displayName: User
     externalId: User
     description: User entity in Okta
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -165,10 +161,6 @@ entities:
     displayName: Group
     externalId: Group
     description: Group entity in Okta
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -204,10 +196,6 @@ entities:
     displayName: GroupMember
     externalId: GroupMember
     description: Group Member entity in Okta
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:

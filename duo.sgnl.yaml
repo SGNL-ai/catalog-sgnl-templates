@@ -19,10 +19,6 @@ entities:
     displayName: User
     externalId: User
     description: User entity in Duo
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -85,10 +81,6 @@ entities:
     displayName: GroupMember
     externalId: groups
     description: Entity representing the Duo groups each user belongs to
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -106,10 +98,6 @@ entities:
     displayName: PhoneOwner
     externalId: phones
     description: Entity representing the Duo phones owned by the User
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -126,10 +114,6 @@ entities:
     displayName: Group
     externalId: Group
     description: Group entity in Duo
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
