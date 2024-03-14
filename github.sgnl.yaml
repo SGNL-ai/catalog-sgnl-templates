@@ -116,7 +116,7 @@ entities:
       - name: viewerIsAMember
         externalId: viewerIsAMember
         type: Bool
-      # Note: This attribute has been added in post-processing and is not part of the Organization entity.
+      # Attribute added in post-processing
       - name: enterpriseId
         externalId: enterpriseId
         type: String
@@ -308,11 +308,10 @@ entities:
       - name: viewerCanSubscribe
         externalId: viewerCanSubscribe
         type: Bool
-      # Note: This attribute has been added in post-processing and is not part of the Team entity.
+      # Attributes added in post-processing
       - name: enterpriseId
         externalId: enterpriseId
         type: String
-      # Note: This attribute has been added in post-processing and is not part of the Team entity.
       - name: orgId
         externalId: orgId
         type: String
@@ -522,11 +521,10 @@ entities:
       - name: webCommitSignoffRequired
         externalId: webCommitSignoffRequired
         type: Bool
-      # Note: This attribute has been added in post-processing and is not part of the Team entity.
+      # Attributes added in post-processing
       - name: enterpriseId
         externalId: enterpriseId
         type: String
-      # Note: This attribute has been added in post-processing and is not part of the Team entity.
       - name: orgId
         externalId: orgId
         type: String
