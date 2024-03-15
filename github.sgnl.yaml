@@ -145,6 +145,7 @@ entities:
       - name: role
         externalId: role
         type: String
+        indexed: true
   # https://docs.github.com/en/graphql/reference/objects#user
   User:
     displayName: User
@@ -338,6 +339,7 @@ entities:
       - name: role
         externalId: role
         type: String
+        indexed: true
       - name: login
         externalId: $.node.login
         type: String
@@ -362,6 +364,7 @@ entities:
       - name: permission 
         externalId: permission
         type: String
+        indexed: true
       - name: name
         externalId: $.node.name
         type: String
@@ -547,6 +550,7 @@ entities:
       - name: permission
         externalId: permission
         type: String
+        indexed: true
   # Collaborator is a User entity type: https://docs.github.com/en/graphql/reference/objects#repositorycollaboratoredge
   Collaborator:
     displayName: Collaborator
