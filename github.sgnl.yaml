@@ -555,7 +555,7 @@ entities:
   Collaborator:
     displayName: Collaborator
     externalId: Collaborator
-    description: Entity representing a GitHub User assigned to some Repository.
+    description: Entity representing a GitHub User assigned to some Repository
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -640,6 +640,66 @@ entities:
       - name: viewerIsFollowing
         externalId: viewerIsFollowing
         type: Bool
+  PullRequest:
+    displayName: PullRequest
+    externalId: PullRequest
+    description: Entity representing a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+  PullRequestAssignee: # similar to orguser
+    displayName: PullRequestAssignee
+    externalId: PullRequestAssignee
+    description: Entity representing the connection between a User entity assigned to a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+  PullRequestReview:
+    displayName: PullRequestReview
+    externalId: PullRequestReview
+    description: Entity representing a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+  Issue:
+    displayName: Issue
+    externalId: Issue
+    description: Entity representing a GitHub Issue
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+  IssueAssignee: # similar to orguser
+    displayName: IssueAssignee
+    externalId: IssueAssignee
+    description: Entity representing the connection between a User entity assigned to a GitHub Issue
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
 relationships:
   RepositoryToOrganization:
     displayName: OrganizationRepository
