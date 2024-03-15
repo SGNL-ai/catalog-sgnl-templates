@@ -30,10 +30,6 @@ entities:
     displayName: User
     externalId: Users
     description: User entity in Curity
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -220,6 +216,7 @@ relationships:
   # Manager relationship
   UserManager:
     name: Manager
+    displayName: User Manager
     fromAttribute: Users.$..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.value
     toAttribute: Users.id
   
