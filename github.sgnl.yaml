@@ -10,10 +10,10 @@ defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: "GitHub-1.0.0"
-adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogIlNHTkwiCn0=" # { enterpriseSlug: "SGNL" }
+adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogInt7SW5wdXQgUmVxdWlyZWR9fSIKfQ==" # { "enterpriseSlug": "{{Input Required}}" }
 auth:
   - bearer:
-      authToken: "Bearer {{input token}}"
+      authToken: "Bearer {{Input Required}}"
 entities:
   # https://docs.github.com/en/graphql/reference/objects#organization
   Organization:
@@ -655,7 +655,7 @@ entities:
   PullRequestAssignee: # similar to orguser
     displayName: PullRequestAssignee
     externalId: PullRequestAssignee
-    description: Entity representing the connection between a User entity assigned to a GitHub PullRequest
+    description: Entity representing the connection between User entities that are assigned to a GitHub PullRequest
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -688,10 +688,30 @@ entities:
         type: String
         indexed: true
         uniqueId: true
+      - name: authorLogin
+        externalId: $.author.login
+        type: String
+        indexed: true
+      - name: repositoryId
+        externalId: $.repository.id
+        type: String
+        indexed: true
   IssueAssignee: # similar to orguser
     displayName: IssueAssignee
     externalId: IssueAssignee
     description: Entity representing the connection between a User entity assigned to a GitHub Issue
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+  IssueParticipant: # similar to orguser
+    displayName: IssueParticipant
+    externalId: IssueParticipant
+    description: Entity representing the connection between a User entity that is a participant of a GitHub Issue
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -760,3 +780,7 @@ relationships:
     name: SameAs
     fromAttribute: repositoryId
     toAttribute: teamRepositoryId
+
+
+"{\"query\":\"query {\\n        enterprise (slug: \\\"SGNL\\\") {\\n            id\\n            organizations (first: 1) {\\n                pageInfo {\\n                    endCursor\\n                    hasNextPage\\n                }\\n\\t\\t\\t\\tnodes { createdAt, databaseId, email, id, login, updatedAt, viewerCanCreateTeams, viewerIsAMember }\\n            }\\n        }\\n    }\"}"
+"{\"query\":\"query {\\n        enterprise (slug: \\\"SGNL\\\") {\\n            id\\n            organizations (first: 1) {\\n                pageInfo {\\n                    endCursor\\n                    hasNextPage\\n                }\\n\\t\\t\\t\\tnodes { id, databaseId, email, login, viewerIsAMember, viewerCanCreateTeams, updatedAt, createdAt }\\n            }\\n        }\\n    }\"}"
