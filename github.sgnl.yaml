@@ -10,10 +10,10 @@ defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: "GitHub-1.0.0"
-adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogIlNHTkwiCn0=" # { enterpriseSlug: "SGNL" }
+adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogInt7SW5wdXQgUmVxdWlyZWR9fSIKfQ==" # { "enterpriseSlug": "{{Input Required}}" }
 auth:
   - bearer:
-      authToken: "Bearer {{input token}}"
+      authToken: "Bearer {{Input Required}}"
 entities:
   # https://docs.github.com/en/graphql/reference/objects#organization
   Organization:
