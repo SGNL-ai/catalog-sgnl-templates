@@ -10,10 +10,10 @@ defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: "GitHub-1.0.0"
-adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogIlNHTkwiCn0=" # { enterpriseSlug: "SGNL" }
+adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogInt7SW5wdXQgUmVxdWlyZWR9fSIKfQ==" # { "enterpriseSlug": "{{Input Required}}" }
 auth:
   - bearer:
-      authToken: "Bearer {{input token}}"
+      authToken: "Bearer {{Input Required}}"
 entities:
   # https://docs.github.com/en/graphql/reference/objects#organization
   Organization:
@@ -116,7 +116,7 @@ entities:
       - name: viewerIsAMember
         externalId: viewerIsAMember
         type: Bool
-      # Note: This attribute has been added in post-processing and is not part of the Organization entity.
+      # Attribute added in post-processing
       - name: enterpriseId
         externalId: enterpriseId
         type: String
@@ -145,6 +145,7 @@ entities:
       - name: role
         externalId: role
         type: String
+        indexed: true
   # https://docs.github.com/en/graphql/reference/objects#user
   User:
     displayName: User
@@ -308,11 +309,10 @@ entities:
       - name: viewerCanSubscribe
         externalId: viewerCanSubscribe
         type: Bool
-      # Note: This attribute has been added in post-processing and is not part of the Team entity.
+      # Attributes added in post-processing
       - name: enterpriseId
         externalId: enterpriseId
         type: String
-      # Note: This attribute has been added in post-processing and is not part of the Team entity.
       - name: orgId
         externalId: orgId
         type: String
@@ -339,6 +339,7 @@ entities:
       - name: role
         externalId: role
         type: String
+        indexed: true
       - name: login
         externalId: $.node.login
         type: String
@@ -363,6 +364,7 @@ entities:
       - name: permission 
         externalId: permission
         type: String
+        indexed: true
       - name: name
         externalId: $.node.name
         type: String
@@ -522,16 +524,15 @@ entities:
       - name: webCommitSignoffRequired
         externalId: webCommitSignoffRequired
         type: Bool
-      # Note: This attribute has been added in post-processing and is not part of the Team entity.
+      # Attributes added in post-processing
       - name: enterpriseId
         externalId: enterpriseId
         type: String
-      # Note: This attribute has been added in post-processing and is not part of the Team entity.
       - name: orgId
         externalId: orgId
         type: String
         indexed: true
-        attributeAlias: Repository-orgId
+        attributeAlias: repositoryOrgId
   RepositoryCollaborator:
     parent: Repository
     displayName: RepositoryCollaborator
@@ -549,6 +550,7 @@ entities:
       - name: permission
         externalId: permission
         type: String
+        indexed: true
   # Collaborator is a User entity type: https://docs.github.com/en/graphql/reference/objects#repositorycollaboratoredge
   Collaborator:
     displayName: Collaborator
@@ -657,7 +659,7 @@ relationships:
   OrganizationUserToOrganization:
     displayName: OrganizationMember
     name: MemberOf
-    fromAttribute: OrgUserOrgId
+    fromAttribute: orgUserOrgId
     toAttribute: organizationId
   OrganizationToUser:
     displayName: OrganizationUser
