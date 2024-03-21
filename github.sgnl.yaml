@@ -178,6 +178,8 @@ entities:
       - name: login
         externalId: login
         type: String
+        indexed: true
+        attributeAlias: userLogin
       - name: isBountyHunter
         externalId: isBountyHunter
         type: Bool
@@ -343,6 +345,8 @@ entities:
       - name: login
         externalId: $.node.login
         type: String
+        indexed: true
+        attributeAlias: teamMemberLogin
   # TeamRepository entity is for creating relationships between Repositories and Teams.
   # TeamRepository is a Repository entity type: https://docs.github.com/en/graphql/reference/objects#repository
   TeamRepository:
@@ -583,6 +587,8 @@ entities:
       - name: login
         externalId: login
         type: String
+        indexed: true
+        attributeAlias: collaboratorLogin
       - name: isBountyHunter
         externalId: isBountyHunter
         type: Bool
@@ -640,6 +646,9 @@ entities:
       - name: viewerIsFollowing
         externalId: viewerIsFollowing
         type: Bool
+  
+##### PART 2 ENTITIES BELOW THIS #####
+
   PullRequest:
     displayName: PullRequest
     externalId: PullRequest
@@ -652,6 +661,21 @@ entities:
         type: String
         indexed: true
         uniqueId: true
+      - name: baseRepositoryId
+        externalId: $.baseRepository.id
+        type: String
+        indexed: true
+        attributeAlias: baseRepositoryId
+      - name: headRepositoryId
+        externalId: $.headRepository.id
+        type: String
+        indexed: true
+        attributeAlias: headRepositoryId
+      - name: authorLogin
+        externalId: $.author.login
+        type: String
+        indexed: true
+        attributeAlias: authorLogin
   PullRequestAssignee: # similar to orguser
     displayName: PullRequestAssignee
     externalId: PullRequestAssignee
@@ -659,11 +683,43 @@ entities:
     pageSize: 100
     pagesOrderedById: false
     attributes:
-      - name: id
-        externalId: id
+      - name: uniqueId
+        externalId: uniqueId
         type: String
         indexed: true
         uniqueId: true
+      - name: pullRequestId
+        externalId: pullRequestId
+        type: String
+        indexed: true
+        attributeAlias: assignedPullRequestId
+      - name: userId
+        externalId: id
+        type: String
+        indexed: true
+        attributeAlias: pullRequestAssigneeId
+  PullRequestParticipant: # similar to orguser
+    displayName: PullRequestParticipant
+    externalId: PullRequestParticipant
+    description: Entity representing the connection between a User entity that is a participant of a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: pullRequestId
+        externalId: pullRequestId
+        type: String
+        indexed: true
+        attributeAlias: participantPullRequestId
+      - name: userId
+        externalId: id
+        type: String
+        indexed: true
+        attributeAlias: pullRequestParticipantId
   PullRequestReview:
     displayName: PullRequestReview
     externalId: PullRequestReview
@@ -676,6 +732,64 @@ entities:
         type: String
         indexed: true
         uniqueId: true
+      - name: userLogin
+        externalId: $.author.login
+        type: String
+        indexed: true
+      - name: pullRequestId
+        externalId: $.pullRequest.id
+        type: String
+        indexed: true
+  PullRequestCommit:
+    displayName: PullRequestCommit
+    externalId: PullRequestCommit
+    description: Entity representing a Commit in a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: pullRequestId
+        externalId: $.pullRequest.id
+        type: String
+        indexed: true
+      - name: commitId
+        externalId: $.commit.id
+        type: String
+        indexed: true
+  PullRequestChangedFile:
+    displayName: PullRequestChangedFile
+    externalId: PullRequestChangedFile
+    description: Entity representing a changed file in a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId # concatenated the file path and PR id
+        externalId: uniqueId
+        type: String
+        uniqueId: true
+      - name: pullRequestId
+        externalId: pullRequestId
+        type: String
+        indexed: true
+      - name: path # unique for each PR
+        externalId: path
+        type: String
+      - name: additions
+        externalId: additions
+        type: Int64
+      - name: deletions
+        externalId: deletions
+        type: Int64
+      - name: changeType
+        externalId: changeType
+        type: String
+      - name: viewerViewedState
+        externalId: viewerViewedState
+        type: String
   Issue:
     displayName: Issue
     externalId: Issue
@@ -703,15 +817,43 @@ entities:
     pageSize: 100
     pagesOrderedById: false
     attributes:
-      - name: id
-        externalId: id
+      - name: uniqueId
+        externalId: uniqueId
         type: String
         indexed: true
         uniqueId: true
+      - name: issueId
+        externalId: issueId
+        type: String
+        indexed: true
+      - name: userId
+        externalId: id
+        type: String
+        indexed: true
   IssueParticipant: # similar to orguser
     displayName: IssueParticipant
     externalId: IssueParticipant
     description: Entity representing the connection between a User entity that is a participant of a GitHub Issue
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: issueId
+        externalId: issueId
+        type: String
+        indexed: true
+      - name: userId
+        externalId: id
+        type: String
+        indexed: true
+  Label:
+    displayName: Label
+    externalId: Label
+    description: Entity representing a GitHub Label
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -720,6 +862,66 @@ entities:
         type: String
         indexed: true
         uniqueId: true
+  RepositoryLabel:
+    displayName: RepositoryLabel
+    externalId: RepositoryLabel
+    description: Entity representing the metadata of a Label entity for a GitHub Repository
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: repositoryId
+        externalId: $.repository.id
+        type: String
+        indexed: true
+      - name: labelId
+        externalId: id
+        type: String
+        indexed: true
+  PullRequestLabel:
+    displayName: PullRequestLabel
+    externalId: PullRequestLabel
+    description: Entity representing the metadata of a Label entity for a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: pullRequestId
+        externalId: pullRequestId
+        type: String
+        indexed: true
+      - name: labelId
+        externalId: labelId
+        type: String
+        indexed: true
+  IssueLabel:
+    displayName: IssueLabel
+    externalId: IssueLabel
+    description: Entity representing the metadata of a Label entity for a GitHub Issue
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: issueId
+        externalId: issueId
+        type: String
+        indexed: true
+      - name: labelId
+        externalId: labelId
+        type: String
+        indexed: true
 relationships:
   RepositoryToOrganization:
     displayName: OrganizationRepository
@@ -781,6 +983,88 @@ relationships:
     fromAttribute: repositoryId
     toAttribute: teamRepositoryId
 
+###### PART 2 RELATIONSHIPS BELOW THIS #######
 
-"{\"query\":\"query {\\n        enterprise (slug: \\\"SGNL\\\") {\\n            id\\n            organizations (first: 1) {\\n                pageInfo {\\n                    endCursor\\n                    hasNextPage\\n                }\\n\\t\\t\\t\\tnodes { createdAt, databaseId, email, id, login, updatedAt, viewerCanCreateTeams, viewerIsAMember }\\n            }\\n        }\\n    }\"}"
-"{\"query\":\"query {\\n        enterprise (slug: \\\"SGNL\\\") {\\n            id\\n            organizations (first: 1) {\\n                pageInfo {\\n                    endCursor\\n                    hasNextPage\\n                }\\n\\t\\t\\t\\tnodes { id, databaseId, email, login, viewerIsAMember, viewerCanCreateTeams, updatedAt, createdAt }\\n            }\\n        }\\n    }\"}"
+######### PullRequest RELATIONSHIPS ##########
+PullRequestToBaseRepository:
+  displayName: RepositoryPullRequest
+  name: MemberOf
+  fromAttribute: baseRepositoryId
+  toAttribute: repositoryId
+PullRequestToHeadRepository:
+  displayName: RepositoryPullRequest
+  name: MemberOf
+  fromAttribute: headRepositoryId
+  toAttribute: repositoryId
+PullRequestToAuthor:
+  displayName: PullRequestAuthor
+  name: AuthorOf
+  fromAttribute: authorLogin
+  toAttribute: userLogin
+
+######### PRAssignee RELATIONSHIPS ##########
+PullRequestAssigneeToPullRequest:
+  displayName: AssignedPullRequest
+  name: MemberOf
+  fromAttribute: assignedPullRequestId
+  toAttribute: pullRequestId
+UserToPullRequestAssignee:
+  displayName: UserAssignedPullRequest
+  name: MemberOf
+  fromAttribute: userId
+  toAttribute: pullRequestAssigneeId
+CollaboratorToPullRequestAssignee:
+  displayName: CollaboratorAssignedPullRequest
+  name: MemberOf
+  fromAttribute: collaboratorId
+  toAttribute: pullRequestAssigneeId
+PullRequestToAssignedUser:
+  displayName: PullRequestUserAssignee
+  name: MemberOf
+  path:
+    - relationship: UserToPullRequestAssignee
+      direction: Forward
+    - relationship: PullRequestAssigneeToPullRequest
+      direction: Forward
+PullRequestToAssignedCollaborator:
+  displayName: PullRequestCollaboratorAssignee
+  name: MemberOf
+  path:
+    - relationship: CollaboratorToPullRequestAssignee
+      direction: Forward
+    - relationship: PullRequestAssigneeToPullRequest
+      direction: Forward
+
+######### PRParticipant RELATIONSHIPS ##########
+
+PullRequestParticipantToPullRequest:
+  displayName: ParticipatingPullRequest
+  name: MemberOf
+  fromAttribute: participantPullRequestId
+  toAttribute: pullRequestId
+UserToPullRequestParticipant:
+  displayName: UserParticipatingPullRequest
+  name: MemberOf
+  fromAttribute: userId
+  toAttribute: pullRequestParticipantId
+CollaboratorToPullRequestParticipant:
+  displayName: CollaboratorParticipatingPullRequest
+  name: MemberOf
+  fromAttribute: collaboratorId
+  toAttribute: pullRequestParticipantId
+PullRequestToUserParticipant:
+  displayName: PullRequestUserParticipant
+  name: MemberOf
+  path:
+    - relationship: UserToPullRequestParticipant
+      direction: Forward
+    - relationship: PullRequestParticipantToPullRequest
+      direction: Forward
+PullRequestToCollaboratorParticipant:
+  displayName: PullRequestCollaboratorParticipant
+  name: MemberOf
+  path:
+    - relationship: CollaboratorToPullRequestParticipant
+      direction: Forward
+    - relationship: PullRequestParticipantToPullRequest
+      direction: Forward
