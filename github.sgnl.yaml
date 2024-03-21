@@ -532,7 +532,7 @@ entities:
         externalId: orgId
         type: String
         indexed: true
-        attributeAlias: Repository-orgId
+        attributeAlias: repositoryOrgId
   RepositoryCollaborator:
     parent: Repository
     displayName: RepositoryCollaborator
@@ -659,7 +659,7 @@ relationships:
   OrganizationUserToOrganization:
     displayName: OrganizationMember
     name: MemberOf
-    fromAttribute: OrgUserOrgId
+    fromAttribute: orgUserOrgId
     toAttribute: organizationId
   OrganizationToUser:
     displayName: OrganizationUser
