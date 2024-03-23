@@ -536,7 +536,7 @@ entities:
         externalId: orgId
         type: String
         indexed: true
-        attributeAlias: Repository-orgId
+        attributeAlias: repositoryOrgId
   RepositoryCollaborator:
     parent: Repository
     displayName: RepositoryCollaborator
@@ -1225,10 +1225,10 @@ LabelToIssue:
 #     - relationship: PullRequestParticipantToPullRequest
 #       direction: Forward
 # PullRequestToCollaboratorParticipant:
-  displayName: PullRequestCollaboratorParticipant
-  name: MemberOf
-  path:
-    - relationship: CollaboratorToPullRequestParticipant
-      direction: Forward
-    - relationship: PullRequestParticipantToPullRequest
-      direction: Forward
+  # displayName: PullRequestCollaboratorParticipant
+  # name: MemberOf
+  # path:
+  #   - relationship: CollaboratorToPullRequestParticipant
+  #     direction: Forward
+  #   - relationship: PullRequestParticipantToPullRequest
+  #     direction: Forward
