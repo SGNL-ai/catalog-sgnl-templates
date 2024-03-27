@@ -649,150 +649,161 @@ entities:
   
 ##### PART 2 ENTITIES BELOW THIS #####
 
-  # PullRequest:
-  #   displayName: PullRequest
-  #   externalId: PullRequest
-  #   description: Entity representing a GitHub PullRequest
-  #   pageSize: 100
-  #   pagesOrderedById: false
-  #   attributes:
-  #     - name: id
-  #       externalId: id
-  #       type: String
-  #       indexed: true
-  #       uniqueId: true
-  #     - name: title
-  #       externalId: title
-  #       type: String
-  #     - name: baseRepositoryId
-  #       externalId: $.baseRepository.id
-  #       type: String
-  #       indexed: true
-  #       attributeAlias: baseRepositoryId
-  #     - name: headRepositoryId
-  #       externalId: $.headRepository.id
-  #       type: String
-  #       indexed: true
-  #       attributeAlias: headRepositoryId
-  #     - name: authorLogin
-  #       externalId: $.author.login
-  #       type: String
-  #       indexed: true
-  #       attributeAlias: authorLogin
-  # PullRequestAssignee: # similar to orguser
-  #   displayName: PullRequestAssignee
-  #   externalId: PullRequestAssignee
-  #   description: Entity representing the connection between User entities that are assigned to a GitHub PullRequest
-  #   pageSize: 100
-  #   pagesOrderedById: false
-  #   attributes:
-  #     - name: uniqueId
-  #       externalId: uniqueId
-  #       type: String
-  #       indexed: true
-  #       uniqueId: true
-  #     - name: pullRequestId
-  #       externalId: pullRequestId
-  #       type: String
-  #       indexed: true
-  #       attributeAlias: assignedPullRequestId
-  #     - name: userId
-  #       externalId: id
-  #       type: String
-  #       indexed: true
-  #       attributeAlias: pullRequestAssigneeId
-  # PullRequestParticipant: # similar to orguser
-  #   displayName: PullRequestParticipant
-  #   externalId: PullRequestParticipant
-  #   description: Entity representing the connection between a User entity that is a participant of a GitHub PullRequest
-  #   pageSize: 100
-  #   pagesOrderedById: false
-  #   attributes:
-  #     - name: uniqueId
-  #       externalId: uniqueId
-  #       type: String
-  #       indexed: true
-  #       uniqueId: true
-  #     - name: pullRequestId
-  #       externalId: pullRequestId
-  #       type: String
-  #       indexed: true
-  #       attributeAlias: participantPullRequestId
-  #     - name: userId
-  #       externalId: id
-  #       type: String
-  #       indexed: true
-  #       attributeAlias: pullRequestParticipantId
-  # PullRequestReview:
-  #   displayName: PullRequestReview
-  #   externalId: PullRequestReview
-  #   description: Entity representing a GitHub PullRequest
-  #   pageSize: 100
-  #   pagesOrderedById: false
-  #   attributes:
-  #     - name: id
-  #       externalId: id
-  #       type: String
-  #       indexed: true
-  #       uniqueId: true
-  #     - name: userLogin
-  #       externalId: $.author.login
-  #       type: String
-  #       indexed: true
-  #     - name: pullRequestId
-  #       externalId: $.pullRequest.id
-  #       type: String
-  #       indexed: true
-  # PullRequestCommit:
-  #   displayName: PullRequestCommit
-  #   externalId: PullRequestCommit
-  #   description: Entity representing a Commit in a GitHub PullRequest
-  #   pageSize: 100
-  #   pagesOrderedById: false
-  #   attributes:
-  #     - name: id
-  #       externalId: id
-  #       type: String
-  #       indexed: true
-  #       uniqueId: true
-  #     - name: pullRequestId
-  #       externalId: $.pullRequest.id
-  #       type: String
-  #       indexed: true
-  #     - name: commitId
-  #       externalId: $.commit.id
-  #       type: String
-  #       indexed: true
-  # PullRequestChangedFile:
-  #   displayName: PullRequestChangedFile
-  #   externalId: PullRequestChangedFile
-  #   description: Entity representing a changed file in a GitHub PullRequest
-  #   pageSize: 100
-  #   pagesOrderedById: false
-  #   attributes:
-  #     - name: uniqueId # concatenated the file path and PR id
-  #       externalId: uniqueId
-  #       type: String
-  #       uniqueId: true
-  #     - name: pullRequestId
-  #       externalId: pullRequestId
-  #       type: String
-  #       indexed: true
-  #     - name: path # unique for each PR
-  #       externalId: path
-  #       type: String
-  #     - name: additions
-  #       externalId: additions
-  #       type: Int64
-  #     - name: deletions
-  #       externalId: deletions
-  #       type: Int64
-  #     - name: changeType
-  #       externalId: changeType
-  #       type: String
-  #     - name: viewerViewedState
-  #       externalId: viewerViewedState
-  #       type: String
+  PullRequest:
+    displayName: PullRequest
+    externalId: PullRequest
+    description: Entity representing a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: pullRequestId
+      - name: title
+        externalId: title
+        type: String
+      - name: baseRepositoryId
+        externalId: $.baseRepository.id
+        type: String
+        indexed: true
+        attributeAlias: baseRepositoryId
+      - name: headRepositoryId
+        externalId: $.headRepository.id
+        type: String
+        indexed: true
+        attributeAlias: headRepositoryId
+      - name: authorLogin
+        externalId: $.author.login
+        type: String
+        indexed: true
+        attributeAlias: authorLogin
+  PullRequestAssignee: # similar to orguser
+    displayName: PullRequestAssignee
+    externalId: PullRequestAssignee
+    description: Entity representing the connection between User entities that are assigned to a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: pullRequestId
+        externalId: pullRequestId
+        type: String
+        indexed: true
+        attributeAlias: assignedPullRequestId
+      - name: userId
+        externalId: id
+        type: String
+        indexed: true
+        attributeAlias: pullRequestAssigneeId
+  PullRequestParticipant: # similar to orguser
+    displayName: PullRequestParticipant
+    externalId: PullRequestParticipant
+    description: Entity representing the connection between a User entity that is a participant of a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: pullRequestId
+        externalId: pullRequestId
+        type: String
+        indexed: true
+        attributeAlias: participantPullRequestId
+      - name: userId
+        externalId: id
+        type: String
+        indexed: true
+        attributeAlias: pullRequestParticipantId
+  PullRequestReview:
+    displayName: PullRequestReview
+    externalId: PullRequestReview
+    description: Entity representing a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: userLogin
+        externalId: $.author.login
+        type: String
+        indexed: true
+        attributeAlias: reviewAuthorLogin
+      - name: pullRequestId
+        externalId: $.pullRequest.id
+        type: String
+        indexed: true
+        attributeAlias: reviewPullRequestId
+  PullRequestCommit:
+    displayName: PullRequestCommit
+    externalId: PullRequestCommit
+    description: Entity representing a Commit in a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: pullRequestId
+        externalId: $.pullRequest.id
+        type: String
+        indexed: true
+        attributeAlias: commitPullRequestId
+      - name: commitId
+        externalId: $.commit.id
+        type: String
+      - name: commitAuthor
+        externalId: $.commit.author.user.id
+        type: String
+        indexed: true
+        attributeAlias: commitAuthorId
+      
+  PullRequestChangedFile:
+    displayName: PullRequestChangedFile
+    externalId: PullRequestChangedFile
+    description: Entity representing a changed file in a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId # concatenated the file path and PR id
+        externalId: uniqueId
+        type: String
+        uniqueId: true
+      - name: pullRequestId
+        externalId: pullRequestId
+        type: String
+        indexed: true
+        attributeAlias: changedFilePullRequestId
+      - name: path # unique for each PR
+        externalId: path
+        type: String
+        indexed: true
+      - name: additions
+        externalId: additions
+        type: Int64
+      - name: deletions
+        externalId: deletions
+        type: Int64
+      - name: changeType
+        externalId: changeType
+        type: String
+      - name: viewerViewedState
+        externalId: viewerViewedState
+        type: String
   
   Issue:
     displayName: Issue
@@ -817,6 +828,9 @@ entities:
         type: String
         indexed: true
         attributeAlias: issueRepositoryId
+      - name: title
+        externalId: title
+        type: String
   IssueAssignee: # similar to orguser
     displayName: IssueAssignee
     externalId: IssueAssignee
@@ -839,6 +853,9 @@ entities:
         type: String
         indexed: true
         attributeAlias: issueAssigneeId
+      - name: login
+        externalId: login
+        type: String
   IssueParticipant: # similar to orguser
     displayName: IssueParticipant
     externalId: IssueParticipant
@@ -861,6 +878,11 @@ entities:
         type: String
         indexed: true
         attributeAlias: issueParticipantId
+      - name: login
+        externalId: login
+        type: String
+  
+  
   Label:
     displayName: Label
     externalId: Label
@@ -903,28 +925,28 @@ entities:
       - name: name
         externalId: name
         type: String
-
-  # PullRequestLabel:
-  #   displayName: PullRequestLabel
-  #   externalId: PullRequestLabel
-  #   description: Entity representing the metadata of a Label entity for a GitHub PullRequest
-  #   pageSize: 100
-  #   pagesOrderedById: false
-  #   attributes:
-  #     - name: uniqueId
-  #       externalId: uniqueId
-  #       type: String
-  #       indexed: true
-  #       uniqueId: true
-  #     - name: pullRequestId
-  #       externalId: pullRequestId
-  #       type: String
-  #       indexed: true
-  #     - name: labelId
-  #       externalId: labelId
-  #       type: String
-  #       indexed: true
-  
+  PullRequestLabel:
+    displayName: PullRequestLabel
+    externalId: PullRequestLabel
+    description: Entity representing the metadata of a Label entity for a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: pullRequestId
+        externalId: pullRequestId
+        type: String
+        indexed: true
+        attributeAlias: pullRequestLabelPullRequestId
+      - name: labelId
+        externalId: labelId
+        type: String
+        indexed: true
+        attributeAlias: pullRequestLabelId
   IssueLabel:
     displayName: IssueLabel
     externalId: IssueLabel
@@ -947,9 +969,15 @@ entities:
         type: String
         indexed: true
         attributeAlias: issueLabelId
+      - name: name
+        externalId: name
+        type: String
 
 
 relationships:
+
+###### PART 1 RELATIONSHIPS BELOW THIS #######
+
   RepositoryToOrganization:
     displayName: OrganizationRepository
     name: MemberOf
@@ -1014,221 +1042,269 @@ relationships:
 
 ########### Issue RELATIONSHIPS ##########
 
-IssueToUserAuthor:
-  displayName: IssueUserAuthor
-  name: AuthorOf
-  fromAttribute: issueAuthorLogin
-  toAttribute: userLogin
-
-IssueToCollaboratorAuthor:
-  displayName: IssueCollaboratorAuthor
-  name: AuthorOf
-  fromAttribute: issueAuthorLogin
-  toAttribute: collaboratorLogin
-
-IssueToRepository:
-  displayName: RepositoryIssue
-  name: MemberOf
-  fromAttribute: issueRepositoryId
-  toAttribute: repositoryId
-
-IssueToIssueAssignee:
-  displayName: IssueToIssueAssignee
-  name: MemberOf
-  fromAttribute: issueId
-  toAttribute: assignedIssueId
-
-IssueAssigneeToUser:
-  displayName: IssueAssigneeUser
-  name: MemberOf
-  fromAttribute: issueAssigneeId
-  toAttribute: userId
-
-IssueAssigneeToCollaborator:
-  displayName: IssueAssigneeCollaborator
-  name: MemberOf
-  fromAttribute: issueAssigneeId
-  toAttribute: collaboratorId
-
-IssueToAssignedUser:
-  displayName: IssueUserAssignee
-  name: MemberOf
-  path:
-    - relationship: IssueToIssueAssignee
-      direction: Forward
-    - relationship: IssueAssigneeToUser
-      direction: Forward
-
-IssueToAssignedCollaborator:
-  displayName: IssueCollaboratorAssignee
-  name: MemberOf
-  path:
-    - relationship: IssueToIssueAssignee
-      direction: Forward
-    - relationship: IssueAssigneeToCollaborator
-      direction: Forward
-
-IssueToIssueParticipant:
-  displayName: IssueToIssueParticipant
-  name: MemberOf
-  fromAttribute: issueId
-  toAttribute: participantIssueId
-
-IssueParticipantToUser:
-  displayName: IssueParticipantUser
-  name: MemberOf
-  fromAttribute: issueParticipantId
-  toAttribute: userId
-
-IssueParticipantToCollaborator:
-  displayName: IssueParticipantCollaborator
-  name: MemberOf
-  fromAttribute: issueParticipantId
-  toAttribute: collaboratorId
-
-IssueToParticipatingUser:
-  displayName: IssueUserParticipant
-  name: MemberOf
-  path:
-    - relationship: IssueToIssueParticipant
-      direction: Forward
-    - relationship: IssueParticipantToUser
-      direction: Forward
-
-IssueToParticipatingCollaborator:
-  displayName: IssueCollaboratorParticipant
-  name: MemberOf
-  path:
-    - relationship: IssueToIssueParticipant
-      direction: Forward
-    - relationship: IssueParticipantToCollaborator
-      direction: Forward
+  IssueToUserAuthor:
+    displayName: IssueUserAuthor
+    name: AuthorOf
+    fromAttribute: issueAuthorLogin
+    toAttribute: userLogin
+  IssueToCollaboratorAuthor:
+    displayName: IssueCollaboratorAuthor
+    name: AuthorOf
+    fromAttribute: issueAuthorLogin
+    toAttribute: collaboratorLogin
+  IssueToRepository:
+    displayName: RepositoryIssue
+    name: MemberOf
+    fromAttribute: issueRepositoryId
+    toAttribute: repositoryId
+  IssueToIssueAssignee:
+    displayName: IssueToIssueAssignee
+    name: MemberOf
+    fromAttribute: issueId
+    toAttribute: assignedIssueId
+  IssueAssigneeToUser:
+    displayName: IssueAssigneeUser
+    name: MemberOf
+    fromAttribute: issueAssigneeId
+    toAttribute: userId
+  IssueAssigneeToCollaborator:
+    displayName: IssueAssigneeCollaborator
+    name: MemberOf
+    fromAttribute: issueAssigneeId
+    toAttribute: collaboratorId
+  IssueToAssignedUser:
+    displayName: IssueUserAssignee
+    name: MemberOf
+    path:
+      - relationship: IssueToIssueAssignee
+        direction: Forward
+      - relationship: IssueAssigneeToUser
+        direction: Forward
+  IssueToAssignedCollaborator:
+    displayName: IssueCollaboratorAssignee
+    name: MemberOf
+    path:
+      - relationship: IssueToIssueAssignee
+        direction: Forward
+      - relationship: IssueAssigneeToCollaborator
+        direction: Forward
+  IssueToIssueParticipant:
+    displayName: IssueToIssueParticipant
+    name: MemberOf
+    fromAttribute: issueId
+    toAttribute: participantIssueId
+  IssueParticipantToUser:
+    displayName: IssueParticipantUser
+    name: MemberOf
+    fromAttribute: issueParticipantId
+    toAttribute: userId
+  IssueParticipantToCollaborator:
+    displayName: IssueParticipantCollaborator
+    name: MemberOf
+    fromAttribute: issueParticipantId
+    toAttribute: collaboratorId
+  IssueToParticipatingUser:
+    displayName: IssueUserParticipant
+    name: MemberOf
+    path:
+      - relationship: IssueToIssueParticipant
+        direction: Forward
+      - relationship: IssueParticipantToUser
+        direction: Forward
+  IssueToParticipatingCollaborator:
+    displayName: IssueCollaboratorParticipant
+    name: MemberOf
+    path:
+      - relationship: IssueToIssueParticipant
+        direction: Forward
+      - relationship: IssueParticipantToCollaborator
+        direction: Forward
 
 ########### Label RELATIONSHIPS ##########
 
-LabelToRepositoryLabel:
-  displayName: RepositoryLabel
-  name: MemberOf
-  fromAttribute: labelId
-  toAttribute: repositoryLabelId
+  LabelToRepositoryLabel:
+    displayName: RepositoryLabel
+    name: MemberOf
+    fromAttribute: labelId
+    toAttribute: repositoryLabelId
+  RepositoryLabelToRepository:
+    displayName: RepositoryLabel
+    name: MemberOf
+    fromAttribute: repositoryLabelRepositoryId
+    toAttribute: repositoryId
+  LabelToRepository:
+    displayName: RepositoryLabel
+    name: MemberOf
+    path:
+      - relationship: LabelToRepositoryLabel
+        direction: Forward
+      - relationship: RepositoryLabelToRepository
+        direction: Forward
+  LabelToIssueLabel:
+    displayName: IssueLabel
+    name: MemberOf
+    fromAttribute: labelId
+    toAttribute: issueLabelId
+  IssueLabelToIssue:
+    displayName: IssueLabel
+    name: MemberOf
+    fromAttribute: issueLabelIssueId
+    toAttribute: issueId
+  LabelToIssue:
+    displayName: IssueLabel
+    name: MemberOf
+    path:
+      - relationship: LabelToIssueLabel
+        direction: Forward
+      - relationship: IssueLabelToIssue
+        direction: Forward
+  LabelToPullRequestLabel:
+    displayName: PullRequestLabel
+    name: MemberOf
+    fromAttribute: labelId
+    toAttribute: pullRequestLabelId
+  PullRequestLabelToPullRequest:
+    displayName: PullRequestLabel
+    name: MemberOf
+    fromAttribute: pullRequestLabelPullRequestId
+    toAttribute: pullRequestId
+  LabelToPullRequest:
+    displayName: PullRequestLabel
+    name: MemberOf
+    path:
+      - relationship: LabelToPullRequestLabel
+        direction: Forward
+      - relationship: PullRequestLabelToPullRequest
+        direction: Forward
 
-RepositoryLabelToRepository:
-  displayName: RepositoryLabel
-  name: MemberOf
-  fromAttribute: repositoryLabelRepositoryId
-  toAttribute: repositoryId
+######## PULL REQUEST RELATIONSHIPS ***********
 
-LabelToRepository:
-  displayName: RepositoryLabel
-  name: MemberOf
-  path:
-    - relationship: LabelToRepositoryLabel
-      direction: Forward
-    - relationship: RepositoryLabelToRepository
-      direction: Forward
+######### PullRequest RELATIONSHIPS ##########
+  PullRequestToBaseRepository:
+    displayName: RepositoryPullRequest
+    name: MemberOf
+    fromAttribute: baseRepositoryId
+    toAttribute: repositoryId
+  PullRequestToHeadRepository:
+    displayName: RepositoryPullRequest
+    name: MemberOf
+    fromAttribute: headRepositoryId
+    toAttribute: repositoryId
+  PullRequestToAuthor:
+    displayName: PullRequestAuthor
+    name: AuthorOf
+    fromAttribute: authorLogin
+    toAttribute: userLogin
 
-LabelToIssueLabel:
-  displayName: IssueLabel
-  name: MemberOf
-  fromAttribute: labelId
-  toAttribute: issueLabelId
+######### PRAssignee RELATIONSHIPS ##########
+  PullRequestAssigneeToPullRequest:
+    displayName: AssignedPullRequest
+    name: MemberOf
+    fromAttribute: assignedPullRequestId
+    toAttribute: pullRequestId
+  UserToPullRequestAssignee:
+    displayName: UserAssignedPullRequest
+    name: MemberOf
+    fromAttribute: userId
+    toAttribute: pullRequestAssigneeId
+  CollaboratorToPullRequestAssignee:
+    displayName: CollaboratorAssignedPullRequest
+    name: MemberOf
+    fromAttribute: collaboratorId
+    toAttribute: pullRequestAssigneeId
+  PullRequestToAssignedUser:
+    displayName: PullRequestUserAssignee
+    name: MemberOf
+    path:
+      - relationship: UserToPullRequestAssignee
+        direction: Forward
+      - relationship: PullRequestAssigneeToPullRequest
+        direction: Forward
+  PullRequestToAssignedCollaborator:
+    displayName: PullRequestCollaboratorAssignee
+    name: MemberOf
+    path:
+      - relationship: CollaboratorToPullRequestAssignee
+        direction: Forward
+      - relationship: PullRequestAssigneeToPullRequest
+        direction: Forward
 
-IssueLabelToIssue:
-  displayName: IssueLabel
-  name: MemberOf
-  fromAttribute: issueLabelIssueId
-  toAttribute: issueId
+######### PRParticipant RELATIONSHIPS ##########
 
-LabelToIssue:
-  displayName: IssueLabel
-  name: MemberOf
-  path:
-    - relationship: LabelToIssueLabel
-      direction: Forward
-    - relationship: IssueLabelToIssue
-      direction: Forward
+  PullRequestParticipantToPullRequest:
+    displayName: ParticipatingPullRequest
+    name: MemberOf
+    fromAttribute: participantPullRequestId
+    toAttribute: pullRequestId
+  UserToPullRequestParticipant:
+    displayName: UserParticipatingPullRequest
+    name: MemberOf
+    fromAttribute: userId
+    toAttribute: pullRequestParticipantId
+  CollaboratorToPullRequestParticipant:
+    displayName: CollaboratorParticipatingPullRequest
+    name: MemberOf
+    fromAttribute: collaboratorId
+    toAttribute: pullRequestParticipantId
+  PullRequestToUserParticipant:
+    displayName: PullRequestUserParticipant
+    name: MemberOf
+    path:
+      - relationship: UserToPullRequestParticipant
+        direction: Forward
+      - relationship: PullRequestParticipantToPullRequest
+        direction: Forward
+  PullRequestToCollaboratorParticipant:
+    displayName: PullRequestCollaboratorParticipant
+    name: MemberOf
+    path:
+      - relationship: CollaboratorToPullRequestParticipant
+        direction: Forward
+      - relationship: PullRequestParticipantToPullRequest
+        direction: Forward
 
 
-# ######### PullRequest RELATIONSHIPS ##########
-# PullRequestToBaseRepository:
-#   displayName: RepositoryPullRequest
-#   name: MemberOf
-#   fromAttribute: baseRepositoryId
-#   toAttribute: repositoryId
-# PullRequestToHeadRepository:
-#   displayName: RepositoryPullRequest
-#   name: MemberOf
-#   fromAttribute: headRepositoryId
-#   toAttribute: repositoryId
-# PullRequestToAuthor:
-#   displayName: PullRequestAuthor
-#   name: AuthorOf
-#   fromAttribute: authorLogin
-#   toAttribute: userLogin
+######### PRReview RELATIONSHIPS ##########
 
-# ######### PRAssignee RELATIONSHIPS ##########
-# PullRequestAssigneeToPullRequest:
-#   displayName: AssignedPullRequest
-#   name: MemberOf
-#   fromAttribute: assignedPullRequestId
-#   toAttribute: pullRequestId
-# UserToPullRequestAssignee:
-#   displayName: UserAssignedPullRequest
-#   name: MemberOf
-#   fromAttribute: userId
-#   toAttribute: pullRequestAssigneeId
-# CollaboratorToPullRequestAssignee:
-#   displayName: CollaboratorAssignedPullRequest
-#   name: MemberOf
-#   fromAttribute: collaboratorId
-#   toAttribute: pullRequestAssigneeId
-# PullRequestToAssignedUser:
-#   displayName: PullRequestUserAssignee
-#   name: MemberOf
-#   path:
-#     - relationship: UserToPullRequestAssignee
-#       direction: Forward
-#     - relationship: PullRequestAssigneeToPullRequest
-#       direction: Forward
-# PullRequestToAssignedCollaborator:
-#   displayName: PullRequestCollaboratorAssignee
-#   name: MemberOf
-#   path:
-#     - relationship: CollaboratorToPullRequestAssignee
-#       direction: Forward
-#     - relationship: PullRequestAssigneeToPullRequest
-#       direction: Forward
+  PullRequestReviewToPullRequest:
+    displayName: PullRequestReview
+    name: MemberOf
+    fromAttribute: reviewPullRequestId
+    toAttribute: pullRequestId
+  PullRequestReviewToUser:
+    displayName: PullRequestReviewer
+    name: ReviewerOf
+    fromAttribute: reviewAuthorLogin
+    toAttribute: userLogin
+  PullRequestReviewToCollaborator:
+    displayName: PullRequestReviewer
+    name: ReviewerOf
+    fromAttribute: reviewAuthorLogin
+    toAttribute: collaboratorLogin
 
-# ######### PRParticipant RELATIONSHIPS ##########
+######### PRCommit RELATIONSHIPS ##########
 
-# PullRequestParticipantToPullRequest:
-#   displayName: ParticipatingPullRequest
-#   name: MemberOf
-#   fromAttribute: participantPullRequestId
-#   toAttribute: pullRequestId
-# UserToPullRequestParticipant:
-#   displayName: UserParticipatingPullRequest
-#   name: MemberOf
-#   fromAttribute: userId
-#   toAttribute: pullRequestParticipantId
-# CollaboratorToPullRequestParticipant:
-#   displayName: CollaboratorParticipatingPullRequest
-#   name: MemberOf
-#   fromAttribute: collaboratorId
-#   toAttribute: pullRequestParticipantId
-# PullRequestToUserParticipant:
-#   displayName: PullRequestUserParticipant
-#   name: MemberOf
-#   path:
-#     - relationship: UserToPullRequestParticipant
-#       direction: Forward
-#     - relationship: PullRequestParticipantToPullRequest
-#       direction: Forward
-# PullRequestToCollaboratorParticipant:
-  # displayName: PullRequestCollaboratorParticipant
-  # name: MemberOf
-  # path:
-  #   - relationship: CollaboratorToPullRequestParticipant
-  #     direction: Forward
-  #   - relationship: PullRequestParticipantToPullRequest
-  #     direction: Forward
+  PullRequestCommitToPullRequest:
+    displayName: PullRequestCommit
+    name: MemberOf
+    fromAttribute: commitPullRequestId
+    toAttribute: pullRequestId
+  PullRequestCommitToUser:
+    displayName: PullRequestCommit
+    name: CommitterOf
+    fromAttribute: commitAuthorId
+    toAttribute: userId
+  PullRequestCommitToCollaborator:
+    displayName: PullRequestCommit
+    name: CommitterOf
+    fromAttribute: commitAuthorId
+    toAttribute: collaboratorId
+
+######### PRChangedFile RELATIONSHIPS ##########
+
+  PullRequestChangedFileToPullRequest:
+    displayName: PullRequestChangedFile
+    name: MemberOf
+    fromAttribute: changedFilePullRequestId
+    toAttribute: pullRequestId
+
