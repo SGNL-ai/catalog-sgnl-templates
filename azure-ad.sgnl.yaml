@@ -342,8 +342,7 @@ entities:
         externalId: memberId
         type: String
         indexed: true
-  Application:
-    # https://learn.microsoft.com/en-us/graph/api/resources/application?view=graph-rest-1.0
+  Application:    
     description: "Application Entity in Azure AD"
     displayName: Application
     externalId: Application
@@ -485,8 +484,7 @@ entities:
       - name: webApplication__logoutUrl
         externalId: webApplication__logoutUrl
         type: String
-  Device:
-    # https://learn.microsoft.com/en-us/graph/api/resources/device?view=graph-rest-1.0
+  Device:    
     description: "Device Entity in Azure AD"
     displayName: Device
     externalId: Device
@@ -574,7 +572,6 @@ entities:
         externalId: trustType
         type: String
   Role:
-    # https://learn.microsoft.com/en-us/graph/api/resources/directoryrole?view=graph-rest-1.0
     description: "Directory Role Entity in Azure AD"
     displayName: Role
     externalId: Role
@@ -599,8 +596,7 @@ entities:
       - name: deletedDateTime
         externalId: deletedDateTime
         type: DateTime
-  RoleMember:
-    # https://learn.microsoft.com/en-us/graph/api/directoryrole-list-members?view=graph-rest-1.0    
+  RoleMember:    
     description: "Directory Role Member Entity in Azure AD"
     displayName: RoleMember
     externalId: RoleMember
@@ -629,13 +625,8 @@ relationships:
     toAttribute: User.id
     # [TODO sc-11020] Give these a unique ID, rename both of these to Member,
     # and keep corresponding path relationships unique below
-  UserMember:
-    name: Member
-    displayName: User Member
-    fromAttribute: GroupMember.memberId
-    toAttribute: User.id
   RoleMember:
-    name: Member
+    name: MemberOf
     displayName: Role To Role Member
     fromAttribute: Role.id
     toAttribute: RoleMember.roleId
@@ -643,7 +634,20 @@ relationships:
     name: Member
     displayName: User To Role Member
     fromAttribute: User.id
-    toAttribute: RoleMember.memberId
+    toAttribute: RoleMember.memberId  
+  RoleMemberUser:
+    name: Role
+    displayName: Role Member User
+    path:
+      - relationship: UserRole
+        direction: Backward
+      - relationship: RoleMember
+        direction: Forward
+  UserMember:
+    name: Member
+    displayName: User Member
+    fromAttribute: GroupMember.memberId
+    toAttribute: User.id
   GroupMember:
     name: Member
     displayName: Group Member
@@ -670,11 +674,3 @@ relationships:
         direction: Backward
       - relationship: MemberOf
         direction: Forward
-  RoleToUser:
-    name: Role
-    displayName: Role To User
-    path:
-      - relationship: RoleMember
-        direction: forward
-      - relationship: UserRole
-        direction: backward
