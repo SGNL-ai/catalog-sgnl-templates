@@ -589,11 +589,10 @@ entities:
       - name: displayName
         externalId: displayName
         type: String
-        indexed: false
+        indexed: true
       - name: description
         externalId: description
         type: String
-        list: false
       - name: roleTemplateId
         externalId: roleTemplateId
         type: String
@@ -620,7 +619,6 @@ entities:
       - name: memberId
         externalId: memberId
         type: String
-        list: false
         indexed: true      
 
 
@@ -636,13 +634,13 @@ relationships:
     displayName: User Member
     fromAttribute: GroupMember.memberId
     toAttribute: User.id
-  RoleToRoleMember:
-    name: RoleToRoleMember
+  RoleMember:
+    name: Member
     displayName: Role To Role Member
     fromAttribute: Role.id
     toAttribute: RoleMember.roleId
-  UserToRoleMember:
-    name: UserToRoleMember
+  UserRole:
+    name: Member
     displayName: User To Role Member
     fromAttribute: User.id
     toAttribute: RoleMember.memberId
@@ -676,7 +674,7 @@ relationships:
     name: Role
     displayName: Role To User
     path:
-      - relationship: RoleToRoleMember
+      - relationship: RoleMember
         direction: forward
-      - relationship: UserToRoleMember
+      - relationship: UserRole
         direction: backward
