@@ -8,7 +8,7 @@ defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
-type: "AzureAD-1.0.1"
+type: "AzureAD-1.1.0"
 # Example Config:
 # {"requestTimeoutSeconds": 10, "apiVersion": "v1.0"}
 adapterConfig: "eyJyZXF1ZXN0VGltZW91dFNlY29uZHMiOiAxMCwgImFwaVZlcnNpb24iOiAidjEuMCJ9"
@@ -573,6 +573,56 @@ entities:
       - name: trustType
         externalId: trustType
         type: String
+  Role:
+    # https://learn.microsoft.com/en-us/graph/api/resources/directoryrole?view=graph-rest-1.0
+    description: "Directory Role Entity in Azure AD"
+    displayName: Role
+    externalId: Role
+    pageSize: 999
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: displayName
+        externalId: displayName
+        type: String
+        indexed: false
+      - name: description
+        externalId: description
+        type: String
+        list: false
+      - name: roleTemplateId
+        externalId: roleTemplateId
+        type: String
+      - name: deletedDateTime
+        externalId: deletedDateTime
+        type: DateTime
+  RoleMember:
+    # https://learn.microsoft.com/en-us/graph/api/directoryrole-list-members?view=graph-rest-1.0    
+    description: "Directory Role Member Entity in Azure AD"
+    displayName: RoleMember
+    externalId: RoleMember
+    pageSize: 999
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: roleId
+        externalId: roleId
+        type: String
+        indexed: true
+      - name: memberId
+        externalId: memberId
+        type: String
+        list: false
+        indexed: true      
+
 
 relationships:
   UserManager:
@@ -586,6 +636,16 @@ relationships:
     displayName: User Member
     fromAttribute: GroupMember.memberId
     toAttribute: User.id
+  RoleToRoleMember:
+    name: RoleToRoleMember
+    displayName: Role To Role Member
+    fromAttribute: Role.id
+    toAttribute: RoleMember.roleId
+  UserToRoleMember:
+    name: UserToRoleMember
+    displayName: User To Role Member
+    fromAttribute: User.id
+    toAttribute: RoleMember.memberId
   GroupMember:
     name: Member
     displayName: Group Member
@@ -612,3 +672,11 @@ relationships:
         direction: Backward
       - relationship: MemberOf
         direction: Forward
+  RoleToUser:
+    name: Role
+    displayName: Role To User
+    path:
+      - relationship: RoleToRoleMember
+        direction: forward
+      - relationship: UserToRoleMember
+        direction: backward
