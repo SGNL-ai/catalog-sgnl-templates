@@ -619,30 +619,43 @@ entities:
 
 
 relationships:
+  UserRoleMember:
+    name: Member
+    displayName: User Role Member
+    fromAttribute: RoleMember.memberId
+    toAttribute: User.id
+  RoleMember:
+    name: Member
+    displayName: Role Member
+    fromAttribute: RoleMember.roleId
+    toAttribute: Role.id
+  RoleMemberOf:
+    name: MemberOf
+    displayName: Member Of
+    fromAttribute: RoleMember.memberId
+    toAttribute: Role.id
+  UserMemberRole:
+    name: Role
+    displayName: User Member Role
+    path:
+      - relationship: UserRoleMember
+        direction: Backward
+      - relationship: RoleMemberOf
+        direction: Forward
+  RoleMemberRole:
+    name: Role
+    displayName: Role Member Role
+    path:
+      - relationship: RoleMember
+        direction: Backward
+      - relationship: RoleMemberOf
+        direction: Forward
   UserManager:
     name: Manager
     fromAttribute: User.manager__id
     toAttribute: User.id
     # [TODO sc-11020] Give these a unique ID, rename both of these to Member,
     # and keep corresponding path relationships unique below
-  RoleMember:
-    name: MemberOf
-    displayName: Role To Role Member
-    fromAttribute: Role.id
-    toAttribute: RoleMember.roleId
-  UserRole:
-    name: Member
-    displayName: User To Role Member
-    fromAttribute: User.id
-    toAttribute: RoleMember.memberId  
-  RoleMemberUser:
-    name: Role
-    displayName: Role Member User
-    path:
-      - relationship: UserRole
-        direction: Backward
-      - relationship: RoleMember
-        direction: Forward
   UserMember:
     name: Member
     displayName: User Member
