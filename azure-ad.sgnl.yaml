@@ -8,7 +8,7 @@ defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
-type: "AzureAD-1.1.0"
+type: "AzureAD-1.0.1"
 # Example Config:
 # {"requestTimeoutSeconds": 10, "apiVersion": "v1.0"}
 adapterConfig: "eyJyZXF1ZXN0VGltZW91dFNlY29uZHMiOiAxMCwgImFwaVZlcnNpb24iOiAidjEuMCJ9"
