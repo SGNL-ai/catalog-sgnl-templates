@@ -768,7 +768,7 @@ entities:
       - name: updatedAt
         externalId: updatedAt
         type: DateTime
-  PullRequestAssignee: # similar to orguser
+  PullRequestAssignee:
     displayName: PullRequestAssignee
     externalId: PullRequestAssignee
     description: Entity representing the connection between User entities that are assigned to a GitHub PullRequest
@@ -793,7 +793,7 @@ entities:
       - name: login # remove later
         externalId: login
         type: String
-  PullRequestParticipant: # similar to orguser
+  PullRequestParticipant:
     displayName: PullRequestParticipant
     externalId: PullRequestParticipant
     description: Entity representing the connection between a User entity that is a participant of a GitHub PullRequest
@@ -1012,7 +1012,7 @@ entities:
       - name: updatedAt
         externalId: updatedAt
         type: DateTime
-  IssueAssignee: # similar to orguser
+  IssueAssignee:
     displayName: IssueAssignee
     externalId: IssueAssignee
     description: Entity representing the connection between a User entity assigned to a GitHub Issue
@@ -1037,7 +1037,7 @@ entities:
       - name: login # remove later
         externalId: login
         type: String
-  IssueParticipant: # similar to orguser
+  IssueParticipant:
     displayName: IssueParticipant
     externalId: IssueParticipant
     description: Entity representing the connection between a User entity that is a participant of a GitHub Issue
