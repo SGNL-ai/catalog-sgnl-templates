@@ -342,8 +342,7 @@ entities:
         externalId: memberId
         type: String
         indexed: true
-  Application:
-    # https://learn.microsoft.com/en-us/graph/api/resources/application?view=graph-rest-1.0
+  Application:    
     description: "Application Entity in Azure AD"
     displayName: Application
     externalId: Application
@@ -485,8 +484,7 @@ entities:
       - name: webApplication__logoutUrl
         externalId: webApplication__logoutUrl
         type: String
-  Device:
-    # https://learn.microsoft.com/en-us/graph/api/resources/device?view=graph-rest-1.0
+  Device:    
     description: "Device Entity in Azure AD"
     displayName: Device
     externalId: Device
@@ -573,8 +571,85 @@ entities:
       - name: trustType
         externalId: trustType
         type: String
+  Role:
+    description: "Directory Role Entity in Azure AD"
+    displayName: Role
+    externalId: Role
+    pageSize: 999
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: displayName
+        externalId: displayName
+        type: String
+        indexed: true
+      - name: description
+        externalId: description
+        type: String
+      - name: roleTemplateId
+        externalId: roleTemplateId
+        type: String
+      - name: deletedDateTime
+        externalId: deletedDateTime
+        type: DateTime
+  RoleMember:    
+    description: "Directory Role Member Entity in Azure AD"
+    displayName: RoleMember
+    externalId: RoleMember
+    pageSize: 999
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: roleId
+        externalId: roleId
+        type: String
+        indexed: true
+      - name: memberId
+        externalId: memberId
+        type: String
+        indexed: true      
+
 
 relationships:
+  UserRoleMember:
+    name: Member
+    displayName: User Role Member
+    fromAttribute: RoleMember.memberId
+    toAttribute: User.id
+  RoleMember:
+    name: Member
+    displayName: Role Member
+    fromAttribute: RoleMember.roleId
+    toAttribute: Role.id
+  RoleMemberOf:
+    name: MemberOf
+    displayName: Member Of
+    fromAttribute: RoleMember.memberId
+    toAttribute: Role.id
+  UserMemberRole:
+    name: Role
+    displayName: User Member Role
+    path:
+      - relationship: UserRoleMember
+        direction: Backward
+      - relationship: RoleMemberOf
+        direction: Forward
+  RoleMemberRole:
+    name: Role
+    displayName: Role Member Role
+    path:
+      - relationship: RoleMember
+        direction: Backward
+      - relationship: RoleMemberOf
+        direction: Forward
   UserManager:
     name: Manager
     fromAttribute: User.manager__id
