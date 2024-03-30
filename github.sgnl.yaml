@@ -662,9 +662,6 @@ entities:
         indexed: true
         uniqueId: true
         attributeAlias: pullRequestId
-      - name: title
-        externalId: title
-        type: String
       - name: baseRepositoryId
         externalId: $.baseRepository.id
         type: String
@@ -680,6 +677,92 @@ entities:
         type: String
         indexed: true
         attributeAlias: authorLogin
+      - name: authorAssociation
+        externalId: authorAssociation
+        type: String
+      - name: baseRefName
+        externalId: baseRefName
+        type: String
+      - name: canBeRebased
+        externalId: canBeRebased
+        type: Bool
+      - name: changedFiles
+        externalId: changedFiles
+        type: Int64
+      - name: closed
+        externalId: closed
+        type: Bool
+      - name: closedAt
+        externalId: closedAt
+        type: DateTime
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: createdViaEmail
+        externalId: createdViaEmail
+        type: Bool
+      - name: fullDatabaseId
+        externalId: fullDatabaseId
+        type: Int64
+      - name: deletions
+        externalId: deletions
+        type: Int64
+      - name: headRefName
+        externalId: headRefName
+        type: String
+      - name: includesCreatedEdit
+        externalId: includesCreatedEdit
+        type: Bool
+      - name: isCrossRepository
+        externalId: isCrossRepository
+        type: Bool
+      - name: isDraft
+        externalId: isDraft
+        type: Bool
+      - name: isInMergeQueue
+        externalId: isInMergeQueue
+        type: Bool
+      - name: isMergeQueueEnabled
+        externalId: isMergeQueueEnabled
+        type: Bool
+      - name: lastEditedAt
+        externalId: lastEditedAt
+        type: DateTime
+      - name: locked
+        externalId: locked
+        type: Bool
+      - name: mainterCanModify
+        externalId: mainterCanModify
+        type: Bool
+      - name: mergeStateStatus
+        externalId: mergeStateStatus
+        type: String
+      - name: mergeable
+        externalId: mergeable
+        type: String
+      - name: merged
+        externalId: merged
+        type: Bool
+      - name: mergedAt
+        externalId: mergedAt
+        type: DateTime
+      - name: number
+        externalId: number
+        type: Int64
+      - name: publishedAt
+        externalId: publishedAt
+        type: DateTime
+      - name: state
+        externalId: state
+        type: String
+      - name: title
+        externalId: title
+        type: String
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+      
+
   PullRequestAssignee: # similar to orguser
     displayName: PullRequestAssignee
     externalId: PullRequestAssignee
@@ -1190,11 +1273,16 @@ relationships:
     name: MemberOf
     fromAttribute: headRepositoryId
     toAttribute: repositoryId
-  PullRequestToAuthor:
-    displayName: PullRequestAuthor
+  PullRequestToUserAuthor:
+    displayName: PullRequestUserAuthor
     name: AuthorOf
     fromAttribute: authorLogin
     toAttribute: userLogin
+  PullRequestToCollaboratorAuthor:
+    displayName: PullRequestCollaboratorAuthor
+    name: AuthorOf
+    fromAttribute: authorLogin
+    toAttribute: collaboratorLogin
 
 ######### PRAssignee RELATIONSHIPS ##########
   PullRequestAssigneeToPullRequest:
