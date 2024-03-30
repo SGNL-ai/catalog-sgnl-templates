@@ -2,15 +2,21 @@
 displayName: "GitHub"
 icon: "PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjMjQyOTJFIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMzIgOEMyNi4yOTY3IDcuOTk0MiAyMC43Nzc3IDEwLjAxOTYgMTYuNDMyMSAxMy43MTMzQzEyLjA4NjUgMTcuNDA3IDkuMTk4MzcgMjIuNTI3NiA4LjI4NTIxIDI4LjE1NzNDNy4zNzIwNCAzMy43ODcgOC40OTM1NiAzOS41NTc5IDExLjQ0ODggNDQuNDM1OUMxNC40MDQgNDkuMzEzOCAxOC45OTk4IDUyLjk3OTkgMjQuNDEyNSA1NC43NzcyQzI1LjYyMDYgNTQuOTk4MSAyNi4wNDc5IDU0LjI0NjggMjYuMDQ3OSA1My42MTMzQzI2LjA0NzkgNTIuOTc5NyAyNi4wNDc5IDUxLjUzNTkgMjYuMDQ3OSA0OS41MzIyQzE5LjM0NDQgNTAuOTkwOCAxNy45MyA0Ni4zMDU3IDE3LjkzIDQ2LjMwNTdDMTcuNDg1MyA0NC44NTM3IDE2LjU0MDUgNDMuNjA2MSAxNS4yNjMzIDQyLjc4NDVDMTMuMDk3NiA0MS4zMTEyIDE1LjQ0MDEgNDEuMzExMiAxNS40NDAxIDQxLjMxMTJDMTYuMTk5MyA0MS40MTg1IDE2LjkyNDEgNDEuNjk3IDE3LjU1OTcgNDIuMTI1OUMxOC4xOTUzIDQyLjU1NDcgMTguNzI1IDQzLjEyMjUgMTkuMTA4NiA0My43ODY0QzE5LjQzNDYgNDQuMzc3NCAxOS44NzQxIDQ0Ljg5ODMgMjAuNDAxOSA0NS4zMTkyQzIwLjkyOTcgNDUuNzQgMjEuNTM1NCA0Ni4wNTI0IDIyLjE4NDIgNDYuMjM4NkMyMi44MzMgNDYuNDI0OCAyMy41MTIyIDQ2LjQ4MSAyNC4xODI4IDQ2LjQwNEMyNC44NTM1IDQ2LjMyNyAyNS41MDIzIDQ2LjExODQgMjYuMDkyIDQ1Ljc5QzI2LjE4NDUgNDQuNTc4IDI2LjcwNyA0My40MzkgMjcuNTY1MyA0Mi41NzgzQzIyLjIzMiA0MS45NzQyIDE2LjYzMzUgMzkuOTExNiAxNi42MzM1IDMwLjc5MTlDMTYuNTk2OSAyOC40MDk1IDE3LjQ3NzggMjYuMTA0MyAxOS4wOTM5IDI0LjM1MzZDMTguMzc0MSAyMi4yODIyIDE4LjQ1ODIgMjAuMDE2IDE5LjMyOTYgMTguMDAzN0MxOS4zMjk2IDE4LjAwMzcgMjEuMzQ4IDE3LjM1NTQgMjUuOTMgMjAuNDY0MUMyOS44NjQ1IDE5LjM4MzggMzQuMDE3NSAxOS4zODM4IDM3Ljk1MjEgMjAuNDY0MUM0Mi41MzQgMTcuMzU1NCA0NC41Mzc3IDE4LjAwMzcgNDQuNTM3NyAxOC4wMDM3QzQ1LjQyMTIgMTkuOTk0NyA0NS41MjY0IDIyLjI0NDYgNDQuODMyNCAyNC4zMDk0QzQ2LjQ0ODUgMjYuMDYwMiA0Ny4zMjk0IDI4LjM2NTMgNDcuMjkyOCAzMC43NDc3QzQ3LjI5MjggMzkuOTcwNSA0MS42Nzk1IDQxLjk4ODkgMzYuMzMxNSA0Mi41MzQxQzM2LjkwNDkgNDMuMTEwNSAzNy4zNDc3IDQzLjgwMzUgMzcuNjI5OSA0NC41NjYxQzM3LjkxMjEgNDUuMzI4NyAzOC4wMjcgNDYuMTQzMSAzNy45NjY4IDQ2Ljk1NEMzNy45NjY4IDUwLjE2NTcgMzcuOTY2OCA1Mi43NTg3IDM3Ljk2NjggNTMuNTM5NkMzNy45NjY4IDU0LjMyMDQgMzguMzk0MSA1NC45MjQ1IDM5LjYxNjkgNTQuNjg4OEM0NC45NjggNTIuODQ0MSA0OS40OTQ5IDQ5LjE2NzUgNTIuMzk4IDQ0LjMwODZDNTUuMzAxIDM5LjQ0OTcgNTYuMzkzMyAzMy43MjEgNTUuNDgyIDI4LjEzNDhDNTQuNTcwNiAyMi41NDg1IDUxLjcxNDIgMTcuNDY0MSA0Ny40MTc0IDEzLjc3OThDNDMuMTIwNiAxMC4wOTU1IDM3LjY1OTkgOC4wNDgzMSAzMiA4WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg=="
 description: "GitHub as a System of Record"
-# Enterprise Cloud: https://api.github.com/graphql 
-# Enterprise Server: {hostname}/api/graphql
+# Enterprise Cloud: api.github.com
+# Enterprise Server: Use your own hostname
 address: "{{Input Required}}"
 defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: "GitHub-1.0.0"
-adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogInt7SW5wdXQgUmVxdWlyZWR9fSIKfQ==" # { "enterpriseSlug": "{{Input Required}}" }
+# Example Config:
+# {
+#    "enterpriseSlug": "{{Input Required}}",
+#    "isEntepriseCloud": "{{Input Required}}",
+#    "apiVersion": "{{Input Required for REST-based entities}}"
+# }
+adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogInt7SW5wdXQgUmVxdWlyZWR9fSIsCiAgICAiaXNFbnRlcHJpc2VDbG91ZCI6ICJ7e0lucHV0IFJlcXVpcmVkfX0iLAogICAgImFwaVZlcnNpb24iOiAie3tJbnB1dCBSZXF1aXJlZCBmb3IgUkVTVC1iYXNlZCBlbnRpdGllc319Igp9"
 auth:
   - bearer:
       authToken: "Bearer {{Input Required}}"
@@ -120,32 +126,6 @@ entities:
       - name: enterpriseId
         externalId: enterpriseId
         type: String
-  OrganizationUser:
-    displayName: OrganizationUser
-    externalId: OrganizationUser
-    description: Entity representing the metadata of a User entity in a GitHub Organization
-    pageSize: 100
-    pagesOrderedById: false
-    attributes:
-      - name: id
-        externalId: uniqueId
-        type: String
-        indexed: true
-        uniqueId: true
-      - name: orgId
-        externalId: orgId
-        type: String
-        indexed: true
-        attributeAlias: orgUserOrgId
-      - name: userId
-        externalId: $.node.id
-        type: String
-        indexed: true
-        attributeAlias: orgUserId
-      - name: role
-        externalId: role
-        type: String
-        indexed: true
   # https://docs.github.com/en/graphql/reference/objects#user
   User:
     displayName: User
@@ -237,6 +217,32 @@ entities:
       - name: viewerIsFollowing
         externalId: viewerIsFollowing
         type: Bool
+  OrganizationUser:
+    displayName: OrganizationUser
+    externalId: OrganizationUser
+    description: Entity representing the metadata of a User entity in a GitHub Organization
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: orgId
+        externalId: orgId
+        type: String
+        indexed: true
+        attributeAlias: orgUserOrgId
+      - name: userId
+        externalId: $.node.id
+        type: String
+        indexed: true
+        attributeAlias: orgUserId
+      - name: role
+        externalId: role
+        type: String
+        indexed: true
   UserOrganizationVerifiedDomainEmails:
     parent: OrganizationUser
     displayName: UserOrganizationVerifiedDomainEmails
@@ -250,6 +256,7 @@ entities:
         type: String
         indexed: true
         uniqueId: true 
+  
   # https://docs.github.com/en/graphql/reference/objects#team  
   Team:
     displayName: Team
@@ -372,6 +379,7 @@ entities:
       - name: name
         externalId: $.node.name
         type: String
+  
   # https://docs.github.com/en/graphql/reference/objects#repository
   Repository:
     displayName: Repository
@@ -647,8 +655,7 @@ entities:
         externalId: viewerIsFollowing
         type: Bool
   
-##### PART 2 ENTITIES BELOW THIS #####
-
+  # https://docs.github.com/en/graphql/reference/objects#pullrequest
   PullRequest:
     displayName: PullRequest
     externalId: PullRequest
@@ -761,8 +768,6 @@ entities:
       - name: updatedAt
         externalId: updatedAt
         type: DateTime
-      
-
   PullRequestAssignee: # similar to orguser
     displayName: PullRequestAssignee
     externalId: PullRequestAssignee
@@ -785,6 +790,9 @@ entities:
         type: String
         indexed: true
         attributeAlias: pullRequestAssigneeId
+      - name: login # remove later
+        externalId: login
+        type: String
   PullRequestParticipant: # similar to orguser
     displayName: PullRequestParticipant
     externalId: PullRequestParticipant
@@ -807,6 +815,10 @@ entities:
         type: String
         indexed: true
         attributeAlias: pullRequestParticipantId
+      - name: login # remove later
+        externalId: login
+        type: String
+  # https://docs.github.com/en/graphql/reference/objects#pullrequestreview
   PullRequestReview:
     displayName: PullRequestReview
     externalId: PullRequestReview
@@ -829,6 +841,43 @@ entities:
         type: String
         indexed: true
         attributeAlias: reviewPullRequestId
+      - name: authorAssociation
+        externalId: authorAssociation
+        type: String
+      - name: authorCanPushToRepository
+        externalId: authorCanPushToRepository
+        type: Bool
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: createdViaEmail
+        externalId: createdViaEmail
+        type: Bool
+      - name: fullDatabaseId
+        externalId: fullDatabaseId
+        type: Int64
+      - name: includesCreatedEdit
+        externalId: includesCreatedEdit
+        type: Bool
+      - name: isMinimized
+        externalId: isMinimized
+        type: Bool
+      - name: lastEditedAt
+        externalId: lastEditedAt
+        type: DateTime
+      - name: minimizedReason
+        externalId: minimizedReason
+        type: String
+      - name: publishedAt
+        externalId: publishedAt
+        type: DateTime
+      - name: submittedAt
+        externalId: submittedAt
+        type: DateTime
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+  # https://docs.github.com/en/graphql/reference/objects#pullrequestcommit
   PullRequestCommit:
     displayName: PullRequestCommit
     externalId: PullRequestCommit
@@ -849,12 +898,15 @@ entities:
       - name: commitId
         externalId: $.commit.id
         type: String
+      - name: committedDate
+        externalId: committedDate
+        type: DateTime
       - name: commitAuthor
         externalId: $.commit.author.user.id
         type: String
         indexed: true
-        attributeAlias: commitAuthorId
-      
+        attributeAlias: commitAuthorId    
+  # https://docs.github.com/en/graphql/reference/objects#pullrequestchangedfile
   PullRequestChangedFile:
     displayName: PullRequestChangedFile
     externalId: PullRequestChangedFile
@@ -888,6 +940,7 @@ entities:
         externalId: viewerViewedState
         type: String
   
+  # https://docs.github.com/en/graphql/reference/objects#issue
   Issue:
     displayName: Issue
     externalId: Issue
@@ -911,9 +964,54 @@ entities:
         type: String
         indexed: true
         attributeAlias: issueRepositoryId
+      - name: activeLockReason
+        externalId: activeLockReason
+        type: String
+      - name: closed
+        externalId: closed
+        type: Bool
+      - name: closedAt
+        externalId: closedAt
+        type: DateTime
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: createdViaEmail
+        externalId: createdViaEmail
+        type: Bool
+      - name: fullDatabaseId
+        externalId: fullDatabaseId
+        type: Int64
+      - name: includesCreatedEdit
+        externalId: includesCreatedEdit
+        type: Bool
+      - name: isPinned
+        externalId: isPinned
+        type: Bool
+      - name: lastEditedAt
+        externalId: lastEditedAt
+        type: DateTime
+      - name: locked
+        externalId: locked
+        type: Bool
+      - name: number
+        externalId: number
+        type: Int64
+      - name: publishedAt
+        externalId: publishedAt
+        type: DateTime
+      - name: state
+        externalId: state
+        type: String
+      - name: stateReason
+        externalId: stateReason
+        type: String
       - name: title
         externalId: title
         type: String
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
   IssueAssignee: # similar to orguser
     displayName: IssueAssignee
     externalId: IssueAssignee
@@ -936,7 +1034,7 @@ entities:
         type: String
         indexed: true
         attributeAlias: issueAssigneeId
-      - name: login
+      - name: login # remove later
         externalId: login
         type: String
   IssueParticipant: # similar to orguser
@@ -961,11 +1059,11 @@ entities:
         type: String
         indexed: true
         attributeAlias: issueParticipantId
-      - name: login
+      - name: login # remove later
         externalId: login
         type: String
   
-  
+  # https://docs.github.com/en/graphql/reference/objects#label
   Label:
     displayName: Label
     externalId: Label
@@ -979,14 +1077,25 @@ entities:
         indexed: true
         uniqueId: true
         attributeAlias: labelId
+      - name: color
+        externalId: color
+        type: String
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: isDefault
+        externalId: isDefault
+        type: Bool
       - name: name
         externalId: name
         type: String
-        indexed: true
-  RepositoryLabel:
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+  RepositoryLabel: # TODO: Might want to remove this from catalog completely
     displayName: RepositoryLabel
     externalId: RepositoryLabel
-    description: Entity representing the metadata of a Label entity for a GitHub Repository
+    description: Entity representing the metadata of a Label entity part of a GitHub Repository
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -1005,13 +1114,13 @@ entities:
         type: String
         indexed: true
         attributeAlias: repositoryLabelId
-      - name: name
+      - name: name # remove later
         externalId: name
         type: String
   PullRequestLabel:
     displayName: PullRequestLabel
     externalId: PullRequestLabel
-    description: Entity representing the metadata of a Label entity for a GitHub PullRequest
+    description: Entity representing the metadata of a Label entity attached to a GitHub PullRequest
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -1030,10 +1139,13 @@ entities:
         type: String
         indexed: true
         attributeAlias: pullRequestLabelId
+      - name: name # remove later
+        externalId: name
+        type: String
   IssueLabel:
     displayName: IssueLabel
     externalId: IssueLabel
-    description: Entity representing the metadata of a Label entity for a GitHub Issue
+    description: Entity representing the metadata of a Label entity attached to GitHub Issue
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -1052,15 +1164,70 @@ entities:
         type: String
         indexed: true
         attributeAlias: issueLabelId
-      - name: name
+      - name: name # remove later
         externalId: name
         type: String
-
+  
+  # https://docs.github.com/en/enterprise-server@3.12/rest/secret-scanning/secret-scanning?apiVersion=2022-11-28#list-secret-scanning-alerts-for-an-enterprise
+  SecretScanningAlert:
+    displayName: SecretScanningAlert
+    externalId: SecretScanningAlert
+    description: Entity representing a GitHub SecretScanningAlert
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: number
+        externalId: number
+        type: Int64
+        indexed: true
+        uniqueId: true
+      - name: createdAt
+        externalId: created_at
+        type: DateTime
+      - name: state
+        externalId: state
+        type: String
+      - name: resolution
+        externalId: resolution
+        type: String
+      - name: resolvedAt
+        externalId: resolved_at
+        type: DateTime
+      - name: resolvedByAuthorId
+        externalId: $.resolved_by.node_id
+        type: String
+        indexed: true
+        attributeAlias: resolvedByAuthorId
+      - name: secretType
+        externalId: secret_type
+        type: String
+      - name: secretTypeDisplayName
+        externalId: secret_type_display_name
+        type: String
+      - name: secret
+        externalId: secret
+        type: String
+      - name: repositoryId
+        externalId: $.repository.node_id
+        type: String
+        indexed: true
+        attributeAlias: secretScanningAlertRepositoryId
+      - name: pushProtectionBypassed
+        externalId: push_protection_bypassed
+        type: Bool
+      - name: pushProtectionBypassedBy
+        externalId: $.push_protection_bypassed_by.node_id
+        type: String
+        indexed: true
+        attributeAlias: pushProtectionBypassedById
+      - name: pushProtectedBypassedAt
+        externalId: push_protected_bypassed_at
+        type: DateTime
+      - name: validity
+        externalId: validity
+        type: String
 
 relationships:
-
-###### PART 1 RELATIONSHIPS BELOW THIS #######
-
   RepositoryToOrganization:
     displayName: OrganizationRepository
     name: MemberOf
@@ -1121,9 +1288,13 @@ relationships:
     fromAttribute: repositoryId
     toAttribute: teamRepositoryId
 
-###### PART 2 RELATIONSHIPS BELOW THIS #######
-
 ########### Issue RELATIONSHIPS ##########
+  
+  IssueToRepository:
+    displayName: RepositoryIssue
+    name: MemberOf
+    fromAttribute: issueRepositoryId
+    toAttribute: repositoryId
 
   IssueToUserAuthor:
     displayName: IssueUserAuthor
@@ -1135,11 +1306,7 @@ relationships:
     name: AuthorOf
     fromAttribute: issueAuthorLogin
     toAttribute: collaboratorLogin
-  IssueToRepository:
-    displayName: RepositoryIssue
-    name: MemberOf
-    fromAttribute: issueRepositoryId
-    toAttribute: repositoryId
+
   IssueToIssueAssignee:
     displayName: IssueToIssueAssignee
     name: MemberOf
@@ -1171,6 +1338,7 @@ relationships:
         direction: Forward
       - relationship: IssueAssigneeToCollaborator
         direction: Forward
+  
   IssueToIssueParticipant:
     displayName: IssueToIssueParticipant
     name: MemberOf
@@ -1223,6 +1391,7 @@ relationships:
         direction: Forward
       - relationship: RepositoryLabelToRepository
         direction: Forward
+  
   LabelToIssueLabel:
     displayName: IssueLabel
     name: MemberOf
@@ -1241,6 +1410,7 @@ relationships:
         direction: Forward
       - relationship: IssueLabelToIssue
         direction: Forward
+  
   LabelToPullRequestLabel:
     displayName: PullRequestLabel
     name: MemberOf
@@ -1260,9 +1430,8 @@ relationships:
       - relationship: PullRequestLabelToPullRequest
         direction: Forward
 
-######## PULL REQUEST RELATIONSHIPS ***********
+######## PULL REQUEST RELATIONSHIPS ##########
 
-######### PullRequest RELATIONSHIPS ##########
   PullRequestToBaseRepository:
     displayName: RepositoryPullRequest
     name: MemberOf
@@ -1284,7 +1453,6 @@ relationships:
     fromAttribute: authorLogin
     toAttribute: collaboratorLogin
 
-######### PRAssignee RELATIONSHIPS ##########
   PullRequestAssigneeToPullRequest:
     displayName: AssignedPullRequest
     name: MemberOf
@@ -1316,8 +1484,6 @@ relationships:
         direction: Forward
       - relationship: PullRequestAssigneeToPullRequest
         direction: Forward
-
-######### PRParticipant RELATIONSHIPS ##########
 
   PullRequestParticipantToPullRequest:
     displayName: ParticipatingPullRequest
@@ -1351,9 +1517,6 @@ relationships:
       - relationship: PullRequestParticipantToPullRequest
         direction: Forward
 
-
-######### PRReview RELATIONSHIPS ##########
-
   PullRequestReviewToPullRequest:
     displayName: PullRequestReview
     name: MemberOf
@@ -1369,8 +1532,6 @@ relationships:
     name: ReviewerOf
     fromAttribute: reviewAuthorLogin
     toAttribute: collaboratorLogin
-
-######### PRCommit RELATIONSHIPS ##########
 
   PullRequestCommitToPullRequest:
     displayName: PullRequestCommit
@@ -1388,11 +1549,36 @@ relationships:
     fromAttribute: commitAuthorId
     toAttribute: collaboratorId
 
-######### PRChangedFile RELATIONSHIPS ##########
-
   PullRequestChangedFileToPullRequest:
     displayName: PullRequestChangedFile
     name: MemberOf
     fromAttribute: changedFilePullRequestId
     toAttribute: pullRequestId
 
+######## SECRET SCANNING ALERT RELATIONSHIPS RELATIONSHIPS ##########
+
+  SecretScanningAlertToRepository:
+    displayName: RepositorySecretScanningAlert
+    name: MemberOf
+    fromAttribute: secretScanningAlertRepositoryId
+    toAttribute: repositoryId
+  SecretScanningAlertToResolvedByUser:
+    displayName: SecretScanningAlertResolvedByUser
+    name: ResolvedBy
+    fromAttribute: resolvedByAuthorId
+    toAttribute: userId
+  SecretScanningAlertToResolvedByCollaborator:
+    displayName: SecretScanningAlertResolvedByCollaborator
+    name: ResolvedBy
+    fromAttribute: resolvedByAuthorId
+    toAttribute: collaboratorId
+  SecretScanningAlertToPushProtectionBypassedByUser:
+    displayName: SecretScanningAlertPushProtectionBypassedByUser
+    name: PushProtectionBypassedBy
+    fromAttribute: pushProtectionBypassedById
+    toAttribute: userId
+  SecretScanningAlertToPushProtectionBypassedByCollaborator:
+    displayName: SecretScanningAlertPushProtectionBypassedByCollaborator
+    name: PushProtectionBypassedBy
+    fromAttribute: pushProtectionBypassedById
+    toAttribute: collaboratorId
