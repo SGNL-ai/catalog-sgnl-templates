@@ -12,9 +12,9 @@ defaultApiCallMinInterval: 1
 type: "GitHub-1.0.0"
 # Example Config:
 # {
-#    "enterpriseSlug": "{{Input Required}}",
-#    "isEntepriseCloud": "{{Input Required}}",
-#    "apiVersion": "{{Input Required for REST-based entities}}"
+#    "enterpriseSlug": "your-enterprise-slug",  
+#    "isEntepriseCloud": true / false,  
+#    "apiVersion": "v1"
 # }
 adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogInt7SW5wdXQgUmVxdWlyZWR9fSIsCiAgICAiaXNFbnRlcHJpc2VDbG91ZCI6ICJ7e0lucHV0IFJlcXVpcmVkfX0iLAogICAgImFwaVZlcnNpb24iOiAie3tJbnB1dCBSZXF1aXJlZCBmb3IgUkVTVC1iYXNlZCBlbnRpdGllc319Igp9"
 auth:
@@ -699,6 +699,7 @@ entities:
       - name: closed
         externalId: closed
         type: Bool
+        indexed: true
       - name: closedAt
         externalId: closedAt
         type: DateTime
@@ -738,6 +739,7 @@ entities:
       - name: locked
         externalId: locked
         type: Bool
+        indexed: true
       - name: mainterCanModify
         externalId: mainterCanModify
         type: Bool
@@ -750,6 +752,7 @@ entities:
       - name: merged
         externalId: merged
         type: Bool
+        indexed: true
       - name: mergedAt
         externalId: mergedAt
         type: DateTime
@@ -762,6 +765,7 @@ entities:
       - name: state
         externalId: state
         type: String
+        indexed: true
       - name: title
         externalId: title
         type: String
@@ -818,6 +822,7 @@ entities:
       - name: login # remove later
         externalId: login
         type: String
+  
   # https://docs.github.com/en/graphql/reference/objects#pullrequestreview
   PullRequestReview:
     displayName: PullRequestReview
@@ -868,6 +873,10 @@ entities:
       - name: minimizedReason
         externalId: minimizedReason
         type: String
+      - name: state
+        externalId: state
+        type: String
+        indexed: true
       - name: publishedAt
         externalId: publishedAt
         type: DateTime
@@ -877,6 +886,7 @@ entities:
       - name: updatedAt
         externalId: updatedAt
         type: DateTime
+  
   # https://docs.github.com/en/graphql/reference/objects#pullrequestcommit
   PullRequestCommit:
     displayName: PullRequestCommit
@@ -901,11 +911,13 @@ entities:
       - name: committedDate
         externalId: committedDate
         type: DateTime
+        indexed: true
       - name: commitAuthor
         externalId: $.commit.author.user.id
         type: String
         indexed: true
         attributeAlias: commitAuthorId    
+  
   # https://docs.github.com/en/graphql/reference/objects#pullrequestchangedfile
   PullRequestChangedFile:
     displayName: PullRequestChangedFile
@@ -936,9 +948,7 @@ entities:
       - name: changeType
         externalId: changeType
         type: String
-      - name: viewerViewedState
-        externalId: viewerViewedState
-        type: String
+        indexed: true
   
   # https://docs.github.com/en/graphql/reference/objects#issue
   Issue:
@@ -970,6 +980,7 @@ entities:
       - name: closed
         externalId: closed
         type: Bool
+        indexed: true
       - name: closedAt
         externalId: closedAt
         type: DateTime
@@ -994,6 +1005,7 @@ entities:
       - name: locked
         externalId: locked
         type: Bool
+        indexed: true
       - name: number
         externalId: number
         type: Int64
@@ -1003,6 +1015,7 @@ entities:
       - name: state
         externalId: state
         type: String
+        indexed: true
       - name: stateReason
         externalId: stateReason
         type: String
@@ -1089,6 +1102,7 @@ entities:
       - name: name
         externalId: name
         type: String
+        indexed: true
       - name: updatedAt
         externalId: updatedAt
         type: DateTime
@@ -1117,6 +1131,7 @@ entities:
       - name: name # remove later
         externalId: name
         type: String
+  
   PullRequestLabel:
     displayName: PullRequestLabel
     externalId: PullRequestLabel
@@ -1142,6 +1157,7 @@ entities:
       - name: name # remove later
         externalId: name
         type: String
+  
   IssueLabel:
     displayName: IssueLabel
     externalId: IssueLabel
