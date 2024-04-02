@@ -690,9 +690,6 @@ entities:
       - name: baseRefName
         externalId: baseRefName
         type: String
-      - name: canBeRebased
-        externalId: canBeRebased
-        type: Bool
       - name: changedFiles
         externalId: changedFiles
         type: Int64
@@ -709,9 +706,6 @@ entities:
       - name: createdViaEmail
         externalId: createdViaEmail
         type: Bool
-      - name: fullDatabaseId
-        externalId: fullDatabaseId
-        type: Int64
       - name: deletions
         externalId: deletions
         type: Int64
@@ -727,12 +721,6 @@ entities:
       - name: isDraft
         externalId: isDraft
         type: Bool
-      - name: isInMergeQueue
-        externalId: isInMergeQueue
-        type: Bool
-      - name: isMergeQueueEnabled
-        externalId: isMergeQueueEnabled
-        type: Bool
       - name: lastEditedAt
         externalId: lastEditedAt
         type: DateTime
@@ -740,19 +728,15 @@ entities:
         externalId: locked
         type: Bool
         indexed: true
-      - name: mainterCanModify
-        externalId: mainterCanModify
+      - name: maintainerCanModify
+        externalId: maintainerCanModify
         type: Bool
-      - name: mergeStateStatus
-        externalId: mergeStateStatus
-        type: String
       - name: mergeable
         externalId: mergeable
         type: String
       - name: merged
         externalId: merged
         type: Bool
-        indexed: true
       - name: mergedAt
         externalId: mergedAt
         type: DateTime
@@ -794,9 +778,6 @@ entities:
         type: String
         indexed: true
         attributeAlias: pullRequestAssigneeId
-      - name: login # remove later
-        externalId: login
-        type: String
   PullRequestParticipant:
     displayName: PullRequestParticipant
     externalId: PullRequestParticipant
@@ -819,9 +800,6 @@ entities:
         type: String
         indexed: true
         attributeAlias: pullRequestParticipantId
-      - name: login # remove later
-        externalId: login
-        type: String
   
   # https://docs.github.com/en/graphql/reference/objects#pullrequestreview
   PullRequestReview:
@@ -842,7 +820,7 @@ entities:
         indexed: true
         attributeAlias: reviewAuthorLogin
       - name: pullRequestId
-        externalId: $.pullRequest.id
+        externalId: pullRequestId
         type: String
         indexed: true
         attributeAlias: reviewPullRequestId
@@ -858,21 +836,12 @@ entities:
       - name: createdViaEmail
         externalId: createdViaEmail
         type: Bool
-      - name: fullDatabaseId
-        externalId: fullDatabaseId
-        type: Int64
       - name: includesCreatedEdit
         externalId: includesCreatedEdit
-        type: Bool
-      - name: isMinimized
-        externalId: isMinimized
         type: Bool
       - name: lastEditedAt
         externalId: lastEditedAt
         type: DateTime
-      - name: minimizedReason
-        externalId: minimizedReason
-        type: String
       - name: state
         externalId: state
         type: String
@@ -901,7 +870,7 @@ entities:
         indexed: true
         uniqueId: true
       - name: pullRequestId
-        externalId: $.pullRequest.id
+        externalId: pullRequestId
         type: String
         indexed: true
         attributeAlias: commitPullRequestId
@@ -909,7 +878,7 @@ entities:
         externalId: $.commit.id
         type: String
       - name: committedDate
-        externalId: committedDate
+        externalId: $.commit.committedDate
         type: DateTime
         indexed: true
       - name: commitAuthor
@@ -929,6 +898,7 @@ entities:
       - name: uniqueId # concatenated the file path and PR id
         externalId: uniqueId
         type: String
+        indexed: true
         uniqueId: true
       - name: pullRequestId
         externalId: pullRequestId
@@ -990,9 +960,6 @@ entities:
       - name: createdViaEmail
         externalId: createdViaEmail
         type: Bool
-      - name: fullDatabaseId
-        externalId: fullDatabaseId
-        type: Int64
       - name: includesCreatedEdit
         externalId: includesCreatedEdit
         type: Bool
@@ -1047,9 +1014,6 @@ entities:
         type: String
         indexed: true
         attributeAlias: issueAssigneeId
-      - name: login # remove later
-        externalId: login
-        type: String
   IssueParticipant:
     displayName: IssueParticipant
     externalId: IssueParticipant
@@ -1072,9 +1036,6 @@ entities:
         type: String
         indexed: true
         attributeAlias: issueParticipantId
-      - name: login # remove later
-        externalId: login
-        type: String
   
   # https://docs.github.com/en/graphql/reference/objects#label
   Label:
@@ -1090,6 +1051,11 @@ entities:
         indexed: true
         uniqueId: true
         attributeAlias: labelId
+      - name: repositoryId
+        externalId: repositoryId
+        type: String
+        indexed: true
+        attributeAlias: labelRepositoryId
       - name: color
         externalId: color
         type: String
@@ -1106,31 +1072,6 @@ entities:
       - name: updatedAt
         externalId: updatedAt
         type: DateTime
-  RepositoryLabel: # TODO: Might want to remove this from catalog completely
-    displayName: RepositoryLabel
-    externalId: RepositoryLabel
-    description: Entity representing the metadata of a Label entity part of a GitHub Repository
-    pageSize: 100
-    pagesOrderedById: false
-    attributes:
-      - name: uniqueId
-        externalId: uniqueId
-        type: String
-        indexed: true
-        uniqueId: true
-      - name: repositoryId
-        externalId: repositoryId
-        type: String
-        indexed: true
-        attributeAlias: repositoryLabelRepositoryId
-      - name: labelId
-        externalId: id
-        type: String
-        indexed: true
-        attributeAlias: repositoryLabelId
-      - name: name # remove later
-        externalId: name
-        type: String
   
   PullRequestLabel:
     displayName: PullRequestLabel
@@ -1145,7 +1086,7 @@ entities:
         indexed: true
         uniqueId: true
       - name: pullRequestId
-        externalId: pullRequestId
+        externalId: id
         type: String
         indexed: true
         attributeAlias: pullRequestLabelPullRequestId
@@ -1154,9 +1095,6 @@ entities:
         type: String
         indexed: true
         attributeAlias: pullRequestLabelId
-      - name: name # remove later
-        externalId: name
-        type: String
   
   IssueLabel:
     displayName: IssueLabel
@@ -1171,18 +1109,15 @@ entities:
         indexed: true
         uniqueId: true
       - name: issueId
-        externalId: issueId
+        externalId: id
         type: String
         indexed: true
         attributeAlias: issueLabelIssueId
       - name: labelId
-        externalId: id
+        externalId: labelId
         type: String
         indexed: true
         attributeAlias: issueLabelId
-      - name: name # remove later
-        externalId: name
-        type: String
   
   # https://docs.github.com/en/enterprise-server@3.12/rest/secret-scanning/secret-scanning?apiVersion=2022-11-28#list-secret-scanning-alerts-for-an-enterprise
   SecretScanningAlert:
@@ -1203,6 +1138,7 @@ entities:
       - name: state
         externalId: state
         type: String
+        indexed: true
       - name: resolution
         externalId: resolution
         type: String
@@ -1354,7 +1290,6 @@ relationships:
         direction: Forward
       - relationship: IssueAssigneeToCollaborator
         direction: Forward
-  
   IssueToIssueParticipant:
     displayName: IssueToIssueParticipant
     name: MemberOf
@@ -1389,24 +1324,11 @@ relationships:
 
 ########### Label RELATIONSHIPS ##########
 
-  LabelToRepositoryLabel:
-    displayName: RepositoryLabel
-    name: MemberOf
-    fromAttribute: labelId
-    toAttribute: repositoryLabelId
-  RepositoryLabelToRepository:
-    displayName: RepositoryLabel
-    name: MemberOf
-    fromAttribute: repositoryLabelRepositoryId
-    toAttribute: repositoryId
   LabelToRepository:
     displayName: RepositoryLabel
     name: MemberOf
-    path:
-      - relationship: LabelToRepositoryLabel
-        direction: Forward
-      - relationship: RepositoryLabelToRepository
-        direction: Forward
+    fromAttribute: labelRepositoryId
+    toAttribute: repositoryId
   
   LabelToIssueLabel:
     displayName: IssueLabel
@@ -1539,12 +1461,12 @@ relationships:
     fromAttribute: reviewPullRequestId
     toAttribute: pullRequestId
   PullRequestReviewToUser:
-    displayName: PullRequestReviewer
+    displayName: PullRequestUserReviewer
     name: ReviewerOf
     fromAttribute: reviewAuthorLogin
     toAttribute: userLogin
   PullRequestReviewToCollaborator:
-    displayName: PullRequestReviewer
+    displayName: PullRequestCollaboratorReviewer
     name: ReviewerOf
     fromAttribute: reviewAuthorLogin
     toAttribute: collaboratorLogin
@@ -1555,12 +1477,12 @@ relationships:
     fromAttribute: commitPullRequestId
     toAttribute: pullRequestId
   PullRequestCommitToUser:
-    displayName: PullRequestCommit
+    displayName: PullRequestUserCommiter
     name: CommitterOf
     fromAttribute: commitAuthorId
     toAttribute: userId
   PullRequestCommitToCollaborator:
-    displayName: PullRequestCommit
+    displayName: PullRequestCollaboratorCommiter
     name: CommitterOf
     fromAttribute: commitAuthorId
     toAttribute: collaboratorId
