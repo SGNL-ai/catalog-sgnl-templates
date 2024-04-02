@@ -21,7 +21,7 @@ entities:
     displayName: User
     externalId: sys_user
     description: User Entity in ServiceNow
-    pageSize: 350
+    pageSize: 150
     pagesOrderedById: true
     attributes:
       - name: sysId
@@ -232,7 +232,7 @@ entities:
     displayName: Group
     externalId: sys_user_group
     description: Group Entity in ServiceNow
-    pageSize: 350
+    pageSize: 150
     pagesOrderedById: true
     attributes:
       - name: sysId
@@ -307,7 +307,7 @@ entities:
     displayName: GroupMember
     externalId: sys_user_grmember
     description: GroupMember Entity in ServiceNow
-    pageSize: 350
+    pageSize: 150
     pagesOrderedById: true
     attributes:
       - name: sysId
@@ -349,7 +349,7 @@ entities:
     displayName: Incident
     externalId: incident
     description: Incident Entity in ServiceNow
-    pageSize: 350
+    pageSize: 150
     pagesOrderedById: true
     attributes:
       - name: sysId
@@ -460,7 +460,7 @@ entities:
     displayName: ChangeRequest
     externalId: change_request
     description: Change Request Entity in ServiceNow
-    pageSize: 350
+    pageSize: 150
     pagesOrderedById: true
     attributes:
       - name: sysId
@@ -535,7 +535,7 @@ entities:
     displayName: ChangeTask
     externalId: change_task
     description: Change Task Entity in ServiceNow
-    pageSize: 350
+    pageSize: 150
     pagesOrderedById: true
     attributes:
       - name: sysId
@@ -577,7 +577,7 @@ entities:
     displayName: Problem
     externalId: problem
     description: Problem Entity in ServiceNow
-    pageSize: 350
+    pageSize: 150
     pagesOrderedById: true
     attributes:
       - name: sysId
@@ -677,7 +677,7 @@ entities:
     displayName: CMDB Business App
     externalId: cmdb_ci_business_app
     description: CMDB Business App Entity in ServiceNow
-    pageSize: 350
+    pageSize: 150
     pagesOrderedById: true
     attributes:
       - name: sysId
