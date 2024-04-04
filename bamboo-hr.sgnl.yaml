@@ -23,7 +23,7 @@ entities:
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
     apiCallMinInterval: 1
-    pageSize: 999
+    pageSize: 30
     pagesOrderedById: false
     attributes:
       - name: id
@@ -31,10 +31,40 @@ entities:
         type: Int64
         indexed: true
         uniqueId: true
+        attributeAlias: employeeId
+      - name: bestEmail
+        externalId: bestEmail
+        type: String
+      - name: dateOfBirth
+        externalId: dateOfBirth
+        type: DateTime
+      - name: bonusAmount
+        externalId: bonusAmount
+        type: String
+      - name: employeeNumber
+        externalId: employeeNumber
+        type: String
+      - name: fullName
+        externalId: fullName1
+        type: String
+      - name: includeInPayroll
+        externalId: includeInPayroll
+        type: Bool
+      - name: supervisorEId
+        externalId: supervisorEId
+        type: Int64
+        indexed: true
+        attributeAlias: supervisorEId
+      - name: supervisorEmail
+        externalId: supervisorEmail
+        type: String
+      - name: lastChanged
+        externalId: lastChanged
+        type: DateTime
 
 relationships:
-  EmployeeManager:
-    name: Manager
-    fromAttribute: User.manager__id
-    toAttribute: User.id
+  EmployeeSupervisor:
+    name: EmployeeSupervisor
+    fromAttribute: supervisorEId
+    toAttribute: employeeId
 
