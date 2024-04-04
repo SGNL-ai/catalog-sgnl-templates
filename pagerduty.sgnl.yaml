@@ -2,7 +2,7 @@
 displayName: "PagerDuty"
 icon: PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjNERBOTQ5Ii8+CjxwYXRoIGQ9Ik0yNC44NTkyIDQxLjM0NjlIMTlWNTJIMjQuODU5MlY0MS4zNDY5WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQxLjA2NzIgMTMuOTUzMUMzNy45MjIgMTIuMjc5IDM1Ljc0MDYgMTIgMzAuNTkxNiAxMkgxOVYzNi4yNDg2SDMwLjU0MDlDMzUuMTMxOSAzNi4yNDg2IDM4LjU1NjEgMzUuOTY5NiA0MS41NzQ1IDMzLjk2NThDNDQuODcxOSAzMS43ODQ0IDQ2LjU3MTMgMjguMTU3MyA0Ni41NzEzIDIzLjk3MjFDNDYuNTcxMyAxOS40MzE4IDQ0LjQ2NjEgMTUuODA0NyA0MS4wNjcyIDEzLjk1MzFaTTMxLjg4NTIgMzEuMTc1NkgyNC44NTkyVjE3LjE5OTdMMzEuNDc5NCAxNy4xNDlDMzcuNTE2MiAxNy4wNzI5IDQwLjUzNDUgMTkuMjAzNiA0MC41MzQ1IDI0LjAyMjhDNDAuNTM0NSAyOS4xOTcyIDM2LjgwNTkgMzEuMTc1NiAzMS44ODUyIDMxLjE3NTZaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K
 description: "PagerDuty as a System of Record"
-address: "api.pagerduty.com"
+hostname: "api.pagerduty.com"
 defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
@@ -22,11 +22,6 @@ adapterConfig: "e30="
 auth:
   - bearer:
       authToken: "Token token={{Input Required: token}}"
-  - oAuth2ClientCredentials:
-      clientId: "{{Input Required: Client-ID}}"
-      clientSecret: "{{Input Required: Client-Secret}}"
-      tokenUrl: "https://identity.pagerduty.com/oauth/token"
-      authStyle: AutoDetect
 
 entities:
   User:
@@ -35,10 +30,6 @@ entities:
     displayName: User
     externalId: users
     description: User entity in PagerDuty
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -104,10 +95,6 @@ entities:
     displayName: Team
     externalId: teams
     description: Team entity in PagerDuty
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -143,10 +130,6 @@ entities:
     displayName: TeamMember
     externalId: members
     description: TeamMember entity in PagerDuty
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -172,10 +155,6 @@ entities:
     displayName: Incident
     externalId: incidents
     description: Incident entity in PagerDuty
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -340,10 +319,6 @@ entities:
     displayName: Service
     externalId: services
     description: Service entity in PagerDuty
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -467,10 +442,6 @@ entities:
     displayName: Schedule
     externalId: schedules
     description: Schedule entity in PagerDuty
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -518,10 +489,6 @@ entities:
     displayName: OnCall
     externalId: oncalls
     description: OnCall entity in PagerDuty
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -587,17 +554,20 @@ relationships:
   # (User) -[UserMember]-> (TeamMember)
   UserMember:
     name: UserMember
+    displayName: User Member
     fromAttribute: users.id
     toAttribute: members.userId
   # (TeamMember) -[TeamMember]-> (Team)
   TeamMember:
     name: TeamMember
+    displayName: Team Member
     fromAttribute: members.teamId
     toAttribute: teams.id
   # Path relationship based on the previous two relationships.
   # (User) -[Team]-> (Team)
   Team:
     name: Team
+    displayName: Team
     path:
       - relationship: UserMember
         direction: Forward
@@ -605,5 +575,6 @@ relationships:
         direction: Forward
   OnCall:
     name: OnCall
+    displayName: On Call
     fromAttribute: users.id
     toAttribute: oncalls.user__id

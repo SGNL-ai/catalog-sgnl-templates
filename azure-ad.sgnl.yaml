@@ -3,15 +3,15 @@ displayName: "Azure AD"
 icon: |
   PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjMDEzRjg2Ii8+CjxwYXRoIGQ9Ik0xMi4yNzYzIDMyLjk1NTVMMzIgNDUuODI2MVY5LjVMMTIuMjc2MyAzMi45NTU1WiIgZmlsbD0iIzRGRTZGRiIvPgo8cGF0aCBkPSJNOCAzOC4wNTA0TDMyIDUzLjk3ODZWNDguODUwN0wxMC43NjY1IDM0Ljc1NzhMOCAzOC4wNTA0WiIgZmlsbD0iIzRGRTZGRiIvPgo8cGF0aCBkPSJNNTYgMzguMDUwNEwzMiA1My45Nzg2VjQ4Ljg1MDdMNTMuMjMzNSAzNC43NTc4TDU2IDM4LjA1MDRaIiBmaWxsPSIjMzY5QkU1Ii8+CjxwYXRoIGQ9Ik01MS43MjM3IDMyLjk1NTVMMzIgNDUuODI2MVY5LjVMNTEuNzIzNyAzMi45NTU1WiIgZmlsbD0iIzQyQTJFOCIvPgo8cGF0aCBkPSJNMTIuMjgxMiAzMi45NTA2TDEyLjI3NjMgMzIuOTU1NUwzMiA0NS44MjYxVjI4LjI0NzNMMTIuMjgxMiAzMi45NTA2WiIgZmlsbD0iIzk5RUNGQSIvPgo8cGF0aCBkPSJNNTEuNzIgMzIuOTUwNkw1MS43MjM3IDMyLjk1NTVMMzIgNDUuODI2MVYyOC4yNDczTDUxLjcyIDMyLjk1MDZaIiBmaWxsPSIjNTJCMURGIi8+Cjwvc3ZnPg==
 description: "Azure AD as a System of Record"
-address: "graph.microsoft.com"
+hostname: "graph.microsoft.com"
 defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
-type: "AzureAD-1.0.0"
+type: "AzureAD-1.0.1"
 # Example Config:
-# {"version": 1, "config": {"filters": {}, "requestTimeout": "10s", "azuread": {"apiVersion": "v1.0"}}}
-adapterConfig: "ewoJInZlcnNpb24iOiAxLAoJImNvbmZpZyI6IHsKICAgICAgICAgICAgICAgICJmaWx0ZXJzIjoge30sCgkJInJlcXVlc3RUaW1lb3V0IjogIjEwcyIsCgkJImF6dXJlYWQiOiB7CiAgICAgICAgICAgICAgICAgICAgImFwaVZlcnNpb24iOiAidjEuMCIKICAgICAgICAgICAgICAgIH0KCX0KfQ=="
+# {"requestTimeoutSeconds": 10, "apiVersion": "v1.0"}
+adapterConfig: "eyJyZXF1ZXN0VGltZW91dFNlY29uZHMiOiAxMCwgImFwaVZlcnNpb24iOiAidjEuMCJ9"
 # All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
   - oAuth2ClientCredentials:
@@ -28,10 +28,6 @@ entities:
     displayName: User
     externalId: User
     description: User Entity in Azure AD
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 999
     pagesOrderedById: false
     attributes:
@@ -216,10 +212,6 @@ entities:
     description: "Group Entity in Azure AD"
     displayName: Group
     externalId: Group
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 999
     pagesOrderedById: false
     attributes:
@@ -334,10 +326,6 @@ entities:
     description: "Group Member Entity in Azure AD"
     displayName: GroupMember
     externalId: GroupMember
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 999
     pagesOrderedById: false
     attributes:
@@ -354,15 +342,10 @@ entities:
         externalId: memberId
         type: String
         indexed: true
-  Application:
-    # https://learn.microsoft.com/en-us/graph/api/resources/application?view=graph-rest-1.0
+  Application:    
     description: "Application Entity in Azure AD"
     displayName: Application
     externalId: Application
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 999
     pagesOrderedById: false
     attributes:
@@ -501,15 +484,10 @@ entities:
       - name: webApplication__logoutUrl
         externalId: webApplication__logoutUrl
         type: String
-  Device:
-    # https://learn.microsoft.com/en-us/graph/api/resources/device?view=graph-rest-1.0
+  Device:    
     description: "Device Entity in Azure AD"
     displayName: Device
     externalId: Device
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 999
     pagesOrderedById: false
     attributes:
@@ -593,8 +571,85 @@ entities:
       - name: trustType
         externalId: trustType
         type: String
+  Role:
+    description: "Directory Role Entity in Azure AD"
+    displayName: Role
+    externalId: Role
+    pageSize: 999
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: displayName
+        externalId: displayName
+        type: String
+        indexed: true
+      - name: description
+        externalId: description
+        type: String
+      - name: roleTemplateId
+        externalId: roleTemplateId
+        type: String
+      - name: deletedDateTime
+        externalId: deletedDateTime
+        type: DateTime
+  RoleMember:    
+    description: "Directory Role Member Entity in Azure AD"
+    displayName: RoleMember
+    externalId: RoleMember
+    pageSize: 999
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: roleId
+        externalId: roleId
+        type: String
+        indexed: true
+      - name: memberId
+        externalId: memberId
+        type: String
+        indexed: true      
+
 
 relationships:
+  UserRoleMember:
+    name: Member
+    displayName: User Role Member
+    fromAttribute: RoleMember.memberId
+    toAttribute: User.id
+  RoleMember:
+    name: Member
+    displayName: Role Member
+    fromAttribute: RoleMember.roleId
+    toAttribute: Role.id
+  RoleMemberOf:
+    name: MemberOf
+    displayName: Member Of
+    fromAttribute: RoleMember.memberId
+    toAttribute: Role.id
+  UserMemberRole:
+    name: Role
+    displayName: User Member Role
+    path:
+      - relationship: UserRoleMember
+        direction: Backward
+      - relationship: RoleMemberOf
+        direction: Forward
+  RoleMemberRole:
+    name: Role
+    displayName: Role Member Role
+    path:
+      - relationship: RoleMember
+        direction: Backward
+      - relationship: RoleMemberOf
+        direction: Forward
   UserManager:
     name: Manager
     fromAttribute: User.manager__id
@@ -603,18 +658,22 @@ relationships:
     # and keep corresponding path relationships unique below
   UserMember:
     name: Member
+    displayName: User Member
     fromAttribute: GroupMember.memberId
     toAttribute: User.id
   GroupMember:
     name: Member
+    displayName: Group Member
     fromAttribute: GroupMember.memberId
     toAttribute: Group.id
   MemberOf:
     name: MemberOf
+    displayName: Member Of
     fromAttribute: GroupMember.groupId
     toAttribute: Group.id
   UserMemberGroup:
     name: Group
+    displayName: User Member Group
     path:
       - relationship: UserMember
         direction: Backward
@@ -622,6 +681,7 @@ relationships:
         direction: Forward
   GroupMemberGroup:
     name: Group
+    displayName: Group Member Group
     path:
       - relationship: GroupMember
         direction: Backward

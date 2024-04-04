@@ -27,10 +27,6 @@ entities:
     displayName: Account
     externalId: Accounts
     description: Entity representing a Sailpoint Identity IQ Account.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -113,10 +109,6 @@ entities:
     displayName: Alert
     externalId: Alerts
     description: Entity representing a Sailpoint Identity IQ Alert.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -257,10 +249,6 @@ entities:
     displayName: Application
     externalId: Applications
     description: Entity representing a Sailpoint Identity IQ Application.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -347,10 +335,6 @@ entities:
     displayName: Entitlement
     externalId: Entitlements
     description: Entity representing a Sailpoint Identity IQ Entitlement.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -507,10 +491,6 @@ entities:
     displayName: LaunchedWorkflow
     externalId: LaunchedWorkflows
     description: Entity representing a Sailpoint Identity IQ Launched Workflow.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -789,10 +769,6 @@ entities:
     displayName: PolicyViolation
     externalId: PolicyViolations
     description: Entity representing a Sailpoint Identity IQ Policy Violation.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -853,10 +829,6 @@ entities:
     displayName: Role
     externalId: Roles
     description: Entity representing a Sailpoint Identity IQ Role.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -1041,9 +1013,6 @@ entities:
     displayName: TaskResult
     externalId: TaskResults
     description: Entity representing a Sailpoint Identity IQ Task Results.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -1148,9 +1117,6 @@ entities:
     displayName: User
     externalId: Users
     description: Entity representing a Sailpoint Identity IQ User.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -1385,10 +1351,6 @@ entities:
     displayName: Workflow
     externalId: Workflows
     description: Entity representing a Sailpoint Identity IQ Workflow.
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:

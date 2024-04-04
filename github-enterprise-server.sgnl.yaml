@@ -1,0 +1,1522 @@
+# GitHub Configuration YAML
+displayName: "GitHub"
+icon: "PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjMjQyOTJFIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMzIgOEMyNi4yOTY3IDcuOTk0MiAyMC43Nzc3IDEwLjAxOTYgMTYuNDMyMSAxMy43MTMzQzEyLjA4NjUgMTcuNDA3IDkuMTk4MzcgMjIuNTI3NiA4LjI4NTIxIDI4LjE1NzNDNy4zNzIwNCAzMy43ODcgOC40OTM1NiAzOS41NTc5IDExLjQ0ODggNDQuNDM1OUMxNC40MDQgNDkuMzEzOCAxOC45OTk4IDUyLjk3OTkgMjQuNDEyNSA1NC43NzcyQzI1LjYyMDYgNTQuOTk4MSAyNi4wNDc5IDU0LjI0NjggMjYuMDQ3OSA1My42MTMzQzI2LjA0NzkgNTIuOTc5NyAyNi4wNDc5IDUxLjUzNTkgMjYuMDQ3OSA0OS41MzIyQzE5LjM0NDQgNTAuOTkwOCAxNy45MyA0Ni4zMDU3IDE3LjkzIDQ2LjMwNTdDMTcuNDg1MyA0NC44NTM3IDE2LjU0MDUgNDMuNjA2MSAxNS4yNjMzIDQyLjc4NDVDMTMuMDk3NiA0MS4zMTEyIDE1LjQ0MDEgNDEuMzExMiAxNS40NDAxIDQxLjMxMTJDMTYuMTk5MyA0MS40MTg1IDE2LjkyNDEgNDEuNjk3IDE3LjU1OTcgNDIuMTI1OUMxOC4xOTUzIDQyLjU1NDcgMTguNzI1IDQzLjEyMjUgMTkuMTA4NiA0My43ODY0QzE5LjQzNDYgNDQuMzc3NCAxOS44NzQxIDQ0Ljg5ODMgMjAuNDAxOSA0NS4zMTkyQzIwLjkyOTcgNDUuNzQgMjEuNTM1NCA0Ni4wNTI0IDIyLjE4NDIgNDYuMjM4NkMyMi44MzMgNDYuNDI0OCAyMy41MTIyIDQ2LjQ4MSAyNC4xODI4IDQ2LjQwNEMyNC44NTM1IDQ2LjMyNyAyNS41MDIzIDQ2LjExODQgMjYuMDkyIDQ1Ljc5QzI2LjE4NDUgNDQuNTc4IDI2LjcwNyA0My40MzkgMjcuNTY1MyA0Mi41NzgzQzIyLjIzMiA0MS45NzQyIDE2LjYzMzUgMzkuOTExNiAxNi42MzM1IDMwLjc5MTlDMTYuNTk2OSAyOC40MDk1IDE3LjQ3NzggMjYuMTA0MyAxOS4wOTM5IDI0LjM1MzZDMTguMzc0MSAyMi4yODIyIDE4LjQ1ODIgMjAuMDE2IDE5LjMyOTYgMTguMDAzN0MxOS4zMjk2IDE4LjAwMzcgMjEuMzQ4IDE3LjM1NTQgMjUuOTMgMjAuNDY0MUMyOS44NjQ1IDE5LjM4MzggMzQuMDE3NSAxOS4zODM4IDM3Ljk1MjEgMjAuNDY0MUM0Mi41MzQgMTcuMzU1NCA0NC41Mzc3IDE4LjAwMzcgNDQuNTM3NyAxOC4wMDM3QzQ1LjQyMTIgMTkuOTk0NyA0NS41MjY0IDIyLjI0NDYgNDQuODMyNCAyNC4zMDk0QzQ2LjQ0ODUgMjYuMDYwMiA0Ny4zMjk0IDI4LjM2NTMgNDcuMjkyOCAzMC43NDc3QzQ3LjI5MjggMzkuOTcwNSA0MS42Nzk1IDQxLjk4ODkgMzYuMzMxNSA0Mi41MzQxQzM2LjkwNDkgNDMuMTEwNSAzNy4zNDc3IDQzLjgwMzUgMzcuNjI5OSA0NC41NjYxQzM3LjkxMjEgNDUuMzI4NyAzOC4wMjcgNDYuMTQzMSAzNy45NjY4IDQ2Ljk1NEMzNy45NjY4IDUwLjE2NTcgMzcuOTY2OCA1Mi43NTg3IDM3Ljk2NjggNTMuNTM5NkMzNy45NjY4IDU0LjMyMDQgMzguMzk0MSA1NC45MjQ1IDM5LjYxNjkgNTQuNjg4OEM0NC45NjggNTIuODQ0MSA0OS40OTQ5IDQ5LjE2NzUgNTIuMzk4IDQ0LjMwODZDNTUuMzAxIDM5LjQ0OTcgNTYuMzkzMyAzMy43MjEgNTUuNDgyIDI4LjEzNDhDNTQuNTcwNiAyMi41NDg1IDUxLjcxNDIgMTcuNDY0MSA0Ny40MTc0IDEzLjc3OThDNDMuMTIwNiAxMC4wOTU1IDM3LjY1OTkgOC4wNDgzMSAzMiA4WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg=="
+description: "GitHub as a System of Record"
+# Enterprise Cloud: api.github.com
+# Enterprise Server: Use your own hostname
+address: "{{Input Required}}"
+defaultSyncFrequency: HOURLY
+defaultSyncMinInterval: 1
+defaultApiCallFrequency: SECONDLY
+defaultApiCallMinInterval: 1
+type: "GitHub-1.0.0"
+# Example Config:
+# {
+#    "enterpriseSlug": "your-enterprise-slug",  
+#    "isEntepriseCloud": true / false,  
+#    "apiVersion": "v1"
+# }
+adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogInt7SW5wdXQgUmVxdWlyZWR9fSIsCiAgICAiaXNFbnRlcHJpc2VDbG91ZCI6ICJ7e0lucHV0IFJlcXVpcmVkfX0iLAogICAgImFwaVZlcnNpb24iOiAie3tJbnB1dCBSZXF1aXJlZCBmb3IgUkVTVC1iYXNlZCBlbnRpdGllc319Igp9"
+auth:
+  - bearer:
+      authToken: "Bearer {{Input Required}}"
+entities:
+  # https://docs.github.com/en/graphql/reference/objects#organization
+  Organization:
+    displayName: Organization
+    externalId: Organization
+    description: Entity representing a GitHub Organization
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: organizationId
+      - name: announcement
+        externalId: announcement
+        type: String
+      - name: announcementExpiresAt
+        externalId: announcementExpiresAt
+        type: DateTime
+      - name: announcementUserDismissible
+        externalId: announcementUserDismissible
+        type: Bool
+      - name: anyPinnableItems
+        externalId: anyPinnableItems
+        type: Bool
+      - name: archivedAt
+        externalId: archivedAt
+        type: DateTime
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: databaseId
+        externalId: databaseId
+        type: Int64
+      - name: description
+        externalId: description
+        type: String
+      - name: email
+        externalId: email
+        type: String
+      - name: login
+        externalId: login
+        type: String
+      - name: ipAllowListEnabledSetting
+        externalId: ipAllowListEnabledSetting
+        type: String
+      - name: isVerified
+        externalId: isVerified
+        type: Bool
+      - name: location
+        externalId: location
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: newTeamResourcePath
+        externalId: newTeamResourcePath
+        type: String
+      - name: organizationBillingEmail
+        externalId: organizationBillingEmail
+        type: String 
+      - name: pinnedItemsRemaining
+        externalId: pinnedItemsRemaining
+        type: Int64
+      - name: projectsResourcePath
+        externalId: projectsResourcePath
+        type: String
+      - name: requiresTwoFactorAuthentication
+        externalId: requiresTwoFactorAuthentication
+        type: Bool
+      - name: resourcePath
+        externalId: resourcePath
+        type: String
+      - name: teamsResourcePath
+        externalId: teamsResourcePath
+        type: String
+      - name: twitterUsername
+        externalId: twitterUsername
+        type: String
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+      - name: viewerCanAdminister
+        externalId: viewerCanAdminister
+        type: Bool
+      - name: viewerCanChangePinnedItems
+        externalId: viewerCanChangePinnedItems
+        type: Bool
+      - name: viewerCanCreateProjects
+        externalId: viewerCanCreateProjects
+        type: Bool
+      - name: viewerCanCreateRepositories
+        externalId: viewerCanCreateRepositories
+        type: Bool
+      - name: viewerCanCreateTeams
+        externalId: viewerCanCreateTeams
+        type: Bool
+      - name: viewerIsAMember
+        externalId: viewerIsAMember
+        type: Bool
+      # Attribute added in post-processing
+      - name: enterpriseId
+        externalId: enterpriseId
+        type: String
+  # https://docs.github.com/en/graphql/reference/objects#user
+  User:
+    displayName: User
+    externalId: User
+    description: User entity in GitHub.
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: userId
+      - name: bio
+        externalId: bio
+        type: String
+      - name: company
+        externalId: company
+        type: String
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: databaseId
+        externalId: databaseId
+        type: Int64
+      - name: email
+        externalId: email
+        type: String
+      - name: login
+        externalId: login
+        type: String
+        indexed: true
+        attributeAlias: userLogin
+      - name: isBountyHunter
+        externalId: isBountyHunter
+        type: Bool
+      - name: isCampusExpert
+        externalId: isCampusExpert
+        type: Bool
+      - name: isDeveloperProgramMember
+        externalId: isDeveloperProgramMember
+        type: Bool
+      - name: isEmployee
+        externalId: isEmployee
+        type: Bool
+      - name: isFollowingViewer
+        externalId: isFollowingViewer
+        type: Bool
+      - name: isHireable
+        externalId: isHireable
+        type: Bool
+      - name: isSiteAdmin
+        externalId: isSiteAdmin
+        type: Bool
+      - name: isViewer
+        externalId: isViewer
+        type: Bool
+      - name: location
+        externalId: location
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: pinnedItemsRemaining
+        externalId: pinnedItemsRemaining
+        type: Int64
+      - name: projectsResourcePath
+        externalId: projectsResourcePath
+        type: String
+      - name: resourcePath
+        externalId: resourcePath
+        type: String
+      - name: twitterUsername
+        externalId: twitterUsername
+        type: String
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+      - name: viewerCanChangePinnedItems
+        externalId: viewerCanChangePinnedItems
+        type: Bool
+      - name: viewerCanCreateProjects
+        externalId: viewerCanCreateProjects
+        type: Bool
+      - name: viewerCanFollow
+        externalId: viewerCanFollow
+        type: Bool
+      - name: viewerIsFollowing
+        externalId: viewerIsFollowing
+        type: Bool
+  OrganizationUser:
+    displayName: OrganizationUser
+    externalId: OrganizationUser
+    description: Entity representing the metadata of a User entity in a GitHub Organization
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: orgId
+        externalId: orgId
+        type: String
+        indexed: true
+        attributeAlias: orgUserOrgId
+      - name: userId
+        externalId: $.node.id
+        type: String
+        indexed: true
+        attributeAlias: orgUserId
+      - name: role
+        externalId: role
+        type: String
+        indexed: true
+  UserOrganizationVerifiedDomainEmails:
+    parent: OrganizationUser
+    displayName: UserOrganizationVerifiedDomainEmails
+    externalId: $.node.organizationVerifiedDomainEmails
+    description: Entity representing a GitHub user's organization verified domain emails
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: email
+        externalId: email
+        type: String
+        indexed: true
+        uniqueId: true 
+  
+  # https://docs.github.com/en/graphql/reference/objects#team  
+  Team:
+    displayName: Team
+    externalId: Team
+    description: Team entity in GitHub.
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: combinedSlug
+        externalId: combinedSlug
+        type: String
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: databaseId
+        externalId: databaseId
+        type: Int64
+      - name: description
+        externalId: description
+        type: String
+      - name: discussionsResourcePath
+        externalId: discussionsResourcePath
+        type: String
+      - name: editTeamResourcePath
+        externalId: editTeamResourcePath
+        type: String
+      - name: membersResourcePath
+        externalId: membersResourcePath
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: newTeamResourcePath
+        externalId: newTeamResourcePath
+        type: String
+      - name: repositoriesResourcePath
+        externalId: repositoriesResourcePath
+        type: String
+      - name: resourcePath
+        externalId: resourcePath
+        type: String
+      - name: slug
+        externalId: slug
+        type: String
+      - name: teamsResourcePath
+        externalId: teamsResourcePath
+        type: String
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+      - name: viewerCanAdminister 
+        externalId: viewerCanAdminister
+        type: Bool
+      - name: viewerCanSubscribe
+        externalId: viewerCanSubscribe
+        type: Bool
+      # Attributes added in post-processing
+      - name: enterpriseId
+        externalId: enterpriseId
+        type: String
+      - name: orgId
+        externalId: orgId
+        type: String
+        indexed: true
+        attributeAlias: teamOrgId
+  # TeamMember entity is for creating relationships between Users and Teams.
+  # TeamMember is a User entity type: https://docs.github.com/en/graphql/reference/objects#user
+  TeamMember:
+    parent: Team
+    displayName: TeamMember
+    externalId: $.members.edges
+    description: Entity representing the metadata of a User entity in a GitHub Team
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: $.node.id
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: teamMemberId
+      # Note: Role represents the TeamMember's role on the team.
+      # https://docs.github.com/en/graphql/reference/enums#teammemberrole
+      - name: role
+        externalId: role
+        type: String
+        indexed: true
+      - name: login
+        externalId: $.node.login
+        type: String
+        indexed: true
+        attributeAlias: teamMemberLogin
+  # TeamRepository entity is for creating relationships between Repositories and Teams.
+  # TeamRepository is a Repository entity type: https://docs.github.com/en/graphql/reference/objects#repository
+  TeamRepository:
+    parent: Team
+    displayName: TeamRepository
+    externalId: $.repositories.edges
+    description: Entity representing the metadata of a Repository entity assigned to a GitHub Team
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: $.node.id
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: teamRepositoryId
+        # Permission is the Team's permission level for this repository
+        # https://docs.github.com/en/graphql/reference/enums#repositorypermission
+      - name: permission 
+        externalId: permission
+        type: String
+        indexed: true
+      - name: name
+        externalId: $.node.name
+        type: String
+  
+  # https://docs.github.com/en/graphql/reference/objects#repository
+  Repository:
+    displayName: Repository
+    externalId: Repository
+    description: Entity representing a GitHub Repository
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: repositoryId
+      - name: allowUpdateBranch
+        externalId: allowUpdateBranch
+        type: Bool
+      - name: archivedAt
+        externalId: archivedAt
+        type: DateTime
+      - name: autoMergeAllowed
+        externalId: autoMergeAllowed
+        type: Bool
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: databaseId
+        externalId: databaseId
+        type: Int64
+      - name: deleteBranchOnMerge
+        externalId: deleteBranchOnMerge
+        type: Bool
+      - name: description
+        externalId: description
+        type: String
+      - name: diskUsage
+        externalId: diskUsage
+        type: Int64
+      - name: forkCount
+        externalId: forkCount
+        type: Int64
+      - name: forkingAllowed
+        externalId: forkingAllowed
+        type: Bool
+      - name: hasDiscussionsEnabled
+        externalId: hasDiscussionsEnabled
+        type: Bool
+      - name: hasIssuesEnabled
+        externalId: hasIssuesEnabled
+        type: Bool
+      - name: hasProjectsEnabled
+        externalId: hasProjectsEnabled
+        type: Bool
+      - name: hasVulnerabilityAlertsEnabled
+        externalId: hasVulnerabilityAlertsEnabled
+        type: Bool
+      - name: hasWikiEnabled
+        externalId: hasWikiEnabled
+        type: Bool
+      - name: isArchived
+        externalId: isArchived
+        type: Bool
+      - name: isBlankIssuesEnabled
+        externalId: isBlankIssuesEnabled
+        type: Bool
+      - name: isDisabled
+        externalId: isDisabled
+        type: Bool
+      - name: isEmpty
+        externalId: isEmpty
+        type: Bool
+      - name: isInOrganization
+        externalId: isInOrganization
+        type: Bool
+      - name: isFork
+        externalId: isFork
+        type: Bool
+      - name: isLocked
+        externalId: isLocked
+        type: Bool
+      - name: isMirror
+        externalId: isMirror
+        type: Bool
+      - name: isPrivate
+        externalId: isPrivate
+        type: Bool
+      - name: isSecurityPolicyEnabled
+        externalId: isSecurityPolicyEnabled
+        type: Bool
+      - name: isTemplate
+        externalId: isTemplate
+        type: Bool
+      - name: isUserConfigurationRepository
+        externalId: isUserConfigurationRepository
+        type: Bool
+      - name: mergeCommitAllowed
+        externalId: mergeCommitAllowed
+        type: Bool
+      - name: name
+        externalId: name
+        type: String
+      - name: nameWithOwner
+        externalId: nameWithOwner
+        type: String
+      - name: projectsResourcePath
+        externalId: projectsResourcePath
+        type: String
+      - name: pushedAt
+        externalId: pushedAt
+        type: DateTime
+      - name: rebaseMergeAllowed
+        externalId: rebaseMergeAllowed
+        type: Bool
+      - name: resourcePath
+        externalId: resourcePath
+        type: String
+      - name: squashMergeAllowed
+        externalId: squashMergeAllowed
+        type: Bool
+      - name: stargazerCount
+        externalId: stargazerCount
+        type: Int64
+      - name: tempCloneToken
+        externalId: tempCloneToken
+        type: String
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+      - name: usesCustomOpenGraphImage
+        externalId: usesCustomOpenGraphImage
+        type: Bool
+      - name: viewerCanAdminister
+        externalId: viewerCanAdminister
+        type: Bool
+      - name: viewerCanCreateProjects
+        externalId: viewerCanCreateProjects
+        type: Bool
+      - name: viewerCanSubscribe
+        externalId: viewerCanSubscribe
+        type: Bool
+      - name: viewerCanUpdateTopics
+        externalId: viewerCanUpdateTopics
+        type: Bool
+      - name: viewerDefaultCommitEmail
+        externalId: viewerDefaultCommitEmail
+        type: String
+      - name: viewerHasStarred
+        externalId: viewerHasStarred
+        type: Bool
+      - name: viewerPossibleCommitEmails
+        externalId: viewerPossibleCommitEmails
+        type: String
+        list: true
+      - name: webCommitSignoffRequired
+        externalId: webCommitSignoffRequired
+        type: Bool
+      # Attributes added in post-processing
+      - name: enterpriseId
+        externalId: enterpriseId
+        type: String
+      - name: orgId
+        externalId: orgId
+        type: String
+        indexed: true
+        attributeAlias: repositoryOrgId
+  RepositoryCollaborator:
+    parent: Repository
+    displayName: RepositoryCollaborator
+    externalId: $.collaborators.edges
+    description: Entity representing the metadata of a User (Collaborator) entity assigned to a GitHub Repository
+    pageSize: 100
+    pagesOrderedById: false 
+    attributes:
+      - name: collaboratorId
+        externalId: $.node.id
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: repositoryCollaboratorId
+      - name: permission
+        externalId: permission
+        type: String
+        indexed: true
+  # Collaborator is a User entity type: https://docs.github.com/en/graphql/reference/objects#repositorycollaboratoredge
+  Collaborator:
+    displayName: Collaborator
+    externalId: Collaborator
+    description: Entity representing a GitHub User assigned to some Repository
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: collaboratorId
+      - name: bio
+        externalId: bio
+        type: String
+      - name: company
+        externalId: company
+        type: String
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: databaseId
+        externalId: databaseId
+        type: Int64
+      - name: email
+        externalId: email
+        type: String
+      - name: login
+        externalId: login
+        type: String
+        indexed: true
+        attributeAlias: collaboratorLogin
+      - name: isBountyHunter
+        externalId: isBountyHunter
+        type: Bool
+      - name: isCampusExpert
+        externalId: isCampusExpert
+        type: Bool
+      - name: isDeveloperProgramMember
+        externalId: isDeveloperProgramMember
+        type: Bool
+      - name: isEmployee
+        externalId: isEmployee
+        type: Bool
+      - name: isFollowingViewer
+        externalId: isFollowingViewer
+        type: Bool
+      - name: isHireable
+        externalId: isHireable
+        type: Bool
+      - name: isSiteAdmin
+        externalId: isSiteAdmin
+        type: Bool
+      - name: isViewer
+        externalId: isViewer
+        type: Bool
+      - name: location
+        externalId: location
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: pinnedItemsRemaining
+        externalId: pinnedItemsRemaining
+        type: Int64
+      - name: projectsResourcePath
+        externalId: projectsResourcePath
+        type: String
+      - name: resourcePath
+        externalId: resourcePath
+        type: String
+      - name: twitterUsername
+        externalId: twitterUsername
+        type: String
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+      - name: viewerCanChangePinnedItems
+        externalId: viewerCanChangePinnedItems
+        type: Bool
+      - name: viewerCanCreateProjects
+        externalId: viewerCanCreateProjects
+        type: Bool
+      - name: viewerCanFollow
+        externalId: viewerCanFollow
+        type: Bool
+      - name: viewerIsFollowing
+        externalId: viewerIsFollowing
+        type: Bool
+  
+  # https://docs.github.com/en/graphql/reference/objects#pullrequest
+  PullRequest:
+    displayName: PullRequest
+    externalId: PullRequest
+    description: Entity representing a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: pullRequestId
+      - name: baseRepositoryId
+        externalId: $.baseRepository.id
+        type: String
+        indexed: true
+        attributeAlias: baseRepositoryId
+      - name: headRepositoryId
+        externalId: $.headRepository.id
+        type: String
+        indexed: true
+        attributeAlias: headRepositoryId
+      - name: authorLogin
+        externalId: $.author.login
+        type: String
+        indexed: true
+        attributeAlias: authorLogin
+      - name: authorAssociation
+        externalId: authorAssociation
+        type: String
+      - name: baseRefName
+        externalId: baseRefName
+        type: String
+      - name: changedFiles
+        externalId: changedFiles
+        type: Int64
+      - name: closed
+        externalId: closed
+        type: Bool
+        indexed: true
+      - name: closedAt
+        externalId: closedAt
+        type: DateTime
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: createdViaEmail
+        externalId: createdViaEmail
+        type: Bool
+      - name: deletions
+        externalId: deletions
+        type: Int64
+      - name: headRefName
+        externalId: headRefName
+        type: String
+      - name: includesCreatedEdit
+        externalId: includesCreatedEdit
+        type: Bool
+      - name: isCrossRepository
+        externalId: isCrossRepository
+        type: Bool
+      - name: isDraft
+        externalId: isDraft
+        type: Bool
+      - name: lastEditedAt
+        externalId: lastEditedAt
+        type: DateTime
+      - name: locked
+        externalId: locked
+        type: Bool
+        indexed: true
+      - name: maintainerCanModify
+        externalId: maintainerCanModify
+        type: Bool
+      - name: mergeable
+        externalId: mergeable
+        type: String
+      - name: merged
+        externalId: merged
+        type: Bool
+      - name: mergedAt
+        externalId: mergedAt
+        type: DateTime
+      - name: number
+        externalId: number
+        type: Int64
+      - name: publishedAt
+        externalId: publishedAt
+        type: DateTime
+      - name: state
+        externalId: state
+        type: String
+        indexed: true
+      - name: title
+        externalId: title
+        type: String
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+  PullRequestAssignee:
+    displayName: PullRequestAssignee
+    externalId: PullRequestAssignee
+    description: Entity representing the connection between User entities that are assigned to a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: pullRequestId
+        externalId: pullRequestId
+        type: String
+        indexed: true
+        attributeAlias: assignedPullRequestId
+      - name: userId
+        externalId: id
+        type: String
+        indexed: true
+        attributeAlias: pullRequestAssigneeId
+  PullRequestParticipant:
+    displayName: PullRequestParticipant
+    externalId: PullRequestParticipant
+    description: Entity representing the connection between a User entity that is a participant of a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: pullRequestId
+        externalId: pullRequestId
+        type: String
+        indexed: true
+        attributeAlias: participantPullRequestId
+      - name: userId
+        externalId: id
+        type: String
+        indexed: true
+        attributeAlias: pullRequestParticipantId
+  
+  # https://docs.github.com/en/graphql/reference/objects#pullrequestreview
+  PullRequestReview:
+    displayName: PullRequestReview
+    externalId: PullRequestReview
+    description: Entity representing a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: userLogin
+        externalId: $.author.login
+        type: String
+        indexed: true
+        attributeAlias: reviewAuthorLogin
+      - name: pullRequestId
+        externalId: pullRequestId
+        type: String
+        indexed: true
+        attributeAlias: reviewPullRequestId
+      - name: authorAssociation
+        externalId: authorAssociation
+        type: String
+      - name: authorCanPushToRepository
+        externalId: authorCanPushToRepository
+        type: Bool
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: createdViaEmail
+        externalId: createdViaEmail
+        type: Bool
+      - name: includesCreatedEdit
+        externalId: includesCreatedEdit
+        type: Bool
+      - name: lastEditedAt
+        externalId: lastEditedAt
+        type: DateTime
+      - name: state
+        externalId: state
+        type: String
+        indexed: true
+      - name: publishedAt
+        externalId: publishedAt
+        type: DateTime
+      - name: submittedAt
+        externalId: submittedAt
+        type: DateTime
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+  
+  # https://docs.github.com/en/graphql/reference/objects#pullrequestcommit
+  PullRequestCommit:
+    displayName: PullRequestCommit
+    externalId: PullRequestCommit
+    description: Entity representing a Commit in a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: pullRequestId
+        externalId: pullRequestId
+        type: String
+        indexed: true
+        attributeAlias: commitPullRequestId
+      - name: commitId
+        externalId: $.commit.id
+        type: String
+      - name: committedDate
+        externalId: $.commit.committedDate
+        type: DateTime
+        indexed: true
+      - name: commitAuthor
+        externalId: $.commit.author.user.id
+        type: String
+        indexed: true
+        attributeAlias: commitAuthorId    
+  
+  # https://docs.github.com/en/graphql/reference/objects#pullrequestchangedfile
+  PullRequestChangedFile:
+    displayName: PullRequestChangedFile
+    externalId: PullRequestChangedFile
+    description: Entity representing a changed file in a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId # concatenated the file path and PR id
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: pullRequestId
+        externalId: pullRequestId
+        type: String
+        indexed: true
+        attributeAlias: changedFilePullRequestId
+      - name: path # unique for each PR
+        externalId: path
+        type: String
+        indexed: true
+      - name: additions
+        externalId: additions
+        type: Int64
+      - name: deletions
+        externalId: deletions
+        type: Int64
+      - name: changeType
+        externalId: changeType
+        type: String
+        indexed: true
+  
+  # https://docs.github.com/en/graphql/reference/objects#issue
+  Issue:
+    displayName: Issue
+    externalId: Issue
+    description: Entity representing a GitHub Issue
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: issueId
+      - name: authorLogin
+        externalId: $.author.login
+        type: String
+        indexed: true
+        attributeAlias: issueAuthorLogin
+      - name: repositoryId
+        externalId: $.repository.id
+        type: String
+        indexed: true
+        attributeAlias: issueRepositoryId
+      - name: activeLockReason
+        externalId: activeLockReason
+        type: String
+      - name: closed
+        externalId: closed
+        type: Bool
+        indexed: true
+      - name: closedAt
+        externalId: closedAt
+        type: DateTime
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: createdViaEmail
+        externalId: createdViaEmail
+        type: Bool
+      - name: includesCreatedEdit
+        externalId: includesCreatedEdit
+        type: Bool
+      - name: isPinned
+        externalId: isPinned
+        type: Bool
+      - name: lastEditedAt
+        externalId: lastEditedAt
+        type: DateTime
+      - name: locked
+        externalId: locked
+        type: Bool
+        indexed: true
+      - name: number
+        externalId: number
+        type: Int64
+      - name: publishedAt
+        externalId: publishedAt
+        type: DateTime
+      - name: state
+        externalId: state
+        type: String
+        indexed: true
+      - name: stateReason
+        externalId: stateReason
+        type: String
+      - name: title
+        externalId: title
+        type: String
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+  IssueAssignee:
+    displayName: IssueAssignee
+    externalId: IssueAssignee
+    description: Entity representing the connection between a User entity assigned to a GitHub Issue
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: issueId
+        externalId: issueId
+        type: String
+        indexed: true
+        attributeAlias: assignedIssueId
+      - name: userId
+        externalId: id
+        type: String
+        indexed: true
+        attributeAlias: issueAssigneeId
+  IssueParticipant:
+    displayName: IssueParticipant
+    externalId: IssueParticipant
+    description: Entity representing the connection between a User entity that is a participant of a GitHub Issue
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: issueId
+        externalId: issueId
+        type: String
+        indexed: true
+        attributeAlias: participantIssueId
+      - name: userId
+        externalId: id
+        type: String
+        indexed: true
+        attributeAlias: issueParticipantId
+  
+  # https://docs.github.com/en/graphql/reference/objects#label
+  Label:
+    displayName: Label
+    externalId: Label
+    description: Entity representing a GitHub Label
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: labelId
+      - name: repositoryId
+        externalId: repositoryId
+        type: String
+        indexed: true
+        attributeAlias: labelRepositoryId
+      - name: color
+        externalId: color
+        type: String
+      - name: createdAt
+        externalId: createdAt
+        type: DateTime
+      - name: isDefault
+        externalId: isDefault
+        type: Bool
+      - name: name
+        externalId: name
+        type: String
+        indexed: true
+      - name: updatedAt
+        externalId: updatedAt
+        type: DateTime
+  
+  PullRequestLabel:
+    displayName: PullRequestLabel
+    externalId: PullRequestLabel
+    description: Entity representing the metadata of a Label entity attached to a GitHub PullRequest
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: pullRequestId
+        externalId: id
+        type: String
+        indexed: true
+        attributeAlias: pullRequestLabelPullRequestId
+      - name: labelId
+        externalId: labelId
+        type: String
+        indexed: true
+        attributeAlias: pullRequestLabelId
+  
+  IssueLabel:
+    displayName: IssueLabel
+    externalId: IssueLabel
+    description: Entity representing the metadata of a Label entity attached to GitHub Issue
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: uniqueId
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: issueId
+        externalId: id
+        type: String
+        indexed: true
+        attributeAlias: issueLabelIssueId
+      - name: labelId
+        externalId: labelId
+        type: String
+        indexed: true
+        attributeAlias: issueLabelId
+  
+  # https://docs.github.com/en/enterprise-server@3.12/rest/secret-scanning/secret-scanning?apiVersion=2022-11-28#list-secret-scanning-alerts-for-an-enterprise
+  SecretScanningAlert:
+    displayName: SecretScanningAlert
+    externalId: SecretScanningAlert
+    description: Entity representing a GitHub SecretScanningAlert
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: number
+        externalId: number
+        type: Int64
+        indexed: true
+        uniqueId: true
+      - name: createdAt
+        externalId: created_at
+        type: DateTime
+      - name: state
+        externalId: state
+        type: String
+        indexed: true
+      - name: resolution
+        externalId: resolution
+        type: String
+      - name: resolvedAt
+        externalId: resolved_at
+        type: DateTime
+      - name: resolvedByAuthorId
+        externalId: $.resolved_by.node_id
+        type: String
+        indexed: true
+        attributeAlias: resolvedByAuthorId
+      - name: secretType
+        externalId: secret_type
+        type: String
+      - name: secretTypeDisplayName
+        externalId: secret_type_display_name
+        type: String
+      - name: secret
+        externalId: secret
+        type: String
+      - name: repositoryId
+        externalId: $.repository.node_id
+        type: String
+        indexed: true
+        attributeAlias: secretScanningAlertRepositoryId
+      - name: pushProtectionBypassed
+        externalId: push_protection_bypassed
+        type: Bool
+      - name: pushProtectionBypassedBy
+        externalId: $.push_protection_bypassed_by.node_id
+        type: String
+        indexed: true
+        attributeAlias: pushProtectionBypassedById
+      - name: pushProtectedBypassedAt
+        externalId: push_protected_bypassed_at
+        type: DateTime
+      - name: validity
+        externalId: validity
+        type: String
+
+relationships:
+  RepositoryToOrganization:
+    displayName: OrganizationRepository
+    name: MemberOf
+    fromAttribute: repositoryOrgId 
+    toAttribute: organizationId
+  TeamToOrganization:
+    displayName: OrganizationTeam
+    name: MemberOf
+    fromAttribute: teamOrgId
+    toAttribute: organizationId
+  UserToOrganizationUser:
+    displayName: UserMember
+    name: MemberOf
+    fromAttribute: userId
+    toAttribute: orgUserId
+  OrganizationUserToOrganization:
+    displayName: OrganizationMember
+    name: MemberOf
+    fromAttribute: orgUserOrgId
+    toAttribute: organizationId
+  OrganizationToUser:
+    displayName: OrganizationUser
+    name: MemberOf
+    path:
+      - relationship: UserToOrganizationUser
+        direction: Forward
+      - relationship: OrganizationUserToOrganization
+        direction: Forward
+  ParentOfRepositoryCollaborator:
+    displayName: RepositoryMember
+    childEntity: $.collaborators.edges
+  RepositoryCollaboratorToCollaborator:
+    displayName: CollaboratorMember
+    name: MemberOf
+    fromAttribute: repositoryCollaboratorId
+    toAttribute: collaboratorId
+  CollaboratorToRepositoryPath:
+    displayName: RepositoryCollaborator
+    name: MemberOf
+    path:
+      - relationship: ParentOfRepositoryCollaborator
+        direction: Backward
+      - relationship: RepositoryCollaboratorToCollaborator
+        direction: Forward
+  UserToCollaborator:
+    displayName: UserCollaborator
+    name: SameAs
+    fromAttribute: userId
+    toAttribute: collaboratorId
+  UserToTeamMember:
+    displayName: UserTeamMember
+    name: SameAs
+    fromAttribute: userId
+    toAttribute: teamMemberId
+  RepositoryToTeamRepository:
+    displayName: RepositoryTeamRepository
+    name: SameAs
+    fromAttribute: repositoryId
+    toAttribute: teamRepositoryId
+
+########### Issue RELATIONSHIPS ##########
+  
+  IssueToRepository:
+    displayName: RepositoryIssue
+    name: MemberOf
+    fromAttribute: issueRepositoryId
+    toAttribute: repositoryId
+
+  IssueToUserAuthor:
+    displayName: IssueUserAuthor
+    name: AuthorOf
+    fromAttribute: issueAuthorLogin
+    toAttribute: userLogin
+  IssueToCollaboratorAuthor:
+    displayName: IssueCollaboratorAuthor
+    name: AuthorOf
+    fromAttribute: issueAuthorLogin
+    toAttribute: collaboratorLogin
+
+  IssueToIssueAssignee:
+    displayName: IssueToIssueAssignee
+    name: MemberOf
+    fromAttribute: issueId
+    toAttribute: assignedIssueId
+  IssueAssigneeToUser:
+    displayName: IssueAssigneeUser
+    name: MemberOf
+    fromAttribute: issueAssigneeId
+    toAttribute: userId
+  IssueAssigneeToCollaborator:
+    displayName: IssueAssigneeCollaborator
+    name: MemberOf
+    fromAttribute: issueAssigneeId
+    toAttribute: collaboratorId
+  IssueToAssignedUser:
+    displayName: IssueUserAssignee
+    name: MemberOf
+    path:
+      - relationship: IssueToIssueAssignee
+        direction: Forward
+      - relationship: IssueAssigneeToUser
+        direction: Forward
+  IssueToAssignedCollaborator:
+    displayName: IssueCollaboratorAssignee
+    name: MemberOf
+    path:
+      - relationship: IssueToIssueAssignee
+        direction: Forward
+      - relationship: IssueAssigneeToCollaborator
+        direction: Forward
+  IssueToIssueParticipant:
+    displayName: IssueToIssueParticipant
+    name: MemberOf
+    fromAttribute: issueId
+    toAttribute: participantIssueId
+  IssueParticipantToUser:
+    displayName: IssueParticipantUser
+    name: MemberOf
+    fromAttribute: issueParticipantId
+    toAttribute: userId
+  IssueParticipantToCollaborator:
+    displayName: IssueParticipantCollaborator
+    name: MemberOf
+    fromAttribute: issueParticipantId
+    toAttribute: collaboratorId
+  IssueToParticipatingUser:
+    displayName: IssueUserParticipant
+    name: MemberOf
+    path:
+      - relationship: IssueToIssueParticipant
+        direction: Forward
+      - relationship: IssueParticipantToUser
+        direction: Forward
+  IssueToParticipatingCollaborator:
+    displayName: IssueCollaboratorParticipant
+    name: MemberOf
+    path:
+      - relationship: IssueToIssueParticipant
+        direction: Forward
+      - relationship: IssueParticipantToCollaborator
+        direction: Forward
+
+########### Label RELATIONSHIPS ##########
+
+  LabelToRepository:
+    displayName: RepositoryLabel
+    name: MemberOf
+    fromAttribute: labelRepositoryId
+    toAttribute: repositoryId
+  
+  LabelToIssueLabel:
+    displayName: IssueLabel
+    name: MemberOf
+    fromAttribute: labelId
+    toAttribute: issueLabelId
+  IssueLabelToIssue:
+    displayName: IssueLabel
+    name: MemberOf
+    fromAttribute: issueLabelIssueId
+    toAttribute: issueId
+  LabelToIssue:
+    displayName: IssueLabel
+    name: MemberOf
+    path:
+      - relationship: LabelToIssueLabel
+        direction: Forward
+      - relationship: IssueLabelToIssue
+        direction: Forward
+  
+  LabelToPullRequestLabel:
+    displayName: PullRequestLabel
+    name: MemberOf
+    fromAttribute: labelId
+    toAttribute: pullRequestLabelId
+  PullRequestLabelToPullRequest:
+    displayName: PullRequestLabel
+    name: MemberOf
+    fromAttribute: pullRequestLabelPullRequestId
+    toAttribute: pullRequestId
+  LabelToPullRequest:
+    displayName: PullRequestLabel
+    name: MemberOf
+    path:
+      - relationship: LabelToPullRequestLabel
+        direction: Forward
+      - relationship: PullRequestLabelToPullRequest
+        direction: Forward
+
+######## PULL REQUEST RELATIONSHIPS ##########
+
+  PullRequestToBaseRepository:
+    displayName: RepositoryPullRequest
+    name: MemberOf
+    fromAttribute: baseRepositoryId
+    toAttribute: repositoryId
+  PullRequestToHeadRepository:
+    displayName: RepositoryPullRequest
+    name: MemberOf
+    fromAttribute: headRepositoryId
+    toAttribute: repositoryId
+  PullRequestToUserAuthor:
+    displayName: PullRequestUserAuthor
+    name: AuthorOf
+    fromAttribute: authorLogin
+    toAttribute: userLogin
+  PullRequestToCollaboratorAuthor:
+    displayName: PullRequestCollaboratorAuthor
+    name: AuthorOf
+    fromAttribute: authorLogin
+    toAttribute: collaboratorLogin
+
+  PullRequestAssigneeToPullRequest:
+    displayName: AssignedPullRequest
+    name: MemberOf
+    fromAttribute: assignedPullRequestId
+    toAttribute: pullRequestId
+  UserToPullRequestAssignee:
+    displayName: UserAssignedPullRequest
+    name: MemberOf
+    fromAttribute: userId
+    toAttribute: pullRequestAssigneeId
+  CollaboratorToPullRequestAssignee:
+    displayName: CollaboratorAssignedPullRequest
+    name: MemberOf
+    fromAttribute: collaboratorId
+    toAttribute: pullRequestAssigneeId
+  PullRequestToAssignedUser:
+    displayName: PullRequestUserAssignee
+    name: MemberOf
+    path:
+      - relationship: UserToPullRequestAssignee
+        direction: Forward
+      - relationship: PullRequestAssigneeToPullRequest
+        direction: Forward
+  PullRequestToAssignedCollaborator:
+    displayName: PullRequestCollaboratorAssignee
+    name: MemberOf
+    path:
+      - relationship: CollaboratorToPullRequestAssignee
+        direction: Forward
+      - relationship: PullRequestAssigneeToPullRequest
+        direction: Forward
+
+  PullRequestParticipantToPullRequest:
+    displayName: ParticipatingPullRequest
+    name: MemberOf
+    fromAttribute: participantPullRequestId
+    toAttribute: pullRequestId
+  UserToPullRequestParticipant:
+    displayName: UserParticipatingPullRequest
+    name: MemberOf
+    fromAttribute: userId
+    toAttribute: pullRequestParticipantId
+  CollaboratorToPullRequestParticipant:
+    displayName: CollaboratorParticipatingPullRequest
+    name: MemberOf
+    fromAttribute: collaboratorId
+    toAttribute: pullRequestParticipantId
+  PullRequestToUserParticipant:
+    displayName: PullRequestUserParticipant
+    name: MemberOf
+    path:
+      - relationship: UserToPullRequestParticipant
+        direction: Forward
+      - relationship: PullRequestParticipantToPullRequest
+        direction: Forward
+  PullRequestToCollaboratorParticipant:
+    displayName: PullRequestCollaboratorParticipant
+    name: MemberOf
+    path:
+      - relationship: CollaboratorToPullRequestParticipant
+        direction: Forward
+      - relationship: PullRequestParticipantToPullRequest
+        direction: Forward
+
+  PullRequestReviewToPullRequest:
+    displayName: PullRequestReview
+    name: MemberOf
+    fromAttribute: reviewPullRequestId
+    toAttribute: pullRequestId
+  PullRequestReviewToUser:
+    displayName: PullRequestUserReviewer
+    name: ReviewerOf
+    fromAttribute: reviewAuthorLogin
+    toAttribute: userLogin
+  PullRequestReviewToCollaborator:
+    displayName: PullRequestCollaboratorReviewer
+    name: ReviewerOf
+    fromAttribute: reviewAuthorLogin
+    toAttribute: collaboratorLogin
+
+  PullRequestCommitToPullRequest:
+    displayName: PullRequestCommit
+    name: MemberOf
+    fromAttribute: commitPullRequestId
+    toAttribute: pullRequestId
+  PullRequestCommitToUser:
+    displayName: PullRequestUserCommiter
+    name: CommitterOf
+    fromAttribute: commitAuthorId
+    toAttribute: userId
+  PullRequestCommitToCollaborator:
+    displayName: PullRequestCollaboratorCommiter
+    name: CommitterOf
+    fromAttribute: commitAuthorId
+    toAttribute: collaboratorId
+
+  PullRequestChangedFileToPullRequest:
+    displayName: PullRequestChangedFile
+    name: MemberOf
+    fromAttribute: changedFilePullRequestId
+    toAttribute: pullRequestId
+
+######## SECRET SCANNING ALERT RELATIONSHIPS RELATIONSHIPS ##########
+
+  SecretScanningAlertToRepository:
+    displayName: RepositorySecretScanningAlert
+    name: MemberOf
+    fromAttribute: secretScanningAlertRepositoryId
+    toAttribute: repositoryId
+  SecretScanningAlertToResolvedByUser:
+    displayName: SecretScanningAlertResolvedByUser
+    name: ResolvedBy
+    fromAttribute: resolvedByAuthorId
+    toAttribute: userId
+  SecretScanningAlertToResolvedByCollaborator:
+    displayName: SecretScanningAlertResolvedByCollaborator
+    name: ResolvedBy
+    fromAttribute: resolvedByAuthorId
+    toAttribute: collaboratorId
+  SecretScanningAlertToPushProtectionBypassedByUser:
+    displayName: SecretScanningAlertPushProtectionBypassedByUser
+    name: PushProtectionBypassedBy
+    fromAttribute: pushProtectionBypassedById
+    toAttribute: userId
+  SecretScanningAlertToPushProtectionBypassedByCollaborator:
+    displayName: SecretScanningAlertPushProtectionBypassedByCollaborator
+    name: PushProtectionBypassedBy
+    fromAttribute: pushProtectionBypassedById
+    toAttribute: collaboratorId
