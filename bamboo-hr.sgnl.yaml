@@ -36,7 +36,7 @@ type: BambooHR-1.0.0
 # "1", "t", "T", "true", "TRUE", "True" are recognized as true.
 # "0", "f", "F", "false", "FALSE", "False" are recognized as false.
 
-adapterConfig: 
+adapterConfig: ewogICAgImFwaVZlcnNpb24iOiAidjEiLAogICAgImNvbXBhbnlEb21haW4iOiAie3tJbnB1dCBSZXF1aXJlZH19IiwKICAgICJvbmx5Q3VycmVudCI6IHt7SW5wdXQgT3B0aW9uYWw6IERlZmF1bHRzIHRvIFRydWV9fSwKICAgICJhdHRyaWJ1dGVNYXBwaW5ncyI6IElucHV0IE9wdGlvbmFsOiB7CiAgICAgICAgImRhdGUiOiAie3tJbnB1dCBPcHRpb25hbDogRGVmYXVsdHMgdG8geXl5eS1tbS1kZH19IiwKICAgICAgICAiYm9vbCI6IElucHV0IE9wdGlvbmFsOiB7CiAgICAgICAgICAgIC8vIFRydWUgYW5kIEZhbHNlIGFyZSByZXF1aXJlZCB0byBoYXZlIGFuIGVxdWFsIG51bWJlciBvZiBtYXBwaW5ncy4KICAgICAgICAgICAgInRydWUiOiBbIklucHV0IFJlcXVpcmVkOiAxKyB2YWx1ZXMiXSwKICAgICAgICAgICAgImZhbHNlIjogWyJJbnB1dCBSZXF1aXJlZDogMSsgdmFsdWVzIl0KICAgICAgICB9CiAgICB9Cn0=
 auth: # https://documentation.bamboohr.com/docs/getting-started#authentication
   - basic:
       username: "{{Input Required: Secret/API key}}"
@@ -85,7 +85,6 @@ entities:
       - name: lastChanged
         externalId: lastChanged
         type: DateTime
-
 relationships:
   EmployeeSupervisor:
     name: EmployeeSupervisor
