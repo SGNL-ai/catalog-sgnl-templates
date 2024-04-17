@@ -11,12 +11,12 @@ type: Workday-1.0.0
 adapterConfig: ewogICAgImFwaVZlcnNpb24iOiAidjEiLAogICAgIm9yZ2FuaXphdGlvbklkIjogInt7SW5wdXQgUmVxdWlyZWR9fSIKfQ==
 auth:
   - bearer:
-      authToken: "Bearer {{Input Required}}"
+      authToken: "Bearer {{Input Required}}" # Access token
 entities:
   Worker:
     displayName: Worker
-    externalId: allWorkers # Name of table in Workday
-    description: Worker entity in Workday
+    externalId: allWorkers # Name of the table in Workday
+    description: Entity representing a Worker in Workday
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -34,6 +34,7 @@ entities:
       - name: workerActive
         externalId: workerActive
         type: Bool
+        indexed: true
       - name: managementLevelDescriptor
         externalId: $.managementLevel.descriptor
         type: String
@@ -58,6 +59,7 @@ entities:
       - name: FTE
         externalId: FTE
         type: String
+        indexed: true
       - name: positionID
         externalId: positionID
         type: String
@@ -77,6 +79,7 @@ entities:
       - name: descriptor
         externalId: descriptor
         type: String
+        indexed: true
   EmployeeType:
     parent: allWorkers
     displayName: Employee Type
