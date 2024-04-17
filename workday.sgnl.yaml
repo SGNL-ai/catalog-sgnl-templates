@@ -1,5 +1,5 @@
 displayName: "Workday"
-icon: # TODO: ask for nice icon
+icon: # ask for nice icon
 description: "Workday as a System of Record"
 address: "wd2-impl-services1.workday.com" 
 defaultSyncFrequency: HOURLY
@@ -7,7 +7,7 @@ defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: Workday-1.0.0
-adapterConfig: ewogICJhcGlWZXJzaW9uIjogInYxIiwKICAib3JnYW5pemF0aW9uSWQiOiAiY2FwZ2VtaW5pc3J2X2RwdDQiCn0=
+adapterConfig: ewogICAgImFwaVZlcnNpb24iOiAidjEiLAogICAgIm9yZ2FuaXphdGlvbklkIjogInt7SW5wdXQgUmVxdWlyZWR9fSIKfQ==
 auth:
   - bearer:
       authToken: "Bearer {{Input Required}}"
