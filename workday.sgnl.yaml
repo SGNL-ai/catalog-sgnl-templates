@@ -1,0 +1,92 @@
+displayName: "Workday"
+icon: # TODO: ask for nice icon
+description: "Workday as a System of Record"
+address: "wd2-impl-services1.workday.com" 
+defaultSyncFrequency: HOURLY
+defaultSyncMinInterval: 1
+defaultApiCallFrequency: SECONDLY
+defaultApiCallMinInterval: 1
+type: Workday-1.0.0
+adapterConfig: ewogICJhcGlWZXJzaW9uIjogInYxIiwKICAib3JnYW5pemF0aW9uSWQiOiAiY2FwZ2VtaW5pc3J2X2RwdDQiCn0=
+auth:
+  - bearer:
+      authToken: "Bearer {{Input Required}}"
+entities:
+  Worker:
+    displayName: Worker
+    externalId: allWorkers
+    description: Worker entity in Workday
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: workerId
+        externalId: $.worker.id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: workerDescriptor
+        externalId: $.worker.descriptor
+        type: String
+      - name: employeeID
+        externalId: employeeID
+        type: String
+      - name: workerActive
+        externalId: workerActive
+        type: Bool
+      - name: managementLevelDescriptor
+        externalId: $.managementLevel.descriptor
+        type: String
+      - name: managementLevelId
+        externalId: $.managementLevel.id
+        type: String
+      - name: companyDescriptor
+        externalId: $.company.descriptor
+        type: String
+      - name: companyId
+        externalId: $.company.id
+        type: String
+      - name: genderDescriptor
+        externalId: $.gender.descriptor
+        type: String
+      - name: genderId
+        externalId: $.gender.id
+        type: String
+      - name: hireDate
+        externalId: hireDate
+        type: DateTime
+      - name: FTE
+        externalId: FTE
+        type: String
+      - name: positionID
+        externalId: positionID
+        type: String
+      - name: jobTitle
+        externalId: jobTitle
+        type: String
+  WorkEmail:
+    parent: allWorkers
+    displayName: Work Email
+    externalId: email_Work
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: descriptor
+        externalId: descriptor
+        type: String
+  EmployeeType:
+    parent: allWorkers
+    displayName: Employee Type
+    externalId: employeeType
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: descriptor
+        externalId: descriptor
+        type: String
+
