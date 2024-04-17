@@ -7,7 +7,7 @@ defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: Workday-1.0.0
-adapterConfig: ewogICJhcGlWZXJzaW9uIjogInYxIiwKICAib3JnYW5pemF0aW9uSWQiOiAiY2FwZ2VtaW5pc3J2X2RwdDQiCn0=
+adapterConfig: ""
 auth:
   - bearer:
       authToken: "Bearer {{Input Required}}"
