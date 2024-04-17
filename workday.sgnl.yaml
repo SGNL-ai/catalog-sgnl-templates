@@ -14,7 +14,7 @@ auth:
 entities:
   Worker:
     displayName: Worker
-    externalId: allWorkers
+    externalId: allWorkers # Name of table in Workday
     description: Worker entity in Workday
     pageSize: 100
     pagesOrderedById: false
