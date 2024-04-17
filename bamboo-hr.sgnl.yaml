@@ -1,20 +1,51 @@
 displayName: "Bamboo HR"
 icon: # TODO: ask for nice icon
 description: "Bamboo HR as a System of Record"
-# If you access BambooHR at https://mycompany.bamboohr.com, then your subdomain is "mycompany"
-address: "https://api.bamboohr.com/api/gateway.php/{subdomain}" 
+address: "api.bamboohr.com/api/gateway.php" 
 defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: BambooHR-1.0.0
+# Example Config: {"apiVersion":"v1","companyDomain":"sgnl","onlyCurrent":true,"attributeMappings":{"date":"yyyy-mm-dd","bool":{"true":["True","yes","1"],"false":["False","no","0"]}}}
+
+# Config Field Info:
+# [Required] ApiVersion: The version of the BambooHR API to use. Currently, only v1 is supported.
+
+# [Required] CompanyDomain: The subdomain used to access your account 
+# (If you access BambooHR at https://mycompany.bamboohr.com, then the subdomain is "mycompany")
+
+# [Optional] OnlyCurrent: If true, only the current employees will be returned.
+# If false, all employees will be returned. This defaults to false.
+
+# [Optional] AttributeMappings: A map of attribute types to potential mappings.
+# The BambooHR SoR Response returns all types as string values. By default, we will attempt to convert 
+# all attributes to the types specified in the catalog. This field allows you to specify additional mappings
+# to perform unconventional type conversions.
+
+# [Optional] AttributeMappings.Date: The format of the date string in the BambooHR response.
+# The BambooHR Admin Console allows you to configure date formats from four options.
+# To find this: Visit the BambooHR Admin Console > Settings > Account > General Settings > Date Input Format (Dropdown)
+# If this field is not specified, we default to "yyyy-mm-dd".
+
+# [Optional] AttributeMappings.Bool: A map of boolean values to their possible string representations.
+# The BambooHR bool type has many possible response values including "0/1", "yes/no", "true/false", etc.
+# This field allows you to specify the possible values for true and false.
+# By default, we will attempt a generic conversion for any attribute that is specified as a bool type in the catalog.
+# Golang recognizes these true/false combinations by default:
+# "1", "t", "T", "true", "TRUE", "True" are recognized as true.
+# "0", "f", "F", "false", "FALSE", "False" are recognized as false.
+
 adapterConfig: 
 auth: # https://documentation.bamboohr.com/docs/getting-started#authentication
   - basic:
       username: "{{Input Required: Secret/API key}}"
-      password: "xxx"
+      password: "xxx" # Random String
 entities:
   # https://documentation.bamboohr.com/docs/list-of-field-names
+  # Note: Make sure the externalIDs of the attributes match exactly with the field names in the BambooHR documentation.
+  # Custom fields are prefixed with 'custom' in the SoR - see customBoolField for an example.
+  # The endpoint does not return any errors when fields are misspelled, it simply omits the information.
   Employee:
     displayName: Employee
     externalId: Employee
@@ -23,7 +54,7 @@ entities:
     syncMinInterval: 1
     apiCallFrequency: SECONDLY
     apiCallMinInterval: 1
-    pageSize: 30
+    pageSize: 100
     pagesOrderedById: false
     attributes:
       - name: id
@@ -38,17 +69,14 @@ entities:
       - name: dateOfBirth
         externalId: dateOfBirth
         type: DateTime
-      - name: bonusAmount
-        externalId: bonusAmount
-        type: String
-      - name: employeeNumber
-        externalId: employeeNumber
-        type: String
       - name: fullName
         externalId: fullName1
         type: String
-      - name: includeInPayroll
-        externalId: includeInPayroll
+      - name: isPhotoUploaded
+        externalId: isPhotoUploaded
+        type: Bool
+      - name: customBoolField
+        externalId: customcustomBoolField
         type: Bool
       - name: supervisorEId
         externalId: supervisorEId
@@ -65,6 +93,6 @@ entities:
 relationships:
   EmployeeSupervisor:
     name: EmployeeSupervisor
-    fromAttribute: supervisorEId
-    toAttribute: employeeId
+    fromAttribute: employeeId
+    toAttribute: supervisorEId
 
