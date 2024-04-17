@@ -1,6 +1,6 @@
-displayName: "Bamboo HR"
+displayName: "BambooHR"
 icon: # TODO: ask for nice icon
-description: "Bamboo HR as a System of Record"
+description: "BambooHR as a System of Record"
 address: "api.bamboohr.com/api/gateway.php" 
 defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
@@ -50,10 +50,6 @@ entities:
     displayName: Employee
     externalId: Employee
     description: Employee Entity in BambooHR
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
     pageSize: 100
     pagesOrderedById: false
     attributes:
