@@ -6,7 +6,7 @@ defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
-type: BambooHR-1.0.0
+type: "BambooHR-1.0.0"
 # Example Config: {"apiVersion":"v1","companyDomain":"sgnl","onlyCurrent":true,"attributeMappings":{"date":"yyyy-mm-dd","bool":{"true":["True","yes","1"],"false":["False","no","0"]}}}
 
 # Config Field Info:
@@ -36,7 +36,7 @@ type: BambooHR-1.0.0
 # "1", "t", "T", "true", "TRUE", "True" are recognized as true.
 # "0", "f", "F", "false", "FALSE", "False" are recognized as false.
 
-adapterConfig: ewogICAgImFwaVZlcnNpb24iOiAidjEiLAogICAgImNvbXBhbnlEb21haW4iOiAie3tJbnB1dCBSZXF1aXJlZH19IiwKICAgICJvbmx5Q3VycmVudCI6IHt7SW5wdXQgT3B0aW9uYWw6IERlZmF1bHRzIHRvIFRydWV9fSwKICAgICJhdHRyaWJ1dGVNYXBwaW5ncyI6IElucHV0IE9wdGlvbmFsOiB7CiAgICAgICAgImRhdGUiOiAie3tJbnB1dCBPcHRpb25hbDogRGVmYXVsdHMgdG8geXl5eS1tbS1kZH19IiwKICAgICAgICAiYm9vbCI6IElucHV0IE9wdGlvbmFsOiB7CiAgICAgICAgICAgIC8vIFRydWUgYW5kIEZhbHNlIGFyZSByZXF1aXJlZCB0byBoYXZlIGFuIGVxdWFsIG51bWJlciBvZiBtYXBwaW5ncy4KICAgICAgICAgICAgInRydWUiOiBbIklucHV0IFJlcXVpcmVkOiAxKyB2YWx1ZXMiXSwKICAgICAgICAgICAgImZhbHNlIjogWyJJbnB1dCBSZXF1aXJlZDogMSsgdmFsdWVzIl0KICAgICAgICB9CiAgICB9Cn0=
+adapterConfig: ewogICAgImFwaVZlcnNpb24iOiAidjEiLAogICAgImNvbXBhbnlEb21haW4iOiAie3tJbnB1dCBSZXF1aXJlZH19IiwKICAgICJvbmx5Q3VycmVudCI6IGZhbHNlLAogICAgImF0dHJpYnV0ZU1hcHBpbmdzIjogewogICAgICAgICJkYXRlIjogInl5eXktbW0tZGQiLAogICAgICAgICJib29sIjogewogICAgICAgICAgICAidHJ1ZSI6IFsidHJ1ZSJdLAogICAgICAgICAgICAiZmFsc2UiOiBbImZhbHNlIl0KICAgICAgICB9CiAgICB9Cn0=
 auth: # https://documentation.bamboohr.com/docs/getting-started#authentication
   - basic:
       username: "{{Input Required: Secret/API key}}"
@@ -55,7 +55,7 @@ entities:
     attributes:
       - name: id
         externalId: id
-        type: Int64
+        type: String
         indexed: true
         uniqueId: true
         attributeAlias: employeeId
@@ -76,7 +76,7 @@ entities:
         type: Bool
       - name: supervisorEId
         externalId: supervisorEId
-        type: Int64
+        type: String
         indexed: true
         attributeAlias: supervisorEId
       - name: supervisorEmail
@@ -85,6 +85,10 @@ entities:
       - name: lastChanged
         externalId: lastChanged
         type: DateTime
+      - name: employeeNumber
+        externalId: employeeNumber
+        type: Int64
+
 relationships:
   EmployeeSupervisor:
     name: EmployeeSupervisor
