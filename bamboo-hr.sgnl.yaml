@@ -71,8 +71,8 @@ entities:
       - name: isPhotoUploaded
         externalId: isPhotoUploaded
         type: Bool
-      - name: customBoolField
-        externalId: customcustomBoolField
+      - name: checkboxField1
+        externalId: customcheckboxField1
         type: Bool
       - name: supervisorEId
         externalId: supervisorEId
