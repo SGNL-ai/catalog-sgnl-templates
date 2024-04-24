@@ -1,0 +1,275 @@
+displayName: "Google Workspace"
+icon: |
+  PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNTUuNTMzMiAyNy4yOTk2SDUzLjZWMjcuMkgzMlYzNi44SDQ1LjU2MzZDNDMuNTg0OCA0Mi4zODg0IDM4LjI2NzYgNDYuNCAzMiA0Ni40QzI0LjA0NzYgNDYuNCAxNy42IDM5Ljk1MjQgMTcuNiAzMkMxNy42IDI0LjA0NzYgMjQuMDQ3NiAxNy42IDMyIDE3LjZDMzUuNjcwOCAxNy42IDM5LjAxMDQgMTguOTg0OCA0MS41NTMyIDIxLjI0NjhMNDguMzQxNiAxNC40NTg0QzQ0LjA1NTIgMTAuNDYzNiAzOC4zMjE2IDggMzIgOEMxOC43NDYgOCA4IDE4Ljc0NiA4IDMyQzggNDUuMjU0IDE4Ljc0NiA1NiAzMiA1NkM0NS4yNTQgNTYgNTYgNDUuMjU0IDU2IDMyQzU2IDMwLjM5MDggNTUuODM0NCAyOC44MiA1NS41MzMyIDI3LjI5OTZaIiBmaWxsPSIjRkZDMTA3Ii8+CjxwYXRoIGQ9Ik0xMC43NjcyIDIwLjgyOTJMMTguNjUyNCAyNi42MTJDMjAuNzg2IDIxLjMyOTYgMjUuOTUzMiAxNy42IDMyIDE3LjZDMzUuNjcwOCAxNy42IDM5LjAxMDQgMTguOTg0OCA0MS41NTMyIDIxLjI0NjhMNDguMzQxNiAxNC40NTg0QzQ0LjA1NTIgMTAuNDYzNiAzOC4zMjE2IDggMzIgOEMyMi43ODE2IDggMTQuNzg3MiAxMy4yMDQ0IDEwLjc2NzIgMjAuODI5MloiIGZpbGw9IiNGRjNEMDAiLz4KPHBhdGggZD0iTTMyIDU2QzM4LjE5OTIgNTYgNDMuODMyIDUzLjYyNzYgNDguMDkwOCA0OS43Njk2TDQwLjY2MjggNDMuNDg0QzM4LjI1MzIgNDUuMzA5MiAzNS4yNTggNDYuNCAzMiA0Ni40QzI1Ljc1NzYgNDYuNCAyMC40NTcyIDQyLjQxOTYgMTguNDYwNCAzNi44NjQ4TDEwLjYzNCA0Mi44OTQ4QzE0LjYwNiA1MC42NjcyIDIyLjY3MjQgNTYgMzIgNTZaIiBmaWxsPSIjNENBRjUwIi8+CjxwYXRoIGQ9Ik01NS41MzMyIDI3LjI5OTZINTMuNlYyNy4ySDMyVjM2LjhINDUuNTYzNkM0NC42MTMyIDM5LjQ4NDQgNDIuODg2NCA0MS43OTkyIDQwLjY1OTIgNDMuNDg1Mkw0MC42NjI4IDQzLjQ4MjhMNDguMDkwOCA0OS43Njg0QzQ3LjU2NTIgNTAuMjQ2IDU2IDQ0IDU2IDMyQzU2IDMwLjM5MDggNTUuODM0NCAyOC44MiA1NS41MzMyIDI3LjI5OTZaIiBmaWxsPSIjMTk3NkQyIi8+Cjwvc3ZnPg==
+description: "Google Workspace as a System of Record"
+address: "admin.googleapis.com" 
+defaultSyncFrequency: HOURLY
+defaultSyncMinInterval: 1
+defaultApiCallFrequency: SECONDLY
+defaultApiCallMinInterval: 1
+type: "GoogleWorkspace-1.0.0"
+# Example Config: 
+# {
+#   "apiVersion": "v1",
+#   "domain": "sgnldemos.com",
+#   "filters": {
+#     "user": {
+#       "showDeleted": true,
+#       "query": "isAdmin=false"
+#     },
+#     "group": {
+#       "query": "adminCreated=true"
+#     },
+#     "member": {
+#       "includeDerivedMembership": false,
+#       "roles": "MEMBER"
+#     }
+#   }
+# }
+
+# Adapter Config Field Info:
+# [Required] APIVersion (String): The version of the Google Workspace API to use. Currently, only v1 is supported.
+
+# DISCLAIMER: Exactly one of either 'Customer' or 'Domain' must be set in the adapter config.
+# Read more about the Customer and Domain parameters here: https://developers.google.com/admin-sdk/directory/v1/guides
+
+# [Required/Optional] Customer (String): The unique ID for the customer's Google Workspace account. In case of a multi-domain account,
+# to fetch all entities for a customer, use this field instead of domain.
+
+# [Required/Optional] Domain (String): Use this field to get entities from only one domain.
+
+# [Optional] Filters (Map): These filters can be applied to the endpoints that are used to retrieve each entity. 
+
+# For more information on the User endpoint: https://developers.google.com/admin-sdk/directory/reference/rest/v1/users/list
+# [Optional] Filters.UserFilters (Map): These filters can be applied to the User endpoint.
+# [Optional] Filters.UserFilters.ShowDeleted (Bool): If set to true, retrieves the list of deleted users. (Default: false)
+# [Optional] Filters.UserFilters.Query (String): Query is a string for searching entity fields.
+# For more information on constructing user queries: https://developers.google.com/admin-sdk/directory/v1/guides/search-users
+
+# For more information on the Group endpoint: https://developers.google.com/admin-sdk/directory/reference/rest/v1/groups/list
+# [Optional] Filters.GroupFilters (Map): These filters can be applied to the Group endpoint.
+# [Optional] Filters.GroupFilters.Query (String): Query is a string for searching entity fields.
+# For more information on constructing group queries: https://developers.google.com/admin-sdk/directory/v1/guides/search-groups
+
+# For more information on the member endpoint: https://developers.google.com/admin-sdk/directory/reference/rest/v1/members/list
+# [Optional] Filters.MemberFilters (Map): These filters can be applied to the Member endpoint.
+# [Optional] Filters.MemberFilters.IncludeDerivedMembership (Bool): If set to true, includes lists of indirect memberships. (Default: false)
+# [Optional] Filters.MemberFilters.Roles (String): The roles query parameter allows you to retrieve group members by role.
+# Roles is an ENUM with possible values of ["MEMBER", "MANAGER", "OWNER"]
+
+adapterConfig: ewogICAgImFwaVZlcnNpb24iOiAidjEiLAogICAgImRvbWFpbiI6ICJ7e0lucHV0IFJlcXVpcmVkfX0iCn0=
+auth: 
+  - bearer:
+      authToken: "Bearer {{Input Required}}" # Access token
+entities:
+  https://developers.google.com/admin-sdk/directory/reference/rest/v1/users#User
+  User:
+    displayName: User
+    externalId: User
+    description: Entity representing a Google Workspace User
+    pageSize: 100
+    pagesOrderedById: true
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: userId
+      - name: kind
+        externalId: kind
+        type: String
+      - name: etag
+        externalId: etag
+        type: String
+      - name: primaryEmail
+        externalId: primaryEmail
+        type: String
+      - name: givenName
+        externalId: $.name.givenName
+        type: String
+      - name: familyName
+        externalId: $.name.familyName
+        type: String
+      - name: fullName
+        externalId: $.name.fullName
+        type: String
+      - name: isAdmin
+        externalId: isAdmin
+        type: Bool
+      - name: isDelegatedAdmin
+        externalId: isDelegatedAdmin
+        type: Bool
+      - name: lastLoginTime
+        externalId: lastLoginTime
+        type: DateTime
+      - name: creationTime
+        externalId: creationTime
+        type: DateTime
+      - name: agreedToTerms
+        externalId: agreedToTerms
+        type: Bool
+      - name: suspended
+        externalId: suspended
+        type: Bool
+      - name: archived
+        externalId: archived
+        type: Bool
+      - name: changePasswordAtNextLogin
+        externalId: changePasswordAtNextLogin
+        type: Bool
+      - name: ipWhitelisted
+        externalId: ipWhitelisted
+        type: Bool
+      - name: nonEditableAliases
+        externalId: nonEditableAliases
+        type: String
+        list: true
+      - name: customerId
+        externalId: customerId
+        type: String
+      - name: orgUnitPath
+        externalId: orgUnitPath
+        type: String
+      - name: isMailboxSetup
+        externalId: isMailboxSetup
+        type: Bool
+      - name: isEnrolledIn2Sv
+        externalId: isEnrolledIn2Sv
+        type: Bool
+      - name: isEnforcedIn2Sv
+        externalId: isEnforcedIn2Sv
+        type: Bool
+      - name: includeInGlobalAddressList
+        externalId: includeInGlobalAddressList
+        type: Bool
+      - name: recoveryEmail
+        externalId: recoveryEmail
+        type: String
+  UserEmail:
+    parent: User
+    displayName: UserEmail
+    externalId: UserEmail
+    description: Entity representing an email object for a Google Workspace User
+    pageSize: 100
+    pagesOrderedById: true
+    attributes:
+      - name: address
+        externalId: address
+        type: String
+        indexed: true
+        uniqueId: true # TODO: this might not be unique, should verify
+      - name: type
+        externalId: type
+        type: String
+      - name: primary
+        externalId: primary
+        type: Bool
+  # https://developers.google.com/admin-sdk/directory/reference/rest/v1/groups#Group
+  Group:
+    displayName: Group
+    externalId: Group
+    description: Entity representing a Google Workspace Group
+    pageSize: 100
+    pagesOrderedById: true
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: groupId
+      - name: kind
+        externalId: kind
+        type: String
+      - name: etag
+        externalId: etag
+        type: String
+      - name: email
+        externalId: email
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: directMembersCount
+        externalId: directMembersCount
+        type: String
+      - name: adminCreated
+        externalId: adminCreated
+        type: Bool
+      - name: nonEditableAliases
+        externalId: nonEditableAliases
+        type: String
+        list: true
+  # https://developers.google.com/admin-sdk/directory/reference/rest/v1/members#Member
+  # In Google Workspace, a member can be a user (GroupMember) or a group (SubGroup).
+  Member:
+    displayName: Member
+    externalId: Member
+    description: Entity representing a Google Workspace Member
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: uniqueId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: memberId
+        externalId: id
+        type: String
+        indexed: true
+        attributeAlias: memberId
+      - name: groupId
+        externalId: groupId
+        type: String
+        indexed: true
+        attributeAlias: memberGroupId
+      - name: kind
+        externalId: kind
+        type: String
+      - name: etag
+        externalId: etag
+        type: String
+      - name: email
+        externalId: email
+        type: String
+      - name: role
+        externalId: role
+        type: String
+      - name: type
+        externalId: type
+        type: String
+      - name: status
+        externalId: status
+        type: String
+
+relationships:
+  UserToMember:
+    name: UserMember
+    fromAttribute: userId
+    toAttribute: memberId
+  GroupToMember:
+    name: GroupMember
+    fromAttribute: groupId
+    toAttribute: memberId
+  MemberToGroup:
+    name: MemberGroup
+    fromAttribute: memberGroupId
+    toAttribute: groupId
+  UserGroupMember:
+    name: UserGroupMember
+    displayName: UserGroupMember
+    path:
+      - relationship: UserToMember
+        direction: Forward
+      - relationship: MemberToGroup
+        direction: Forward
+  SubGroupMember:
+    name: SubGroupMember
+    displayName: SubGroupMember
+    path:
+      - relationship: GroupToMember
+        direction: Forward
+      - relationship: MemberToGroup
+        direction: Forward
