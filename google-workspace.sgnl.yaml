@@ -158,7 +158,7 @@ entities:
         externalId: address
         type: String
         indexed: true
-        uniqueId: true # TODO: this might not be unique, should verify
+        uniqueId: true
       - name: type
         externalId: type
         type: String
