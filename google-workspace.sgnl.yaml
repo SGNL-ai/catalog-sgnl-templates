@@ -28,15 +28,15 @@ type: "GoogleWorkspace-1.0.0"
 # }
 
 # Adapter Config Field Info:
-# [Required] APIVersion (String): The version of the Google Workspace API to use. Currently, only v1 is supported.
+# [Required] apiVersion (String): The version of the Google Workspace API to use. Currently, only v1 is supported.
 
-# DISCLAIMER: Exactly one of either 'Customer' or 'Domain' must be set in the adapter config.
-# Read more about the Customer and Domain parameters here: https://developers.google.com/admin-sdk/directory/v1/guides
+# DISCLAIMER: Exactly one of either 'customer' or 'domain' must be set in the adapter config.
+# Read more about the 'customer' and 'domain' parameters here: https://developers.google.com/admin-sdk/directory/v1/guides
 
-# [Required/Optional] Customer (String): The unique ID for the customer's Google Workspace account. In case of a multi-domain account,
+# [Required/Optional] customer (String): The unique ID for the customer's Google Workspace account. In case of a multi-domain account,
 # to fetch all entities for a customer, use this field instead of domain.
 
-# [Required/Optional] Domain (String): Use this field to get entities from only one domain.
+# [Required/Optional] domain (String): Use this field to get entities from only one domain.
 
 # [Optional] filters (Object): These filters can be applied to the endpoints that are used to retrieve each entity. 
 
