@@ -1,5 +1,6 @@
 displayName: "BambooHR"
-icon: # TODO: ask for nice icon
+icon: |
+  PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTM2LjA2MiA0MS44NEMzNS4zMDk2IDQxLjg0NTEgMzQuNTYzNiA0MS43MDA3IDMzLjg2NzQgNDEuNDE1M0MzMy4xNzExIDQxLjEyOTkgMzIuNTM4NSA0MC43MDkxIDMyLjAwNjEgNDAuMTc3M0MzMS40NzM4IDM5LjY0NTUgMzEuMDUyMyAzOS4wMTMzIDMwLjc2NjIgMzguMzE3NEMzMC40OCAzNy42MjE1IDMwLjMzNDkgMzYuODc1NyAzMC4zMzkyIDM2LjEyMzJDMzAuMzM5MiAzMi44NDcyIDMyLjU1MDggMzAuMTU4IDM2LjExNzIgMzAuMTU4QzM5LjY4MzYgMzAuMTU4IDQxLjc4NiAzMy4wMzggNDEuNzg2IDM2LjA2MkM0MS43ODYgMzkuMzUzNiAzOS41NiA0MS44NCAzNi4wNjIgNDEuODRaTTI2LjkyNCAzMS4wMDA0TDI1LjgyODQgMjcuNDEyNEMyNS4xNzU2IDI1LjUyNDggMjQuOTg4NCAyNC40Mzc2IDIzLjE0MDQgMjIuNDkyNEMyMi41MDkyIDIxLjgyNTIgMjAuMTIyNCAyMC4zNTc2IDIwLjQxODggMjAuNjc4QzIzLjQ0NCAyMy45NDMyIDI0Ljk5MDggMjcuOTAwOCAyNS41ODg0IDI5QzI1LjA0IDI4LjMzNTIgMjQuMzk4IDI3LjczNjQgMjMuNjY4NCAyNi45OTM2QzIzLjA5OTQgMjYuMzkzNCAyMi40NjMyIDI1Ljg2MDcgMjEuNzcyNCAyNS40MDZDMjEuMzY0NCAyNS4xNTQgMjEuMTM1MiAyNS4wMTQ4IDIwLjcyMjQgMjQuOEMxOS4zMzA2IDI0LjA3NTIgMTcuODY3NiAyMy40OTYyIDE2LjM1NjggMjMuMDcyQzE1LjgwNDUgMjIuOTQwMiAxNS4yNDI4IDIyLjg1MTUgMTQuNjc2OCAyMi44MDY4QzE0LjY3NjggMjIuODA2OCAxNy4zNzggMjUuMDg2OCAxOC41MzYgMjYuNTM4OEMxOS42OTQgMjcuOTkwOCAyMC44NzM2IDI5LjI5MTYgMjIuMTc5MiAyOS44MjMyQzIzLjQ4NDggMzAuMzU0OCAyMy45Mzg0IDMwLjUwNzIgMjQuOTY1NiAzMC42NjMyQzI1Ljg0NCAzMC44IDI2LjkyNCAzMS4wMDA0IDI2LjkyNCAzMS4wMDA0Wk0zNi4zMTA0IDI3LjgyMTZDMzMuNDU0NCAyNy44MjE2IDMxLjkyMzIgMjguODAyIDMwLjg0OTIgMjkuODYxNkwzMC41NiAzMC4xNzQ4VjIwLjZIMjguMDg4VjM2LjI2OTZDMjguMDg4IDQxLjA5IDMxLjgwMDggNDQuMDkzNiAzNi4wNjIgNDQuMDkzNkM0MC43NTY0IDQ0LjA5MzYgNDQuMzA5NiA0MC40ODE2IDQ0LjMwOTYgMzUuODM4OEM0NC4zMDk2IDMxLjUyNzIgNDAuNjAyOCAyNy44MjE2IDM2LjMxMDQgMjcuODIxNlpNNTYgMzJDNTYgNDUuMjU1MiA0NS4yNTUyIDU2IDMyIDU2QzE4Ljc0NDggNTYgOCA0NS4yNTUyIDggMzJDOCAxOC43NDQ4IDE4Ljc0NDggOCAzMiA4QzQ1LjI1NTIgOCA1NiAxOC43NDQ4IDU2IDMyWiIgZmlsbD0iIzczQzQxRCIvPgo8L3N2Zz4=
 description: "BambooHR as a System of Record"
 address: "api.bamboohr.com/api/gateway.php" 
 defaultSyncFrequency: HOURLY
@@ -7,28 +8,40 @@ defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: "BambooHR-1.0.0"
-# Example Config: {"apiVersion":"v1","companyDomain":"sgnl","onlyCurrent":true,"attributeMappings":{"date":"yyyy-mm-dd","bool":{"true":["True","yes","1"],"false":["False","no","0"]}}}
+# Example Adapter Config: 
+# {
+#   "apiVersion": "v1",
+#   "companyDomain": "sgnl",
+#   "onlyCurrent": true,
+#   "attributeMappings": {
+#     "date": "yyyy-mm-dd",
+#     "bool": {
+#       "true": ["True", "yes", "1"],
+#       "false": ["False", "no", "0"]
+#     }
+#   }
+# }
 
-# Config Field Info:
-# [Required] ApiVersion: The version of the BambooHR API to use. Currently, only v1 is supported.
+# Adapter Config Field Info:
+# [Required] apiVersion (String): The version of the BambooHR API to use. Currently, only v1 is supported.
 
-# [Required] CompanyDomain: The subdomain used to access your account 
+# [Required] companyDomain (String): The subdomain used to access your account 
 # (If you access BambooHR at https://mycompany.bamboohr.com, then the subdomain is "mycompany")
 
-# [Optional] OnlyCurrent: If true, only the current employees will be returned.
-# If false, all employees will be returned. This defaults to false.
+# [Optional] onlyCurrent: If true, only the current employees will be returned.
+# If false, all employees will be returned. This field defaults to false.
 
-# [Optional] AttributeMappings: A map of attribute types to potential mappings.
+# [Optional] attributeMappings (Object): A map of attribute types to potential mappings.
 # The BambooHR SoR Response returns all types as string values. By default, we will attempt to convert 
 # all attributes to the types specified in the catalog. This field allows you to specify additional mappings
 # to perform unconventional type conversions.
 
-# [Optional] AttributeMappings.Date: The format of the date string in the BambooHR response.
+# [Optional] attributeMappings.date (String): The format of the date string in the BambooHR response.
 # The BambooHR Admin Console allows you to configure date formats from four options.
 # To find this: Visit the BambooHR Admin Console > Settings > Account > General Settings > Date Input Format (Dropdown)
 # If this field is not specified, we default to "yyyy-mm-dd".
 
-# [Optional] AttributeMappings.Bool: A map of boolean values to their possible string representations.
+# [Optional] attributeMappings.bool (Object): A map of boolean values to their possible string representations.
 # The BambooHR bool type has many possible response values including "0/1", "yes/no", "true/false", etc.
 # This field allows you to specify the possible values for true and false.
 # By default, we will attempt a generic conversion for any attribute that is specified as a bool type in the catalog.
@@ -49,7 +62,7 @@ entities:
   Employee:
     displayName: Employee
     externalId: Employee
-    description: Employee Entity in BambooHR
+    description: Entity representing a BambooHR Employee
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -92,8 +105,8 @@ entities:
         type: Int64
 
 relationships:
-  EmployeeSupervisor:
-    name: EmployeeSupervisor
+  Manager:
+    name: Manager
     fromAttribute: employeeId
     toAttribute: supervisorEId
 
