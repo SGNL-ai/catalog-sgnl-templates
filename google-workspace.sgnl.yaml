@@ -38,26 +38,26 @@ type: "GoogleWorkspace-1.0.0"
 
 # [Required/Optional] Domain (String): Use this field to get entities from only one domain.
 
-# [Optional] Filters (Map): These filters can be applied to the endpoints that are used to retrieve each entity. 
+# [Optional] filters (Object): These filters can be applied to the endpoints that are used to retrieve each entity. 
 
 # For more information on the User endpoint: https://developers.google.com/admin-sdk/directory/reference/rest/v1/users/list
-# [Optional] Filters.UserFilters (Map): These filters can be applied to the User endpoint.
-# [Optional] Filters.UserFilters.ShowDeleted (Bool): If set to true, retrieves the list of deleted users. (Default: false)
-# [Optional] Filters.UserFilters.Query (String): Query is a string for searching entity fields.
+# [Optional] filters.user (Object): These filters can be applied to the User endpoint.
+# [Optional] filters.user.showDeleted (Bool): If set to true, retrieves the list of deleted users. (Default: false)
+# [Optional] filters.user.query (String): Query is a string for searching entity fields.
 # For more information on constructing user queries: https://developers.google.com/admin-sdk/directory/v1/guides/search-users
 
 # For more information on the Group endpoint: https://developers.google.com/admin-sdk/directory/reference/rest/v1/groups/list
-# [Optional] Filters.GroupFilters (Map): These filters can be applied to the Group endpoint.
-# [Optional] Filters.GroupFilters.Query (String): Query is a string for searching entity fields.
+# [Optional] filters.group (Object): These filters can be applied to the Group endpoint.
+# [Optional] filters.group.query (String): Query is a string for searching entity fields.
 # For more information on constructing group queries: https://developers.google.com/admin-sdk/directory/v1/guides/search-groups
 
 # For more information on the member endpoint: https://developers.google.com/admin-sdk/directory/reference/rest/v1/members/list
-# [Optional] Filters.MemberFilters (Map): These filters can be applied to the Member endpoint.
-# [Optional] Filters.MemberFilters.IncludeDerivedMembership (Bool): If set to true, includes lists of indirect memberships. (Default: false)
-# [Optional] Filters.MemberFilters.Roles (String): The roles query parameter allows you to retrieve group members by role.
+# [Optional] filters.member (Object): These filters can be applied to the Member endpoint.
+# [Optional] filters.member.includeDerivedMembership (Bool): If set to true, includes lists of indirect memberships. (Default: false)
+# [Optional] filters.member.roles (String): The roles query parameter allows you to retrieve group members by role.
 # Roles is an ENUM with possible values of ["MEMBER", "MANAGER", "OWNER"]
 
-adapterConfig: ewogICAgImFwaVZlcnNpb24iOiAidjEiLAogICAgImRvbWFpbiI6ICJ7e0lucHV0IFJlcXVpcmVkfX0iCn0=
+adapterConfig: ewogICJhcGlWZXJzaW9uIjogInYxIiwKCSJkb21haW4iOiAic2dubGRlbW9zLmNvbSIsCgkiZmlsdGVycyI6IHsKCQkidXNlciI6IHsKCQkJInNob3dEZWxldGVkIjogdHJ1ZSwKCQkJInF1ZXJ5IjogImlzQWRtaW49ZmFsc2UiCgkJfSwKCQkiZ3JvdXAiOiB7CgkJCSJxdWVyeSI6ICJhZG1pbkNyZWF0ZWQ9dHJ1ZSIKCQl9LAoJCSJtZW1iZXIiOiB7CgkJCSJpbmNsdWRlRGVyaXZlZE1lbWJlcnNoaXAiOiBmYWxzZSwKCQkJInJvbGVzIjogIk1FTUJFUiIKCQl9Cgl9Cn0=
 auth: 
   - bearer:
       authToken: "Bearer {{Input Required}}" # Access token
@@ -104,6 +104,7 @@ entities:
       - name: lastLoginTime
         externalId: lastLoginTime
         type: DateTime
+        indexed: true
       - name: creationTime
         externalId: creationTime
         type: DateTime
@@ -113,6 +114,7 @@ entities:
       - name: suspended
         externalId: suspended
         type: Bool
+        indexed: true
       - name: archived
         externalId: archived
         type: Bool
@@ -129,6 +131,7 @@ entities:
       - name: customerId
         externalId: customerId
         type: String
+        indexed: true
       - name: orgUnitPath
         externalId: orgUnitPath
         type: String
@@ -193,6 +196,7 @@ entities:
       - name: name
         externalId: name
         type: String
+        indexed: true
       - name: directMembersCount
         externalId: directMembersCount
         type: String
@@ -233,9 +237,10 @@ entities:
       - name: etag
         externalId: etag
         type: String
-      - name: email
+      - name: memberEmail
         externalId: email
         type: String
+        indexed: true
       - name: role
         externalId: role
         type: String
