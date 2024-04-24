@@ -68,22 +68,23 @@ entities:
     externalId: User
     description: Entity representing a Google Workspace User
     pageSize: 100
-    pagesOrderedById: true
+    pagesOrderedById: false
     attributes:
+      - name: primaryEmail
+        externalId: primaryEmail
+        type: String
+        indexed: true
+        uniqueId: true
       - name: id
         externalId: id
         type: String
         indexed: true
-        uniqueId: true
         attributeAlias: userId
       - name: kind
         externalId: kind
         type: String
       - name: etag
         externalId: etag
-        type: String
-      - name: primaryEmail
-        externalId: primaryEmail
         type: String
       - name: givenName
         externalId: $.name.givenName
@@ -149,10 +150,10 @@ entities:
   UserEmail:
     parent: User
     displayName: UserEmail
-    externalId: UserEmail
+    externalId: emails
     description: Entity representing an email object for a Google Workspace User
     pageSize: 100
-    pagesOrderedById: true
+    pagesOrderedById: false
     attributes:
       - name: address
         externalId: address
@@ -171,22 +172,23 @@ entities:
     externalId: Group
     description: Entity representing a Google Workspace Group
     pageSize: 100
-    pagesOrderedById: true
+    pagesOrderedById: false
     attributes:
+      - name: email
+        externalId: email
+        type: String
+        indexed: true
+        uniqueId: true
       - name: id
         externalId: id
         type: String
         indexed: true
-        uniqueId: true
         attributeAlias: groupId
       - name: kind
         externalId: kind
         type: String
       - name: etag
         externalId: etag
-        type: String
-      - name: email
-        externalId: email
         type: String
       - name: name
         externalId: name
