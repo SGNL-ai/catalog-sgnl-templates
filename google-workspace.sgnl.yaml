@@ -62,7 +62,7 @@ auth:
   - bearer:
       authToken: "Bearer {{Input Required}}" # Access token
 entities:
-  https://developers.google.com/admin-sdk/directory/reference/rest/v1/users#User
+  # https://developers.google.com/admin-sdk/directory/reference/rest/v1/users#User
   User:
     displayName: User
     externalId: User
