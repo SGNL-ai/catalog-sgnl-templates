@@ -57,7 +57,7 @@ type: "GoogleWorkspace-1.0.0"
 # [Optional] filters.member.roles (String): The roles query parameter allows you to retrieve group members by role.
 # Roles is an ENUM with possible values of ["MEMBER", "MANAGER", "OWNER"]
 
-adapterConfig: ewogICJhcGlWZXJzaW9uIjogInYxIiwKCSJkb21haW4iOiAic2dubGRlbW9zLmNvbSIsCgkiZmlsdGVycyI6IHsKCQkidXNlciI6IHsKCQkJInNob3dEZWxldGVkIjogdHJ1ZSwKCQkJInF1ZXJ5IjogImlzQWRtaW49ZmFsc2UiCgkJfSwKCQkiZ3JvdXAiOiB7CgkJCSJxdWVyeSI6ICJhZG1pbkNyZWF0ZWQ9dHJ1ZSIKCQl9LAoJCSJtZW1iZXIiOiB7CgkJCSJpbmNsdWRlRGVyaXZlZE1lbWJlcnNoaXAiOiBmYWxzZSwKCQkJInJvbGVzIjogIk1FTUJFUiIKCQl9Cgl9Cn0=
+adapterConfig: ewogICAgImFwaVZlcnNpb24iOiAidjEiLAogICAgImRvbWFpbiI6ICJzZ25sZGVtb3MuY29tIiwKICAgICJmaWx0ZXJzIjogewogICAgCSJ1c2VyIjogewogICAgCQkic2hvd0RlbGV0ZWQiOiB0cnVlLAogICAgCQkicXVlcnkiOiAiaXNBZG1pbj1mYWxzZSIKICAgIAl9LAogICAgCSJncm91cCI6IHsKICAgIAkJInF1ZXJ5IjogImFkbWluQ3JlYXRlZD10cnVlIgogICAgCX0sCiAgICAJIm1lbWJlciI6IHsKICAgIAkJImluY2x1ZGVEZXJpdmVkTWVtYmVyc2hpcCI6IGZhbHNlLAogICAgCQkicm9sZXMiOiAiTUVNQkVSIgogICAgCX0KICAgIH0KfQ==
 auth: 
   - bearer:
       authToken: "Bearer {{Input Required}}" # Access token
