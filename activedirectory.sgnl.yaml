@@ -1,0 +1,257 @@
+# Active Directory Configuration YAML for DS2.0
+displayName: "Active Directory"
+icon: |
+  PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjMDEzRjg2Ii8+CjxwYXRoIGQ9Ik0xMi4yNzYzIDMyLjk1NTVMMzIgNDUuODI2MVY5LjVMMTIuMjc2MyAzMi45NTU1WiIgZmlsbD0iIzRGRTZGRiIvPgo8cGF0aCBkPSJNOCAzOC4wNTA0TDMyIDUzLjk3ODZWNDguODUwN0wxMC43NjY1IDM0Ljc1NzhMOCAzOC4wNTA0WiIgZmlsbD0iIzRGRTZGRiIvPgo8cGF0aCBkPSJNNTYgMzguMDUwNEwzMiA1My45Nzg2VjQ4Ljg1MDdMNTMuMjMzNSAzNC43NTc4TDU2IDM4LjA1MDRaIiBmaWxsPSIjMzY5QkU1Ii8+CjxwYXRoIGQ9Ik01MS43MjM3IDMyLjk1NTVMMzIgNDUuODI2MVY5LjVMNTEuNzIzNyAzMi45NTU1WiIgZmlsbD0iIzQyQTJFOCIvPgo8cGF0aCBkPSJNMTIuMjgxMiAzMi45NTA2TDEyLjI3NjMgMzIuOTU1NUwzMiA0NS44MjYxVjI4LjI0NzNMMTIuMjgxMiAzMi45NTA2WiIgZmlsbD0iIzk5RUNGQSIvPgo8cGF0aCBkPSJNNTEuNzIgMzIuOTUwNkw1MS43MjM3IDMyLjk1NTVMMzIgNDUuODI2MVYyOC4yNDczTDUxLjcyIDMyLjk1MDZaIiBmaWxsPSIjNTJCMURGIi8+Cjwvc3ZnPg==
+description: "Active Directory as a System of Record"
+hostname: "{{Input Required: Hostname}}"
+defaultSyncFrequency: HOURLY
+defaultSyncMinInterval: 1
+defaultApiCallFrequency: SECONDLY
+defaultApiCallMinInterval: 1
+type: "ActiveDirectory-1.0.0"
+# Example Config:
+#{
+#    "baseDN":"dc=org,dc=example,dc=io",
+#    "certificateChain": ". . . base64 encoded certificate chain here . . ",
+#    "filters":{
+#        "User":"(&(objectClass=user)(logonCount=0))"
+#    }
+#}
+adapterConfig: "ewogICAgImJhc2VETiI6ImRjPW9yZyxkYz1leGFtcGxlLGRjPWlvIiwKICAgICJjZXJ0aWZpY2F0ZUNoYWluIjogIi4gLiAuIGJhc2U2NCBlbmNvZGVkIGNlcnRpZmljYXRlIGNoYWluIGhlcmUgLiAuICIsCiAgICAiZmlsdGVycyI6ewogICAgICAgICJVc2VyIjoiKCYob2JqZWN0Q2xhc3M9dXNlcikobG9nb25Db3VudD0wKSkiCiAgICB9Cn0="
+# All auth mechanisms specified below must be supported by the specified Adapter.
+auth:
+  - basic:
+      username: "{{Input Required: Username}}"
+      password: "{{Input Required: Password}}"
+entities:
+  # Configuring complex attributes will cap the page size in AAD's API response to 100.
+  # See: https://learn.microsoft.com/en-us/graph/known-issues?view=graph-rest-1.0#some-limitations-apply-to-query-parameters
+  # We use the `$expand` filter to retrieve complex attributes.
+  User:
+    displayName: User
+    externalId: User
+    description: User Entity in Active Directory
+    pageSize: 999
+    pagesOrderedById: false
+    attributes:
+      - name: dn
+        externalId: dn
+        description: distinguished Name of the user
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: sn
+        externalId: sn
+        type: String
+      - name: cn
+        externalId: cn
+        type: String
+      - name: c
+        externalId: c
+        type: String
+      - name: l
+        externalId: l
+        type: String
+      - name: telephoneNumber
+        externalId: telephoneNumber
+        type: String
+      - name: givenName
+        externalId: givenName
+        type: String
+      - name: distinguishedName
+        externalId: distinguishedName
+        type: String
+        uniqueId: true
+      - name: instanceType
+        externalId: instanceType
+        type: Int64
+      - name: whenCreated
+        externalId: whenCreated
+        type: DateTime
+      - name: whenChanged
+        externalId: whenChanged
+        type: DateTime
+      - name: uSNCreated
+        externalId: uSNCreated
+        type: DateTime
+      - name: uSNChanged
+        externalId: uSNChanged
+        type: DateTime
+      - name: department
+        externalId: department
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: objectGUID
+        externalId: objectGUID
+        type: String
+      - name: userAccountControl
+        externalId: userAccountControl
+        type: Int64
+      - name: badPwdCount
+        externalId: badPwdCount
+        type: Int64
+      - name: codePage
+        externalId: codePage
+        type: Int64
+      - name: countryCode
+        externalId: countryCode
+        type: Int64
+      - name: department
+        externalId: department
+        type: String
+      - name: badPasswordTime
+        externalId: badPasswordTime
+        type: Int64
+      - name: lastLogoff
+        externalId: lastLogoff
+        type: Int64
+      - name: lastLogon
+        externalId: lastLogon
+        type: Int64
+      - name: pwdLastSet
+        externalId: pwdLastSet
+        type: Int64
+      - name: primaryGroupID
+        externalId: primaryGroupID
+        type: Int64
+      - name: objectSid
+        externalId: objectSid
+        type: String
+      - name: accountExpires
+        externalId: accountExpires
+        type: Int64
+      - name: logonCount
+        externalId: logonCount
+        type: Int64
+      - name: sAMAccountName
+        externalId: sAMAccountName
+        type: String
+      - name: sAMAccountType
+        externalId: sAMAccountType
+        type: Int64
+      - name: userPrincipalName
+        externalId: userPrincipalName
+        type: String
+      - name: objectCategory
+        externalId: objectCategory
+        type: String
+      - name: dSCorePropagationData
+        externalId: dSCorePropagationData
+        type: DateTime
+  Group:
+    description: "Group Entity in Active Directory"
+    displayName: Group
+    externalId: Group
+    pageSize: 999
+    pagesOrderedById: false
+    attributes:
+      - name: dn
+        externalId: dn
+        description: distinguished Name of the user
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: cn
+        externalId: cn
+        type: String
+      - name: description
+        externalId: description
+        type: String
+      - name: distinguishedName
+        externalId: distinguishedName
+        type: String
+        uniqueId: true
+      - name: instanceType
+        externalId: instanceType
+        type: Int64
+      - name: whenCreated
+        externalId: whenCreated
+        type: DateTime
+      - name: whenChanged
+        externalId: whenChanged
+        type: DateTime
+      - name: uSNCreated
+        externalId: uSNCreated
+        type: DateTime
+      - name: uSNChanged
+        externalId: uSNChanged
+        type: DateTime
+      - name: name
+        externalId: name
+        type: String
+      - name: objectGUID
+        externalId: objectGUID
+        type: String
+      - name: objectSid
+        externalId: objectSid
+        type: String
+      - name: sAMAccountName
+        externalId: sAMAccountName
+        type: String
+      - name: sAMAccountType
+        externalId: sAMAccountType
+        type: Int64
+      - name: groupType
+        externalId: groupType
+        type: Int64
+      - name: objectCategory
+        externalId: objectCategory
+        type: String
+      - name: dSCorePropagationData
+        externalId: dSCorePropagationData
+        type: DateTime
+  GroupMember:
+    description: "Group Member Entity in Active Directory"
+    displayName: GroupMember
+    externalId: GroupMember
+    pageSize: 999
+    pagesOrderedById: false
+    attributes:
+      - name: dn
+        externalId: dn
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: groupDistinguishedName
+        externalId: groupDistinguishedName
+        type: String
+        indexed: true
+      - name: memberDistinguishedName
+        externalId: memberDistinguishedName
+        type: String
+        indexed: true
+
+relationships:    
+  UserMember:
+    name: Member
+    displayName: User Member
+    fromAttribute: GroupMember.memberDistinguishedName
+    toAttribute: User.dn
+  GroupMember:
+    name: Member
+    displayName: Group Member
+    fromAttribute: GroupMember.memberDistinguishedName
+    toAttribute: Group.dn
+  MemberOf:
+    name: MemberOf
+    displayName: Member Of
+    fromAttribute: GroupMember.groupDistinguishedName
+    toAttribute: Group.dn
+  UserMemberGroup:
+    name: Group
+    displayName: User Member Group
+    path:
+      - relationship: UserMember
+        direction: Backward
+      - relationship: MemberOf
+        direction: Forward
+  GroupMemberGroup:
+    name: Group
+    displayName: Group Member Group
+    path:
+      - relationship: GroupMember
+        direction: Backward
+      - relationship: MemberOf
+        direction: Forward
