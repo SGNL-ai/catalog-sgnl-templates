@@ -13,7 +13,7 @@ type: "ServiceNow-1.0.1"
 #  "requestTimeoutSeconds": 10,
 #  "apiVersion": "v2",
 #  "filters": {
-#    "incident": "active=true",
+#    "incident": "active=true^sys_updated_onRELATIVEGT@day@ago@30",
 #    "sys_user": "active=true",
 #    "change_request": "active=true",
 #    "change_task": "active=true",
@@ -22,7 +22,7 @@ type: "ServiceNow-1.0.1"
 #    "sys_user_group": "active=true"
 #  }
 #}
-adapterConfig: "ewogICJyZXF1ZXN0VGltZW91dFNlY29uZHMiOiAxMCwKICAiYXBpVmVyc2lvbiI6ICJ2MiIsCiAgImZpbHRlcnMiOiB7CiAgICAiaW5jaWRlbnQiOiAiYWN0aXZlPXRydWUiLAogICAgInN5c191c2VyIjogImFjdGl2ZT10cnVlIiwKICAgICJjaGFuZ2VfcmVxdWVzdCI6ICJhY3RpdmU9dHJ1ZSIsCiAgICAiY2hhbmdlX3Rhc2siOiAiYWN0aXZlPXRydWUiLAogICAgInByb2JsZW0iOiAiYWN0aXZlPXRydWUiLAogICAgImNtZGJfY2lfYnVzaW5lc3NfYXBwIjogImFjdGl2ZT10cnVlIiwKICAgICJzeXNfdXNlcl9ncm91cCI6ICJhY3RpdmU9dHJ1ZSIKICB9Cn0="
+adapterConfig: "ewogICJyZXF1ZXN0VGltZW91dFNlY29uZHMiOiAxMCwKICAiYXBpVmVyc2lvbiI6ICJ2MiIsCiAgImZpbHRlcnMiOiB7CiAgICAiaW5jaWRlbnQiOiAiYWN0aXZlPXRydWVec3lzX3VwZGF0ZWRfb25SRUxBVElWRUdUQGRheUBhZ29AMzAiLAogICAgInN5c191c2VyIjogImFjdGl2ZT10cnVlIiwKICAgICJjaGFuZ2VfcmVxdWVzdCI6ICJhY3RpdmU9dHJ1ZSIsCiAgICAiY2hhbmdlX3Rhc2siOiAiYWN0aXZlPXRydWUiLAogICAgInByb2JsZW0iOiAiYWN0aXZlPXRydWUiLAogICAgImNtZGJfY2lfYnVzaW5lc3NfYXBwIjogImFjdGl2ZT10cnVlIiwKICAgICJzeXNfdXNlcl9ncm91cCI6ICJhY3RpdmU9dHJ1ZSIKICB9Cn0="
 # All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
   - basic:
