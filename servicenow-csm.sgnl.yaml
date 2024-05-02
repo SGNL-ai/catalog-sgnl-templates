@@ -9,16 +9,16 @@ defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: "ServiceNow-1.0.1"
 # Example Config:
-# {
+#{
 #  "requestTimeoutSeconds": 10,
 #  "apiVersion": "v2",
 #  "filters": {
-#    "sn_customerservice_case": "active=true^sys_updated_onRELATIVEGT@day@ago@30",
+#    "sn_customerservice_case": "active=true^sys_updated_onRELATIVEGT@dayofweek@ago@30",
 #    "sys_user": "active=true",
 #    "customer_account": "active=true",
 #    "sys_user_group": "active=true"
 #  }
-# }
+#}
 adapterConfig: "ewogICJyZXF1ZXN0VGltZW91dFNlY29uZHMiOiAxMCwKICAiYXBpVmVyc2lvbiI6ICJ2MiIsCiAgImZpbHRlcnMiOiB7CiAgICAic25fY3VzdG9tZXJzZXJ2aWNlX2Nhc2UiOiAiYWN0aXZlPXRydWVec3lzX3VwZGF0ZWRfb25SRUxBVElWRUdUQGRheUBhZ29AMzAiLAogICAgInN5c191c2VyIjogImFjdGl2ZT10cnVlIiwKICAgICJjdXN0b21lcl9hY2NvdW50IjogImFjdGl2ZT10cnVlIiwKICAgICJzeXNfdXNlcl9ncm91cCI6ICJhY3RpdmU9dHJ1ZSIKICB9Cn0="
 # All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
@@ -288,9 +288,6 @@ entities:
       - name: sysUpdatedBy
         externalId: sys_updated_by
         type: String
-      - name: actionStatus
-        externalId: action_status
-        type: String
       - name: active
         externalId: active
         type: Bool
@@ -381,12 +378,6 @@ entities:
       - name: approvalSet
         externalId: approval_set
         type: DateTime
-      - name: businessDuration
-        externalId: business_duration
-        type: String
-      - name: calendarDuration
-        externalId: calendar_duration
-        type: String
       - name: cmdbCi
         externalId: cmdb_ci
         type: String
@@ -405,32 +396,14 @@ entities:
       - name: location
         externalId: location
         type: String
-      - name: order
-        externalId: order
-        type: String
-      - name: serviceOffering
-        externalId: service_offering
-        type: String
-      - name: skills
-        externalId: skills
-        type: String
       - name: slaDue
         externalId: sla_due
         type: DateTime
       - name: timeWorked
         externalId: time_worked
         type: DateTime
-      - name: uponApproval
-        externalId: upon_approval
-        type: String
-      - name: uponReject
-        externalId: upon_reject
-        type: String
       - name: urgency
         externalId: urgency
-        type: String
-      - name: userInput
-        externalId: user_input
         type: String
       - name: workEnd
         externalId: work_end
