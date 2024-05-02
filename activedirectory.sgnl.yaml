@@ -1,7 +1,7 @@
-# Active Directory Configuration YAML for DS2.0
+# Active Directory Configuration YAML
 displayName: "Active Directory"
 icon: |
-  PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjMDEzRjg2Ii8+CjxwYXRoIGQ9Ik0xMi4yNzYzIDMyLjk1NTVMMzIgNDUuODI2MVY5LjVMMTIuMjc2MyAzMi45NTU1WiIgZmlsbD0iIzRGRTZGRiIvPgo8cGF0aCBkPSJNOCAzOC4wNTA0TDMyIDUzLjk3ODZWNDguODUwN0wxMC43NjY1IDM0Ljc1NzhMOCAzOC4wNTA0WiIgZmlsbD0iIzRGRTZGRiIvPgo8cGF0aCBkPSJNNTYgMzguMDUwNEwzMiA1My45Nzg2VjQ4Ljg1MDdMNTMuMjMzNSAzNC43NTc4TDU2IDM4LjA1MDRaIiBmaWxsPSIjMzY5QkU1Ii8+CjxwYXRoIGQ9Ik01MS43MjM3IDMyLjk1NTVMMzIgNDUuODI2MVY5LjVMNTEuNzIzNyAzMi45NTU1WiIgZmlsbD0iIzQyQTJFOCIvPgo8cGF0aCBkPSJNMTIuMjgxMiAzMi45NTA2TDEyLjI3NjMgMzIuOTU1NUwzMiA0NS44MjYxVjI4LjI0NzNMMTIuMjgxMiAzMi45NTA2WiIgZmlsbD0iIzk5RUNGQSIvPgo8cGF0aCBkPSJNNTEuNzIgMzIuOTUwNkw1MS43MjM3IDMyLjk1NTVMMzIgNDUuODI2MVYyOC4yNDczTDUxLjcyIDMyLjk1MDZaIiBmaWxsPSIjNTJCMURGIi8+Cjwvc3ZnPg==
+  PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjguOTAzMiAxMy4zNjg4TDEwLjIwMzIgMzQuNDI4QzguODI1NiAzNS45NzkyIDkuMTY5NiAzOC4zOTUyIDEwLjkyNCAzOS41MDE2TDMwLjEwMTYgNTEuNTkxMkMzMS4xOTY4IDUyLjI4MTYgMzIuNTkwNCA1Mi4yODE2IDMzLjY4NDggNTEuNTkxMkw1Mi44NjI0IDM5LjUwMTZDNTQuNjE2OCAzOC4zOTUyIDU0Ljk2IDM1Ljk3OTIgNTMuNTgzMiAzNC40MjhMMzQuODg0OCAxMy4zNjg4QzMzLjI5MzYgMTEuNTc2OCAzMC40OTQ0IDExLjU3NjggMjguOTAyNCAxMy4zNjg4SDI4LjkwMzJaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfMTYyNV80MCkiLz4KPHBhdGggZD0iTTQyLjYxMzYgMzUuMDRMMjcuMzI4IDQ0Ljc2NzJDMjQuODQxNiA0Ni4zNDk2IDIxLjY2NDggNDYuMzUxMiAxOS4xNzYgNDQuNzcyOEwxMC44NCAzOS40ODMyQzkuMDg4MDEgMzguMzcxMiA4Ljc1MjAxIDM1Ljk1MjggMTAuMTM2IDM0LjQwNjRMMjguOTM4NCAxMy4yOTQ0QzMwLjQ2OTYgMTEuNTgyNCAzMy4zMTEyIDExLjU4ODggMzQuODM0NCAxMy4zMDcyTDQxLjI1MzYgMjAuNTZDNDEuMjUzNiAyMC41NiAzNi4xMzM2IDE3LjkyIDMxLjg5MzYgMjIuNzJMNDIuNjEzNiAzNS4wNFoiIGZpbGw9InVybCgjcGFpbnQxX2xpbmVhcl8xNjI1XzQwKSIvPgo8cGF0aCBkPSJNMzEuODkzNiAyMi43MkwyMS4xNzM2IDM1LjA0TDMxLjg5MzYgNDEuNzZMNDIuNjEzNiAzNS4wNEwzMS44OTM2IDIyLjcyWiIgZmlsbD0idXJsKCNwYWludDJfbGluZWFyXzE2MjVfNDApIi8+CjxtYXNrIGlkPSJtYXNrMF8xNjI1XzQwIiBzdHlsZT0ibWFzay10eXBlOmx1bWluYW5jZSIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iOSIgeT0iMTIiIHdpZHRoPSI0NiIgaGVpZ2h0PSI0MSI+CjxwYXRoIGQ9Ik0yOC45MDMyIDEzLjM2ODhMMTAuMjAzMiAzNC40MjhDOC44MjU2IDM1Ljk3OTIgOS4xNjk2IDM4LjM5NTIgMTAuOTI0IDM5LjUwMTZMMzAuMTAxNiA1MS41OTEyQzMxLjE5NjggNTIuMjgxNiAzMi41OTA0IDUyLjI4MTYgMzMuNjg0OCA1MS41OTEyTDUyLjg2MjQgMzkuNTAxNkM1NC42MTY4IDM4LjM5NTIgNTQuOTYgMzUuOTc5MiA1My41ODMyIDM0LjQyOEwzNC44ODQ4IDEzLjM2ODhDMzMuMjkzNiAxMS41NzY4IDMwLjQ5NDQgMTEuNTc2OCAyOC45MDI0IDEzLjM2ODhIMjguOTAzMloiIGZpbGw9IndoaXRlIi8+CjwvbWFzaz4KPGcgbWFzaz0idXJsKCNtYXNrMF8xNjI1XzQwKSI+CjxwYXRoIHN0eWxlPSJtaXgtYmxlbmQtbW9kZTptdWx0aXBseSIgZD0iTTMxLjg5MzYgNTIuNzJWOS45Mkw1Ni4yMTM2IDM3LjQ0TDMxLjg5MzYgNTIuNzJaIiBmaWxsPSJ1cmwoI3BhaW50M19saW5lYXJfMTYyNV80MCkiLz4KPC9nPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzE2MjVfNDAiIHgxPSI5LjM1NTIiIHkxPSIzMi4wNjY0IiB4Mj0iNTQuNDMyIiB5Mj0iMzIuMDY2NCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMjI1MDg3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAzNEVBRiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MV9saW5lYXJfMTYyNV80MCIgeDE9IjkuMjgwMDEiIHkxPSIyOC45ODQ4IiB4Mj0iNDIuNjEzNiIgeTI9IjI4Ljk4NDgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzY5REVGRiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxREE2RTgiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDJfbGluZWFyXzE2MjVfNDAiIHgxPSIzMS44OTM2IiB5MT0iMjIuNzIiIHgyPSIzMS44OTM2IiB5Mj0iNDEuNzYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzhDRUFGRiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM1RERGRkEiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDNfbGluZWFyXzE2MjVfNDAiIHgxPSIyNS43ODg4IiB5MT0iMTMuNDQ0OCIgeDI9IjQ0LjMyMjQiIHkyPSI0NS41NDQ4IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3Atb3BhY2l0eT0iMC4xIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1vcGFjaXR5PSIwLjIiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4=
 description: "Active Directory as a System of Record"
 hostname: "{{Input Required: Hostname}}"
 defaultSyncFrequency: HOURLY
@@ -14,7 +14,8 @@ type: "ActiveDirectory-1.0.0"
 #    "baseDN":"dc=org,dc=example,dc=io",
 #    "certificateChain": ". . . base64 encoded certificate chain here . . ",
 #    "filters":{
-#        "User":"(&(objectClass=user)(logonCount=0))"
+#         "User":"(&(objectClass=user)(objectCategory=user)(distinguishedName=*))",
+#         "Group":"(&(objectClass=group)(objectCategory=group)(distinguishedName=*))"
 #    }
 #}
 adapterConfig: "ewogICAgImJhc2VETiI6ImRjPW9yZyxkYz1leGFtcGxlLGRjPWlvIiwKICAgICJjZXJ0aWZpY2F0ZUNoYWluIjogIi4gLiAuIGJhc2U2NCBlbmNvZGVkIGNlcnRpZmljYXRlIGNoYWluIGhlcmUgLiAuICIsCiAgICAiZmlsdGVycyI6ewogICAgICAgICJVc2VyIjoiKCYob2JqZWN0Q2xhc3M9dXNlcikobG9nb25Db3VudD0wKSkiCiAgICB9Cn0="
@@ -24,9 +25,6 @@ auth:
       username: "{{Input Required: Username}}"
       password: "{{Input Required: Password}}"
 entities:
-  # Configuring complex attributes will cap the page size in AAD's API response to 100.
-  # See: https://learn.microsoft.com/en-us/graph/known-issues?view=graph-rest-1.0#some-limitations-apply-to-query-parameters
-  # We use the `$expand` filter to retrieve complex attributes.
   User:
     displayName: User
     externalId: User
@@ -40,20 +38,11 @@ entities:
         type: String
         indexed: true
         uniqueId: true
+      - name: obejctClass
+        externalId: obejctClass
+        type: String
       - name: sn
         externalId: sn
-        type: String
-      - name: cn
-        externalId: cn
-        type: String
-      - name: c
-        externalId: c
-        type: String
-      - name: l
-        externalId: l
-        type: String
-      - name: telephoneNumber
-        externalId: telephoneNumber
         type: String
       - name: givenName
         externalId: givenName
@@ -61,7 +50,6 @@ entities:
       - name: distinguishedName
         externalId: distinguishedName
         type: String
-        uniqueId: true
       - name: instanceType
         externalId: instanceType
         type: Int64
@@ -73,18 +61,15 @@ entities:
         type: DateTime
       - name: uSNCreated
         externalId: uSNCreated
-        type: DateTime
+        type: Int64
       - name: uSNChanged
         externalId: uSNChanged
-        type: DateTime
+        type: Int64
       - name: department
         externalId: department
         type: String
       - name: name
         externalId: name
-        type: String
-      - name: objectGUID
-        externalId: objectGUID
         type: String
       - name: userAccountControl
         externalId: userAccountControl
@@ -98,9 +83,6 @@ entities:
       - name: countryCode
         externalId: countryCode
         type: Int64
-      - name: department
-        externalId: department
-        type: String
       - name: badPasswordTime
         externalId: badPasswordTime
         type: Int64
@@ -116,9 +98,6 @@ entities:
       - name: primaryGroupID
         externalId: primaryGroupID
         type: Int64
-      - name: objectSid
-        externalId: objectSid
-        type: String
       - name: accountExpires
         externalId: accountExpires
         type: Int64
@@ -162,7 +141,6 @@ entities:
       - name: distinguishedName
         externalId: distinguishedName
         type: String
-        uniqueId: true
       - name: instanceType
         externalId: instanceType
         type: Int64
@@ -174,18 +152,12 @@ entities:
         type: DateTime
       - name: uSNCreated
         externalId: uSNCreated
-        type: DateTime
+        type: Int64
       - name: uSNChanged
         externalId: uSNChanged
-        type: DateTime
+        type: Int64
       - name: name
         externalId: name
-        type: String
-      - name: objectGUID
-        externalId: objectGUID
-        type: String
-      - name: objectSid
-        externalId: objectSid
         type: String
       - name: sAMAccountName
         externalId: sAMAccountName
@@ -223,7 +195,7 @@ entities:
         type: String
         indexed: true
 
-relationships:    
+relationships:
   UserMember:
     name: Member
     displayName: User Member
