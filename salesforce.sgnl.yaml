@@ -10,8 +10,15 @@ defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: "Salesforce-1.0.1"
 # Example Config:
-# {"requestTimeoutSeconds": 10, "apiVersion": "58.0"}
-adapterConfig: "eyJyZXF1ZXN0VGltZW91dFNlY29uZHMiOiAxMCwgImFwaVZlcnNpb24iOiAiNTguMCJ9"
+# {
+#  "requestTimeoutSeconds": 10,
+#  "apiVersion": "58.0",
+#  "filters": {
+#    "User": "isActive=true",
+#    "Case": "isClosed=false"
+#  }
+# }
+adapterConfig: "ewogICJyZXF1ZXN0VGltZW91dFNlY29uZHMiOiAxMCwKICAiYXBpVmVyc2lvbiI6ICI1OC4wIiwKICAiZmlsdGVycyI6IHsKICAgICJVc2VyIjogImlzQWN0aXZlPXRydWUiLAogICAgIkNhc2UiOiAiaXNDbG9zZWQ9ZmFsc2UiCiAgfQp9"
 # All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
   - oAuth2ClientCredentials:
@@ -59,11 +66,6 @@ entities:
         externalId: SystemModstamp
         description: "SystemModstamp attribute"
         type: DateTime
-      - name: AccountNumber
-        externalId: AccountNumber
-        description: "AccountNumber attribute"
-        type: String
-        indexed: true
       - name: BillingCity
         externalId: BillingCity
         description: "BillingCity attribute"
@@ -80,17 +82,9 @@ entities:
         externalId: BillingState
         description: "BillingState attribute"
         type: String
-      - name: BillingStreet
-        externalId: BillingStreet
-        description: "BillingStreet attribute"
-        type: String
       - name: Description
         externalId: Description
         description: "Description attribute"
-        type: String
-      - name: DunsNumber
-        externalId: DunsNumber
-        description: "DunsNumber attribute"
         type: String
       - name: Industry
         externalId: Industry
@@ -118,10 +112,6 @@ entities:
         description: "OwnerId attribute"
         type: String
         indexed: true
-      - name: Ownership
-        externalId: Ownership
-        description: "Ownership attribute"
-        type: String
       - name: ParentId
         externalId: ParentId
         description: "ParentId attribute"
@@ -143,15 +133,10 @@ entities:
         externalId: ShippingState
         description: "ShippingState attribute"
         type: String
-      - name: Site
-        externalId: Site
-        description: "Site attribute"
-        type: String
       - name: Type
         externalId: Type
         description: "Type attribute"
         type: String
-
   Case:
     displayName: Case
     externalId: Case
@@ -251,10 +236,6 @@ entities:
         externalId: Reason
         description: "Reason attribute"
         type: String
-      - name: SourceId
-        externalId: SourceId
-        description: "SourceId attribute"
-        type: String
       - name: Status
         externalId: Status
         description: "Status attribute"
@@ -327,7 +308,6 @@ entities:
         description: "OwnerId attribute"
         type: String
         indexed: true
-
   User:
     displayName: User
     externalId: User
@@ -409,10 +389,6 @@ entities:
       - name: FirstName
         externalId: FirstName
         description: "FirstName attribute"
-        type: String
-      - name: IndividualId
-        externalId: IndividualId
-        description: "IndividualId attribute"
         type: String
       - name: IsActive
         externalId: IsActive
