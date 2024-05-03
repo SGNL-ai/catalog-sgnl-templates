@@ -18,28 +18,31 @@ type: "ActiveDirectory-1.0.0"
 #         "Group":"(&(objectClass=group)(objectCategory=group)(distinguishedName=*))"
 #    }
 #}
-adapterConfig: "ewogICAgImJhc2VETiI6ImRjPW9yZyxkYz1leGFtcGxlLGRjPWlvIiwKICAgICJjZXJ0aWZpY2F0ZUNoYWluIjogIi4gLiAuIGJhc2U2NCBlbmNvZGVkIGNlcnRpZmljYXRlIGNoYWluIGhlcmUgLiAuICIsCiAgICAiZmlsdGVycyI6ewogICAgICAgICJVc2VyIjoiKCYob2JqZWN0Q2xhc3M9dXNlcikobG9nb25Db3VudD0wKSkiCiAgICB9Cn0="
+adapterConfig: "ewogICAgImJhc2VETiI6ICJ7e0lucHV0IFJlcXVpcmVkOiBCYXNlRE59fSIsCiAgICAiY2VydGlmaWNhdGVDaGFpbiI6ICJ7e0lucHV0IFJlcXVpcmVkOiBJZiBMREFQUyBpcyBlbmFibGVkfX0iLAogICAgImZpbHRlcnMiOiB7CiAgICAgICAgIlVzZXIiOiAiKCYob2JqZWN0Q2xhc3M9dXNlcikpIiwKICAgICAgICAiR3JvdXAiOiAiKCYob2JqZWN0Q2xhc3M9Z3JvdXApKSIKICAgIH0KfQ=="
 # All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
   - basic:
       username: "{{Input Required: Username}}"
       password: "{{Input Required: Password}}"
 entities:
+  # Reference for Active Directory Schema
+  # See: https://learn.microsoft.com/en-us/windows/win32/adschema/active-directory-schema
   User:
     displayName: User
     externalId: User
-    description: User Entity in Active Directory
-    pageSize: 999
+    description: An entity representing a User in an Active Directory
+    pageSize: 100
     pagesOrderedById: false
     attributes:
       - name: dn
         externalId: dn
-        description: distinguished Name of the user
+        description: The Distinguished Name (DN) of the user
         type: String
         indexed: true
         uniqueId: true
-      - name: obejctClass
-        externalId: obejctClass
+        attributeAlias: userDN
+      - name: objectClass
+        externalId: objectClass
         type: String
       - name: sn
         externalId: sn
@@ -120,18 +123,19 @@ entities:
         externalId: dSCorePropagationData
         type: DateTime
   Group:
-    description: "Group Entity in Active Directory"
+    description: "An entity representing a Group in an Active Directory"
     displayName: Group
     externalId: Group
-    pageSize: 999
+    pageSize: 100
     pagesOrderedById: false
     attributes:
       - name: dn
         externalId: dn
-        description: distinguished Name of the user
+        description: The Distinguished Name (DN) of the group
         type: String
         indexed: true
         uniqueId: true
+        attributeAlias: groupDN
       - name: cn
         externalId: cn
         type: String
@@ -178,7 +182,7 @@ entities:
     description: "Group Member Entity in Active Directory"
     displayName: GroupMember
     externalId: GroupMember
-    pageSize: 999
+    pageSize: 100
     pagesOrderedById: false
     attributes:
       - name: dn
@@ -200,17 +204,17 @@ relationships:
     name: Member
     displayName: User Member
     fromAttribute: GroupMember.memberDistinguishedName
-    toAttribute: User.dn
+    toAttribute: userDN
   GroupMember:
     name: Member
     displayName: Group Member
     fromAttribute: GroupMember.memberDistinguishedName
-    toAttribute: Group.dn
+    toAttribute: groupDN
   MemberOf:
     name: MemberOf
     displayName: Member Of
     fromAttribute: GroupMember.groupDistinguishedName
-    toAttribute: Group.dn
+    toAttribute: groupDN
   UserMemberGroup:
     name: Group
     displayName: User Member Group
