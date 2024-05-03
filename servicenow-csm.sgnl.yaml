@@ -9,17 +9,17 @@ defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: "ServiceNow-1.0.1"
 # Example Config:
-#{
-#  "requestTimeoutSeconds": 10,
-#  "apiVersion": "v2",
-#  "filters": {
-#    "sn_customerservice_case": "active=true^sys_updated_onRELATIVEGT@dayofweek@ago@30",
-#    "sys_user": "active=true",
-#    "customer_account": "active=true",
-#    "sys_user_group": "active=true"
+# {
+#   "requestTimeoutSeconds": 10,
+#   "apiVersion": "v2",
+#   "filters": {
+#     "sn_customerservice_case": "active=true^sys_updated_onRELATIVEGT@dayofweek@ago@30",
+#     "sys_user": "active=true",
+#     "customer_account": "active=true",
+#     "sys_user_group": "active=true"
 #  }
-#}
-adapterConfig: "ewogICJyZXF1ZXN0VGltZW91dFNlY29uZHMiOiAxMCwKICAiYXBpVmVyc2lvbiI6ICJ2MiIsCiAgImZpbHRlcnMiOiB7CiAgICAic25fY3VzdG9tZXJzZXJ2aWNlX2Nhc2UiOiAiYWN0aXZlPXRydWVec3lzX3VwZGF0ZWRfb25SRUxBVElWRUdUQGRheUBhZ29AMzAiLAogICAgInN5c191c2VyIjogImFjdGl2ZT10cnVlIiwKICAgICJjdXN0b21lcl9hY2NvdW50IjogImFjdGl2ZT10cnVlIiwKICAgICJzeXNfdXNlcl9ncm91cCI6ICJhY3RpdmU9dHJ1ZSIKICB9Cn0="
+# }
+adapterConfig: "ewogICJyZXF1ZXN0VGltZW91dFNlY29uZHMiOiAxMCwKICAiYXBpVmVyc2lvbiI6ICJ2MiIsCiAgImZpbHRlcnMiOiB7CiAgICAic25fY3VzdG9tZXJzZXJ2aWNlX2Nhc2UiOiAiYWN0aXZlPXRydWVec3lzX3VwZGF0ZWRfb25SRUxBVElWRUdUQGRheW9md2Vla0BhZ29AMzAiLAogICAgInN5c191c2VyIjogImFjdGl2ZT10cnVlIiwKICAgICJjdXN0b21lcl9hY2NvdW50IjogImFjdGl2ZT10cnVlIiwKICAgICJzeXNfdXNlcl9ncm91cCI6ICJhY3RpdmU9dHJ1ZSIKICB9Cn0="
 # All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
   - basic:

@@ -9,19 +9,19 @@ defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: "ServiceNow-1.0.1"
 # Example Config:
-#{
-#  "requestTimeoutSeconds": 10,
-#  "apiVersion": "v2",
-#  "filters": {
-#    "incident": "active=true^sys_updated_onRELATIVEGT@dayofweek@ago@30",
-#    "sys_user": "active=true",
-#    "change_request": "active=true^sys_updated_onRELATIVEGT@dayofweek@ago@30",
-#    "change_task": "active=true^sys_updated_onRELATIVEGT@dayofweek@ago@30",
-#    "problem": "active=true^sys_updated_onRELATIVEGT@dayofweek@ago@30",
-#    "cmdb_ci_business_app": "active=true^sys_updated_onRELATIVEGT@dayofweek@ago@30",
-#    "sys_user_group": "active=true"
-#  }
-#}
+# {
+#   "requestTimeoutSeconds": 10,
+#   "apiVersion": "v2",
+#   "filters": {
+#     "incident": "active=true^sys_updated_onRELATIVEGT@dayofweek@ago@30",
+#     "sys_user": "active=true",
+#     "change_request": "active=true^sys_updated_onRELATIVEGT@dayofweek@ago@30",
+#     "change_task": "active=true^sys_updated_onRELATIVEGT@dayofweek@ago@30",
+#     "problem": "active=true^sys_updated_onRELATIVEGT@dayofweek@ago@30",
+#     "cmdb_ci_business_app": "active=true^sys_updated_onRELATIVEGT@dayofweek@ago@30",
+#     "sys_user_group": "active=true"
+#   }
+# }
 adapterConfig: "ewogICJyZXF1ZXN0VGltZW91dFNlY29uZHMiOiAxMCwKICAiYXBpVmVyc2lvbiI6ICJ2MiIsCiAgImZpbHRlcnMiOiB7CiAgICAiaW5jaWRlbnQiOiAiYWN0aXZlPXRydWVec3lzX3VwZGF0ZWRfb25SRUxBVElWRUdUQGRheW9md2Vla0BhZ29AMzAiLAogICAgInN5c191c2VyIjogImFjdGl2ZT10cnVlIiwKICAgICJjaGFuZ2VfcmVxdWVzdCI6ICJhY3RpdmU9dHJ1ZV5zeXNfdXBkYXRlZF9vblJFTEFUSVZFR1RAZGF5b2Z3ZWVrQGFnb0AzMCIsCiAgICAiY2hhbmdlX3Rhc2siOiAiYWN0aXZlPXRydWVec3lzX3VwZGF0ZWRfb25SRUxBVElWRUdUQGRheW9md2Vla0BhZ29AMzAiLAogICAgInByb2JsZW0iOiAiYWN0aXZlPXRydWVec3lzX3VwZGF0ZWRfb25SRUxBVElWRUdUQGRheW9md2Vla0BhZ29AMzAiLAogICAgImNtZGJfY2lfYnVzaW5lc3NfYXBwIjogImFjdGl2ZT10cnVlXnN5c191cGRhdGVkX29uUkVMQVRJVkVHVEBkYXlvZndlZWtAYWdvQDMwIiwKICAgICJzeXNfdXNlcl9ncm91cCI6ICJhY3RpdmU9dHJ1ZSIKICB9Cn0="
 # All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
