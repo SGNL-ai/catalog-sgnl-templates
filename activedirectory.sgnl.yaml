@@ -10,15 +10,28 @@ defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
 type: "ActiveDirectory-1.0.0"
 # Example Config:
-#{
-#    "baseDN":"dc=org,dc=example,dc=io",
-#    "certificateChain": ". . . base64 encoded certificate chain here . . ",
-#    "filters":{
-#         "User":"(&(objectClass=user)(objectCategory=user)(distinguishedName=*))",
-#         "Group":"(&(objectClass=group)(objectCategory=group)(distinguishedName=*))"
-#    }
-#}
-adapterConfig: "ewogICAgImJhc2VETiI6ICJ7e0lucHV0IFJlcXVpcmVkOiBCYXNlRE59fSIsCiAgICAiY2VydGlmaWNhdGVDaGFpbiI6ICJ7e0lucHV0IFJlcXVpcmVkOiBJZiBMREFQUyBpcyBlbmFibGVkfX0iLAogICAgImZpbHRlcnMiOiB7CiAgICAgICAgIlVzZXIiOiAiKCYob2JqZWN0Q2xhc3M9dXNlcikpIiwKICAgICAgICAiR3JvdXAiOiAiKCYob2JqZWN0Q2xhc3M9Z3JvdXApKSIKICAgIH0KfQ=="
+# {
+#   "baseDN":"dc=org,dc=example,dc=io",
+#   "certificateChain": ". . . base64 encoded certificate chain here . . "
+#   "entityConfig": {
+#     "User": {
+#       "selector": "(&(objectCategory=user)(objectClass=user)(distinguishedName=*))"
+#     },
+#     "Computer": {
+#       "selector": "(&(objectCategory=computer)(name=*))"
+#     },
+#     "Group": {
+#       "selector": "(&(objectCategory=group)(objectClass=group)(distinguishedName=*))"
+#     },
+#     "GroupMember": {
+#       "memberOf": "Group",
+#       "selector": "(&(memberOf={{CollectionId}})(objectCategory=user)(objectClass=user))",
+#       "memberUniqueIdAttribute": "memberObjectGUID",
+#       "memberOfUniqueIdAttribute": "groupObjectGUID"
+#     }
+#   },
+# }
+adapterConfig: "ewogICJiYXNlRE4iOiAiZGM9Y29ycCxkYz1leGFtcGxlLGRjPWFpIiwKICAiZW50aXR5Q29uZmlnIjogewogICAgIlVzZXIiOiB7CiAgICAgICJzZWxlY3RvciI6ICIoJihvYmplY3RDYXRlZ29yeT11c2VyKShvYmplY3RDbGFzcz11c2VyKShkaXN0aW5ndWlzaGVkTmFtZT0qKSkiCiAgICB9LAogICAgIkNvbXB1dGVyIjogewogICAgICAic2VsZWN0b3IiOiAiKCYob2JqZWN0Q2F0ZWdvcnk9Y29tcHV0ZXIpKG5hbWU9KikpIgogICAgfSwKICAgICJHcm91cCI6IHsKICAgICAgInNlbGVjdG9yIjogIigmKG9iamVjdENhdGVnb3J5PWdyb3VwKShvYmplY3RDbGFzcz1ncm91cCkoZGlzdGluZ3Vpc2hlZE5hbWU9KikpIgogICAgfSwKICAgICJHcm91cE1lbWJlciI6IHsKICAgICAgIm1lbWJlck9mIjogIkdyb3VwIiwKICAgICAgInNlbGVjdG9yIjogIigmKG1lbWJlck9mPXt7Q29sbGVjdGlvbklkfX0pKG9iamVjdENhdGVnb3J5PXVzZXIpKG9iamVjdENsYXNzPXVzZXIpKSIsCiAgICAgICJtZW1iZXJVbmlxdWVJZEF0dHJpYnV0ZSI6ICJtZW1iZXJPYmplY3RHVUlEIiwKICAgICAgIm1lbWJlck9mVW5pcXVlSWRBdHRyaWJ1dGUiOiAiZ3JvdXBPYmplY3RHVUlEIgogICAgfQogIH0sCiAgImNlcnRpZmljYXRlQ2hhaW4iOiAiLiAuIC4gYmFzZTY0IGVuY29kZWQgY2VydGlmaWNhdGUgY2hhaW4gaGVyZSAuIC4gIgp9"
 # All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
   - basic:
@@ -34,16 +47,21 @@ entities:
     pageSize: 100
     pagesOrderedById: false
     attributes:
+      - name: objectGUID
+        externalId: objectGUID
+        description: The objectGUID of the User
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: userGUID
       - name: dn
         externalId: dn
         description: The Distinguished Name (DN) of the user
         type: String
-        indexed: true
-        uniqueId: true
-        attributeAlias: userDN
       - name: objectClass
         externalId: objectClass
         type: String
+        list: true
       - name: sn
         externalId: sn
         type: String
@@ -122,6 +140,134 @@ entities:
       - name: dSCorePropagationData
         externalId: dSCorePropagationData
         type: DateTime
+      - name: objectSid
+        externalId: objectSid
+        type: String
+  Computer:
+    displayName: Computer
+    externalId: Computer
+    description: An entity representing a Computer in an Active Directory
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: objectGUID
+        externalId: objectGUID
+        description: The objectGUID of the Computer
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: dn
+        externalId: dn
+        description: The Distinguished Name (DN) of the Computer
+        type: String
+      - name: objectClass
+        externalId: objectClass
+        type: String
+        list: true
+      - name: cn
+        externalId: cn
+        type: String
+      - name: givenName
+        externalId: givenName
+        type: String
+      - name: distinguishedName
+        externalId: distinguishedName
+        type: String
+      - name: instanceType
+        externalId: instanceType
+        type: Int64
+      - name: whenCreated
+        externalId: whenCreated
+        type: DateTime
+      - name: whenChanged
+        externalId: whenChanged
+        type: DateTime
+      - name: uSNCreated
+        externalId: uSNCreated
+        type: Int64
+      - name: uSNChanged
+        externalId: uSNChanged
+        type: Int64
+      - name: department
+        externalId: department
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: userAccountControl
+        externalId: userAccountControl
+        type: Int64
+      - name: badPwdCount
+        externalId: badPwdCount
+        type: Int64
+      - name: codePage
+        externalId: codePage
+        type: Int64
+      - name: countryCode
+        externalId: countryCode
+        type: Int64
+      - name: badPasswordTime
+        externalId: badPasswordTime
+        type: Int64
+      - name: lastLogoff
+        externalId: lastLogoff
+        type: Int64
+      - name: lastLogon
+        externalId: lastLogon
+        type: Int64
+      - name: localPolicyFlags
+        externalId: localPolicyFlags
+        type: Int64
+      - name: pwdLastSet
+        externalId: pwdLastSet
+        type: Int64
+      - name: primaryGroupID
+        externalId: primaryGroupID
+        type: Int64
+      - name: accountExpires
+        externalId: accountExpires
+        type: Int64
+      - name: logonCount
+        externalId: logonCount
+        type: Int64
+      - name: sAMAccountName
+        externalId: sAMAccountName
+        type: String
+      - name: sAMAccountType
+        externalId: sAMAccountType
+        type: Int64
+      - name: operatingSystem
+        externalId: operatingSystem
+        type: String
+      - name: operatingSystemVersion
+        externalId: operatingSystemVersion
+        type: String
+      - name: dNSHostName
+        externalId: dNSHostName
+        type: String
+      - name: servicePrincipalName
+        externalId: servicePrincipalName
+        type: String
+        list: true
+      - name: objectCategory
+        externalId: objectCategory
+        type: String
+      - name: isCriticalSystemObject
+        externalId: isCriticalSystemObject
+        type: Bool
+      - name: dSCorePropagationData
+        externalId: dSCorePropagationData
+        type: DateTime
+        list: true
+      - name: objectSid
+        externalId: objectSid
+        type: String
+      - name: msDSSupportedEncryptionTypes
+        externalId: msDS-SupportedEncryptionTypes
+        type: Int64
+      - name: lastLogonTimestamp
+        externalId: lastLogonTimestamp
+        type: Int64
   Group:
     description: "An entity representing a Group in an Active Directory"
     displayName: Group
@@ -129,13 +275,21 @@ entities:
     pageSize: 100
     pagesOrderedById: false
     attributes:
+      - name: objectGUID
+        externalId: objectGUID
+        description: The objectGUID of the Group
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: groupGUID
       - name: dn
         externalId: dn
         description: The Distinguished Name (DN) of the group
         type: String
-        indexed: true
-        uniqueId: true
-        attributeAlias: groupDN
+      - name: objectClass
+        externalId: objectClass
+        type: String
+        list: true
       - name: cn
         externalId: cn
         type: String
@@ -178,6 +332,9 @@ entities:
       - name: dSCorePropagationData
         externalId: dSCorePropagationData
         type: DateTime
+      - name: objectSid
+        externalId: objectSid
+        type: String
   GroupMember:
     description: "Group Member Entity in Active Directory"
     displayName: GroupMember
@@ -185,17 +342,17 @@ entities:
     pageSize: 100
     pagesOrderedById: false
     attributes:
-      - name: dn
-        externalId: dn
+      - name: objectGUID
+        externalId: objectGUID
         type: String
         indexed: true
         uniqueId: true
-      - name: groupDistinguishedName
-        externalId: groupDistinguishedName
+      - name: groupObjectGUID
+        externalId: groupObjectGUID
         type: String
         indexed: true
-      - name: memberDistinguishedName
-        externalId: memberDistinguishedName
+      - name: memberObjectGUID
+        externalId: memberObjectGUID
         type: String
         indexed: true
 
@@ -203,18 +360,18 @@ relationships:
   UserMember:
     name: Member
     displayName: User Member
-    fromAttribute: GroupMember.memberDistinguishedName
-    toAttribute: userDN
+    fromAttribute: GroupMember.memberObjectGUID
+    toAttribute: userGUID
   GroupMember:
     name: Member
     displayName: Group Member
-    fromAttribute: GroupMember.memberDistinguishedName
-    toAttribute: groupDN
+    fromAttribute: GroupMember.memberObjectGUID
+    toAttribute: groupGUID
   MemberOf:
     name: MemberOf
     displayName: Member Of
-    fromAttribute: GroupMember.groupDistinguishedName
-    toAttribute: groupDN
+    fromAttribute: GroupMember.groupObjectGUID
+    toAttribute: groupGUID
   UserMemberGroup:
     name: Group
     displayName: User Member Group
