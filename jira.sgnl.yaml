@@ -121,10 +121,6 @@ entities:
       - name: fields__project__simplified
         externalId: fields__project__simplified
         type: Bool
-      - name: fields__fixVersions
-        externalId: fields__fixVersions
-        type: String
-        list: true
       - name: fields_aggregatetimespent
         externalId: fields__aggregatetimespent
         type: Int64
@@ -328,6 +324,30 @@ entities:
         type: Int64
       - name: fields__votes__hasVoted
         externalId: fields__votes__hasVoted
+        type: Bool
+
+  FixVersions:
+    parent: Issue
+    displayName: FixVersions
+    externalId: $.fields.fixVersions
+    description: Fix Versions associated with a specific issue
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: name
+        externalId: name
+        type: String
+        indexed: true
+      - name: archived
+        externalId: archived
+        type: Bool
+      - name: released
+        externalId: released
         type: Bool
 
   Group:
