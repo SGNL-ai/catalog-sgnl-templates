@@ -15,23 +15,23 @@ type: "ActiveDirectory-1.0.0"
 #   "certificateChain": ". . . base64 encoded certificate chain here . . "
 #   "entityConfig": {
 #     "User": {
-#       "selector": "(&(objectCategory=user)(objectClass=user)(distinguishedName=*))"
+#       "query": "(&(objectCategory=user)(objectClass=user)(distinguishedName=*))"
 #     },
 #     "Computer": {
-#       "selector": "(&(objectCategory=computer)(name=*))"
+#       "query": "(&(objectCategory=computer)(name=*))"
 #     },
 #     "Group": {
-#       "selector": "(&(objectCategory=group)(objectClass=group)(distinguishedName=*))"
+#       "query": "(&(objectCategory=group)(objectClass=group)(distinguishedName=*))"
 #     },
 #     "GroupMember": {
 #       "memberOf": "Group",
-#       "selector": "(&(memberOf={{CollectionId}})(objectCategory=user)(objectClass=user))",
+#       "query": "(&(memberOf={{CollectionId}})(objectCategory=user)(objectClass=user))",
 #       "memberUniqueIdAttribute": "memberObjectGUID",
 #       "memberOfUniqueIdAttribute": "groupObjectGUID"
 #     }
 #   },
 # }
-adapterConfig: "ewogICJiYXNlRE4iOiAiZGM9Y29ycCxkYz1leGFtcGxlLGRjPWFpIiwKICAiZW50aXR5Q29uZmlnIjogewogICAgIlVzZXIiOiB7CiAgICAgICJzZWxlY3RvciI6ICIoJihvYmplY3RDYXRlZ29yeT11c2VyKShvYmplY3RDbGFzcz11c2VyKShkaXN0aW5ndWlzaGVkTmFtZT0qKSkiCiAgICB9LAogICAgIkNvbXB1dGVyIjogewogICAgICAic2VsZWN0b3IiOiAiKCYob2JqZWN0Q2F0ZWdvcnk9Y29tcHV0ZXIpKG5hbWU9KikpIgogICAgfSwKICAgICJHcm91cCI6IHsKICAgICAgInNlbGVjdG9yIjogIigmKG9iamVjdENhdGVnb3J5PWdyb3VwKShvYmplY3RDbGFzcz1ncm91cCkoZGlzdGluZ3Vpc2hlZE5hbWU9KikpIgogICAgfSwKICAgICJHcm91cE1lbWJlciI6IHsKICAgICAgIm1lbWJlck9mIjogIkdyb3VwIiwKICAgICAgInNlbGVjdG9yIjogIigmKG1lbWJlck9mPXt7Q29sbGVjdGlvbklkfX0pKG9iamVjdENhdGVnb3J5PXVzZXIpKG9iamVjdENsYXNzPXVzZXIpKSIsCiAgICAgICJtZW1iZXJVbmlxdWVJZEF0dHJpYnV0ZSI6ICJtZW1iZXJPYmplY3RHVUlEIiwKICAgICAgIm1lbWJlck9mVW5pcXVlSWRBdHRyaWJ1dGUiOiAiZ3JvdXBPYmplY3RHVUlEIgogICAgfQogIH0sCiAgImNlcnRpZmljYXRlQ2hhaW4iOiAiLiAuIC4gYmFzZTY0IGVuY29kZWQgY2VydGlmaWNhdGUgY2hhaW4gaGVyZSAuIC4gIgp9"
+adapterConfig: "ewogICAgImJhc2VETiI6ICJ7e0lucHV0IFJlcXVpcmVkOiBCYXNlRE59fSIsCiAgICAiZW50aXR5Q29uZmlnIjogewogICAgICAgICJVc2VyIjogewogICAgICAgICAgICAicXVlcnkiOiAiKCYob2JqZWN0Q2F0ZWdvcnk9dXNlcikob2JqZWN0Q2xhc3M9dXNlcikoZGlzdGluZ3Vpc2hlZE5hbWU9KikpIgogICAgICAgIH0sCiAgICAgICAgIkNvbXB1dGVyIjogewogICAgICAgICAgICAicXVlcnkiOiAiKCYob2JqZWN0Q2F0ZWdvcnk9Y29tcHV0ZXIpKG5hbWU9KikpIgogICAgICAgIH0sCiAgICAgICAgIkdyb3VwIjogewogICAgICAgICAgICAicXVlcnkiOiAiKCYob2JqZWN0Q2F0ZWdvcnk9Z3JvdXApKG9iamVjdENsYXNzPWdyb3VwKShkaXN0aW5ndWlzaGVkTmFtZT0qKSkiCiAgICAgICAgfSwKICAgICAgICAiR3JvdXBNZW1iZXIiOiB7CiAgICAgICAgICAgICJtZW1iZXJPZiI6ICJHcm91cCIsCiAgICAgICAgICAgICJxdWVyeSI6ICIoJihtZW1iZXJPZj17e0NvbGxlY3Rpb25JZH19KShvYmplY3RDYXRlZ29yeT11c2VyKShvYmplY3RDbGFzcz11c2VyKSkiLAogICAgICAgICAgICAibWVtYmVyVW5pcXVlSWRBdHRyaWJ1dGUiOiAie3tJbnB1dCBSZXF1aXJlZDogSWYgbWVtYmVyT2YgaXMgcHJlc2VudH19IiwKICAgICAgICAgICAgIm1lbWJlck9mVW5pcXVlSWRBdHRyaWJ1dGUiOiAie3tJbnB1dCBSZXF1aXJlZDogSWYgbWVtYmVyT2YgaXMgcHJlc2VudH19IgogICAgICAgIH0KICAgIH0sCiAgICAiY2VydGlmaWNhdGVDaGFpbiI6ICJ7e0lucHV0IFJlcXVpcmVkOiBJZiBMREFQUyBpcyBlbmFibGVkOiBiYXNlNjQgZW5jb2RlZCBjZXJ0aWZpY2F0ZUNoYWlufX0iCn0="
 # All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
   - basic:
