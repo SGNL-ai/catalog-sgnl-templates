@@ -67,6 +67,22 @@ entities:
       - name: jobTitle
         externalId: jobTitle
         type: String
+      - name: workerCountryIsUSA
+        externalId: cf_WorkerCountryEqualToUnitedStatesOfAmerica
+        type: Bool
+        indexed: true
+      - name: workerLocationCity
+        externalId: $.location.descriptor
+        type: String
+        indexed: true
+      - name: workerLocationState
+        externalId: $.locationAddress_StateUnitedStates.descriptor
+        type: String
+        indexed: true
+      - name: isUSCitizen
+        externalId: isUSCitizen
+        type: Bool
+      
   WorkEmail:
     parent: allWorkers
     displayName: Work Email
