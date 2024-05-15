@@ -31,7 +31,31 @@ type: "LDAP-1.0.0"
 #     }
 #   },
 # }
-adapterConfig: "ewogICAgImJhc2VETiI6ICJ7e0lucHV0IFJlcXVpcmVkOiBCYXNlRE59fSIsCiAgICAiZW50aXR5Q29uZmlnIjogewogICAgICAgICJVc2VyIjogewogICAgICAgICAgICAicXVlcnkiOiAiKCYob2JqZWN0Q2F0ZWdvcnk9dXNlcikob2JqZWN0Q2xhc3M9dXNlcikoZGlzdGluZ3Vpc2hlZE5hbWU9KikpIgogICAgICAgIH0sCiAgICAgICAgIkNvbXB1dGVyIjogewogICAgICAgICAgICAicXVlcnkiOiAiKCYob2JqZWN0Q2F0ZWdvcnk9Y29tcHV0ZXIpKG5hbWU9KikpIgogICAgICAgIH0sCiAgICAgICAgIkdyb3VwIjogewogICAgICAgICAgICAicXVlcnkiOiAiKCYob2JqZWN0Q2F0ZWdvcnk9Z3JvdXApKG9iamVjdENsYXNzPWdyb3VwKShkaXN0aW5ndWlzaGVkTmFtZT0qKSkiCiAgICAgICAgfSwKICAgICAgICAiR3JvdXBNZW1iZXIiOiB7CiAgICAgICAgICAgICJtZW1iZXJPZiI6ICJHcm91cCIsCiAgICAgICAgICAgICJxdWVyeSI6ICIoJihtZW1iZXJPZj17e0NvbGxlY3Rpb25JZH19KShvYmplY3RDYXRlZ29yeT11c2VyKShvYmplY3RDbGFzcz11c2VyKSkiLAogICAgICAgICAgICAibWVtYmVyVW5pcXVlSWRBdHRyaWJ1dGUiOiAibWVtYmVyT2JqZWN0R1VJRCIsCiAgICAgICAgICAgICJtZW1iZXJPZlVuaXF1ZUlkQXR0cmlidXRlIjogImdyb3VwT2JqZWN0R1VJRCIKICAgICAgICB9CiAgICB9LAogICAgImNlcnRpZmljYXRlQ2hhaW4iOiAie3tJbnB1dCBSZXF1aXJlZDogSWYgTERBUFMgaXMgZW5hYmxlZDogYmFzZTY0IGVuY29kZWQgY2VydGlmaWNhdGVDaGFpbn19Igp9"
+
+# Adapter Config Field Info:
+# [Required] baseDN (String): Specifies the Base Distinguished Name (DN) for the LDAP directory.
+
+# [Optional/Required] certificateChain (String): Contains the Base64 encoded certificate chain for secure communication with the LDAP server. (if LDAPS)
+
+# [Optional/Required] entityConfig (Object): Configurations for different types of entities within the LDAP directory.
+
+# For more information on LDAP queries: https://ldap.com/ldap-filters/
+# [Optional] entityConfig.User (Object): Configuration for user entities.
+# [Required] entityConfig.User.query (String): Specifies the LDAP query for retrieving user entities.
+
+# [Optional] entityConfig.Computer (Object): Configuration for computer entities.
+# [Required] entityConfig.Computer.query (String): Specifies the LDAP query for retrieving computer entities.
+
+# [Optional] entityConfig.Group (Object): Configuration for group entities.
+# [Required] entityConfig.Group.query (String): Specifies the LDAP query for retrieving group entities.
+
+# [Optional] entityConfig.GroupMember (Object): Configuration for group membership entities.
+# [Required] entityConfig.GroupMember.query (String): Specifies the LDAP query for retrieving group members.
+# [Required] entityConfig.GroupMember.memberOf (String): Specifies the group to which the members belong.
+# [Required] entityConfig.GroupMember.memberUniqueIdAttribute (String): Specifies the attribute used as a unique identifier for members.
+# [Required] entityConfig.GroupMember.memberOfUniqueIdAttribute (String): Specifies the attribute used as a unique identifier for the group.
+
+adapterConfig: "ewogICAgImJhc2VETiI6ICJ7e0lucHV0IFJlcXVpcmVkOiBCYXNlRE59fSIsCiAgICAiY2VydGlmaWNhdGVDaGFpbiI6ICJ7e0lucHV0IFJlcXVpcmVkOiBJZiBMREFQUyBpcyBlbmFibGVkOiBiYXNlNjQgZW5jb2RlZCBjZXJ0aWZpY2F0ZUNoYWlufX0iCn0="
 # All auth mechanisms specified below must be supported by the specified Adapter.
 auth:
   - basic:
