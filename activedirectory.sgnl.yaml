@@ -25,6 +25,7 @@ type: "LDAP-1.0.0"
 #     },
 #     "GroupMember": {
 #       "memberOf": "Group",
+#       "collectionAttribute": "distinguishedName",
 #       "query": "(&(memberOf={{CollectionId}})(objectCategory=user)(objectClass=user))",
 #       "memberUniqueIdAttribute": "memberObjectGUID",
 #       "memberOfUniqueIdAttribute": "groupObjectGUID"
@@ -50,8 +51,9 @@ type: "LDAP-1.0.0"
 # [Required] entityConfig.Group.query (String): Specifies the LDAP query for retrieving group entities.
 
 # [Optional] entityConfig.GroupMember (Object): Configuration for group membership entities.
-# [Required] entityConfig.GroupMember.query (String): Specifies the LDAP query for retrieving group members.
 # [Required] entityConfig.GroupMember.memberOf (String): Specifies the group to which the members belong.
+# [Required] entityConfig.GroupMember.query (String): Specifies the LDAP query for retrieving group members with {{CollectionID}}.
+# [Required] entityConfig.GroupMember.collectionAttribute (String): Specifies attribute name to replate {{CollectionID}}.
 # [Required] entityConfig.GroupMember.memberUniqueIdAttribute (String): Specifies the attribute used as a unique identifier for members.
 # [Required] entityConfig.GroupMember.memberOfUniqueIdAttribute (String): Specifies the attribute used as a unique identifier for the group.
 
@@ -366,17 +368,17 @@ entities:
     pageSize: 100
     pagesOrderedById: false
     attributes:
-      - name: objectGUID
-        externalId: objectGUID
+      - name: id
+        externalId: id
         type: String
         indexed: true
         uniqueId: true
-      - name: groupObjectGUID
-        externalId: groupObjectGUID
+      - name: group_objectGUID
+        externalId: group_objectGUID
         type: String
         indexed: true
-      - name: memberObjectGUID
-        externalId: memberObjectGUID
+      - name: member_objectGUID
+        externalId: member_objectGUID
         type: String
         indexed: true
 
@@ -384,17 +386,17 @@ relationships:
   UserMember:
     name: Member
     displayName: User Member
-    fromAttribute: GroupMember.memberObjectGUID
+    fromAttribute: GroupMember.member_objectGUID
     toAttribute: userGUID
   GroupMember:
     name: Member
     displayName: Group Member
-    fromAttribute: GroupMember.memberObjectGUID
+    fromAttribute: GroupMember.member_objectGUID
     toAttribute: groupGUID
   MemberOf:
     name: MemberOf
     displayName: Member Of
-    fromAttribute: GroupMember.groupObjectGUID
+    fromAttribute: GroupMember.group_objectGUID
     toAttribute: groupGUID
   UserMemberGroup:
     name: Group
