@@ -18,7 +18,7 @@ entities:
     externalId: allWorkers # Name of the table in Workday
     description: Entity representing a Worker in Workday
     pageSize: 100
-    pagesOrderedById: false
+    pagesOrderedById: true
     attributes:
       - name: workerId
         externalId: $.worker.id
