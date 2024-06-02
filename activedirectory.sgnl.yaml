@@ -27,8 +27,8 @@ type: "LDAP-1.0.0"
 #       "memberOf": "Group",
 #       "collectionAttribute": "distinguishedName",
 #       "query": "(&(memberOf={{CollectionId}})(objectCategory=user)(objectClass=user))",
-#       "memberUniqueIdAttribute": "memberObjectGUID",
-#       "memberOfUniqueIdAttribute": "groupObjectGUID"
+#       "memberUniqueIdAttribute": "objectGUID",
+#       "memberOfUniqueIdAttribute": "objectGUID"
 #     }
 #   },
 # }
