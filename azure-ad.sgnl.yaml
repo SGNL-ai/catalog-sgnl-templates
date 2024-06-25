@@ -631,7 +631,7 @@ relationships:
     toAttribute: Role.id
   RoleMemberOf:
     name: MemberOf
-    displayName: Member Of
+    displayName: Role Member Of
     fromAttribute: RoleMember.memberId
     toAttribute: Role.id
   UserMemberRole:
