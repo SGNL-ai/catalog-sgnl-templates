@@ -1,0 +1,385 @@
+# AWS Configuration YAML for DS2.0
+displayName: "AWS"
+icon: PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDMwNCAxODIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMwNCAxODI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojMjUyRjNFO30KCS5zdDF7ZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojRkY5OTAwO30KPC9zdHlsZT4KPGc+Cgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNODYuNCw2Ni40YzAsMy43LDAuNCw2LjcsMS4xLDguOWMwLjgsMi4yLDEuOCw0LjYsMy4yLDcuMmMwLjUsMC44LDAuNywxLjYsMC43LDIuM2MwLDEtMC42LDItMS45LDNsLTYuMyw0LjIgICBjLTAuOSwwLjYtMS44LDAuOS0yLjYsMC45Yy0xLDAtMi0wLjUtMy0xLjRDNzYuMiw5MCw3NSw4OC40LDc0LDg2LjhjLTEtMS43LTItMy42LTMuMS01LjljLTcuOCw5LjItMTcuNiwxMy44LTI5LjQsMTMuOCAgIGMtOC40LDAtMTUuMS0yLjQtMjAtNy4yYy00LjktNC44LTcuNC0xMS4yLTcuNC0xOS4yYzAtOC41LDMtMTUuNCw5LjEtMjAuNmM2LjEtNS4yLDE0LjItNy44LDI0LjUtNy44YzMuNCwwLDYuOSwwLjMsMTAuNiwwLjggICBjMy43LDAuNSw3LjUsMS4zLDExLjUsMi4ydi03LjNjMC03LjYtMS42LTEyLjktNC43LTE2Yy0zLjItMy4xLTguNi00LjYtMTYuMy00LjZjLTMuNSwwLTcuMSwwLjQtMTAuOCwxLjNjLTMuNywwLjktNy4zLDItMTAuOCwzLjQgICBjLTEuNiwwLjctMi44LDEuMS0zLjUsMS4zYy0wLjcsMC4yLTEuMiwwLjMtMS42LDAuM2MtMS40LDAtMi4xLTEtMi4xLTMuMXYtNC45YzAtMS42LDAuMi0yLjgsMC43LTMuNWMwLjUtMC43LDEuNC0xLjQsMi44LTIuMSAgIGMzLjUtMS44LDcuNy0zLjMsMTIuNi00LjVjNC45LTEuMywxMC4xLTEuOSwxNS42LTEuOWMxMS45LDAsMjAuNiwyLjcsMjYuMiw4LjFjNS41LDUuNCw4LjMsMTMuNiw4LjMsMjQuNlY2Ni40eiBNNDUuOCw4MS42ICAgYzMuMywwLDYuNy0wLjYsMTAuMy0xLjhjMy42LTEuMiw2LjgtMy40LDkuNS02LjRjMS42LTEuOSwyLjgtNCwzLjQtNi40YzAuNi0yLjQsMS01LjMsMS04Ljd2LTQuMmMtMi45LTAuNy02LTEuMy05LjItMS43ICAgYy0zLjItMC40LTYuMy0wLjYtOS40LTAuNmMtNi43LDAtMTEuNiwxLjMtMTQuOSw0Yy0zLjMsMi43LTQuOSw2LjUtNC45LDExLjVjMCw0LjcsMS4yLDguMiwzLjcsMTAuNiAgIEMzNy43LDgwLjQsNDEuMiw4MS42LDQ1LjgsODEuNnogTTEyNi4xLDkyLjRjLTEuOCwwLTMtMC4zLTMuOC0xYy0wLjgtMC42LTEuNS0yLTIuMS0zLjlMOTYuNywxMC4yYy0wLjYtMi0wLjktMy4zLTAuOS00ICAgYzAtMS42LDAuOC0yLjUsMi40LTIuNWg5LjhjMS45LDAsMy4yLDAuMywzLjksMWMwLjgsMC42LDEuNCwyLDIsMy45bDE2LjgsNjYuMmwxNS42LTY2LjJjMC41LTIsMS4xLTMuMywxLjktMy45YzAuOC0wLjYsMi4yLTEsNC0xICAgaDhjMS45LDAsMy4yLDAuMyw0LDFjMC44LDAuNiwxLjUsMiwxLjksMy45bDE1LjgsNjdsMTcuMy02N2MwLjYtMiwxLjMtMy4zLDItMy45YzAuOC0wLjYsMi4xLTEsMy45LTFoOS4zYzEuNiwwLDIuNSwwLjgsMi41LDIuNSAgIGMwLDAuNS0wLjEsMS0wLjIsMS42Yy0wLjEsMC42LTAuMywxLjQtMC43LDIuNWwtMjQuMSw3Ny4zYy0wLjYsMi0xLjMsMy4zLTIuMSwzLjljLTAuOCwwLjYtMi4xLDEtMy44LDFoLTguNmMtMS45LDAtMy4yLTAuMy00LTEgICBjLTAuOC0wLjctMS41LTItMS45LTRMMTU2LDIzbC0xNS40LDY0LjRjLTAuNSwyLTEuMSwzLjMtMS45LDRjLTAuOCwwLjctMi4yLDEtNCwxSDEyNi4xeiBNMjU0LjYsOTUuMWMtNS4yLDAtMTAuNC0wLjYtMTUuNC0xLjggICBjLTUtMS4yLTguOS0yLjUtMTEuNS00Yy0xLjYtMC45LTIuNy0xLjktMy4xLTIuOGMtMC40LTAuOS0wLjYtMS45LTAuNi0yLjh2LTUuMWMwLTIuMSwwLjgtMy4xLDIuMy0zLjFjMC42LDAsMS4yLDAuMSwxLjgsMC4zICAgYzAuNiwwLjIsMS41LDAuNiwyLjUsMWMzLjQsMS41LDcuMSwyLjcsMTEsMy41YzQsMC44LDcuOSwxLjIsMTEuOSwxLjJjNi4zLDAsMTEuMi0xLjEsMTQuNi0zLjNjMy40LTIuMiw1LjItNS40LDUuMi05LjUgICBjMC0yLjgtMC45LTUuMS0yLjctN2MtMS44LTEuOS01LjItMy42LTEwLjEtNS4yTDI0Niw1MmMtNy4zLTIuMy0xMi43LTUuNy0xNi0xMC4yYy0zLjMtNC40LTUtOS4zLTUtMTQuNWMwLTQuMiwwLjktNy45LDIuNy0xMS4xICAgYzEuOC0zLjIsNC4yLTYsNy4yLTguMmMzLTIuMyw2LjQtNCwxMC40LTUuMmM0LTEuMiw4LjItMS43LDEyLjYtMS43YzIuMiwwLDQuNSwwLjEsNi43LDAuNGMyLjMsMC4zLDQuNCwwLjcsNi41LDEuMSAgIGMyLDAuNSwzLjksMSw1LjcsMS42YzEuOCwwLjYsMy4yLDEuMiw0LjIsMS44YzEuNCwwLjgsMi40LDEuNiwzLDIuNWMwLjYsMC44LDAuOSwxLjksMC45LDMuM3Y0LjdjMCwyLjEtMC44LDMuMi0yLjMsMy4yICAgYy0wLjgsMC0yLjEtMC40LTMuOC0xLjJjLTUuNy0yLjYtMTIuMS0zLjktMTkuMi0zLjljLTUuNywwLTEwLjIsMC45LTEzLjMsMi44Yy0zLjEsMS45LTQuNyw0LjgtNC43LDguOWMwLDIuOCwxLDUuMiwzLDcuMSAgIGMyLDEuOSw1LjcsMy44LDExLDUuNWwxNC4yLDQuNWM3LjIsMi4zLDEyLjQsNS41LDE1LjUsOS42YzMuMSw0LjEsNC42LDguOCw0LjYsMTRjMCw0LjMtMC45LDguMi0yLjYsMTEuNiAgIGMtMS44LDMuNC00LjIsNi40LTcuMyw4LjhjLTMuMSwyLjUtNi44LDQuMy0xMS4xLDUuNkMyNjQuNCw5NC40LDI1OS43LDk1LjEsMjU0LjYsOTUuMXoiLz4KCTxnPgoJCTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0yNzMuNSwxNDMuN2MtMzIuOSwyNC4zLTgwLjcsMzcuMi0xMjEuOCwzNy4yYy01Ny42LDAtMTA5LjUtMjEuMy0xNDguNy01Ni43Yy0zLjEtMi44LTAuMy02LjYsMy40LTQuNCAgICBjNDIuNCwyNC42LDk0LjcsMzkuNSwxNDguOCwzOS41YzM2LjUsMCw3Ni42LTcuNiwxMTMuNS0yMy4yQzI3NC4yLDEzMy42LDI3OC45LDEzOS43LDI3My41LDE0My43eiIvPgoJCTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0yODcuMiwxMjguMWMtNC4yLTUuNC0yNy44LTIuNi0zOC41LTEuM2MtMy4yLDAuNC0zLjctMi40LTAuOC00LjVjMTguOC0xMy4yLDQ5LjctOS40LDUzLjMtNSAgICBjMy42LDQuNS0xLDM1LjQtMTguNiw1MC4yYy0yLjcsMi4zLTUuMywxLjEtNC4xLTEuOUMyODIuNSwxNTUuNywyOTEuNCwxMzMuNCwyODcuMiwxMjguMXoiLz4KCTwvZz4KPC9nPgo8L3N2Zz4=
+description: "AWS as a System of Record"
+defaultSyncFrequency: HOURLY
+defaultSyncMinInterval: 1
+defaultApiCallFrequency: SECONDLY
+defaultApiCallMinInterval: 1
+type: "AWS-1.0.0"
+# Example Config:
+#
+# {
+#   "region": "ap-south-1",
+#   "requestTimeoutSeconds": 120
+# }
+adapterConfig: "ewogICJyZWdpb24iOiAie3tJbnB1dCBSZXF1aXJlZDogYXdzX3JlZ2lvbn19Igp9Cgo="
+# All auth mechanisms specified below must be supported by the specified Adapter.
+auth:
+  - basic:
+      username: "{{Input Required: AccessKeyID}}"
+      password: "{{Input Required: SecretAccessKey}}"
+entities:
+  IdentityProvider:
+    displayName: IdentityProvider
+    externalId: IdentityProvider
+    description: IdentityProvider entity in AWS
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: Arn
+        externalId: Arn
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: AccountId
+        externalId: AccountId
+        type: String
+      - name: CreateDate
+        externalId: CreateDate
+        type: String
+      - name: ValidUntil
+        externalId: ValidUntil
+        type: String
+  User:
+    displayName: User
+    externalId: User
+    description: User entity in AWS
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: Arn
+        externalId: Arn
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: AccountId
+        externalId: AccountId
+        type: String
+      - name: CreateDate
+        externalId: CreateDate
+        type: String
+      - name: PasswordLastUsed
+        externalId: PasswordLastUsed
+        type: String
+      - name: Path
+        externalId: Path
+        type: String
+      - name: PermissionsBoundary
+        externalId: PermissionsBoundary
+        type: String
+      - name: UserId
+        externalId: UserId
+        type: String
+        indexed: true
+      - name: UserName
+        externalId: UserName
+        type: String
+        indexed: true
+  Role:
+    displayName: Role
+    externalId: Role
+    description: Role entity in AWS
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: Arn
+        externalId: Arn
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: AccountId
+        externalId: AccountId
+        type: String
+      - name: AssumeRolePolicyDocument
+        externalId: AssumeRolePolicyDocument
+        type: String
+        indexed: true
+      - name: CreateDate
+        externalId: CreateDate
+        type: String
+      - name: Description
+        externalId: Description
+        type: String
+      - name: MaxSessionDuration
+        externalId: MaxSessionDuration
+        type: Int64
+      - name: Path
+        externalId: Path
+        type: String
+      - name: PermissionsBoundary
+        externalId: PermissionsBoundary
+        type: String
+      - name: RoleId
+        externalId: RoleId
+        type: String
+        indexed: true
+      - name: RoleLastUsed
+        externalId: $.RoleLastUsed.LastUsedDate
+        type: String
+      - name: RoleName
+        externalId: RoleName
+        type: String
+        indexed: true
+  Group:
+    displayName: Group
+    externalId: Group
+    description: Group entity in AWS
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: Arn
+        externalId: Arn
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: AccountId
+        externalId: AccountId
+        type: String
+      - name: CreateDate
+        externalId: CreateDate
+        type: String
+      - name: GroupId
+        externalId: GroupId
+        type: String
+        indexed: true
+      - name: GroupName
+        externalId: GroupName
+        type: String
+        indexed: true
+      - name: Path
+        externalId: Path
+        type: String
+  Policy:
+    displayName: Policy
+    externalId: Policy
+    description: Policy entity in AWS
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: Arn
+        externalId: Arn
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: AccountId
+        externalId: AccountId
+        type: String
+      - name: AttachmentCount
+        externalId: AttachmentCount
+        type: Int64
+      - name: CreateDate
+        externalId: CreateDate
+        type: String
+      - name: DefaultVersionId
+        externalId: DefaultVersionId
+        type: String
+      - name: Description
+        externalId: Description
+        type: String
+      - name: IsAttachable
+        externalId: IsAttachable
+        type: Bool
+      - name: Path
+        externalId: Path
+        type: String
+      - name: PermissionsBoundaryUsageCount
+        externalId: PermissionsBoundaryUsageCount
+        type: Int64
+      - name: PolicyId
+        externalId: PolicyId
+        type: String
+        indexed: true
+      - name: RoleLastUsed
+        externalId: $.RoleLastUsed.LastUsedDate
+        type: String
+      - name: PolicyName
+        externalId: PolicyName
+        type: String
+      - name: UpdateDate
+        externalId: UpdateDate
+        type: String
+  GroupMember:
+    displayName: GroupMember
+    externalId: GroupMember
+    description: Members of Groups in AWS
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: Id
+        externalId: Id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: UserId
+        externalId: UserId
+        type: String
+        indexed: true
+      - name: GroupName
+        externalId: GroupName
+        type: String
+        indexed: true
+  GroupPolicy:
+    displayName: GroupPolicy
+    externalId: GroupPolicy
+    description: Policies Assigned to Groups in AWS
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: Id
+        externalId: Id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: PolicyArn
+        externalId: PolicyArn
+        type: String
+        indexed: true
+      - name: GroupName
+        externalId: GroupName
+        type: String
+        indexed: true
+  RolePolicy:
+    displayName: RolePolicy
+    externalId: RolePolicy
+    description: Policies Assigned to Roles in AWS
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: Id
+        externalId: Id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: PolicyArn
+        externalId: PolicyArn
+        type: String
+        indexed: true
+      - name: RoleName
+        externalId: RoleName
+        type: String
+        indexed: true
+  UserPolicy:
+    displayName: UserPolicy
+    externalId: UserPolicy
+    description: Policies Assigned to Users in AWS
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: Id
+        externalId: Id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: PolicyArn
+        externalId: PolicyArn
+        type: String
+        indexed: true
+      - name: UserName
+        externalId: UserName
+        type: String
+        indexed: true
+relationships:
+  UserAssignedPolicyMember:
+    name: Assigned
+    fromAttribute: User.UserName
+    toAttribute: UserPolicy.UserName
+  RoleAssignedPolicyMember:
+    name: Assigned
+    fromAttribute: Role.RoleName
+    toAttribute: RolePolicy.RoleName
+  GroupAssignedPolicyMember:
+    name: Assigned
+    fromAttribute: Group.GroupName
+    toAttribute: GroupPolicy.GroupName
+  UserAssignedPolicy:
+    name: AssignedPolicy
+    fromAttribute: UserPolicy.PolicyArn
+    toAttribute: Policy.Arn
+  GroupAssignedPolicy:
+    name: AssignedPolicy
+    fromAttribute: GroupPolicy.PolicyArn
+    toAttribute: Policy.Arn
+  RoleAssignedPolicy:
+    name: AssignedPolicy
+    fromAttribute: RolePolicy.PolicyArn
+    toAttribute: Policy.Arn
+  GroupMember:
+    name: Member
+    fromAttribute: User.UserId
+    toAttribute: GroupMember.UserId
+  MemberOf:
+    name: MemberOf
+    fromAttribute: GroupMember.GroupName
+    toAttribute: Group.GroupName
+  IdPPolicy:
+    name: AssumeRole
+    path:
+      - relationship: AssumeMember
+        direction: Forward
+      - relationship: Assume
+        direction: Forward
+  RolePolicy:
+    name: HasPolicy
+    path:
+      - relationship: RoleAssignedPolicyMember
+        direction: Forward
+      - relationship: RoleAssignedPolicy
+        direction: Forward
+  GroupPolicy:
+    name: HasPolicy
+    path:
+      - relationship: GroupAssignedPolicyMember
+        direction: Forward
+      - relationship: GroupAssignedPolicy
+        direction: Forward
+  UserPolicy:
+    name: HasPolicy
+    path:
+      - relationship: UserAssignedPolicyMember
+        direction: Forward
+      - relationship: UserAssignedPolicy
+        direction: Forward
+  Group:
+    name: Group
+    path:
+      - relationship: GroupMember
+        direction: Forward
+      - relationship: MemberOf
+        direction: Forward
