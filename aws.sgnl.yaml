@@ -230,8 +230,8 @@ entities:
     pageSize: 100
     pagesOrderedById: false
     attributes:
-      - name: Id
-        externalId: Id
+      - name: id
+        externalId: id
         type: String
         indexed: true
         uniqueId: true
@@ -254,8 +254,8 @@ entities:
     pageSize: 100
     pagesOrderedById: false
     attributes:
-      - name: Id
-        externalId: Id
+      - name: id
+        externalId: id
         type: String
         indexed: true
         uniqueId: true
@@ -278,8 +278,8 @@ entities:
     pageSize: 100
     pagesOrderedById: false
     attributes:
-      - name: Id
-        externalId: Id
+      - name: id
+        externalId: id
         type: String
         indexed: true
         uniqueId: true
@@ -302,8 +302,8 @@ entities:
     pageSize: 100
     pagesOrderedById: false
     attributes:
-      - name: Id
-        externalId: Id
+      - name: id
+        externalId: id
         type: String
         indexed: true
         uniqueId: true
