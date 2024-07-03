@@ -22,3 +22,24 @@ auth:
   - basic:
       username: "{{Input Required: AccessKeyID}}"
       password: "{{Input Required: SecretAccessKey}}"
+
+entities:
+  User:
+    displayName: User
+    externalId: users # This must match the name of the CSV file in the S3 bucket
+    description: User represents the user data stored in AWS S3 in users.csv
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: userId
+        externalId: userId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: userName
+        externalId: userName
+        type: String
