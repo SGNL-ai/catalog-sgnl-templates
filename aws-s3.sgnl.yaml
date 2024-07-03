@@ -1,0 +1,91 @@
+displayName: "AWS S3"
+icon: |
+  PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDMwNCAxODIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMwNCAxODI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojMjUyRjNFO30KCS5zdDF7ZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojRkY5OTAwO30KPC9zdHlsZT4KPGc+Cgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNODYuNCw2Ni40YzAsMy43LDAuNCw2LjcsMS4xLDguOWMwLjgsMi4yLDEuOCw0LjYsMy4yLDcuMmMwLjUsMC44LDAuNywxLjYsMC43LDIuM2MwLDEtMC42LDItMS45LDNsLTYuMyw0LjIgICBjLTAuOSwwLjYtMS44LDAuOS0yLjYsMC45Yy0xLDAtMi0wLjUtMy0xLjRDNzYuMiw5MCw3NSw4OC40LDc0LDg2LjhjLTEtMS43LTItMy42LTMuMS01LjljLTcuOCw5LjItMTcuNiwxMy44LTI5LjQsMTMuOCAgIGMtOC40LDAtMTUuMS0yLjQtMjAtNy4yYy00LjktNC44LTcuNC0xMS4yLTcuNC0xOS4yYzAtOC41LDMtMTUuNCw5LjEtMjAuNmM2LjEtNS4yLDE0LjItNy44LDI0LjUtNy44YzMuNCwwLDYuOSwwLjMsMTAuNiwwLjggICBjMy43LDAuNSw3LjUsMS4zLDExLjUsMi4ydi03LjNjMC03LjYtMS42LTEyLjktNC43LTE2Yy0zLjItMy4xLTguNi00LjYtMTYuMy00LjZjLTMuNSwwLTcuMSwwLjQtMTAuOCwxLjNjLTMuNywwLjktNy4zLDItMTAuOCwzLjQgICBjLTEuNiwwLjctMi44LDEuMS0zLjUsMS4zYy0wLjcsMC4yLTEuMiwwLjMtMS42LDAuM2MtMS40LDAtMi4xLTEtMi4xLTMuMXYtNC45YzAtMS42LDAuMi0yLjgsMC43LTMuNWMwLjUtMC43LDEuNC0xLjQsMi44LTIuMSAgIGMzLjUtMS44LDcuNy0zLjMsMTIuNi00LjVjNC45LTEuMywxMC4xLTEuOSwxNS42LTEuOWMxMS45LDAsMjAuNiwyLjcsMjYuMiw4LjFjNS41LDUuNCw4LjMsMTMuNiw4LjMsMjQuNlY2Ni40eiBNNDUuOCw4MS42ICAgYzMuMywwLDYuNy0wLjYsMTAuMy0xLjhjMy42LTEuMiw2LjgtMy40LDkuNS02LjRjMS42LTEuOSwyLjgtNCwzLjQtNi40YzAuNi0yLjQsMS01LjMsMS04Ljd2LTQuMmMtMi45LTAuNy02LTEuMy05LjItMS43ICAgYy0zLjItMC40LTYuMy0wLjYtOS40LTAuNmMtNi43LDAtMTEuNiwxLjMtMTQuOSw0Yy0zLjMsMi43LTQuOSw2LjUtNC45LDExLjVjMCw0LjcsMS4yLDguMiwzLjcsMTAuNiAgIEMzNy43LDgwLjQsNDEuMiw4MS42LDQ1LjgsODEuNnogTTEyNi4xLDkyLjRjLTEuOCwwLTMtMC4zLTMuOC0xYy0wLjgtMC42LTEuNS0yLTIuMS0zLjlMOTYuNywxMC4yYy0wLjYtMi0wLjktMy4zLTAuOS00ICAgYzAtMS42LDAuOC0yLjUsMi40LTIuNWg5LjhjMS45LDAsMy4yLDAuMywzLjksMWMwLjgsMC42LDEuNCwyLDIsMy45bDE2LjgsNjYuMmwxNS42LTY2LjJjMC41LTIsMS4xLTMuMywxLjktMy45YzAuOC0wLjYsMi4yLTEsNC0xICAgaDhjMS45LDAsMy4yLDAuMyw0LDFjMC44LDAuNiwxLjUsMiwxLjksMy45bDE1LjgsNjdsMTcuMy02N2MwLjYtMiwxLjMtMy4zLDItMy45YzAuOC0wLjYsMi4xLTEsMy45LTFoOS4zYzEuNiwwLDIuNSwwLjgsMi41LDIuNSAgIGMwLDAuNS0wLjEsMS0wLjIsMS42Yy0wLjEsMC42LTAuMywxLjQtMC43LDIuNWwtMjQuMSw3Ny4zYy0wLjYsMi0xLjMsMy4zLTIuMSwzLjljLTAuOCwwLjYtMi4xLDEtMy44LDFoLTguNmMtMS45LDAtMy4yLTAuMy00LTEgICBjLTAuOC0wLjctMS41LTItMS45LTRMMTU2LDIzbC0xNS40LDY0LjRjLTAuNSwyLTEuMSwzLjMtMS45LDRjLTAuOCwwLjctMi4yLDEtNCwxSDEyNi4xeiBNMjU0LjYsOTUuMWMtNS4yLDAtMTAuNC0wLjYtMTUuNC0xLjggICBjLTUtMS4yLTguOS0yLjUtMTEuNS00Yy0xLjYtMC45LTIuNy0xLjktMy4xLTIuOGMtMC40LTAuOS0wLjYtMS45LTAuNi0yLjh2LTUuMWMwLTIuMSwwLjgtMy4xLDIuMy0zLjFjMC42LDAsMS4yLDAuMSwxLjgsMC4zICAgYzAuNiwwLjIsMS41LDAuNiwyLjUsMWMzLjQsMS41LDcuMSwyLjcsMTEsMy41YzQsMC44LDcuOSwxLjIsMTEuOSwxLjJjNi4zLDAsMTEuMi0xLjEsMTQuNi0zLjNjMy40LTIuMiw1LjItNS40LDUuMi05LjUgICBjMC0yLjgtMC45LTUuMS0yLjctN2MtMS44LTEuOS01LjItMy42LTEwLjEtNS4yTDI0Niw1MmMtNy4zLTIuMy0xMi43LTUuNy0xNi0xMC4yYy0zLjMtNC40LTUtOS4zLTUtMTQuNWMwLTQuMiwwLjktNy45LDIuNy0xMS4xICAgYzEuOC0zLjIsNC4yLTYsNy4yLTguMmMzLTIuMyw2LjQtNCwxMC40LTUuMmM0LTEuMiw4LjItMS43LDEyLjYtMS43YzIuMiwwLDQuNSwwLjEsNi43LDAuNGMyLjMsMC4zLDQuNCwwLjcsNi41LDEuMSAgIGMyLDAuNSwzLjksMSw1LjcsMS42YzEuOCwwLjYsMy4yLDEuMiw0LjIsMS44YzEuNCwwLjgsMi40LDEuNiwzLDIuNWMwLjYsMC44LDAuOSwxLjksMC45LDMuM3Y0LjdjMCwyLjEtMC44LDMuMi0yLjMsMy4yICAgYy0wLjgsMC0yLjEtMC40LTMuOC0xLjJjLTUuNy0yLjYtMTIuMS0zLjktMTkuMi0zLjljLTUuNywwLTEwLjIsMC45LTEzLjMsMi44Yy0zLjEsMS45LTQuNyw0LjgtNC43LDguOWMwLDIuOCwxLDUuMiwzLDcuMSAgIGMyLDEuOSw1LjcsMy44LDExLDUuNWwxNC4yLDQuNWM3LjIsMi4zLDEyLjQsNS41LDE1LjUsOS42YzMuMSw0LjEsNC42LDguOCw0LjYsMTRjMCw0LjMtMC45LDguMi0yLjYsMTEuNiAgIGMtMS44LDMuNC00LjIsNi40LTcuMyw4LjhjLTMuMSwyLjUtNi44LDQuMy0xMS4xLDUuNkMyNjQuNCw5NC40LDI1OS43LDk1LjEsMjU0LjYsOTUuMXoiLz4KCTxnPgoJCTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0yNzMuNSwxNDMuN2MtMzIuOSwyNC4zLTgwLjcsMzcuMi0xMjEuOCwzNy4yYy01Ny42LDAtMTA5LjUtMjEuMy0xNDguNy01Ni43Yy0zLjEtMi44LTAuMy02LjYsMy40LTQuNCAgICBjNDIuNCwyNC42LDk0LjcsMzkuNSwxNDguOCwzOS41YzM2LjUsMCw3Ni42LTcuNiwxMTMuNS0yMy4yQzI3NC4yLDEzMy42LDI3OC45LDEzOS43LDI3My41LDE0My43eiIvPgoJCTxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0yODcuMiwxMjguMWMtNC4yLTUuNC0yNy44LTIuNi0zOC41LTEuM2MtMy4yLDAuNC0zLjctMi40LTAuOC00LjVjMTguOC0xMy4yLDQ5LjctOS40LDUzLjMtNSAgICBjMy42LDQuNS0xLDM1LjQtMTguNiw1MC4yYy0yLjcsMi4zLTUuMywxLjEtNC4xLTEuOUMyODIuNSwxNTUuNywyOTEuNCwxMzMuNCwyODcuMiwxMjguMXoiLz4KCTwvZz4KPC9nPgo8L3N2Zz4=
+description: "AWS S3 as a System of Record"
+defaultSyncFrequency: HOURLY
+defaultSyncMinInterval: 1
+defaultApiCallFrequency: SECONDLY
+defaultApiCallMinInterval: 1
+type: "S3-1.0.0"
+
+# Example Config:
+# To fetch entity data stored in a `data/internal` path in `employeeData`` S3 bucket in the `us-west-2` region i.e. s3://my-bucket/internal/{entity}.csv
+# {
+#   "region": "us-west-2",
+#   "bucket": "employeeData",
+#   "prefix": "data/internal",
+# }
+adapterConfig: "ewogICAgInJlZ2lvbiI6ICJ7e0lucHV0IFJlcXVpcmVkOiByZWdpb259fSIsCiAgICAiYnVja2V0IjogInt7SW5wdXQgUmVxdWlyZWQ6IGJ1Y2tldCBuYW1lfX0iCn0="
+
+# All auth mechanisms specified below must be supported by the specified Adapter.
+auth:
+  - basic:
+      username: "{{Input Required: AccessKeyID}}"
+      password: "{{Input Required: SecretAccessKey}}"
+
+# An example user entity
+entities:
+  User:
+    displayName: User
+    externalId: users # This must match the name of the CSV file in the S3 bucket
+    description: User represents the user data stored in AWS S3 in users.csv
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: userId
+        externalId: userId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: userName
+        externalId: userName
+        type: String
+
+  Group:
+    displayName: Group
+    externalId: groups # This must match the name of the CSV file in the S3 bucket
+    description: Group represents the group data stored in AWS S3 in groups.csv
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: groupId
+        externalId: groupId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: groupName
+        externalId: groupName
+        type: String
+
+  GroupMember:
+    displayName: Group Member
+    externalId: members
+    description: Group Member represents the group membership data stored in AWS S3 in members.csv
+    syncFrequency: HOURLY
+    syncMinInterval: 1
+    apiCallFrequency: SECONDLY
+    apiCallMinInterval: 1
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true # A unique ID is required for the entity
+      - name: userId
+        externalId: userId
+        type: String
+        indexed: true
+      - name: groupId
+        externalId: groupId
+        type: String
+        indexed: true
