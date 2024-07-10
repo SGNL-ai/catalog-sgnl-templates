@@ -564,6 +564,9 @@ entities:
       - name: registrationDateTime
         externalId: registrationDateTime
         type: DateTime
+      - name: registeredOwner
+        externalId: $.registeredOwners[0].id
+        type: String
       - name: systemLabels
         externalId: systemLabels
         type: String
@@ -650,6 +653,11 @@ relationships:
         direction: Backward
       - relationship: RoleMemberOf
         direction: Forward
+  DeviceOwner:
+    name: DeviceOwner
+    displayName: Device Owner
+    fromAttribute: Device.registeredOwner
+    toAttribute: User.id
   UserManager:
     name: Manager
     fromAttribute: User.manager__id
