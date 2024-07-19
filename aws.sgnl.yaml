@@ -23,11 +23,7 @@ entities:
   IdentityProvider:
     displayName: IdentityProvider
     externalId: IdentityProvider
-    description: IdentityProvider entity in AWS
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
+    description: IdentityProvider represents a AWS IAM SAML Providers.
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -39,20 +35,17 @@ entities:
       - name: AccountId
         externalId: AccountId
         type: String
+        indexed: true
       - name: CreateDate
         externalId: CreateDate
-        type: String
+        type: DateTime
       - name: ValidUntil
         externalId: ValidUntil
-        type: String
+        type: DateTime
   User:
     displayName: User
     externalId: User
-    description: User entity in AWS
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
+    description: User represents a AWS IAM User
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -64,12 +57,13 @@ entities:
       - name: AccountId
         externalId: AccountId
         type: String
+        indexed: true
       - name: CreateDate
         externalId: CreateDate
-        type: String
+        type: DateTime
       - name: PasswordLastUsed
         externalId: PasswordLastUsed
-        type: String
+        type: DateTime
       - name: Path
         externalId: Path
         type: String
@@ -87,11 +81,7 @@ entities:
   Role:
     displayName: Role
     externalId: Role
-    description: Role entity in AWS
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
+    description: Role represents a AWS IAM Role
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -103,13 +93,14 @@ entities:
       - name: AccountId
         externalId: AccountId
         type: String
+        indexed: true
       - name: AssumeRolePolicyDocument
         externalId: AssumeRolePolicyDocument
         type: String
         indexed: true
       - name: CreateDate
         externalId: CreateDate
-        type: String
+        type: DateTime
       - name: Description
         externalId: Description
         type: String
@@ -128,7 +119,7 @@ entities:
         indexed: true
       - name: RoleLastUsed
         externalId: $.RoleLastUsed.LastUsedDate
-        type: String
+        type: DateTime
       - name: RoleName
         externalId: RoleName
         type: String
@@ -136,11 +127,7 @@ entities:
   Group:
     displayName: Group
     externalId: Group
-    description: Group entity in AWS
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
+    description: Group represents a AWS IAM Group
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -152,9 +139,10 @@ entities:
       - name: AccountId
         externalId: AccountId
         type: String
+        indexed: true
       - name: CreateDate
         externalId: CreateDate
-        type: String
+        type: DateTime
       - name: GroupId
         externalId: GroupId
         type: String
@@ -169,11 +157,7 @@ entities:
   Policy:
     displayName: Policy
     externalId: Policy
-    description: Policy entity in AWS
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
+    description: Policy represents a AWS IAM Policy
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -185,12 +169,13 @@ entities:
       - name: AccountId
         externalId: AccountId
         type: String
+        indexed: true
       - name: AttachmentCount
         externalId: AttachmentCount
         type: Int64
       - name: CreateDate
         externalId: CreateDate
-        type: String
+        type: DateTime
       - name: DefaultVersionId
         externalId: DefaultVersionId
         type: String
@@ -212,21 +197,17 @@ entities:
         indexed: true
       - name: RoleLastUsed
         externalId: $.RoleLastUsed.LastUsedDate
-        type: String
+        type: DateTime
       - name: PolicyName
         externalId: PolicyName
         type: String
       - name: UpdateDate
         externalId: UpdateDate
-        type: String
+        type: DateTime
   GroupMember:
     displayName: GroupMember
     externalId: GroupMember
-    description: Members of Groups in AWS
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
+    description: GroupMember represents a AWS IAM User belongs to AWS IAM Group
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -246,11 +227,7 @@ entities:
   GroupPolicy:
     displayName: GroupPolicy
     externalId: GroupPolicy
-    description: Policies Assigned to Groups in AWS
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
+    description: GroupPolicy represents a AWS IAM Policies assigned to AWS IAM Group
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -270,11 +247,7 @@ entities:
   RolePolicy:
     displayName: RolePolicy
     externalId: RolePolicy
-    description: Policies Assigned to Roles in AWS
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
+    description: RolePolicy represents a AWS IAM Policies assigned to the AWS IAM Role
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -294,11 +267,7 @@ entities:
   UserPolicy:
     displayName: UserPolicy
     externalId: UserPolicy
-    description: Policies Assigned to Users in AWS
-    syncFrequency: HOURLY
-    syncMinInterval: 1
-    apiCallFrequency: SECONDLY
-    apiCallMinInterval: 1
+    description: UserPolicy represents a AWS IAM Policies assigned to AWS IAM User
     pageSize: 100
     pagesOrderedById: false
     attributes:
