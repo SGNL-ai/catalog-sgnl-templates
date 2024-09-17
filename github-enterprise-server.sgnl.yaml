@@ -13,10 +13,10 @@ type: "GitHub-1.0.0"
 # Example Config:
 # {
 #    "enterpriseSlug": "your-enterprise-slug",  
-#    "isEntepriseCloud": true / false,  
+#    "isEnterpriseCloud": true / false,  
 #    "apiVersion": "v1"
 # }
-adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogInt7SW5wdXQgUmVxdWlyZWR9fSIsCiAgICAiaXNFbnRlcHJpc2VDbG91ZCI6ICJ7e0lucHV0IFJlcXVpcmVkfX0iLAogICAgImFwaVZlcnNpb24iOiAie3tJbnB1dCBSZXF1aXJlZCBmb3IgUkVTVC1iYXNlZCBlbnRpdGllc319Igp9"
+adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogInt7SW5wdXQgUmVxdWlyZWR9fSIsCiAgICAiaXNFbnRlcnByaXNlQ2xvdWQiOiB7e0lucHV0IFJlcXVpcmVkfX0sCiAgICAiYXBpVmVyc2lvbiI6ICJ7e0lucHV0IFJlcXVpcmVkIGZvciBSRVNULWJhc2VkIGVudGl0aWVzfX0iCn0="
 auth:
   - bearer:
       authToken: "Bearer {{Input Required}}"
@@ -65,9 +65,6 @@ entities:
       - name: login
         externalId: login
         type: String
-      - name: ipAllowListEnabledSetting
-        externalId: ipAllowListEnabledSetting
-        type: String
       - name: isVerified
         externalId: isVerified
         type: Bool
@@ -80,18 +77,12 @@ entities:
       - name: newTeamResourcePath
         externalId: newTeamResourcePath
         type: String
-      - name: organizationBillingEmail
-        externalId: organizationBillingEmail
-        type: String 
       - name: pinnedItemsRemaining
         externalId: pinnedItemsRemaining
         type: Int64
       - name: projectsResourcePath
         externalId: projectsResourcePath
         type: String
-      - name: requiresTwoFactorAuthentication
-        externalId: requiresTwoFactorAuthentication
-        type: Bool
       - name: resourcePath
         externalId: resourcePath
         type: String
