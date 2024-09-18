@@ -20,7 +20,7 @@ entities:
         indexed: true
         uniqueId: true
       - name: subject
-        externalId: $.sub_id.id
+        externalId: $.sub_id.email
         type: String
         indexed: true
       - name: issuer
@@ -56,7 +56,7 @@ entities:
         indexed: true
         uniqueId: true
       - name: subject
-        externalId: $.sub_id.id
+        externalId: $.sub_id.email
         type: String
         indexed: true
       - name: issuer
@@ -92,7 +92,7 @@ entities:
         indexed: true
         uniqueId: true
       - name: subject
-        externalId: $.sub_id.id
+        externalId: $.sub_id.email
         type: String
         indexed: true
       - name: issuer
@@ -131,7 +131,7 @@ entities:
         indexed: true
         uniqueId: true
       - name: subject
-        externalId: $.sub_id.id
+        externalId: $.sub_id.email
         type: String
         indexed: true
       - name: issuer
@@ -167,7 +167,7 @@ entities:
         indexed: true
         uniqueId: true
       - name: subject
-        externalId: $.sub_id.id
+        externalId: $.sub_id.email
         type: String
         indexed: true
       - name: issuer
@@ -206,7 +206,7 @@ entities:
         indexed: true
         uniqueId: true
       - name: subject
-        externalId: $.sub_id.id
+        externalId: $.sub_id.email
         type: String
         indexed: true
       - name: issuer
@@ -242,7 +242,7 @@ entities:
         indexed: true
         uniqueId: true
       - name: subject
-        externalId: $.sub_id.id
+        externalId: $.sub_id.email
         type: String
         indexed: true
       - name: issuer
