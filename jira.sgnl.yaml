@@ -73,6 +73,7 @@ entities:
       - name: key
         externalId: key
         type: String
+        indexed: true
       - name: fields__statuscategorychangedate
         externalId: fields__statuscategorychangedate
         type: DateTime
