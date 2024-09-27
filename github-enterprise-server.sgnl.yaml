@@ -16,7 +16,7 @@ type: "GitHub-1.0.0"
 #    "isEnterpriseCloud": true / false,  
 #    "apiVersion": "v1"
 # }
-adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogInt7SW5wdXQgUmVxdWlyZWR9fSIsCiAgICAiaXNFbnRlcnByaXNlQ2xvdWQiOiAie3tJbnB1dCBSZXF1aXJlZH19IiwKICAgICJhcGlWZXJzaW9uIjogInt7SW5wdXQgUmVxdWlyZWQgZm9yIFJFU1QtYmFzZWQgZW50aXRpZXN9fSIKfQ=="
+adapterConfig: "ewogICAgImVudGVycHJpc2VTbHVnIjogInt7SW5wdXQgUmVxdWlyZWR9fSIsCiAgICAiaXNFbnRlcnByaXNlQ2xvdWQiOiB0cnVlLAogICAgImFwaVZlcnNpb24iOiAie3tJbnB1dCBSZXF1aXJlZCBmb3IgUkVTVC1iYXNlZCBlbnRpdGllc319Igp9"
 auth:
   - bearer:
       authToken: "Bearer {{Input Required}}"
