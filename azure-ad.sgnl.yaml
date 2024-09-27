@@ -567,7 +567,8 @@ entities:
       - name: registeredOwner
         externalId: $.registeredOwners[0].id
         type: String
-        attributeAlias: registeredOwner
+        attributeAlias: deviceRegisteredOwner
+        indexed: true
       - name: systemLabels
         externalId: systemLabels
         type: String
