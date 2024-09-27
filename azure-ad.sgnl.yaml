@@ -658,7 +658,7 @@ relationships:
   DeviceOwner:
     name: DeviceOwner
     displayName: Device Owner
-    fromAttribute: registeredOwner
+    fromAttribute: deviceRegisteredOwner
     toAttribute: User.id
   UserManager:
     name: Manager
