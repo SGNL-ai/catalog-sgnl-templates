@@ -472,9 +472,11 @@ entities:
       - name: name
         externalId: name
         type: String
+        indexed: true
       - name: nameWithOwner
         externalId: nameWithOwner
         type: String
+        indexed: true
       - name: projectsResourcePath
         externalId: projectsResourcePath
         type: String
