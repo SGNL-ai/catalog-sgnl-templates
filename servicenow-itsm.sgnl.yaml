@@ -331,6 +331,10 @@ entities:
         externalId: caused_by
         type: String
         indexed: true
+      - name: urgency
+        externalId: urgency
+        type: String
+        indexed: true
 
   ChangeRequest:
     displayName: ChangeRequest
@@ -347,6 +351,10 @@ entities:
         uniqueId: true
       - name: active
         externalId: active
+        type: String
+        indexed: true
+      - name: approval
+        externalId: approval
         type: String
         indexed: true
       - name: number
@@ -395,6 +403,10 @@ entities:
         type: String
       - name: type
         externalId: type
+        type: String
+        indexed: true
+      - name: configurationItem
+        externalId: cmdb_ci
         type: String
         indexed: true
 
@@ -537,6 +549,44 @@ entities:
         type: String
         indexed: true
 
+  ConfigurationItem:
+    displayName: Configuration Item
+    externalId: cmdb_ci
+    description: Configuration Item Entity in ServiceNow
+    pageSize: 150
+    pagesOrderedById: true
+    attributes:
+      - name: id
+        externalId: sys_id
+        description: ID of the problem
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: assetTag
+        externalId: asset_tag
+        type: String
+        indexed: true
+      - name: Category
+        externalId: category
+        type: String
+        indexed: true
+      - name: CorrelationId
+        externalId: correlation_id
+        type: String
+        indexed: true
+      - name: desiredAssetTag
+        externalId: u_asset_tag_desired
+        type: String
+        indexed: true
+      - name: Justification
+        externalId: justification
+        type: String
+        indexed: true
+      - name: name
+        externalId: name
+        type: String
+        indexed: true
+
 relationships:
   UserManager:
     name: Manager
@@ -618,6 +668,11 @@ relationships:
     displayName: Incident Resolved By
     fromAttribute: incident.resolved_by
     toAttribute: sys_user.sys_id
+  IncidentLinkedTo:
+    name: IncidentLinkedTo
+    displayName: Incident Linked To
+    fromAttribute: incident.cmdb_ci
+    toAttribute: cmdb_ci.sys_id
   ChangeRequestedBy:
     name: RequestedBy
     displayName: Change Requested By
@@ -633,6 +688,11 @@ relationships:
     displayName: Change Request Assigned To Group
     fromAttribute: change_request.assignment_group
     toAttribute: sys_user_group.sys_id
+  ChangeRequestLinkedTo:
+    name: ChangeRequestLinkedTo
+    displayName: ChangeRequest Linked To
+    fromAttribute: change_request.cmdb_ci
+    toAttribute: cmdb_ci.sys_id
   ProblemAssignedTo:
     name: AssignedToUser
     displayName: Problem Assigned To
