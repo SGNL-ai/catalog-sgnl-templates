@@ -18,7 +18,7 @@ adapterConfig: "ewogICAgImFwaVZlcnNpb24iOiAidjEiLAogICAgImFyY2hpdmVkIjogZmFsc2Us
 auth:
   - oAuth2ClientCredentials:
       clientId: "{{Input Required: Client-ID}}"
-      tokenUrl: "{{Input Required: Token-URL}}"
+      tokenUrl: "https://api.{{Input Required: API Region (e.g. us-1)}}.crowdstrike.com/oauth2/token"
       authStyle: "AutoDetect"
       clientSecret: "{{Input Required: Client-Secret}}"
   - bearer:
