@@ -1,0 +1,582 @@
+displayName: "CrowdStrike Identity Threat Protection"
+icon: PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTU1Ljg5OTEgNTZDNTQuMjY1IDUyLjI2IDUwLjk4MjcgNDcuNDYxNiAzOC4xMjcyIDQwLjYwOTJDMzIuMTk3OSAzNy4zMTI3IDIyLjA2OTUgMzIuMjM3NSAxMi45NjMzIDIyLjU4NTZDMTMuNzg5IDI2LjA2NzYgMTguMDE5NyAzMy43MTkgMzYuMjA4NCA0My4yNjcxQzQxLjI0NzUgNDYuMDI0MSA0OS43Njg2IDQ4LjYwOTcgNTUuODk5MSA1NS45ODc0IiBmaWxsPSIjRDgyRTIwIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNTUuMDgxMyA0OS41OTlDNTMuNTMwNiA0NS4xNzk2IDUwLjczMTEgMzkuNTIwOSAzNy40NTA5IDMxLjExOTNDMzAuOTg1MyAyNi44ODIzIDIxLjQ4NzYgMjEuNTYxNyA5IDhDOS44OTMzMiAxMS42NTY2IDEzLjg0MDkgMjEuMTY1NCAzMy43MzkyIDMzLjUwOThDNDAuMjc1NSAzNy45Mzg3IDQ4LjcxMTcgNDAuNjcwNSA1NS4wODEzIDQ5LjU5OVoiIGZpbGw9IiNEODJFMjAiLz4KPC9zdmc+Cg==
+description: "CrowdStrike Identity Threat Protection as a System of Record"
+address: "api.{{Input Required: API Region (e.g. us-1)}}.crowdstrike.com"
+defaultSyncFrequency: HOURLY
+defaultSyncMinInterval: 1
+defaultApiCallFrequency: SECONDLY
+defaultApiCallMinInterval: 1
+type: "CrowdStrike-1.0.0"
+# Example Config:
+# {
+#     "apiVersion": "v1",
+#     "archived": false,
+#     "enabled": true
+# }
+adapterConfig: "ewogICAgImFwaVZlcnNpb24iOiAidjEiLAogICAgImFyY2hpdmVkIjogZmFsc2UsCiAgICAiZW5hYmxlZCI6IHRydWUKfQ=="
+# All auth mechanisms specified below must be supported by the specified Adapter.
+auth:
+  - oAuth2ClientCredentials:
+      clientId: "{{Input Required: Client-ID}}"
+      tokenUrl: "https://api.{{Input Required: API Region (e.g. us-1)}}.crowdstrike.com/oauth2/token"
+      authStyle: "AutoDetect"
+      clientSecret: "{{Input Required: Client-Secret}}"
+  - bearer:
+      authToken: "{{Input Required: AuthToken}}"
+entities:
+  User:
+    displayName: User
+    externalId: user
+    description: User represents a user in the CrowdStrike platform.
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: entityId
+        externalId: entityId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: primaryDisplayName
+        externalId: primaryDisplayName
+        type: String
+      - name: secondaryDisplayName
+        externalId: secondaryDisplayName
+        type: String
+      - name: archived
+        externalId: archived
+        type: Bool
+      - name: creationTime
+        externalId: creationTime
+        type: DateTime
+      - name: earliestSeenTraffic
+        externalId: earliestSeenTraffic
+        type: DateTime
+      - name: hasADDomainAdminRole
+        externalId: hasADDomainAdminRole
+        type: Bool
+      - name: impactScore
+        externalId: impactScore
+        type: Double
+      - name: inactive
+        externalId: inactive
+        type: Bool
+      - name: learned
+        externalId: learned
+        type: Bool
+      - name: markTime
+        externalId: markTime
+        type: DateTime
+      - name: mostRecentActivity
+        externalId: mostRecentActivity
+        type: DateTime
+      - name: riskScore
+        externalId: riskScore
+        type: Double
+      - name: riskScoreSeverity
+        externalId: riskScoreSeverity
+        type: String
+      - name: riskScoreWithoutLinkedAccounts
+        externalId: riskScoreWithoutLinkedAccounts
+        type: Double
+      - name: shared
+        externalId: shared
+        type: Bool
+      - name: stale
+        externalId: stale
+        type: Bool
+      - name: watched
+        externalId: watched
+        type: Bool
+      - name: type
+        externalId: type
+        type: String
+
+  UserRiskFactor:
+    parent: user
+    displayName: UserRiskFactor
+    externalId: $.riskFactors
+    description: UserRiskFactor represents the risk factor associated with a user.
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: type
+        externalId: type
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: score
+        externalId: score
+        type: Double
+      - name: severity
+        externalId: severity
+        type: String
+
+  UserAccountActiveDirectory:
+    parent: user
+    displayName: UserAccountActiveDirectory
+    externalId: $.accounts[?(@.__typename=="ActiveDirectoryAccountDescriptor")]
+    description: UserAccountActiveDirectory represents the Active Directory account associated with a user.
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: objectGuid
+        externalId: objectGuid
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: objectSid
+        externalId: objectSid
+        type: String
+      - name: typename
+        externalId: __typename
+        type: String
+      - name: archived
+        externalId: archived
+        type: Bool
+      - name: cn
+        externalId: cn
+        type: String
+      - name: consistencyGuid
+        externalId: consistencyGuid
+        type: String
+      - name: creationTime
+        externalId: creationTime
+        type: DateTime
+      - name: dataSource
+        externalId: dataSource
+        type: String
+      - name: department
+        externalId: department
+        type: String
+      - name: description
+        externalId: description
+        type: String
+      - name: dn
+        externalId: dn
+        type: String
+      - name: domain
+        externalId: domain
+        type: String
+      - name: enabled
+        externalId: enabled
+        type: Bool
+      - name: expirationTime
+        externalId: expirationTime
+        type: DateTime
+      - name: lastUpdateTime
+        externalId: lastUpdateTime
+        type: DateTime
+      - name: lockoutTime
+        externalId: lockoutTime
+        type: DateTime
+      - name: mostRecentActivity
+        externalId: mostRecentActivity
+        type: DateTime
+      - name: ou
+        externalId: ou
+        type: String
+      - name: samAccountName
+        externalId: samAccountName
+        type: String
+      - name: servicePrincipalNames
+        externalId: servicePrincipalNames
+        type: String
+        list: true
+      - name: title
+        externalId: title
+        type: String
+      - name: upn
+        externalId: upn
+        type: String
+      - name: userAccountControl
+        externalId: userAccountControl
+        type: Int64
+      - name: userAccountControlFlags
+        externalId: userAccountControlFlags
+        type: String
+        list: true
+
+  Endpoint:
+    displayName: Endpoint
+    externalId: endpoint
+    description: Endpoint represents an endpoint in the CrowdStrike platform.
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: entityId
+        externalId: entityId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: agentId
+        externalId: agentId
+        type: String
+      - name: agentVersion
+        externalId: agentVersion
+        type: String
+      - name: archived
+        externalId: archived
+        type: Bool
+      - name: cid
+        externalId: cid
+        type: String
+      - name: creationTime
+        externalId: creationTime
+        type: DateTime
+      - name: earliestSeenTraffic
+        externalId: earliestSeenTraffic
+        type: DateTime
+      - name: guestAccountEnabled
+        externalId: guestAccountEnabled
+        type: Bool
+      - name: hasADDomainAdminRole
+        externalId: hasADDomainAdminRole
+        type: Bool
+      - name: hasRole
+        externalId: hasRole
+        type: Bool
+      - name: hostName
+        externalId: hostName
+        type: String
+      - name: impactScore
+        externalId: impactScore
+        type: Double
+      - name: inactive
+        externalId: inactive
+        type: Bool
+      - name: lastIpAddress
+        externalId: lastIpAddress
+        type: String
+      - name: learned
+        externalId: learned
+        type: Bool
+      - name: markTime
+        externalId: markTime
+        type: DateTime
+      - name: mostRecentActivity
+        externalId: mostRecentActivity
+        type: DateTime
+      - name: primaryDisplayName
+        externalId: primaryDisplayName
+        type: String
+      - name: riskScore
+        externalId: riskScore
+        type: Double
+      - name: riskScoreSeverity
+        externalId: riskScoreSeverity
+        type: String
+      - name: secondaryDisplayName
+        externalId: secondaryDisplayName
+        type: String
+      - name: shared
+        externalId: shared
+        type: Bool
+      - name: stale
+        externalId: stale
+        type: Bool
+      - name: type
+        externalId: type
+        type: String
+      - name: unmanaged
+        externalId: unmanaged
+        type: Bool
+      - name: watched
+        externalId: watched
+        type: Bool
+      - name: ztaScore
+        externalId: ztaScore
+        type: Double
+
+  EndpointRiskFactor:
+    parent: endpoint
+    displayName: EndpointRiskFactor
+    externalId: $.riskFactors
+    description: EndpointRiskFactor represents the risk factor associated with an endpoint.
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: type
+        externalId: type
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: score
+        externalId: score
+        type: Double
+      - name: severity
+        externalId: severity
+        type: String
+
+  EndpointAccountActiveDirectory:
+    parent: endpoint
+    displayName: EndpointAccountActiveDirectory
+    externalId: $.accounts[?(@.__typename=="ActiveDirectoryAccountDescriptor")]
+    description: EndpointAccountActiveDirectory represents the Active Directory account associated with the endpoint.
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: objectGuid
+        externalId: objectGuid
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: objectSid
+        externalId: objectSid
+        type: String
+      - name: typename
+        externalId: __typename
+        type: String
+      - name: archived
+        externalId: archived
+        type: Bool
+      - name: cn
+        externalId: cn
+        type: String
+      - name: consistencyGuid
+        externalId: consistencyGuid
+        type: String
+      - name: creationTime
+        externalId: creationTime
+        type: DateTime
+      - name: dataSource
+        externalId: dataSource
+        type: String
+      - name: department
+        externalId: department
+        type: String
+      - name: description
+        externalId: description
+        type: String
+      - name: dn
+        externalId: dn
+        type: String
+      - name: domain
+        externalId: domain
+        type: String
+      - name: enabled
+        externalId: enabled
+        type: Bool
+      - name: expirationTime
+        externalId: expirationTime
+        type: DateTime
+      - name: lastUpdateTime
+        externalId: lastUpdateTime
+        type: DateTime
+      - name: lockoutTime
+        externalId: lockoutTime
+        type: DateTime
+      - name: mostRecentActivity
+        externalId: mostRecentActivity
+        type: DateTime
+      - name: ou
+        externalId: ou
+        type: String
+      - name: samAccountName
+        externalId: samAccountName
+        type: String
+      - name: servicePrincipalNames
+        externalId: servicePrincipalNames
+        type: String
+        list: true
+      - name: title
+        externalId: title
+        type: String
+      - name: upn
+        externalId: upn
+        type: String
+      - name: userAccountControl
+        externalId: userAccountControl
+        type: Int64
+      - name: userAccountControlFlags
+        externalId: userAccountControlFlags
+        type: String
+        list: true
+
+  Incident:
+    displayName: Incident
+    externalId: incident
+    description: Incident represents an incident in the CrowdStrike platform.
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: incidentId
+        externalId: incidentId
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: incidentId
+      - name: endTime
+        externalId: endTime
+        type: DateTime
+      - name: lifeCycleStage
+        externalId: lifeCycleStage
+        type: String
+      - name: markedAsRead
+        externalId: markedAsRead
+        type: Bool
+      - name: severity
+        externalId: severity
+        type: String
+      - name: startTime
+        externalId: startTime
+        type: DateTime
+      - name: type
+        externalId: type
+        type: String
+
+  IncidentCompromisedEntity:
+    parent: incident
+    displayName: IncidentCompromisedEntity
+    externalId: $.compromisedEntities
+    description: EndpointRiskFactor represents the risk factor associated with an endpoint.
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: entityId
+        externalId: entityId
+        type: String
+        indexed: true
+        uniqueId: true
+        attributeAlias: compromisedEntityId
+      - name: archived
+        externalId: archived
+        type: Bool
+      - name: creationTime
+        externalId: creationTime
+        type: DateTime
+      - name: hasADDomainAdminRole
+        externalId: hasADDomainAdminRole
+        type: Bool
+      - name: hasRole
+        externalId: hasRole
+        type: Bool
+      - name: learned
+        externalId: learned
+        type: Bool
+      - name: markTime
+        externalId: markTime
+        type: DateTime
+      - name: primaryDisplayName
+        externalId: primaryDisplayName
+        type: String
+      - name: riskScore
+        externalId: riskScore
+        type: Double
+      - name: riskScoreSeverity
+        externalId: riskScoreSeverity
+        type: String
+      - name: secondaryDisplayName
+        externalId: secondaryDisplayName
+        type: String
+      - name: type
+        externalId: type
+        type: String
+      - name: watched
+        externalId: watched
+        type: Bool
+
+  IncidentAlertEvent:
+    parent: incident
+    displayName: IncidentAlertEvent
+    externalId: $.alertEvents
+    description: IncidentAlertEvent represents the alert event associated with an incident.
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: eventId
+        externalId: eventId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: alertId
+        externalId: alertId
+        type: String
+      - name: alertType
+        externalId: alertType
+        type: String
+      - name: endTime
+        externalId: endTime
+        type: DateTime
+      - name: eventLabel
+        externalId: eventLabel
+        type: String
+      - name: eventSeverity
+        externalId: eventSeverity
+        type: String
+      - name: eventType
+        externalId: eventType
+        type: String
+      - name: patternId
+        externalId: patternId
+        type: Int64
+      - name: resolved
+        externalId: resolved
+        type: Bool
+      - name: startTime
+        externalId: startTime
+        type: DateTime
+      - name: timestamp
+        externalId: timestamp
+        type: DateTime
+
+  IncidentAlertEventEntity:
+    parent: $.alertEvents
+    displayName: IncidentAlertEventEntity
+    externalId: $.entities
+    description: IncidentAlertEventEntity represents the entity associated with an alert event.
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: entityId
+        externalId: entityId
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: archived
+        externalId: archived
+        type: Bool
+      - name: creationTime
+        externalId: creationTime
+        type: DateTime
+      - name: hasADDomainAdminRole
+        externalId: hasADDomainAdminRole
+        type: Bool
+      - name: hasRole
+        externalId: hasRole
+        type: Bool
+      - name: learned
+        externalId: learned
+        type: Bool
+      - name: markTime
+        externalId: markTime
+        type: DateTime
+      - name: primaryDisplayName
+        externalId: primaryDisplayName
+        type: String
+      - name: riskScore
+        externalId: riskScore
+        type: Double
+      - name: riskScoreSeverity
+        externalId: riskScoreSeverity
+        type: String
+      - name: secondaryDisplayName
+        externalId: secondaryDisplayName
+        type: String
+      - name: type
+        externalId: type
+        type: String
+      - name: watched
+        externalId: watched
+        type: Bool
+
+relationships:
+  CompromisedUserEntity:
+    displayName: CompromisedUserEntity
+    name: CompromisedUserEntity
+    fromAttribute: compromisedEntityId
+    toAttribute: user.entityId
+  CompromisedEndpointEntity:
+    displayName: CompromisedEndpointEntity
+    name: CompromisedEndpointEntity
+    fromAttribute: compromisedEntityId
+    toAttribute: endpoint.entityId
