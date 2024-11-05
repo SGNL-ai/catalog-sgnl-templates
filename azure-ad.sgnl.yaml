@@ -621,7 +621,87 @@ entities:
         externalId: memberId
         type: String
         indexed: true      
-
+  RoleAssignment:    
+    description: "Role Assignment in Azure AD"
+    displayName: RoleAssignment
+    externalId: RoleAssignment
+    pageSize: 999
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: principalId
+        externalId: principalId
+        type: String
+      - name: roleDefinitionId
+        externalId: roleDefinitionId
+        type: String
+  RoleRequest:    
+    description: "Role Assignment Schedule Request in Azure AD"
+    displayName: RoleRequest
+    externalId: RoleAssignmentScheduleRequest
+    pageSize: 999
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: action
+        externalId: action
+        type: String
+      - name: approvalId
+        externalId: approvalId
+        type: String
+      - name: justification
+        externalId: justification
+        type: String
+      - name: principalId
+        externalId: principalId
+        type: String
+      - name: completedDateTime
+        externalId: completedDateTime
+        type: DateTime
+      - name: createdDateTime
+        externalId: createdDateTime
+        type: DateTime
+  GroupRequest:    
+    description: "Group Assignment Schedule Request in Azure AD"
+    displayName: GroupRequest
+    externalId: GroupAssignmentScheduleRequest
+    pageSize: 999
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: accessId
+        externalId: accessId
+        type: String
+      - name: approvalId
+        externalId: approvalId
+        type: String
+      - name: groupId
+        externalId: groupId
+        type: String
+      - name: principalId
+        externalId: principalId
+        type: String
+      - name: status
+        externalId: status
+        type: String
+      - name: action
+        externalId: action
+        type: String
+      - name: completedDateTime
+        externalId: completedDateTime
+        type: DateTime
 
 relationships:
   UserRoleMember:
