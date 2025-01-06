@@ -1,8 +1,8 @@
-# Azure AD Configuration YAML for DS2.0
-displayName: "Azure AD"
+# Entra ID Configuration YAML for DS2.0
+displayName: "Entra ID"
 icon: |
   PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjMDEzRjg2Ii8+CjxwYXRoIGQ9Ik0xMi4yNzYzIDMyLjk1NTVMMzIgNDUuODI2MVY5LjVMMTIuMjc2MyAzMi45NTU1WiIgZmlsbD0iIzRGRTZGRiIvPgo8cGF0aCBkPSJNOCAzOC4wNTA0TDMyIDUzLjk3ODZWNDguODUwN0wxMC43NjY1IDM0Ljc1NzhMOCAzOC4wNTA0WiIgZmlsbD0iIzRGRTZGRiIvPgo8cGF0aCBkPSJNNTYgMzguMDUwNEwzMiA1My45Nzg2VjQ4Ljg1MDdMNTMuMjMzNSAzNC43NTc4TDU2IDM4LjA1MDRaIiBmaWxsPSIjMzY5QkU1Ii8+CjxwYXRoIGQ9Ik01MS43MjM3IDMyLjk1NTVMMzIgNDUuODI2MVY5LjVMNTEuNzIzNyAzMi45NTU1WiIgZmlsbD0iIzQyQTJFOCIvPgo8cGF0aCBkPSJNMTIuMjgxMiAzMi45NTA2TDEyLjI3NjMgMzIuOTU1NUwzMiA0NS44MjYxVjI4LjI0NzNMMTIuMjgxMiAzMi45NTA2WiIgZmlsbD0iIzk5RUNGQSIvPgo8cGF0aCBkPSJNNTEuNzIgMzIuOTUwNkw1MS43MjM3IDMyLjk1NTVMMzIgNDUuODI2MVYyOC4yNDczTDUxLjcyIDMyLjk1MDZaIiBmaWxsPSIjNTJCMURGIi8+Cjwvc3ZnPg==
-description: "Azure AD as a System of Record"
+description: "Entra ID as a System of Record"
 hostname: "graph.microsoft.com"
 defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
@@ -27,7 +27,7 @@ entities:
   User:
     displayName: User
     externalId: User
-    description: User Entity in Azure AD
+    description: User Entity in Entra ID
     pageSize: 999
     pagesOrderedById: false
     attributes:
@@ -209,7 +209,7 @@ entities:
         externalId: passwordProfile__forceChangePasswordNextSignInWithMfa
         type: Bool
   Group:
-    description: "Group Entity in Azure AD"
+    description: "Group Entity in Entra ID"
     displayName: Group
     externalId: Group
     pageSize: 999
@@ -323,7 +323,7 @@ entities:
         externalId: licenseProcessingState
         type: String
   GroupMember:
-    description: "Group Member Entity in Azure AD"
+    description: "Group Member Entity in Entra ID"
     displayName: GroupMember
     externalId: GroupMember
     pageSize: 999
@@ -343,7 +343,7 @@ entities:
         type: String
         indexed: true
   Application:    
-    description: "Application Entity in Azure AD"
+    description: "Application Entity in Entra ID"
     displayName: Application
     externalId: Application
     pageSize: 999
@@ -485,7 +485,7 @@ entities:
         externalId: webApplication__logoutUrl
         type: String
   Device:    
-    description: "Device Entity in Azure AD"
+    description: "Device Entity in Entra ID"
     displayName: Device
     externalId: Device
     pageSize: 999
@@ -577,7 +577,7 @@ entities:
         externalId: trustType
         type: String
   Role:
-    description: "Directory Role Entity in Azure AD"
+    description: "Directory Role Entity in Entra ID"
     displayName: Role
     externalId: Role
     pageSize: 999
@@ -602,7 +602,7 @@ entities:
         externalId: deletedDateTime
         type: DateTime
   RoleMember:    
-    description: "Directory Role Member Entity in Azure AD"
+    description: "Directory Role Member Entity in Entra ID"
     displayName: RoleMember
     externalId: RoleMember
     pageSize: 999
@@ -622,7 +622,7 @@ entities:
         type: String
         indexed: true      
   RoleAssignment:    
-    description: "Role Assignment in Azure AD"
+    description: "Role Assignment in Entra ID"
     displayName: RoleAssignment
     externalId: RoleAssignment
     pageSize: 999
@@ -640,7 +640,7 @@ entities:
         externalId: roleDefinitionId
         type: String
   RoleRequest:    
-    description: "Role Assignment Schedule Request in Azure AD"
+    description: "Role Assignment Schedule Request in Entra ID"
     displayName: RoleRequest
     externalId: RoleAssignmentScheduleRequest
     pageSize: 999
@@ -670,7 +670,7 @@ entities:
         externalId: createdDateTime
         type: DateTime
   GroupRequest:    
-    description: "Group Assignment Schedule Request in Azure AD"
+    description: "Group Assignment Schedule Request in Entra ID"
     displayName: GroupRequest
     externalId: GroupAssignmentScheduleRequest
     pageSize: 999
