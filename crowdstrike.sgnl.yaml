@@ -1,6 +1,6 @@
-displayName: "CrowdStrike Identity Threat Protection"
+displayName: "CrowdStrike"
 icon: PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTU1Ljg5OTEgNTZDNTQuMjY1IDUyLjI2IDUwLjk4MjcgNDcuNDYxNiAzOC4xMjcyIDQwLjYwOTJDMzIuMTk3OSAzNy4zMTI3IDIyLjA2OTUgMzIuMjM3NSAxMi45NjMzIDIyLjU4NTZDMTMuNzg5IDI2LjA2NzYgMTguMDE5NyAzMy43MTkgMzYuMjA4NCA0My4yNjcxQzQxLjI0NzUgNDYuMDI0MSA0OS43Njg2IDQ4LjYwOTcgNTUuODk5MSA1NS45ODc0IiBmaWxsPSIjRDgyRTIwIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNTUuMDgxMyA0OS41OTlDNTMuNTMwNiA0NS4xNzk2IDUwLjczMTEgMzkuNTIwOSAzNy40NTA5IDMxLjExOTNDMzAuOTg1MyAyNi44ODIzIDIxLjQ4NzYgMjEuNTYxNyA5IDhDOS44OTMzMiAxMS42NTY2IDEzLjg0MDkgMjEuMTY1NCAzMy43MzkyIDMzLjUwOThDNDAuMjc1NSAzNy45Mzg3IDQ4LjcxMTcgNDAuNjcwNSA1NS4wODEzIDQ5LjU5OVoiIGZpbGw9IiNEODJFMjAiLz4KPC9zdmc+Cg==
-description: "CrowdStrike Identity Threat Protection as a System of Record"
+description: "CrowdStrike as a System of Record"
 address: "api.{{Input Required: API Region (e.g. us-1)}}.crowdstrike.com"
 defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
@@ -27,7 +27,7 @@ entities:
   User:
     displayName: User
     externalId: user
-    description: User represents a user in the CrowdStrike platform.
+    description: User represents a user in the CrowdStrike platform. This is fetched from the Identity Protection module.
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -199,7 +199,7 @@ entities:
   Endpoint:
     displayName: Endpoint
     externalId: endpoint
-    description: Endpoint represents an endpoint in the CrowdStrike platform.
+    description: Endpoint represents an endpoint in the CrowdStrike platform. This is fetched from the Identity Protection module.
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -395,7 +395,7 @@ entities:
   Incident:
     displayName: Incident
     externalId: incident
-    description: Incident represents an incident in the CrowdStrike platform.
+    description: Incident represents an incident in the CrowdStrike platform. This is fetched from the Identity Protection module.
     pageSize: 100
     pagesOrderedById: false
     attributes:
@@ -572,7 +572,7 @@ entities:
   Device:
     displayName: Device
     externalId: endpoint_protection_device
-    description: Device represents a device in the Endpoint Protection module on CrowdStrike platform.
+    description: Device represents a device in CrowdStrike platform.. This is fetched from the Endpoint Protection module.
     pageSize: 100
     attributes:
       - name: deviceId
@@ -623,7 +623,7 @@ entities:
   Detection:
     displayName: Detection
     externalId: endpoint_protection_detect
-    description: Detection represents a detection in the Endpoint Protection module on CrowdStrike platform.
+    description: Detection represents a detection in the CrowdStrike platform. This is fetched from the Endpoint Protection module.
     pageSize: 100
     attributes:
       - name: detectionId
@@ -659,7 +659,7 @@ entities:
   EndpointIncident:
     displayName: Endpoint Incident
     externalId: endpoint_protection_incident
-    description: Endpoint Incident represents a incident in the Endpoint Protection module on CrowdStrike platform.
+    description: Endpoint Incident represents an incident in the CrowdStrike platform. This is fetched from the Endpoint Protection module.
     pageSize: 100
     attributes:
       - name: incidentId
