@@ -583,7 +583,7 @@ entities:
       - name: cId
         externalId: cid
         type: String
-      - name: deviceType
+      - name: productTypeDesc
         externalId: product_type_desc
         type: String
       - name: serviceProvider
@@ -616,7 +616,7 @@ entities:
       - name: zoneGroup
         externalId: zone_group
         type: String
-      - name: modifiedAt
+      - name: modifiedTimestamp
         externalId: modified_timestamp
         type: DateTime
 
