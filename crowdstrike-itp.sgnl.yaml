@@ -569,6 +569,137 @@ entities:
         externalId: watched
         type: Bool
 
+  Device:
+    displayName: Device
+    externalId: endpoint_protection_device
+    description: Device represents a device in the Endpoint Protection module on CrowdStrike platform.
+    pageSize: 100
+    attributes:
+      - name: deviceId
+        externalId: device_id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: cId
+        externalId: cid
+        type: String
+      - name: DeviceType
+        externalId: product_type_desc
+        type: String
+      - name: ServiceProvider
+        externalId: service_provider
+        type: String
+      - name: ServiceProviderAccountId
+        externalId: service_provider_account_id
+        type: String
+      - name: HostName
+        externalId: hostname
+        type: String
+      - name: LastLoginTimestamp
+        externalId: last_login_timestamp
+        type: DateTime
+      - name: LastLoginUser
+        externalId: last_login_user
+        type: String
+      - name: LastLoginUserSid
+        externalId: last_login_user_sid
+        type: String
+      - name: PlatformName
+        externalId: platform_name
+        type: String
+      - name: ProvisionStatus
+        externalId: provision_status
+        type: String
+      - name: Status
+        externalId: status
+        type: String
+      - name: ZoneGroup
+        externalId: zone_group
+        type: String
+      - name: ModifiedAt
+        externalId: modified_timestamp
+        type: DateTime
+
+  Detection:
+    displayName: Detection
+    externalId: endpoint_protection_detect
+    description: Detection represents a detection in the Endpoint Protection module on CrowdStrike platform.
+    pageSize: 100
+    attributes:
+      - name: DetectionId
+        externalId: detection_id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: EmailSent
+        externalId: email_sent
+        type: Bool
+      - name: Status
+        externalId: status
+        type: String
+      - name: CID
+        externalId: cid
+        type: String
+      - name: CreatedTimestamp
+        externalId: created_timestamp
+        type: DateTime
+      - name: MaxConfidence
+        externalId: max_confidence
+        type: Int64
+      - name: MaxSeverity
+        externalId: max_severity
+        type: Int64
+      - name: MaxSeverityDisplayname
+        externalId: max_severity_displayname
+        type: String
+      - name: DateUpdated
+        externalId: date_updated
+        type: DateTime
+
+
+  EndpointIncident:
+    displayName: Endpoint Incident
+    externalId: endpoint_protection_incident
+    description: Endpoint Incident represents a incident in the Endpoint Protection module on CrowdStrike platform.
+    pageSize: 100
+    attributes:
+      - name: IncidentId
+        externalId: incident_id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: State
+        externalId: state
+        type: String
+      - name: IncidentType
+        externalId: incident_type
+        type: Int64
+      - name: Cid
+        externalId: cid
+        type: String
+      - name: HostIds
+        externalId: host_ids
+        type: String
+        list: true
+      - name: Created
+        externalId: created
+        type: DateTime
+      - name: Start
+        externalId: start
+        type: DateTime  
+      - name: End
+        externalId: end
+        type: DateTime
+      - name: EmailState
+        externalId: email_state
+        type: String
+      - name: Status
+        externalId: status
+        type: Int64
+      - name: FineScore
+        externalId: fine_score
+        type: Int64
+
 relationships:
   CompromisedUserEntity:
     displayName: CompromisedUserEntity
