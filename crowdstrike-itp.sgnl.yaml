@@ -583,40 +583,40 @@ entities:
       - name: cId
         externalId: cid
         type: String
-      - name: DeviceType
+      - name: deviceType
         externalId: product_type_desc
         type: String
-      - name: ServiceProvider
+      - name: serviceProvider
         externalId: service_provider
         type: String
-      - name: ServiceProviderAccountId
+      - name: serviceProviderAccountId
         externalId: service_provider_account_id
         type: String
-      - name: HostName
+      - name: hostName
         externalId: hostname
         type: String
-      - name: LastLoginTimestamp
+      - name: lastLoginTimestamp
         externalId: last_login_timestamp
         type: DateTime
-      - name: LastLoginUser
+      - name: lastLoginUser
         externalId: last_login_user
         type: String
-      - name: LastLoginUserSid
+      - name: lastLoginUserSid
         externalId: last_login_user_sid
         type: String
-      - name: PlatformName
+      - name: platformName
         externalId: platform_name
         type: String
-      - name: ProvisionStatus
+      - name: provisionStatus
         externalId: provision_status
         type: String
-      - name: Status
+      - name: status
         externalId: status
         type: String
-      - name: ZoneGroup
+      - name: zoneGroup
         externalId: zone_group
         type: String
-      - name: ModifiedAt
+      - name: modifiedAt
         externalId: modified_timestamp
         type: DateTime
 
@@ -626,36 +626,35 @@ entities:
     description: Detection represents a detection in the Endpoint Protection module on CrowdStrike platform.
     pageSize: 100
     attributes:
-      - name: DetectionId
+      - name: detectionId
         externalId: detection_id
         type: String
         indexed: true
         uniqueId: true
-      - name: EmailSent
+      - name: emailSent
         externalId: email_sent
         type: Bool
-      - name: Status
+      - name: status
         externalId: status
         type: String
-      - name: CID
+      - name: cId
         externalId: cid
         type: String
-      - name: CreatedTimestamp
+      - name: createdTimestamp
         externalId: created_timestamp
         type: DateTime
-      - name: MaxConfidence
+      - name: maxConfidence
         externalId: max_confidence
         type: Int64
-      - name: MaxSeverity
+      - name: maxSeverity
         externalId: max_severity
         type: Int64
-      - name: MaxSeverityDisplayname
+      - name: maxSeverityDisplayname
         externalId: max_severity_displayname
         type: String
-      - name: DateUpdated
+      - name: dateUpdated
         externalId: date_updated
         type: DateTime
-
 
   EndpointIncident:
     displayName: Endpoint Incident
@@ -663,40 +662,40 @@ entities:
     description: Endpoint Incident represents a incident in the Endpoint Protection module on CrowdStrike platform.
     pageSize: 100
     attributes:
-      - name: IncidentId
+      - name: incidentId
         externalId: incident_id
         type: String
         indexed: true
         uniqueId: true
-      - name: State
+      - name: state
         externalId: state
         type: String
-      - name: IncidentType
+      - name: incidentType
         externalId: incident_type
         type: Int64
-      - name: Cid
+      - name: cId
         externalId: cid
         type: String
-      - name: HostIds
+      - name: hostIds
         externalId: host_ids
         type: String
         list: true
-      - name: Created
+      - name: created
         externalId: created
         type: DateTime
-      - name: Start
+      - name: start
         externalId: start
         type: DateTime  
-      - name: End
+      - name: end
         externalId: end
         type: DateTime
-      - name: EmailState
+      - name: emailState
         externalId: email_state
         type: String
-      - name: Status
+      - name: status
         externalId: status
         type: Int64
-      - name: FineScore
+      - name: fineScore
         externalId: fine_score
         type: Int64
 
