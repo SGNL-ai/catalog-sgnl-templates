@@ -572,7 +572,7 @@ entities:
   Device:
     displayName: Device
     externalId: endpoint_protection_device
-    description: Device represents a device in CrowdStrike platform.. This is fetched from the Endpoint Protection module.
+    description: Device represents a device in the CrowdStrike platform.. This is fetched from the Endpoint Protection module.
     pageSize: 100
     attributes:
       - name: deviceId
