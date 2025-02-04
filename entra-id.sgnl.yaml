@@ -149,7 +149,7 @@ entities:
         externalId: onPremisesSamAccountName
         type: String
       - name: onPremisesSecurityIdentifier
-        externalId: onPremisessecurityIdentifier
+        externalId: onPremisesSecurityIdentifier
         type: String
       - name: onPremisesSyncEnabled
         externalId: onPremisesSyncEnabled
