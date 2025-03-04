@@ -169,6 +169,15 @@ entities:
       - name: objectSid
         externalId: objectSid
         type: String
+      - name: mail
+        externalId: mail
+        type: String
+        indexed: true
+      - name: title
+        externalId: title
+        type: String
+        indexed: true
+
   Computer:
     displayName: Computer
     externalId: Computer
