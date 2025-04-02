@@ -53,6 +53,7 @@ entities:
       - name: mail
         externalId: mail
         type: String
+        indexed: true
       - name: mobilePhone
         externalId: mobilePhone
         type: String
@@ -342,7 +343,7 @@ entities:
         externalId: memberId
         type: String
         indexed: true
-  Application:    
+  Application:
     description: "Application Entity in Entra ID"
     displayName: Application
     externalId: Application
@@ -484,7 +485,7 @@ entities:
       - name: webApplication__logoutUrl
         externalId: webApplication__logoutUrl
         type: String
-  Device:    
+  Device:
     description: "Device Entity in Entra ID"
     displayName: Device
     externalId: Device
@@ -601,7 +602,7 @@ entities:
       - name: deletedDateTime
         externalId: deletedDateTime
         type: DateTime
-  RoleMember:    
+  RoleMember:
     description: "Directory Role Member Entity in Entra ID"
     displayName: RoleMember
     externalId: RoleMember
@@ -620,8 +621,8 @@ entities:
       - name: memberId
         externalId: memberId
         type: String
-        indexed: true      
-  RoleAssignment:    
+        indexed: true
+  RoleAssignment:
     description: "Role Assignment in Entra ID"
     displayName: RoleAssignment
     externalId: RoleAssignment
@@ -639,7 +640,7 @@ entities:
       - name: roleDefinitionId
         externalId: roleDefinitionId
         type: String
-  RoleRequest:    
+  RoleRequest:
     description: "Role Assignment Schedule Request in Entra ID"
     displayName: RoleRequest
     externalId: RoleAssignmentScheduleRequest
@@ -669,7 +670,7 @@ entities:
       - name: createdDateTime
         externalId: createdDateTime
         type: DateTime
-  GroupRequest:    
+  GroupRequest:
     description: "Group Assignment Schedule Request in Entra ID"
     displayName: GroupRequest
     externalId: GroupAssignmentScheduleRequest
@@ -738,7 +739,7 @@ relationships:
   DeviceOwner:
     name: DeviceOwner
     displayName: Device Owner
-    fromAttribute: deviceRegisteredOwner
+    fromAttribute: Device.deviceRegisteredOwner
     toAttribute: User.id
   UserManager:
     name: Manager

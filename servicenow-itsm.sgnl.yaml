@@ -478,7 +478,7 @@ entities:
         type: String
         indexed: true
       - name: u_area
-        external_id: u_area
+        externalId: u_area
         type: String
         indexed: true
       - name: u_phase
