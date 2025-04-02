@@ -53,6 +53,7 @@ entities:
       - name: mail
         externalId: mail
         type: String
+        indexed: true
       - name: mobilePhone
         externalId: mobilePhone
         type: String
