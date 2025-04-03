@@ -431,6 +431,7 @@ entities:
     description: EndpointRiskFactor represents the risk factor associated with an endpoint.
     pageSize: 100
     pagesOrderedById: false
+    entityAlias: compromisedEntity
     attributes:
       - name: entityId
         externalId: entityId
@@ -685,7 +686,7 @@ entities:
         type: DateTime
       - name: start
         externalId: start
-        type: DateTime  
+        type: DateTime
       - name: end
         externalId: end
         type: DateTime
@@ -703,10 +704,10 @@ relationships:
   CompromisedUserEntity:
     displayName: CompromisedUserEntity
     name: CompromisedUserEntity
-    fromAttribute: compromisedEntityId
+    fromAttribute: compromisedEntity.compromisedEntityId
     toAttribute: user.entityId
   CompromisedEndpointEntity:
     displayName: CompromisedEndpointEntity
     name: CompromisedEndpointEntity
-    fromAttribute: compromisedEntityId
+    fromAttribute: compromisedEntity.compromisedEntityId
     toAttribute: endpoint.entityId
