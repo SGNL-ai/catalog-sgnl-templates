@@ -39,6 +39,7 @@ entities:
       - name: primaryDisplayName
         externalId: primaryDisplayName
         type: String
+        indexed: true
       - name: secondaryDisplayName
         externalId: secondaryDisplayName
         type: String

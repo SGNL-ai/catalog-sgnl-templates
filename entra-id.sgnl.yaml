@@ -44,6 +44,7 @@ entities:
       - name: displayName
         externalId: displayName
         type: String
+        indexed: true
       - name: givenName
         externalId: givenName
         type: String
@@ -599,6 +600,7 @@ entities:
       - name: roleTemplateId
         externalId: roleTemplateId
         type: String
+        indexed: true
       - name: deletedDateTime
         externalId: deletedDateTime
         type: DateTime
