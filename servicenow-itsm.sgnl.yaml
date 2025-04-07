@@ -409,6 +409,9 @@ entities:
         externalId: cmdb_ci
         type: String
         indexed: true
+      - name: closedAt
+        externalId: closed_at
+        type: DateTime
 
   ChangeTask:
     displayName: ChangeTask
