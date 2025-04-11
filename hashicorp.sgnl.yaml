@@ -7,7 +7,7 @@ defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
-type: "HashiCorp-1.0.0"
+type: "HashiCorpBoundary-1.0.0"
 
 # Base64 encoded adapter config.
 # authMethodId is required
