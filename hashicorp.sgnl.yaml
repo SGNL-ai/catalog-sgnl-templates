@@ -14,14 +14,14 @@ type: "HashiCorpBoundary-1.0.0"
 # entityConfig is optional and allows filtering of entities and scopes.
 # Example
 # {
-#     "requestTimeoutSeconds": 10,
-# 	  "authMethodId": "ampw_UNEy43ZyMf",
-# 	  "entityConfig": {
-# 		  "hosts": {
-# 		  	"scope_id": "o_6W7PFp6pzM",
-# 		  	"filter": ""
-# 		  }
-# 	  }
+#   "requestTimeoutSeconds": 10,
+#   "authMethodId": "ampw_UNEy43ZyMf",
+#   "entityConfig": {
+#     "hosts": {
+#       "scope_id": "o_6W7PFp6pzM",
+#       "filter": ""
+#     }
+#   }
 # }
 adapterConfig: "ewogICAgInJlcXVlc3RUaW1lb3V0U2Vjb25kcyI6IDEwLAogICAgImF1dGhNZXRob2RJZCI6ICJhbXB3X1VORXk0M1p5TWYiLAogICAgImVudGl0eUNvbmZpZyI6IHsKICAgICAgICAiaG9zdHMiOiB7CiAgICAgICAgICAgICJzY29wZV9pZCI6ICJvXzZXN1BGcDZwek0iLAogICAgICAgICAgICAiZmlsdGVyIjogIiIKICAgICAgICB9CiAgICB9Cn0="
 auth:
