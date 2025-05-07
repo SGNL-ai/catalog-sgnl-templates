@@ -1,0 +1,515 @@
+# HashiCorp Boundary Configuration YAML
+displayName: "HashiCorp Boundary"
+icon: PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDBweCIgaGVpZ2h0PSIxMDBweCIgdmlld0JveD0iMCAwIDIgMiIgZmlsbD0ibm9uZSI+PGcgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAuODU1IDAuMDc1IDAuMTI1IDAuNDk1djEuMDA5bDAuMjc0IDAuMTU4VjAuNjUzbDAuNDU2IC0wLjI2M3oiLz48cGF0aCBkPSJNMS4xNDUgMC4wNzV2MC44MDNoLTAuMjkxdi0wLjNsLTAuMjc0IDAuMTU5djEuMDNsMC4yNzQgMC4xNTlWMS4xMjNoMC4yOTF2MC4yOThsMC4yNzQgLTAuMTU4VjAuMjMzeiIvPjxwYXRoIGQ9Im0xLjg3NSAxLjUwNSAtMC43MyAwLjQydi0wLjMxNmwwLjQ1NSAtMC4yNjNWMC4zMzhsMC4yNzUgMC4xNTh6Ii8+PC9nPjwvc3ZnPg==
+description: "HashiCorp Boundary as a System of Record"
+hostname: "{{Input Required: uuid.boundary.hashicorp.cloud}}"
+defaultSyncFrequency: HOURLY
+defaultSyncMinInterval: 1
+defaultApiCallFrequency: SECONDLY
+defaultApiCallMinInterval: 1
+type: "HashiCorpBoundary-1.0.0"
+
+# Base64 encoded adapter config.
+# authMethodId is required
+# entityConfig is optional and allows filtering of entities and scopes.
+# Example
+# {
+#   "requestTimeoutSeconds": 10,
+#   "authMethodId": "ampw_UNEy43ZyMf",
+#   "entityConfig": {
+#     "hosts": {
+#       "scope_id": "o_6W7PFp6pzM",
+#       "filter": ""
+#     }
+#   }
+# }
+adapterConfig: "ewogICAgInJlcXVlc3RUaW1lb3V0U2Vjb25kcyI6IDEwLAogICAgImF1dGhNZXRob2RJZCI6ICJhbXB3X1VORXk0M1p5TWYiLAogICAgImVudGl0eUNvbmZpZyI6IHsKICAgICAgICAiaG9zdHMiOiB7CiAgICAgICAgICAgICJzY29wZV9pZCI6ICJvXzZXN1BGcDZwek0iLAogICAgICAgICAgICAiZmlsdGVyIjogIiIKICAgICAgICB9CiAgICB9Cn0="
+auth:
+  - basic:
+      username: "{{Input Required: Username}}"
+      password: "{{Input Required: Password}}"
+
+entities:
+  Account:
+    # https://developer.hashicorp.com/boundary/api-docs/account-service
+    displayName: Account
+    externalId: accounts
+    description: Account entity in HashiCorp Boundary
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: auth_method_id
+        externalId: auth_method_id
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: description
+        externalId: description
+        type: String
+      - name: created_time
+        externalId: created_time
+        type: DateTime
+      - name: updated_time
+        externalId: updated_time
+        type: DateTime
+      - name: version
+        externalId: version
+        type: Int64
+      - name: type
+        externalId: type
+        type: String
+      - name: login_name
+        externalId: attributes.login_name
+        type: String
+      - name: subject
+        externalId: attributes.subject
+        type: String
+      - name: email
+        externalId: attributes.email
+        type: String
+      - name: managed_group_ids
+        externalId: managed_group_ids
+        type: String
+        list: true
+      - name: authorized_actions
+        externalId: authorized_actions
+        type: String
+        list: true
+
+  Host:
+    # https://developer.hashicorp.com/boundary/api-docs/host-service
+    displayName: Host
+    externalId: hosts
+    description: Host entity in HashiCorp Boundary
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: host_catalog_id
+        externalId: host_catalog_id
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: description
+        externalId: description
+        type: String
+      - name: created_time
+        externalId: created_time
+        type: DateTime
+      - name: updated_time
+        externalId: updated_time
+        type: DateTime
+      - name: version
+        externalId: version
+        type: Int64
+      - name: type
+        externalId: type
+        type: String
+      - name: host_set_ids
+        externalId: host_set_ids
+        type: String
+        list: true
+      - name: ip_addresses
+        externalId: ip_addresses
+        type: String
+        list: true
+      - name: dns_names
+        externalId: dns_names
+        type: String
+        list: true
+      - name: external_id
+        externalId: external_id
+        type: String
+      - name: external_name
+        externalId: external_name
+        type: String
+      - name: authorized_actions
+        externalId: authorized_actions
+        type: String
+        list: true
+
+  Role:
+    # https://developer.hashicorp.com/boundary/api-docs/role-service
+    displayName: Role
+    externalId: roles
+    description: Role entity in HashiCorp Boundary
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: scope_id
+        externalId: scope_id
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: description
+        externalId: description
+        type: String
+      - name: created_time
+        externalId: created_time
+        type: DateTime
+      - name: updated_time
+        externalId: updated_time
+        type: DateTime
+      - name: version
+        externalId: version
+        type: Int64
+      - name: grant_scope_ids
+        externalId: grant_scope_ids
+        type: String
+        list: true
+      - name: principal_ids
+        externalId: principal_ids
+        type: String
+        list: true
+      - name: grant_strings
+        externalId: grant_strings
+        type: String
+        list: true
+      - name: authorized_actions
+        externalId: authorized_actions
+        type: String
+        list: true
+
+  Scope:
+    # https://developer.hashicorp.com/boundary/api-docs/scope-service
+    displayName: Scope
+    externalId: scopes
+    description: Scope entity in HashiCorp Boundary
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: scope_id
+        externalId: scope_id
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: description
+        externalId: description
+        type: String
+      - name: created_time
+        externalId: created_time
+        type: DateTime
+      - name: updated_time
+        externalId: updated_time
+        type: DateTime
+      - name: version
+        externalId: version
+        type: Int64
+      - name: type
+        externalId: type
+        type: String
+      - name: primary_auth_method_id
+        externalId: primary_auth_method_id
+        type: String
+      - name: storage_policy_id
+        externalId: storage_policy_id
+        type: String
+      - name: authorized_actions
+        externalId: authorized_actions
+        type: String
+        list: true
+
+  User:
+    # https://developer.hashicorp.com/boundary/api-docs/user-service
+    displayName: User
+    externalId: users
+    description: User entity in HashiCorp Boundary
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: scope_id
+        externalId: scope_id
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: description
+        externalId: description
+        type: String
+      - name: created_time
+        externalId: created_time
+        type: DateTime
+      - name: updated_time
+        externalId: updated_time
+        type: DateTime
+      - name: version
+        externalId: version
+        type: Int64
+      - name: login_name
+        externalId: login_name
+        type: String
+      - name: full_name
+        externalId: full_name
+        type: String
+      - name: email
+        externalId: email
+        type: String
+      - name: primary_account_id
+        externalId: primary_account_id
+        type: String
+      - name: account_ids
+        externalId: account_ids
+        type: String
+        list: true
+      - name: authorized_actions
+        externalId: authorized_actions
+        type: String
+        list: true
+
+  Group:
+    # https://developer.hashicorp.com/boundary/api-docs/group-service
+    displayName: Group
+    externalId: groups
+    description: Group entity in HashiCorp Boundary
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: scope_id
+        externalId: scope_id
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: description
+        externalId: description
+        type: String
+      - name: created_time
+        externalId: created_time
+        type: DateTime
+      - name: updated_time
+        externalId: updated_time
+        type: DateTime
+      - name: version
+        externalId: version
+        type: Int64
+      - name: member_ids
+        externalId: member_ids
+        type: String
+        list: true
+      - name: authorized_actions
+        externalId: authorized_actions
+        type: String
+        list: true
+
+  Target:
+    # https://developer.hashicorp.com/boundary/api-docs/target-service
+    displayName: Target
+    externalId: targets
+    description: Target entity in HashiCorp Boundary
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: scope_id
+        externalId: scope_id
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: description
+        externalId: description
+        type: String
+      - name: created_time
+        externalId: created_time
+        type: DateTime
+      - name: updated_time
+        externalId: updated_time
+        type: DateTime
+      - name: version
+        externalId: version
+        type: Int64
+      - name: type
+        externalId: type
+        type: String
+      - name: host_source_ids
+        externalId: host_source_ids
+        type: String
+        list: true
+      - name: session_max_seconds
+        externalId: session_max_seconds
+        type: Int64
+      - name: session_connection_limit
+        externalId: session_connection_limit
+        type: Int64
+      - name: worker_filter
+        externalId: worker_filter
+        type: String
+      - name: egress_worker_filter
+        externalId: egress_worker_filter
+        type: String
+      - name: ingress_worker_filter
+        externalId: ingress_worker_filter
+        type: String
+      - name: brokered_credential_source_ids
+        externalId: brokered_credential_source_ids
+        type: String
+        list: true
+      - name: injected_application_credential_source_ids
+        externalId: injected_application_credential_source_ids
+        type: String
+        list: true
+      - name: address
+        externalId: address
+        type: String
+      - name: authorized_actions
+        externalId: authorized_actions
+        type: String
+        list: true
+
+  Session:
+    # https://developer.hashicorp.com/boundary/api-docs/session-service
+    displayName: Session
+    externalId: sessions
+    description: Session entity in HashiCorp Boundary
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: target_id
+        externalId: target_id
+        type: String
+      - name: user_id
+        externalId: user_id
+        type: String
+      - name: host_set_id
+        externalId: host_set_id
+        type: String
+      - name: host_id
+        externalId: host_id
+        type: String
+      - name: scope_id
+        externalId: scope_id
+        type: String
+      - name: auth_token_id
+        externalId: auth_token_id
+        type: String
+      - name: endpoint
+        externalId: endpoint
+        type: String
+      - name: created_time
+        externalId: created_time
+        type: DateTime
+      - name: updated_time
+        externalId: updated_time
+        type: DateTime
+      - name: version
+        externalId: version
+        type: Int64
+      - name: type
+        externalId: type
+        type: String
+      - name: expiration_time
+        externalId: expiration_time
+        type: DateTime
+      - name: status
+        externalId: status
+        type: String
+      - name: certificate
+        externalId: certificate
+        type: String
+      - name: termination_reason
+        externalId: termination_reason
+        type: String
+      - name: authorized_actions
+        externalId: authorized_actions
+        type: String
+        list: true
+  SessionStates:
+    parent: sessions
+    displayName: SessionStates
+    externalId: states
+    description: Entity representing the states of a session
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: status
+        externalId: status
+        type: String
+        uniqueId: true
+        indexed: true
+      - name: start_time
+        externalId: start_time
+        type: DateTime
+      - name: end_time
+        externalId: end_time
+        type: DateTime
+
+  Credential:
+    # https://developer.hashicorp.com/boundary/api-docs/credential-service
+    displayName: Credential
+    externalId: credentials
+    description: Credential entity in HashiCorp Boundary
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: credential_store_id
+        externalId: credential_store_id
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: description
+        externalId: description
+        type: String
+      - name: created_time
+        externalId: created_time
+        type: DateTime
+      - name: updated_time
+        externalId: updated_time
+        type: DateTime
+      - name: version
+        externalId: version
+        type: Int64
+      - name: type
+        externalId: type
+        type: String
+      - name: authorized_actions
+        externalId: authorized_actions
+        type: String
+        list: true
