@@ -1,0 +1,304 @@
+# Jira Data Center Configuration YAML
+displayName: "Jira Data Center"
+description: "Jira Data Center as a System of Record"
+hostname: "{{Input Required: Jira-Domain-URL}}"
+defaultSyncFrequency: HOURLY
+defaultSyncMinInterval: 1
+defaultApiCallFrequency: SECONDLY
+defaultApiCallMinInterval: 1
+type: "JiraDatacenter-1.0.0"
+# Example Configs:
+# empty config: {} | b64: "e30="
+# config with issues jql filter: {"issuesJqlFilter":"project=SGNL"} | b64: "eyJpc3N1ZXNKcWxGaWx0ZXIiOiJwcm9qZWN0PVNHTkwifQ=="
+# config with specific groups: {"groups":["jira-administrators","jira-users"]} | b64: "eyJncm91cHMiOlsiaWlyYS1hZG1pbmlzdHJhdG9ycyIsImppcmEtdXNlcnMiXX0="
+# config with API version: {"apiVersion":"2"} | b64: "eyJhcGlWZXJzaW9uIjoiMiJ9"
+# config with inactive users: {"includeInactiveUsers":true} | b64: "eyJpbmNsdWRlSW5hY3RpdmVVc2VycyI6dHJ1ZX0="
+adapterConfig: "eyJhcGlWZXJzaW9uIjoibGF0ZXN0IiwiaW5jbHVkZUluYWN0aXZlVXNlcnMiOmZhbHNlfQ==" # {"apiVersion":"latest","includeInactiveUsers":false}
+
+# All auth mechanisms specified below must be supported by the specified Adapter.
+auth:
+  - basic:
+      username: "{{Input Required: Username}}"
+      password: "{{Input Required: Password}}"
+  - bearer:
+      authToken: "{{Input Required: Personal Access Token}}"
+
+entities:
+  User:
+    # https://docs.atlassian.com/software/jira/docs/api/REST/9.17.0/#api/2/group-getUsersFromGroup
+    displayName: User
+    externalId: User
+    description: User entity in Jira Data Center
+    pageSize: 50
+    pagesOrderedById: false
+    attributes:
+      - name: key
+        externalId: key
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: name
+        externalId: name
+        type: String
+      - name: emailAddress
+        externalId: emailAddress
+        type: String
+        indexed: true
+      - name: displayName
+        externalId: displayName
+        type: String
+      - name: active
+        externalId: active
+        type: Bool
+      - name: timeZone
+        externalId: timeZone
+        type: String
+      - name: locale
+        externalId: locale
+        type: String
+      - name: self
+        externalId: self
+        type: String
+
+  Issue:
+    # https://docs.atlassian.com/software/jira/docs/api/REST/9.17.0/#api/2/search-search
+    displayName: Issue
+    externalId: Issue
+    description: Issue entity in Jira Data Center
+    pageSize: 50
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: self
+        externalId: self
+        type: String
+      - name: key
+        externalId: key
+        type: String
+        indexed: true
+      - name: fields_summary
+        externalId: $.fields.summary
+        type: String
+      - name: fields_issuetype_id
+        externalId: $.fields.issuetype.id
+        type: String
+      - name: fields_issuetype_name
+        externalId: $.fields.issuetype.name
+        type: String
+      - name: fields_issuetype_description
+        externalId: $.fields.issuetype.description
+        type: String
+      - name: fields_issuetype_subtask
+        externalId: $.fields.issuetype.subtask
+        type: Bool
+      - name: fields_project_id
+        externalId: $.fields.project.id
+        type: String
+      - name: fields_project_key
+        externalId: $.fields.project.key
+        type: String
+      - name: fields_project_name
+        externalId: $.fields.project.name
+        type: String
+      - name: fields_assignee_key
+        externalId: $.fields.assignee.key
+        type: String
+        indexed: true
+      - name: fields_assignee_name
+        externalId: $.fields.assignee.name
+        type: String
+      - name: fields_assignee_emailAddress
+        externalId: $.fields.assignee.emailAddress
+        type: String
+      - name: fields_assignee_displayName
+        externalId: $.fields.assignee.displayName
+        type: String
+      - name: fields_assignee_active
+        externalId: $.fields.assignee.active
+        type: Bool
+      - name: fields_creator_key
+        externalId: $.fields.creator.key
+        type: String
+        indexed: true
+      - name: fields_creator_name
+        externalId: $.fields.creator.name
+        type: String
+      - name: fields_creator_emailAddress
+        externalId: $.fields.creator.emailAddress
+        type: String
+      - name: fields_creator_displayName
+        externalId: $.fields.creator.displayName
+        type: String
+      - name: fields_creator_active
+        externalId: $.fields.creator.active
+        type: Bool
+      - name: fields_reporter_key
+        externalId: $.fields.reporter.key
+        type: String
+        indexed: true
+      - name: fields_reporter_name
+        externalId: $.fields.reporter.name
+        type: String
+      - name: fields_reporter_emailAddress
+        externalId: $.fields.reporter.emailAddress
+        type: String
+      - name: fields_reporter_displayName
+        externalId: $.fields.reporter.displayName
+        type: String
+      - name: fields_reporter_active
+        externalId: $.fields.reporter.active
+        type: Bool
+      - name: fields_status_id
+        externalId: $.fields.status.id
+        type: String
+      - name: fields_status_name
+        externalId: $.fields.status.name
+        type: String
+      - name: fields_status_description
+        externalId: $.fields.status.description
+        type: String
+      - name: fields_priority_id
+        externalId: $.fields.priority.id
+        type: String
+      - name: fields_priority_name
+        externalId: $.fields.priority.name
+        type: String
+      - name: fields_resolution_id
+        externalId: $.fields.resolution.id
+        type: String
+      - name: fields_resolution_name
+        externalId: $.fields.resolution.name
+        type: String
+      - name: fields_resolution_description
+        externalId: $.fields.resolution.description
+        type: String
+      - name: fields_created
+        externalId: $.fields.created
+        type: DateTime
+      - name: fields_updated
+        externalId: $.fields.updated
+        type: DateTime
+      - name: fields_resolutiondate
+        externalId: $.fields.resolutiondate
+        type: DateTime
+      - name: fields_duedate
+        externalId: $.fields.duedate
+        type: DateTime
+      - name: fields_labels
+        externalId: $.fields.labels
+        type: String
+      - name: fields_timeestimate
+        externalId: $.fields.timeestimate
+        type: Int64
+      - name: fields_timespent
+        externalId: $.fields.timespent
+        type: Int64
+      - name: fields_timeoriginalestimate
+        externalId: $.fields.timeoriginalestimate
+        type: Int64
+      - name: fields_environment
+        externalId: $.fields.environment
+        type: String
+      - name: fields_description
+        externalId: $.fields.description
+        type: String
+      - name: fields_workratio
+        externalId: $.fields.workratio
+        type: Int64
+
+  Group:
+    # https://docs.atlassian.com/software/jira/docs/api/REST/9.17.0/#api/2/groups-findGroups
+    displayName: Group
+    externalId: Group
+    description: Group entity in Jira Data Center
+    pageSize: 50
+    pagesOrderedById: false
+    attributes:
+      - name: name
+        externalId: name
+        type: String
+        indexed: true
+        uniqueId: true
+
+  GroupLabel:
+    parent: Group
+    displayName: GroupLabel
+    externalId: labels
+    description: Labels associated with a Group in Jira Data Center
+    pageSize: 50
+    pagesOrderedById: false
+    attributes:
+      - name: type
+        externalId: type
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: text
+        externalId: text
+        type: String
+        indexed: true
+      - name: title
+        externalId: title
+        type: String
+
+  GroupMember:
+    # https://docs.atlassian.com/software/jira/docs/api/REST/9.17.0/#api/2/group-getUsersFromGroup
+    displayName: GroupMember
+    externalId: GroupMember
+    description: Group Member entity in Jira Data Center
+    pageSize: 50
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: groupId
+        externalId: groupId
+        type: String
+        indexed: true
+      - name: key
+        externalId: key
+        type: String
+        indexed: true
+
+relationships:
+  # (User) -[UserMember]-> (GroupMember)
+  UserMember:
+    name: UserMember
+    displayName: User Member
+    fromAttribute: User.key
+    toAttribute: GroupMember.key
+    
+  # (GroupMember) -[GroupMember]-> (Group)
+  GroupMember:
+    name: GroupMember
+    displayName: Group Member
+    fromAttribute: GroupMember.groupId
+    toAttribute: Group.name
+
+  # (Issue) -[AssignedTo]-> (User)
+  IssueAssignee:
+    name: AssignedTo
+    displayName: Issue Assignee
+    fromAttribute: Issue.$.fields.assignee.key
+    toAttribute: User.key
+    
+  # (Issue) -[CreatedBy]-> (User)
+  IssueCreator:
+    name: CreatedBy
+    displayName: Issue Creator
+    fromAttribute: Issue.$.fields.creator.key
+    toAttribute: User.key
+    
+  # (Issue) -[ReportedBy]-> (User)
+  IssueReporter:
+    name: ReportedBy
+    displayName: Issue Reporter
+    fromAttribute: Issue.$.fields.reporter.key
+    toAttribute: User.key
