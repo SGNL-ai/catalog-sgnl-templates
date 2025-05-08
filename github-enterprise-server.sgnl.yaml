@@ -1513,3 +1513,15 @@ relationships:
     name: PushProtectionBypassedBy
     fromAttribute: pushProtectionBypassedById
     toAttribute: collaboratorId
+  
+  # Parent Relationships
+  ParentOfUserOrganizationVerifiedDomainEmails:
+    displayName: ParentOfUserOrganizationVerifiedDomainEmails
+    childEntity: $.node.organizationVerifiedDomainEmails
+  ParentOfTeamMember:
+    displayName: ParentOfTeamMember
+    childEntity: $.members.edges
+  ParentOfTeamRepository:
+    displayName: ParentOfTeamRepository
+    childEntity: $.repositories.edges
+  
