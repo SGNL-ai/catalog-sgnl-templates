@@ -84,10 +84,10 @@ entities:
         externalId: dn
         description: The Distinguished Name (DN) of the user
         type: String
-      - name: objectClass
-        externalId: objectClass
-        type: String
-        list: true
+      # - name: objectClass
+      #   externalId: objectClass
+      #   type: String
+      #   list: true
       - name: sn
         externalId: sn
         type: String
@@ -97,21 +97,21 @@ entities:
       - name: distinguishedName
         externalId: distinguishedName
         type: String
-      - name: instanceType
-        externalId: instanceType
-        type: Int64
+      # - name: instanceType
+      #   externalId: instanceType
+      #   type: Int64
       - name: whenCreated
         externalId: whenCreated
         type: DateTime
       - name: whenChanged
         externalId: whenChanged
         type: DateTime
-      - name: uSNCreated
-        externalId: uSNCreated
-        type: Int64
-      - name: uSNChanged
-        externalId: uSNChanged
-        type: Int64
+      # - name: uSNCreated
+      #   externalId: uSNCreated
+      #   type: Int64
+      # - name: uSNChanged
+      #   externalId: uSNChanged
+      #   type: Int64
       - name: department
         externalId: department
         type: String
@@ -121,51 +121,51 @@ entities:
       - name: userAccountControl
         externalId: userAccountControl
         type: Int64
-      - name: badPwdCount
-        externalId: badPwdCount
-        type: Int64
-      - name: codePage
-        externalId: codePage
-        type: Int64
+      # - name: badPwdCount
+      #   externalId: badPwdCount
+      #   type: Int64
+      # - name: codePage
+      #   externalId: codePage
+      #   type: Int64
       - name: countryCode
         externalId: countryCode
         type: Int64
-      - name: badPasswordTime
-        externalId: badPasswordTime
-        type: Int64
-      - name: lastLogoff
-        externalId: lastLogoff
-        type: Int64
-      - name: lastLogon
-        externalId: lastLogon
-        type: Int64
-      - name: pwdLastSet
-        externalId: pwdLastSet
-        type: Int64
+      # - name: badPasswordTime
+      #   externalId: badPasswordTime
+      #   type: Int64
+      # - name: lastLogoff
+      #   externalId: lastLogoff
+      #   type: Int64
+      # - name: lastLogon
+      #   externalId: lastLogon
+      #   type: Int64
+      # - name: pwdLastSet
+      #   externalId: pwdLastSet
+      #   type: Int64
       - name: primaryGroupID
         externalId: primaryGroupID
         type: Int64
       - name: accountExpires
         externalId: accountExpires
         type: Int64
-      - name: logonCount
-        externalId: logonCount
-        type: Int64
+      # - name: logonCount
+      #   externalId: logonCount
+      #   type: Int64
       - name: sAMAccountName
         externalId: sAMAccountName
         type: String
-      - name: sAMAccountType
-        externalId: sAMAccountType
-        type: Int64
+      # - name: sAMAccountType
+      #   externalId: sAMAccountType
+      #   type: Int64
       - name: userPrincipalName
         externalId: userPrincipalName
         type: String
-      - name: objectCategory
-        externalId: objectCategory
-        type: String
-      - name: dSCorePropagationData
-        externalId: dSCorePropagationData
-        type: DateTime
+      # - name: objectCategory
+      #   externalId: objectCategory
+      #   type: String
+      # - name: dSCorePropagationData
+      #   externalId: dSCorePropagationData
+      #   type: DateTime
       - name: objectSid
         externalId: objectSid
         type: String
@@ -195,34 +195,34 @@ entities:
         externalId: dn
         description: The Distinguished Name (DN) of the Computer
         type: String
-      - name: objectClass
-        externalId: objectClass
-        type: String
-        list: true
+      # - name: objectClass
+      #   externalId: objectClass
+      #   type: String
+      #   list: true
       - name: cn
         externalId: cn
         type: String
-      - name: givenName
-        externalId: givenName
-        type: String
+      # - name: givenName
+      #   externalId: givenName
+      #   type: String
       - name: distinguishedName
         externalId: distinguishedName
-        type: String
-      - name: instanceType
-        externalId: instanceType
-        type: Int64
-      - name: whenCreated
-        externalId: whenCreated
-        type: DateTime
-      - name: whenChanged
-        externalId: whenChanged
-        type: DateTime
-      - name: uSNCreated
-        externalId: uSNCreated
-        type: Int64
-      - name: uSNChanged
-        externalId: uSNChanged
-        type: Int64
+      #   type: String
+      # - name: instanceType
+      #   externalId: instanceType
+      #   type: Int64
+      # - name: whenCreated
+      #   externalId: whenCreated
+      #   type: DateTime
+      # - name: whenChanged
+      #   externalId: whenChanged
+      #   type: DateTime
+      # - name: uSNCreated
+      #   externalId: uSNCreated
+      #   type: Int64
+      # - name: uSNChanged
+      #   externalId: uSNChanged
+      #   type: Int64
       - name: department
         externalId: department
         type: String
@@ -232,45 +232,45 @@ entities:
       - name: userAccountControl
         externalId: userAccountControl
         type: Int64
-      - name: badPwdCount
-        externalId: badPwdCount
-        type: Int64
-      - name: codePage
-        externalId: codePage
-        type: Int64
+      # - name: badPwdCount
+      #   externalId: badPwdCount
+      #   type: Int64
+      # - name: codePage
+      #   externalId: codePage
+      #   type: Int64
       - name: countryCode
         externalId: countryCode
         type: Int64
-      - name: badPasswordTime
-        externalId: badPasswordTime
-        type: Int64
-      - name: lastLogoff
-        externalId: lastLogoff
-        type: Int64
-      - name: lastLogon
-        externalId: lastLogon
-        type: Int64
-      - name: localPolicyFlags
-        externalId: localPolicyFlags
-        type: Int64
-      - name: pwdLastSet
-        externalId: pwdLastSet
-        type: Int64
-      - name: primaryGroupID
-        externalId: primaryGroupID
-        type: Int64
+      # - name: badPasswordTime
+      #   externalId: badPasswordTime
+      #   type: Int64
+      # - name: lastLogoff
+      #   externalId: lastLogoff
+      #   type: Int64
+      # - name: lastLogon
+      #   externalId: lastLogon
+      #   type: Int64
+      # - name: localPolicyFlags
+      #   externalId: localPolicyFlags
+      #   type: Int64
+      # - name: pwdLastSet
+      #   externalId: pwdLastSet
+      #   type: Int64
+      # - name: primaryGroupID
+      #   externalId: primaryGroupID
+      #   type: Int64
       - name: accountExpires
         externalId: accountExpires
         type: Int64
-      - name: logonCount
-        externalId: logonCount
-        type: Int64
+      # - name: logonCount
+      #   externalId: logonCount
+      #   type: Int64
       - name: sAMAccountName
         externalId: sAMAccountName
         type: String
-      - name: sAMAccountType
-        externalId: sAMAccountType
-        type: Int64
+      # - name: sAMAccountType
+      #   externalId: sAMAccountType
+      #   type: Int64
       - name: operatingSystem
         externalId: operatingSystem
         type: String
@@ -280,29 +280,29 @@ entities:
       - name: dNSHostName
         externalId: dNSHostName
         type: String
-      - name: servicePrincipalName
-        externalId: servicePrincipalName
-        type: String
-        list: true
-      - name: objectCategory
-        externalId: objectCategory
-        type: String
-      - name: isCriticalSystemObject
-        externalId: isCriticalSystemObject
-        type: Bool
-      - name: dSCorePropagationData
-        externalId: dSCorePropagationData
-        type: DateTime
-        list: true
+      # - name: servicePrincipalName
+      #   externalId: servicePrincipalName
+      #   type: String
+      #   list: true
+      # - name: objectCategory
+      #   externalId: objectCategory
+      #   type: String
+      # - name: isCriticalSystemObject
+      #   externalId: isCriticalSystemObject
+      #   type: Bool
+      # - name: dSCorePropagationData
+      #   externalId: dSCorePropagationData
+      #   type: DateTime
+      #   list: true
       - name: objectSid
         externalId: objectSid
         type: String
-      - name: msDSSupportedEncryptionTypes
-        externalId: msDS-SupportedEncryptionTypes
-        type: Int64
-      - name: lastLogonTimestamp
-        externalId: lastLogonTimestamp
-        type: Int64
+      # - name: msDSSupportedEncryptionTypes
+      #   externalId: msDS-SupportedEncryptionTypes
+      #   type: Int64
+      # - name: lastLogonTimestamp
+      #   externalId: lastLogonTimestamp
+      #   type: Int64
   Group:
     description: "An entity representing a Group in an Active Directory"
     displayName: Group
@@ -321,10 +321,10 @@ entities:
         externalId: dn
         description: The Distinguished Name (DN) of the group
         type: String
-      - name: objectClass
-        externalId: objectClass
-        type: String
-        list: true
+      # - name: objectClass
+      #   externalId: objectClass
+      #   type: String
+      #   list: true
       - name: cn
         externalId: cn
         type: String
@@ -334,39 +334,39 @@ entities:
       - name: distinguishedName
         externalId: distinguishedName
         type: String
-      - name: instanceType
-        externalId: instanceType
-        type: Int64
-      - name: whenCreated
-        externalId: whenCreated
-        type: DateTime
-      - name: whenChanged
-        externalId: whenChanged
-        type: DateTime
-      - name: uSNCreated
-        externalId: uSNCreated
-        type: Int64
-      - name: uSNChanged
-        externalId: uSNChanged
-        type: Int64
+      # - name: instanceType
+      #   externalId: instanceType
+      #   type: Int64
+      # - name: whenCreated
+      #   externalId: whenCreated
+      #   type: DateTime
+      # - name: whenChanged
+      #   externalId: whenChanged
+      #   type: DateTime
+      # - name: uSNCreated
+      #   externalId: uSNCreated
+      #   type: Int64
+      # - name: uSNChanged
+      #   externalId: uSNChanged
+      #   type: Int64
       - name: name
         externalId: name
         type: String
       - name: sAMAccountName
         externalId: sAMAccountName
         type: String
-      - name: sAMAccountType
-        externalId: sAMAccountType
-        type: Int64
+      # - name: sAMAccountType
+      #   externalId: sAMAccountType
+      #   type: Int64
       - name: groupType
         externalId: groupType
         type: Int64
-      - name: objectCategory
-        externalId: objectCategory
-        type: String
-      - name: dSCorePropagationData
-        externalId: dSCorePropagationData
-        type: DateTime
+      # - name: objectCategory
+      #   externalId: objectCategory
+      #   type: String
+      # - name: dSCorePropagationData
+      #   externalId: dSCorePropagationData
+      #   type: DateTime
       - name: objectSid
         externalId: objectSid
         type: String
