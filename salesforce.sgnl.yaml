@@ -480,6 +480,29 @@ entities:
         description: "OwnerId attribute"
         type: String
         indexed: true
+  GroupMember:
+    displayName: GroupMember
+    externalId: GroupMember
+    description: Group Member entity in Salesforce
+    pageSize: 200 # Current minimum enforced by Salesforce API
+    pagesOrderedById: true
+    attributes:
+      - name: Id
+        externalId: Id
+        description: "Id of the resource"
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: GroupId
+        externalId: GroupId
+        description: "Group Id attribute"
+        type: String
+        indexed: true
+      - name: UserOrGroupId
+        externalId: UserOrGroupId
+        description: "User or Group Id attribute"
+        type: String
+        indexed: true
 relationships:
   UserAccount:
     name: Account
@@ -576,3 +599,13 @@ relationships:
     displayName: Case Master Record
     fromAttribute: Case.MasterRecordId
     toAttribute: Case.Id
+  GroupMemberGroup:
+    name: Group
+    displayName: Group Member Group
+    fromAttribute: GroupMember.GroupId
+    toAttribute: Group.Id
+  GroupMemberUser:
+    name: Member
+    displayName: Group Member User
+    fromAttribute: GroupMember.UserOrGroupId
+    toAttribute: User.Id
