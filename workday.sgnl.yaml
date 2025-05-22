@@ -110,3 +110,12 @@ entities:
       - name: descriptor
         externalId: descriptor
         type: String
+
+relationships:
+  # Parent relationships
+  ParentOfWorkEmail:
+    displayName: ParentOfWorkEmail
+    childEntity: email_Work
+  ParentOfEmployeeType:
+    displayName: ParentOfEmployeeType
+    childEntity: employeeType

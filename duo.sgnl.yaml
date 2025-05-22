@@ -327,3 +327,10 @@ relationships:
         direction: Backward
       - relationship: OwnerOfPhone
         direction: Forward
+  # Parent relationships
+  ParentOfGroupMember:
+    displayName: ParentOfGroupMember
+    childEntity: groups
+  ParentOfPhoneOwner:
+    displayName: ParentOfPhoneOwner
+    childEntity: phones

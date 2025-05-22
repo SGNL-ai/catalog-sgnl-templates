@@ -280,3 +280,7 @@ relationships:
         direction: Forward
       - relationship: MemberToGroup
         direction: Forward
+  # Parent relationships
+  ParentOfUserEmail:
+    displayName: ParentOfUserEmail
+    childEntity: emails
