@@ -118,6 +118,7 @@ entities:
     description: UserAccountActiveDirectory represents the Active Directory account associated with a user.
     pageSize: 100
     pagesOrderedById: false
+    entityAlias: userAccountActiveDirectory
     attributes:
       - name: objectGuid
         externalId: objectGuid
@@ -314,6 +315,7 @@ entities:
     description: EndpointAccountActiveDirectory represents the Active Directory account associated with the endpoint.
     pageSize: 100
     pagesOrderedById: false
+    entityAlias: endpointAccountActiveDirectory
     attributes:
       - name: objectGuid
         externalId: objectGuid
@@ -685,7 +687,7 @@ entities:
         type: DateTime
       - name: start
         externalId: start
-        type: DateTime  
+        type: DateTime
       - name: end
         externalId: end
         type: DateTime
@@ -716,13 +718,13 @@ relationships:
     childEntity: $.riskFactors
   ParentOfUserAccountActiveDirectory:
     displayName: ParentOfUserAccountActiveDirectory
-    childEntity: $.accounts[?(@.__typename=="ActiveDirectoryAccountDescriptor")]
+    childEntity: userAccountActiveDirectory
   ParentOfEndpointRiskFactor:
     displayName: ParentOfEndpointRiskFactor
     childEntity: $.riskFactors
   ParentOfEndpointAccountActiveDirectory:
     displayName: ParentOfEndpointAccountActiveDirectory
-    childEntity: $.accounts[?(@.__typename=="ActiveDirectoryAccountDescriptor")]
+    childEntity: endpointAccountActiveDirectory
   ParentOfIncidentCompromisedEntity:
     displayName: ParentOfIncidentCompromisedEntity
     childEntity: $.compromisedEntities
