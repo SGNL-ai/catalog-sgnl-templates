@@ -711,3 +711,25 @@ relationships:
     name: CompromisedEndpointEntity
     fromAttribute: compromisedEntity.compromisedEntityId
     toAttribute: endpoint.entityId
+  # Parent relationships
+  ParentOfUserRiskFactor:
+    displayName: ParentOfUserRiskFactor
+    childEntity: $.riskFactors
+  ParentOfUserAccountActiveDirectory:
+    displayName: ParentOfUserAccountActiveDirectory
+    childEntity: $.accounts[?(@.__typename=="ActiveDirectoryAccountDescriptor")]
+  ParentOfEndpointRiskFactor:
+    displayName: ParentOfEndpointRiskFactor
+    childEntity: $.riskFactors
+  ParentOfEndpointAccountActiveDirectory:
+    displayName: ParentOfEndpointAccountActiveDirectory
+    childEntity: $.accounts[?(@.__typename=="ActiveDirectoryAccountDescriptor")]
+  ParentOfIncidentCompromisedEntity:
+    displayName: ParentOfIncidentCompromisedEntity
+    childEntity: $.compromisedEntities
+  ParentOfIncidentAlertEvent:
+    displayName: ParentOfIncidentAlertEvent
+    childEntity: $.alertEvents
+  ParentOfIncidentAlertEventEntity:
+    displayName: ParentOfIncidentAlertEventEntity
+    childEntity: $.entities

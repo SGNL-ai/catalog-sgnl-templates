@@ -542,7 +542,7 @@ entities:
         externalId: name
         type: String
       - name: messages
-        externalId: $.messages[*].[*] # Flatten a [][]string to a []string
+        externalId: $.messages..[*]..[*] # Flatten a [][]string to a []string
         type: String
         list: true
       - name: completionStatus
@@ -1076,8 +1076,9 @@ entities:
         externalId: taskSchedule
         type: String
       - name: messages
-        externalId: $.messages[*].[*] # Flatten a [][]string to a []string
+        externalId: $.messages..[*]..[*] # Flatten a [][]string to a []string
         type: String
+        list: true
 
       # Meta
       - name: resourceType
@@ -1388,3 +1389,81 @@ entities:
       - name: location
         externalId: $.meta.location
         type: String
+
+relationships:
+  # Parent relationships
+  ParentOfAlertAttribute:
+    displayName: ParentOfWorkEmail
+    childEntity: attributes
+  ParentOfAlertAction:
+    displayName: ParentOfAlertAction
+    childEntity: actions
+  ParentOfAlertActionResult:
+    displayName: ParentOfAlertActionResult
+    childEntity: result
+  ParentOfAlertActionResultNotification:
+    displayName: ParentOfAlertActionResultNotification
+    childEntity: notifications
+  ParentOfApplicationSchema:
+    displayName: ParentOfApplicationSchema
+    childEntity: applicationSchemas
+  ParentOfApplicationLocalizedDescription:
+    displayName: ParentOfApplicationLocalizedDescription
+    childEntity: descriptions
+  ParentOfEntitlementLocalizedDescription:
+    displayName: ParentOfEntitlementLocalizedDescription
+    childEntity: descriptions
+  ParentOfEntitlementApplication:
+    displayName: ParentOfEntitlementApplication
+    childEntity: application
+  ParentOfEntitlementOwner:
+    displayName: ParentOfEntitlementOwner
+    childEntity: owner
+  ParentOfLaunchedWorkflowInput:
+    displayName: ParentOfLaunchedWorkflowInput
+    childEntity: input
+  ParentOfLaunchedWorkflowOutput:
+    displayName: ParentOfLaunchedWorkflowOutput
+    childEntity: output
+  ParentOfLaunchedWorkflowAttribute:
+    displayName: ParentOfLaunchedWorkflowAttribute
+    childEntity: attributes
+  ParentOfObjectConfigAttribute:
+    displayName: ParentOfObjectConfigAttribute
+    childEntity: objectAttributes
+  ParentOfObjectAttributeSource:
+    displayName: ParentOfObjectAttributeSource
+    childEntity: attributeSources
+  ParentOfObjectAttributeTarget:
+    displayName: ParentOfObjectAttributeTarget
+    childEntity: attributeTargets
+  ParentOfRoleLocalizedDescription:
+    displayName: ParentOfRoleLocalizedDescription
+    childEntity: descriptions
+  ParentOfRoleInheritance:
+    displayName: ParentOfRoleInheritance
+    childEntity: inheritance
+  ParentOfRoleRequirement:
+    displayName: ParentOfRoleRequirement
+    childEntity: requirements
+  ParentOfRolePermit:
+    displayName: ParentOfRolePermit
+    childEntity: permits
+  ParentOfRoleClassfication:
+    displayName: ParentOfRoleClassfication
+    childEntity: classifications
+  ParentOfTaskResultsAttribute:
+    displayName: ParentOfTaskResultsAttribute
+    childEntity: attributes
+  ParentOfSailpointUserEmail:
+    displayName: ParentOfSailpointUserEmail
+    childEntity: emails
+  ParentOfSailPointUserAccount:
+    displayName: ParentOfSailPointUserAccount
+    childEntity: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].accounts
+  ParentOfSailpointUserEntitlement:
+    displayName: ParentOfSailpointUserEntitlement
+    childEntity: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].entitlements
+  ParentOfSailpointUserRole:
+    displayName: ParentOfSailpointUserRole
+    childEntity: $..["urn:ietf:params:scim:schemas:sailpoint:1.0:User"].roles

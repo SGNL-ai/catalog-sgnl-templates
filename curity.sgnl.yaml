@@ -219,4 +219,14 @@ relationships:
     displayName: User Manager
     fromAttribute: Users.$..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.value
     toAttribute: Users.id
+  # Parent relationships
+  ParentOfUserEmail:
+    displayName: ParentOfUserEmail
+    childEntity: emails
+  ParentOfUserAddress:
+    displayName: ParentOfUserAddress
+    childEntity: addresses
+  ParentOfUserPhoneNumber:
+    displayName: ParentOfUserPhoneNumber
+    childEntity: phoneNumbers
   

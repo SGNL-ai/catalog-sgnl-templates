@@ -726,7 +726,7 @@ relationships:
     path:
       - relationship: UserRoleMember
         direction: Backward
-      - relationship: RoleMemberOf
+      - relationship: RoleMember
         direction: Forward
   RoleMemberRole:
     name: Role
@@ -739,7 +739,7 @@ relationships:
   DeviceOwner:
     name: DeviceOwner
     displayName: Device Owner
-    fromAttribute: Device.deviceRegisteredOwner
+    fromAttribute: deviceRegisteredOwner
     toAttribute: User.id
   UserManager:
     name: Manager
