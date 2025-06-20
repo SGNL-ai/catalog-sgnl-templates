@@ -530,3 +530,8 @@ relationships:
     displayName: Issue Reporter
     fromAttribute: Issue.fields__reporter__accountId
     toAttribute: User.accountId
+  # Parent relationships
+  # FixVersions-[parent]->Issue
+  ParentOfFixVersions:
+    displayName: ParentOfFixVersions
+    childEntity: $.fields.fixVersions
