@@ -706,12 +706,12 @@ relationships:
   CompromisedUserEntity:
     displayName: CompromisedUserEntity
     name: CompromisedUserEntity
-    fromAttribute: compromisedEntity.compromisedEntityId
+    fromAttribute: compromisedEntityId
     toAttribute: user.entityId
   CompromisedEndpointEntity:
     displayName: CompromisedEndpointEntity
     name: CompromisedEndpointEntity
-    fromAttribute: compromisedEntity.compromisedEntityId
+    fromAttribute: compromisedEntityId
     toAttribute: endpoint.entityId
   # Parent relationships
   ParentOfUserRiskFactor:
