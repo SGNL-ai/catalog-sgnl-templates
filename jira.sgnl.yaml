@@ -52,7 +52,6 @@ entities:
       - name: emailAddress
         externalId: emailAddress
         type: String
-        indexed: true
 
   Issue:
     # https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issue-search/#api-rest-api-3-search-post
@@ -73,7 +72,6 @@ entities:
       - name: key
         externalId: key
         type: String
-        indexed: true
       - name: fields__statuscategorychangedate
         externalId: fields__statuscategorychangedate
         type: DateTime
@@ -191,7 +189,6 @@ entities:
       - name: fields__assignee__accountId
         externalId: fields__assignee__accountId
         type: String
-        indexed: true
       - name: fields__assignee__emailAddress
         externalId: fields__assignee__emailAddress
         type: String
@@ -261,7 +258,6 @@ entities:
       - name: fields__creator__accountId
         externalId: fields__creator__accountId
         type: String
-        indexed: true
       - name: fields__creator__emailAddress
         externalId: fields__creator__emailAddress
         type: String
@@ -283,7 +279,6 @@ entities:
       - name: fields__reporter__accountId
         externalId: fields__reporter__accountId
         type: String
-        indexed: true
       - name: fields__reporter__emailAddress
         externalId: fields__reporter__emailAddress
         type: String
@@ -343,7 +338,6 @@ entities:
       - name: name
         externalId: name
         type: String
-        indexed: true
       - name: archived
         externalId: archived
         type: Bool
@@ -383,11 +377,9 @@ entities:
       - name: groupId
         externalId: groupId
         type: String
-        indexed: true
       - name: accountId
         externalId: accountId
         type: String
-        indexed: true
 
   Workspace:
     # https://developer.atlassian.com/cloud/jira/service-desk/rest/api-group-assets/#api-rest-servicedeskapi-assets-workspace-get.
@@ -421,7 +413,6 @@ entities:
       - name: workspaceId
         externalId: workspaceId
         type: String
-        indexed: true
       - name: id
         externalId: id
         type: String

@@ -48,23 +48,18 @@ entities:
       - name: manager
         externalId: manager
         type: String
-        indexed: true
       - name: employeeNumber
         externalId: employee_number
         type: String
-        indexed: true
       - name: company
         externalId: company
         type: String
-        indexed: true
       - name: email
         externalId: email
         type: String
-        indexed: true
       - name: hashedUserId
         externalId: hashed_user_id
         type: String
-        indexed: true
       - name: sysCreatedOn
         externalId: sys_created_on
         type: DateTime
@@ -160,19 +155,15 @@ entities:
       - name: parent
         externalId: parent
         type: String
-        indexed: true
       - name: defaultAssignee
         externalId: default_assignee
         type: String
-        indexed: true
       - name: name
         externalId: name
         type: String
-        indexed: true
       - name: manager
         externalId: manager
         type: String
-        indexed: true
       - name: sysCreatedOn
         externalId: sys_created_on
         type: DateTime
@@ -223,12 +214,10 @@ entities:
       - name: user
         externalId: user
         type: String
-        indexed: true
         required: true
       - name: group
         externalId: group
         type: String
-        indexed: true
         required: true
       - name: sysCreatedOn
         externalId: sys_created_on
@@ -259,18 +248,14 @@ entities:
       - name: number
         externalId: number
         type: String
-        indexed: true
       - name: caller_id
         externalId: caller_id
         type: String
-        indexed: true
       - name: cmdb_ci
         externalId: cmdb_ci
         type: String
-        indexed: true
       - name: configuration_items
         externalId: u_configuration_items
-        indexed: true
         type: String
       - name: business_impact
         externalId: business_impact
@@ -284,30 +269,23 @@ entities:
       - name: assignedTo
         externalId: assigned_to
         type: String
-        indexed: true
       - name: assignmentGroup
         externalId: assignment_group
-        indexed: true
         type: String
       - name: parentIncident
         externalId: parent_incident
         type: String
-        indexed: true
       - name: rfc
         externalId: rfc
         type: String
-        indexed: true
       - name: problem
         externalId: problem_id
         type: String
-        indexed: true
       - name: openedBy
         externalId: opened_by
         type: String
-        indexed: true
       - name: resolvedBy
         externalId: resolved_by
-        indexed: true
         type: String
       - name: resolvedAt
         externalId: resolved_at
@@ -318,23 +296,18 @@ entities:
       - name: active
         externalId: active
         type: String
-        indexed: true
       - name: state
         externalId: state
         type: String
-        indexed: true
       - name: sys_created_on
         externalId: sys_created_on
         type: DateTime
-        indexed: true
       - name: causedBy
         externalId: caused_by
         type: String
-        indexed: true
       - name: urgency
         externalId: urgency
         type: String
-        indexed: true
 
   ChangeRequest:
     displayName: ChangeRequest
@@ -352,19 +325,15 @@ entities:
       - name: active
         externalId: active
         type: String
-        indexed: true
       - name: approval
         externalId: approval
         type: String
-        indexed: true
       - name: number
         externalId: number
         type: String
-        indexed: true
       - name: requested_by
         externalId: requested_by
         type: String
-        indexed: true
       - name: risk
         externalId: risk
         type: String
@@ -374,15 +343,12 @@ entities:
       - name: state
         externalId: state
         type: String
-        indexed: true
       - name: assignedTo
         externalId: assigned_to
         type: String
-        indexed: true
       - name: assignmentGroup
         externalId: assignment_group
         type: String
-        indexed: true
       - name: start_date
         externalId: start_date
         type: DateTime
@@ -404,11 +370,9 @@ entities:
       - name: type
         externalId: type
         type: String
-        indexed: true
       - name: configurationItem
         externalId: cmdb_ci
         type: String
-        indexed: true
       - name: closedAt
         externalId: closed_at
         type: DateTime
@@ -429,31 +393,24 @@ entities:
       - name: active
         externalId: active
         type: String
-        indexed: true
       - name: assignedTo
         externalId: assigned_to
         type: String
-        indexed: true
       - name: assignmentGroup
         externalId: assignment_group
         type: String
-        indexed: true
       - name: changeTaskType
         externalId: change_task_type
         type: String
-        indexed: true
       - name: number
         externalId: number
         type: String
-        indexed: true
       - name: state
         externalId: state
         type: String
-        indexed: true
       - name: changeRequest
         externalId: change_request
         type: String
-        indexed: true
 
   Problem:
     displayName: Problem
@@ -471,23 +428,18 @@ entities:
       - name: number
         externalId: number
         type: String
-        indexed: true
       - name: cmdb_ci
         externalId: cmdb_ci
         type: String
-        indexed: true
       - name: state
         externalId: state
         type: String
-        indexed: true
       - name: u_area
         externalId: u_area
         type: String
-        indexed: true
       - name: u_phase
         externalId: u_phase
         type: String
-        indexed: true
       - name: sysUpdatedOn
         externalId: sys_updated_on
         type: DateTime
@@ -503,11 +455,9 @@ entities:
       - name: assignedTo
         externalId: assigned_to
         type: String
-        indexed: true
       - name: assignmentGroup
         externalId: assignment_group
         type: String
-        indexed: true
       - name: slaDue
         externalId: sla_due
         type: DateTime
@@ -520,7 +470,6 @@ entities:
       - name: rfc
         externalId: rfc
         type: String
-        indexed: true
       - name: resolvedAt
         externalId: resolved_at
         type: DateTime
@@ -550,7 +499,6 @@ entities:
       - name: number
         externalId: number
         type: String
-        indexed: true
 
   ConfigurationItem:
     displayName: Configuration Item
@@ -568,27 +516,21 @@ entities:
       - name: assetTag
         externalId: asset_tag
         type: String
-        indexed: true
       - name: Category
         externalId: category
         type: String
-        indexed: true
       - name: CorrelationId
         externalId: correlation_id
         type: String
-        indexed: true
       - name: desiredAssetTag
         externalId: u_asset_tag_desired
         type: String
-        indexed: true
       - name: Justification
         externalId: justification
         type: String
-        indexed: true
       - name: name
         externalId: name
         type: String
-        indexed: true
 
 relationships:
   UserManager:

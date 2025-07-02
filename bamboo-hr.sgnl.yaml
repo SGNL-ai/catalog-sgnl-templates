@@ -75,7 +75,6 @@ entities:
       - name: bestEmail
         externalId: bestEmail
         type: String
-        indexed: true
       - name: dateOfBirth
         externalId: dateOfBirth
         type: DateTime
@@ -91,12 +90,10 @@ entities:
       - name: supervisorEId
         externalId: supervisorEId
         type: String
-        indexed: true
         attributeAlias: supervisorEId
       - name: supervisorEmail
         externalId: supervisorEmail
         type: String
-        indexed: true
       - name: lastChanged
         externalId: lastChanged
         type: DateTime

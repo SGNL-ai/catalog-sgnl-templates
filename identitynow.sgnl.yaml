@@ -63,7 +63,6 @@ entities:
       - name: identityId
         externalId: identityId
         type: String
-        indexed: true
       - name: authoritative
         externalId: authoritative
         type: Bool
@@ -157,11 +156,9 @@ entities:
       - name: accountId
         externalId: accountId
         type: String
-        indexed: true
       - name: entitlementId
         externalId: entitlementId
         type: String
-        indexed: true
   Identity:
     displayName: Identity
     externalId: identities

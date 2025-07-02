@@ -40,7 +40,6 @@ entities:
       - name: userPrincipalName
         externalId: userPrincipalName
         type: String
-        indexed: true
       - name: displayName
         externalId: displayName
         type: String
@@ -53,7 +52,6 @@ entities:
       - name: mail
         externalId: mail
         type: String
-        indexed: true
       - name: mobilePhone
         externalId: mobilePhone
         type: String
@@ -133,7 +131,6 @@ entities:
       - name: manager__id
         externalId: manager__id
         type: String
-        indexed: true
       - name: onPremisesDistinguishedName
         externalId: onPremisesDistinguishedName
         type: String
@@ -338,11 +335,9 @@ entities:
       - name: groupId
         externalId: groupId
         type: String
-        indexed: true
       - name: memberId
         externalId: memberId
         type: String
-        indexed: true
   Application:
     description: "Application Entity in Entra ID"
     displayName: Application
@@ -358,7 +353,6 @@ entities:
       - name: appId
         externalId: appId
         type: String
-        indexed: true
       - name: tags
         externalId: tags
         type: String
@@ -512,7 +506,6 @@ entities:
       - name: deviceId
         externalId: deviceId
         type: String
-        indexed: true
       - name: deviceMetadata
         externalId: deviceMetadata
         type: String
@@ -569,7 +562,6 @@ entities:
         externalId: $.registeredOwners[0].id
         type: String
         attributeAlias: deviceRegisteredOwner
-        indexed: true
       - name: systemLabels
         externalId: systemLabels
         type: String
@@ -592,7 +584,6 @@ entities:
       - name: displayName
         externalId: displayName
         type: String
-        indexed: true
       - name: description
         externalId: description
         type: String
@@ -617,11 +608,9 @@ entities:
       - name: roleId
         externalId: roleId
         type: String
-        indexed: true
       - name: memberId
         externalId: memberId
         type: String
-        indexed: true
   RoleAssignment:
     description: "Role Assignment in Entra ID"
     displayName: RoleAssignment

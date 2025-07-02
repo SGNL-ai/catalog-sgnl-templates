@@ -141,11 +141,9 @@ entities:
       - name: userId
         externalId: userId
         type: String
-        indexed: true
       - name: teamId
         externalId: teamId
         type: String
-        indexed: true
       - name: role
         externalId: role
         type: String
@@ -500,7 +498,6 @@ entities:
       - name: user__id
         externalId: user__id
         type: String
-        indexed: true
       - name: user__type
         externalId: user__type
         type: String

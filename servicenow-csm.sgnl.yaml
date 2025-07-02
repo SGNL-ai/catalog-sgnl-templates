@@ -45,23 +45,18 @@ entities:
       - name: manager
         externalId: manager
         type: String
-        indexed: true
       - name: employeeNumber
         externalId: employee_number
         type: String
-        indexed: true
       - name: company
         externalId: company
         type: String
-        indexed: true
       - name: email
         externalId: email
         type: String
-        indexed: true
       - name: hashedUserId
         externalId: hashed_user_id
         type: String
-        indexed: true
       - name: sysCreatedOn
         externalId: sys_created_on
         type: DateTime
@@ -157,19 +152,15 @@ entities:
       - name: parent
         externalId: parent
         type: String
-        indexed: true
       - name: defaultAssignee
         externalId: default_assignee
         type: String
-        indexed: true
       - name: name
         externalId: name
         type: String
-        indexed: true
       - name: manager
         externalId: manager
         type: String
-        indexed: true
       - name: sysCreatedOn
         externalId: sys_created_on
         type: DateTime
@@ -220,12 +211,10 @@ entities:
       - name: user
         externalId: user
         type: String
-        indexed: true
         required: true
       - name: group
         externalId: group
         type: String
-        indexed: true
         required: true
       - name: sysCreatedOn
         externalId: sys_created_on
@@ -255,27 +244,21 @@ entities:
       - name: account
         externalId: account
         type: String
-        indexed: true
       - name: assignedTo
         externalId: assigned_to
         type: String
-        indexed: true
       - name: company
         externalId: company
         type: String
-        indexed: true
       - name: contributorUsers
         externalId: contributorUsers
         type: String
-        indexed: true
       - name: number
         externalId: number
         type: String
-        indexed: true
       - name: parent
         externalId: parent
         type: String
-        indexed: true
       - name: sysCreatedOn
         externalId: sys_created_on
         type: DateTime
@@ -427,15 +410,12 @@ entities:
       - name: parent
         externalId: parent
         type: String
-        indexed: true
       - name: accountParent
         externalId: account_parent
         type: String
-        indexed: true
       - name: number
         externalId: number
         type: String
-        indexed: true
       - name: name
         externalId: name
         type: String

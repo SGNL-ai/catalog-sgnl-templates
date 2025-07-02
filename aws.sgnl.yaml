@@ -35,7 +35,6 @@ entities:
       - name: AccountId
         externalId: AccountId
         type: String
-        indexed: true
       - name: CreateDate
         externalId: CreateDate
         type: DateTime
@@ -57,7 +56,6 @@ entities:
       - name: AccountId
         externalId: AccountId
         type: String
-        indexed: true
       - name: CreateDate
         externalId: CreateDate
         type: DateTime
@@ -73,11 +71,9 @@ entities:
       - name: UserId
         externalId: UserId
         type: String
-        indexed: true
       - name: UserName
         externalId: UserName
         type: String
-        indexed: true
   Role:
     displayName: Role
     externalId: Role
@@ -93,11 +89,9 @@ entities:
       - name: AccountId
         externalId: AccountId
         type: String
-        indexed: true
       - name: AssumeRolePolicyDocument
         externalId: AssumeRolePolicyDocument
         type: String
-        indexed: true
       - name: CreateDate
         externalId: CreateDate
         type: DateTime
@@ -116,14 +110,12 @@ entities:
       - name: RoleId
         externalId: RoleId
         type: String
-        indexed: true
       - name: RoleLastUsed
         externalId: $.RoleLastUsed.LastUsedDate
         type: DateTime
       - name: RoleName
         externalId: RoleName
         type: String
-        indexed: true
   Group:
     displayName: Group
     externalId: Group
@@ -139,18 +131,15 @@ entities:
       - name: AccountId
         externalId: AccountId
         type: String
-        indexed: true
       - name: CreateDate
         externalId: CreateDate
         type: DateTime
       - name: GroupId
         externalId: GroupId
         type: String
-        indexed: true
       - name: GroupName
         externalId: GroupName
         type: String
-        indexed: true
       - name: Path
         externalId: Path
         type: String
@@ -169,7 +158,6 @@ entities:
       - name: AccountId
         externalId: AccountId
         type: String
-        indexed: true
       - name: AttachmentCount
         externalId: AttachmentCount
         type: Int64
@@ -194,7 +182,6 @@ entities:
       - name: PolicyId
         externalId: PolicyId
         type: String
-        indexed: true
       - name: RoleLastUsed
         externalId: $.RoleLastUsed.LastUsedDate
         type: DateTime
@@ -219,11 +206,9 @@ entities:
       - name: UserId
         externalId: UserId
         type: String
-        indexed: true
       - name: GroupName
         externalId: GroupName
         type: String
-        indexed: true
   GroupPolicy:
     displayName: GroupPolicy
     externalId: GroupPolicy
@@ -239,11 +224,9 @@ entities:
       - name: PolicyArn
         externalId: PolicyArn
         type: String
-        indexed: true
       - name: GroupName
         externalId: GroupName
         type: String
-        indexed: true
   RolePolicy:
     displayName: RolePolicy
     externalId: RolePolicy
@@ -259,11 +242,9 @@ entities:
       - name: PolicyArn
         externalId: PolicyArn
         type: String
-        indexed: true
       - name: RoleName
         externalId: RoleName
         type: String
-        indexed: true
   UserPolicy:
     displayName: UserPolicy
     externalId: UserPolicy
@@ -279,11 +260,9 @@ entities:
       - name: PolicyArn
         externalId: PolicyArn
         type: String
-        indexed: true
       - name: UserName
         externalId: UserName
         type: String
-        indexed: true
 relationships:
   UserAssignedPolicyMember:
     name: Assigned

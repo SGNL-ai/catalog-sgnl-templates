@@ -22,7 +22,6 @@ entities:
       - name: subject
         externalId: $.sub_id.email
         type: String
-        indexed: true
       - name: issuer
         externalId: $.iss
         type: String
@@ -58,7 +57,6 @@ entities:
       - name: subject
         externalId: $.sub_id.email
         type: String
-        indexed: true
       - name: issuer
         externalId: $.iss
         type: String
@@ -94,7 +92,6 @@ entities:
       - name: subject
         externalId: $.sub_id.email
         type: String
-        indexed: true
       - name: issuer
         externalId: $.iss
         type: String
@@ -133,7 +130,6 @@ entities:
       - name: subject
         externalId: $.sub_id.email
         type: String
-        indexed: true
       - name: issuer
         externalId: $.iss
         type: String
@@ -169,7 +165,6 @@ entities:
       - name: subject
         externalId: $.sub_id.email
         type: String
-        indexed: true
       - name: issuer
         externalId: $.iss
         type: String
@@ -208,7 +203,6 @@ entities:
       - name: subject
         externalId: $.sub_id.email
         type: String
-        indexed: true
       - name: issuer
         externalId: $.iss
         type: String
@@ -244,7 +238,6 @@ entities:
       - name: subject
         externalId: $.sub_id.email
         type: String
-        indexed: true
       - name: issuer
         externalId: $.iss
         type: String

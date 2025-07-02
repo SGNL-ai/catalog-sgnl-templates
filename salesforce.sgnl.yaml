@@ -48,7 +48,6 @@ entities:
         externalId: CreatedById
         description: "CreatedById attribute"
         type: String
-        indexed: true
       - name: CreatedDate
         externalId: CreatedDate
         description: "CreatedDate attribute"
@@ -57,7 +56,6 @@ entities:
         externalId: LastModifiedById
         description: "LastModifiedById attribute"
         type: String
-        indexed: true
       - name: LastModifiedDate
         externalId: LastModifiedDate
         description: "LastModifiedDate attribute"
@@ -98,7 +96,6 @@ entities:
         externalId: MasterRecordId
         description: "MasterRecordId attribute"
         type: String
-        indexed: true
       - name: Name
         externalId: Name
         description: "Name attribute"
@@ -111,12 +108,10 @@ entities:
         externalId: OwnerId
         description: "OwnerId attribute"
         type: String
-        indexed: true
       - name: ParentId
         externalId: ParentId
         description: "ParentId attribute"
         type: String
-        indexed: true
       - name: Phone
         externalId: Phone
         description: "Phone attribute"
@@ -158,7 +153,6 @@ entities:
         externalId: CreatedById
         description: "CreatedById attribute"
         type: String
-        indexed: true
       - name: CreatedDate
         externalId: CreatedDate
         description: "CreatedDate attribute"
@@ -167,7 +161,6 @@ entities:
         externalId: LastModifiedById
         description: "LastModifiedById attribute"
         type: String
-        indexed: true
       - name: LastModifiedDate
         externalId: LastModifiedDate
         description: "LastModifiedDate attribute"
@@ -180,7 +173,6 @@ entities:
         externalId: AccountId
         description: "AccountId attribute"
         type: String
-        indexed: true
       - name: CaseNumber
         externalId: CaseNumber
         description: "CaseNumber attribute"
@@ -213,7 +205,6 @@ entities:
         externalId: MasterRecordId
         description: "MasterRecordId attribute"
         type: String
-        indexed: true
       - name: Origin
         externalId: Origin
         description: "Origin attribute"
@@ -222,12 +213,10 @@ entities:
         externalId: OwnerId
         description: "OwnerId attribute"
         type: String
-        indexed: true
       - name: ParentId
         externalId: ParentId
         description: "ParentId attribute"
         type: String
-        indexed: true
       - name: Priority
         externalId: Priority
         description: "Priority attribute"
@@ -277,7 +266,6 @@ entities:
         externalId: CreatedById
         description: "CreatedById attribute"
         type: String
-        indexed: true
       - name: CreatedDate
         externalId: CreatedDate
         description: "CreatedDate attribute"
@@ -286,7 +274,6 @@ entities:
         externalId: LastModifiedById
         description: "LastModifiedById attribute"
         type: String
-        indexed: true
       - name: LastModifiedDate
         externalId: LastModifiedDate
         description: "LastModifiedDate attribute"
@@ -307,7 +294,6 @@ entities:
         externalId: OwnerId
         description: "OwnerId attribute"
         type: String
-        indexed: true
   User:
     displayName: User
     externalId: User
@@ -325,7 +311,6 @@ entities:
         externalId: CreatedById
         description: "CreatedById attribute"
         type: String
-        indexed: true
       - name: CreatedDate
         externalId: CreatedDate
         description: "CreatedDate attribute"
@@ -334,7 +319,6 @@ entities:
         externalId: LastModifiedById
         description: "LastModifiedById attribute"
         type: String
-        indexed: true
       - name: LastModifiedDate
         externalId: LastModifiedDate
         description: "LastModifiedDate attribute"
@@ -347,7 +331,6 @@ entities:
         externalId: AccountId
         description: "AccountId attribute"
         type: String
-        indexed: true
       - name: Alias
         externalId: Alias
         description: "Alias attribute"
@@ -368,7 +351,6 @@ entities:
         externalId: DelegatedApproverId
         description: "DelegatedApproverId attribute"
         type: String
-        indexed: true
       - name: Department
         externalId: Department
         description: "Department attribute"
@@ -381,7 +363,6 @@ entities:
         externalId: Email
         description: "Email attribute"
         type: String
-        indexed: true
       - name: EmployeeNumber
         externalId: EmployeeNumber
         description: "EmployeeNumber attribute"
@@ -406,7 +387,6 @@ entities:
         externalId: ManagerId
         description: "ManagerId attribute"
         type: String
-        indexed: true
       - name: MobilePhone
         externalId: MobilePhone
         description: "MobilePhone attribute"
@@ -439,7 +419,6 @@ entities:
         externalId: Username
         description: "Username attribute"
         type: String
-        indexed: true
       - name: UserRoleId
         externalId: UserRoleId
         description: "UserRoleId attribute"
@@ -465,12 +444,10 @@ entities:
         externalId: Name
         description: "Name attribute"
         type: String
-        indexed: true
       - name: Type
         externalId: Type
         description: "Type attribute"
         type: String
-        indexed: true
       - name: DeveloperName
         externalId: DeveloperName
         description: "DeveloperName attribute"
@@ -479,7 +456,6 @@ entities:
         externalId: OwnerId
         description: "OwnerId attribute"
         type: String
-        indexed: true
   GroupMember:
     displayName: GroupMember
     externalId: GroupMember
@@ -497,12 +473,10 @@ entities:
         externalId: GroupId
         description: "Group Id attribute"
         type: String
-        indexed: true
       - name: UserOrGroupId
         externalId: UserOrGroupId
         description: "User or Group Id attribute"
         type: String
-        indexed: true
 relationships:
   UserAccount:
     name: Account

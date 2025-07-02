@@ -74,7 +74,6 @@ entities:
       - name: identityUserName
         externalId: $.identity.userName
         type: String
-        indexed: true
       - name: identityDisplayName
         externalId: $.identity.displayName
         type: String
@@ -1152,7 +1151,6 @@ entities:
       - name: managerId
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.value
         type: String
-        indexed: true
       - name: managerDisplayName
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.displayName
         type: String
