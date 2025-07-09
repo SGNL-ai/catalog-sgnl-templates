@@ -38,7 +38,6 @@ entities:
       - name: userId
         externalId: userId
         type: String
-        indexed: true
         uniqueId: true
       - name: userName
         externalId: userName

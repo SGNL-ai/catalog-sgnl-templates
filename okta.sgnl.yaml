@@ -33,7 +33,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: status
         externalId: status
@@ -68,7 +67,6 @@ entities:
       - name: profile__email
         externalId: profile__email
         type: String
-        indexed: true
       - name: profile__secondEmail
         externalId: profile__secondEmail
         type: String
@@ -153,7 +151,6 @@ entities:
       - name: profile__managerId
         externalId: profile__managerId
         type: String
-        indexed: true
       - name: profile__manager
         externalId: profile__manager
         type: String
@@ -167,7 +164,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: created
         externalId: created
@@ -188,7 +184,6 @@ entities:
       - name: profile__name
         externalId: profile__name
         type: String
-        indexed: true
       - name: profile__description
         externalId: profile__description
         type: String
@@ -202,16 +197,13 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: groupId
         externalId: groupId
         type: String
-        indexed: true
       - name: userId
         externalId: userId
         type: String
-        indexed: true
 
 relationships:
   Member:

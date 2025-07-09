@@ -25,7 +25,6 @@ entities:
       - name: user_id
         externalId: user_id
         type: String
-        indexed: true
         uniqueId: true
       - name: alias1
         externalId: alias1
@@ -87,7 +86,6 @@ entities:
       - name: group_id
         externalId: group_id
         type: String
-        indexed: true
         uniqueId: true
       - name: name
         externalId: name
@@ -104,7 +102,6 @@ entities:
       - name: phone_id
         externalId: phone_id
         type: String
-        indexed: true
         uniqueId: true
       - name: name
         externalId: name
@@ -120,7 +117,6 @@ entities:
       - name: group_id
         externalId: group_id
         type: String
-        indexed: true
         uniqueId: true
       - name: desc
         externalId: desc
@@ -154,7 +150,6 @@ entities:
       - name: phone_id
         externalId: phone_id
         type: String
-        indexed: true
         uniqueId: true
       - name: activated
         externalId: activated
@@ -216,7 +211,6 @@ entities:
       - name: epkey
         externalId: epkey
         type: String
-        indexed: true
         uniqueId: true
       - name: computer_sid
         externalId: computer_sid

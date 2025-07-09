@@ -77,7 +77,6 @@ entities:
         externalId: objectGUID
         description: The objectGUID of the User
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: userGUID
       - name: dn
@@ -172,11 +171,9 @@ entities:
       - name: mail
         externalId: mail
         type: String
-        indexed: true
       - name: title
         externalId: title
         type: String
-        indexed: true
 
   Computer:
     displayName: Computer
@@ -189,7 +186,6 @@ entities:
         externalId: objectGUID
         description: The objectGUID of the Computer
         type: String
-        indexed: true
         uniqueId: true
       - name: dn
         externalId: dn
@@ -314,7 +310,6 @@ entities:
         externalId: objectGUID
         description: The objectGUID of the Group
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: groupGUID
       - name: dn
@@ -380,16 +375,13 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: group_objectGUID
         externalId: group_objectGUID
         type: String
-        indexed: true
       - name: member_objectGUID
         externalId: member_objectGUID
         type: String
-        indexed: true
 
 relationships:
   UserMember:

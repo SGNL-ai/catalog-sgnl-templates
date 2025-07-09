@@ -36,7 +36,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: summary
         externalId: summary
@@ -101,7 +100,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: summary
         externalId: summary
@@ -136,16 +134,13 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: userId
         externalId: userId
         type: String
-        indexed: true
       - name: teamId
         externalId: teamId
         type: String
-        indexed: true
       - name: role
         externalId: role
         type: String
@@ -161,7 +156,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: summary
         externalId: summary
@@ -325,7 +319,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: summary
         externalId: summary
@@ -448,7 +441,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: summary
         externalId: summary
@@ -495,12 +487,10 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: user__id
         externalId: user__id
         type: String
-        indexed: true
       - name: user__type
         externalId: user__type
         type: String

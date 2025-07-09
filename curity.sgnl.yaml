@@ -36,16 +36,13 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: externalId
         externalId: externalId
         type: String
-        indexed: true
       - name: userName
         externalId: userName
         type: String
-        indexed: true
       - name: formattedName
         externalId: $.name.formatted
         type: String
@@ -96,7 +93,6 @@ entities:
       - name: employeeNumber
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].employeeNumber
         type: String
-        indexed: true
       - name: costCenter
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].costCenter
         type: String
@@ -112,7 +108,6 @@ entities:
       - name: managerId
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.value
         type: String  
-        indexed: true
       - name: managerDisplayName
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.displayName
         type: String
@@ -145,7 +140,6 @@ entities:
       - name: value
         externalId: value
         type: String
-        indexed: true
         uniqueId: true
       - name: display
         externalId: display
@@ -168,7 +162,6 @@ entities:
       - name: formatted
         externalId: formatted
         type: String
-        indexed: true
         uniqueId: true
       - name: streetAddress
         externalId: streetAddress
@@ -200,7 +193,6 @@ entities:
       - name: value
         externalId: value
         type: String
-        indexed: true
         uniqueId: true
       - name: display
         externalId: display
