@@ -49,7 +49,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: name
         externalId: name
@@ -103,7 +102,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: name
         externalId: name
@@ -151,7 +149,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: accountId
         externalId: accountId
@@ -169,7 +166,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: name
         externalId: name

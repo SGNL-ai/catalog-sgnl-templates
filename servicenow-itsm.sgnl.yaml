@@ -40,7 +40,6 @@ entities:
         externalId: sys_id
         description: ID of the user
         type: String
-        indexed: true
         uniqueId: true
       - name: name
         externalId: name
@@ -150,7 +149,6 @@ entities:
         externalId: sys_id
         description: ID of the group
         type: String
-        indexed: true
         uniqueId: true
       - name: parent
         externalId: parent
@@ -209,7 +207,6 @@ entities:
         externalId: sys_id
         description: ID of the group meber
         type: String
-        indexed: true
         uniqueId: true
       - name: user
         externalId: user
@@ -243,7 +240,6 @@ entities:
         externalId: sys_id
         description: ID of the incident
         type: String
-        indexed: true
         uniqueId: true
       - name: number
         externalId: number
@@ -320,7 +316,6 @@ entities:
         externalId: sys_id
         description: ID of the change request
         type: String
-        indexed: true
         uniqueId: true
       - name: active
         externalId: active
@@ -388,7 +383,6 @@ entities:
         externalId: sys_id
         description: ID of the change task
         type: String
-        indexed: true
         uniqueId: true
       - name: active
         externalId: active
@@ -423,7 +417,6 @@ entities:
         externalId: sys_id
         description: ID of the problem
         type: String
-        indexed: true
         uniqueId: true
       - name: number
         externalId: number
@@ -494,7 +487,6 @@ entities:
         externalId: sys_id
         description: ID of the problem
         type: String
-        indexed: true
         uniqueId: true
       - name: number
         externalId: number
@@ -511,7 +503,6 @@ entities:
         externalId: sys_id
         description: ID of the problem
         type: String
-        indexed: true
         uniqueId: true
       - name: assetTag
         externalId: asset_tag

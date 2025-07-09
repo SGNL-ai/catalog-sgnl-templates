@@ -17,7 +17,6 @@ entities:
       - name: id
         externalId: $.jti
         type: String
-        indexed: true
         uniqueId: true
       - name: subject
         externalId: $.sub_id.email
@@ -52,7 +51,6 @@ entities:
       - name: id
         externalId: $.jti
         type: String
-        indexed: true
         uniqueId: true
       - name: subject
         externalId: $.sub_id.email
@@ -87,7 +85,6 @@ entities:
       - name: id
         externalId: $.jti
         type: String
-        indexed: true
         uniqueId: true
       - name: subject
         externalId: $.sub_id.email
@@ -125,7 +122,6 @@ entities:
       - name: id
         externalId: $.jti
         type: String
-        indexed: true
         uniqueId: true
       - name: subject
         externalId: $.sub_id.email
@@ -160,7 +156,6 @@ entities:
       - name: id
         externalId: $.jti
         type: String
-        indexed: true
         uniqueId: true
       - name: subject
         externalId: $.sub_id.email
@@ -198,7 +193,6 @@ entities:
       - name: id
         externalId: $.jti
         type: String
-        indexed: true
         uniqueId: true
       - name: subject
         externalId: $.sub_id.email
@@ -233,7 +227,6 @@ entities:
       - name: id
         externalId: $.jti
         type: String
-        indexed: true
         uniqueId: true
       - name: subject
         externalId: $.sub_id.email

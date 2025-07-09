@@ -37,7 +37,6 @@ entities:
         externalId: sys_id
         description: ID of the user
         type: String
-        indexed: true
         uniqueId: true
       - name: name
         externalId: name
@@ -147,7 +146,6 @@ entities:
         externalId: sys_id
         description: ID of the group
         type: String
-        indexed: true
         uniqueId: true
       - name: parent
         externalId: parent
@@ -206,7 +204,6 @@ entities:
         externalId: sys_id
         description: ID of the group meber
         type: String
-        indexed: true
         uniqueId: true
       - name: user
         externalId: user
@@ -239,7 +236,6 @@ entities:
         externalId: sys_id
         description: ID of the case
         type: String
-        indexed: true
         uniqueId: true
       - name: account
         externalId: account
@@ -405,7 +401,6 @@ entities:
         externalId: sys_id
         description: ID of the account
         type: String
-        indexed: true
         uniqueId: true
       - name: parent
         externalId: parent

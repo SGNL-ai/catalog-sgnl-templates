@@ -69,7 +69,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: employeeId
       - name: bestEmail

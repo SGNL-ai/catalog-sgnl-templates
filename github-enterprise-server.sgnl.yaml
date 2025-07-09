@@ -32,7 +32,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: organizationId
       - name: announcement
@@ -128,7 +127,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: userId
       - name: bio
@@ -217,7 +215,6 @@ entities:
       - name: id
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: orgId
         externalId: orgId
@@ -241,7 +238,6 @@ entities:
       - name: email
         externalId: email
         type: String
-        indexed: true
         uniqueId: true 
   
   # https://docs.github.com/en/graphql/reference/objects#team  
@@ -255,7 +251,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: combinedSlug
         externalId: combinedSlug
@@ -326,7 +321,6 @@ entities:
       - name: id
         externalId: $.node.id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: teamMemberId
       # Note: Role represents the TeamMember's role on the team.
@@ -351,7 +345,6 @@ entities:
       - name: id
         externalId: $.node.id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: teamRepositoryId
         # Permission is the Team's permission level for this repository
@@ -374,7 +367,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: repositoryId
       - name: allowUpdateBranch
@@ -538,7 +530,6 @@ entities:
       - name: collaboratorId
         externalId: $.node.id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: repositoryCollaboratorId
       - name: permission
@@ -555,7 +546,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: collaboratorId
       - name: bio
@@ -646,7 +636,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: pullRequestId
       - name: baseRepositoryId
@@ -740,7 +729,6 @@ entities:
       - name: uniqueId
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: pullRequestId
         externalId: pullRequestId
@@ -760,7 +748,6 @@ entities:
       - name: uniqueId
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: pullRequestId
         externalId: pullRequestId
@@ -782,7 +769,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: userLogin
         externalId: $.author.login
@@ -834,7 +820,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: pullRequestId
         externalId: pullRequestId
@@ -862,7 +847,6 @@ entities:
       - name: uniqueId # concatenated the file path and PR id
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: pullRequestId
         externalId: pullRequestId
@@ -892,7 +876,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: issueId
       - name: authorLogin
@@ -958,7 +941,6 @@ entities:
       - name: uniqueId
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: issueId
         externalId: issueId
@@ -999,7 +981,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: labelId
       - name: repositoryId
@@ -1032,7 +1013,6 @@ entities:
       - name: uniqueId
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: pullRequestId
         externalId: id
@@ -1053,7 +1033,6 @@ entities:
       - name: uniqueId
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: issueId
         externalId: id
@@ -1075,7 +1054,6 @@ entities:
       - name: number
         externalId: number
         type: Int64
-        indexed: true
         uniqueId: true
       - name: createdAt
         externalId: created_at

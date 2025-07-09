@@ -73,7 +73,6 @@ entities:
       - name: primaryEmail
         externalId: primaryEmail
         type: String
-        indexed: true
         uniqueId: true
       - name: id
         externalId: id
@@ -157,7 +156,6 @@ entities:
       - name: address
         externalId: address
         type: String
-        indexed: true
         uniqueId: true
       - name: type
         externalId: type
@@ -176,7 +174,6 @@ entities:
       - name: email
         externalId: email
         type: String
-        indexed: true
         uniqueId: true
       - name: id
         externalId: id
@@ -213,7 +210,6 @@ entities:
       - name: id
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: memberId
         externalId: id

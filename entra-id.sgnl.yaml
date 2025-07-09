@@ -35,7 +35,6 @@ entities:
         externalId: id
         description: ID of the user
         type: String
-        indexed: true
         uniqueId: true
       - name: userPrincipalName
         externalId: userPrincipalName
@@ -216,7 +215,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: classification
         externalId: classification
@@ -330,7 +328,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: groupId
         externalId: groupId
@@ -348,7 +345,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: appId
         externalId: appId
@@ -489,7 +485,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: accountEnabled
         externalId: accountEnabled
@@ -579,7 +574,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: displayName
         externalId: displayName
@@ -603,7 +597,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: roleId
         externalId: roleId
@@ -621,7 +614,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: principalId
         externalId: principalId
@@ -639,7 +631,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: action
         externalId: action
@@ -669,7 +660,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: accessId
         externalId: accessId

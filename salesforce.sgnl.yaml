@@ -38,7 +38,6 @@ entities:
         externalId: Id
         description: "Id attribute"
         type: String
-        indexed: true
         uniqueId: true
       - name: IsDeleted
         externalId: IsDeleted
@@ -143,7 +142,6 @@ entities:
         externalId: Id
         description: "Id of the resource"
         type: String
-        indexed: true
         uniqueId: true
       - name: IsDeleted
         externalId: IsDeleted
@@ -256,7 +254,6 @@ entities:
         externalId: Id
         description: "Id of the resource"
         type: String
-        indexed: true
         uniqueId: true
       - name: IsDeleted
         externalId: IsDeleted
@@ -305,7 +302,6 @@ entities:
         externalId: Id
         description: "Id of the resource"
         type: String
-        indexed: true
         uniqueId: true
       - name: CreatedById
         externalId: CreatedById
@@ -438,7 +434,6 @@ entities:
         externalId: Id
         description: "Id of the resource"
         type: String
-        indexed: true
         uniqueId: true
       - name: Name
         externalId: Name
@@ -467,7 +462,6 @@ entities:
         externalId: Id
         description: "Id of the resource"
         type: String
-        indexed: true
         uniqueId: true
       - name: GroupId
         externalId: GroupId

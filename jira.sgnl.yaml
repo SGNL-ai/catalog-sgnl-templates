@@ -32,7 +32,6 @@ entities:
       - name: accountId
         externalId: accountId
         type: String
-        indexed: true
         uniqueId: true
       - name: self
         externalId: self
@@ -64,7 +63,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: self
         externalId: self
@@ -333,7 +331,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: name
         externalId: name
@@ -356,7 +353,6 @@ entities:
       - name: groupId
         externalId: groupId
         type: String
-        indexed: true
         uniqueId: true
       - name: name
         externalId: name
@@ -372,7 +368,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: groupId
         externalId: groupId
@@ -392,7 +387,6 @@ entities:
       - name: workspaceId
         externalId: workspaceId
         type: String
-        indexed: true
         uniqueId: true
 
   # WARNING: In order to sync Objects, you must specify the objectsQlQuery in the adapterConfig.
@@ -408,7 +402,6 @@ entities:
       - name: globalId
         externalId: globalId
         type: String
-        indexed: true
         uniqueId: true
       - name: workspaceId
         externalId: workspaceId

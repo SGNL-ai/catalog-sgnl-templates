@@ -23,7 +23,6 @@ entities:
       - name: workerId
         externalId: $.worker.id
         type: String
-        indexed: true
         uniqueId: true
       - name: workerDescriptor
         externalId: $.worker.descriptor
@@ -85,7 +84,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: descriptor
         externalId: descriptor
@@ -98,7 +96,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: descriptor
         externalId: descriptor

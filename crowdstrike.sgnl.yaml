@@ -34,7 +34,6 @@ entities:
       - name: entityId
         externalId: entityId
         type: String
-        indexed: true
         uniqueId: true
       - name: primaryDisplayName
         externalId: primaryDisplayName
@@ -102,7 +101,6 @@ entities:
       - name: type
         externalId: type
         type: String
-        indexed: true
         uniqueId: true
       - name: score
         externalId: score
@@ -123,7 +121,6 @@ entities:
       - name: objectGuid
         externalId: objectGuid
         type: String
-        indexed: true
         uniqueId: true
       - name: objectSid
         externalId: objectSid
@@ -207,7 +204,6 @@ entities:
       - name: entityId
         externalId: entityId
         type: String
-        indexed: true
         uniqueId: true
       - name: agentId
         externalId: agentId
@@ -299,7 +295,6 @@ entities:
       - name: type
         externalId: type
         type: String
-        indexed: true
         uniqueId: true
       - name: score
         externalId: score
@@ -320,7 +315,6 @@ entities:
       - name: objectGuid
         externalId: objectGuid
         type: String
-        indexed: true
         uniqueId: true
       - name: objectSid
         externalId: objectSid
@@ -404,7 +398,6 @@ entities:
       - name: incidentId
         externalId: incidentId
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: incidentId
       - name: endTime
@@ -438,7 +431,6 @@ entities:
       - name: entityId
         externalId: entityId
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: compromisedEntityId
       - name: archived
@@ -489,7 +481,6 @@ entities:
       - name: eventId
         externalId: eventId
         type: String
-        indexed: true
         uniqueId: true
       - name: alertId
         externalId: alertId
@@ -533,7 +524,6 @@ entities:
       - name: entityId
         externalId: entityId
         type: String
-        indexed: true
         uniqueId: true
       - name: archived
         externalId: archived
@@ -581,7 +571,6 @@ entities:
       - name: deviceId
         externalId: device_id
         type: String
-        indexed: true
         uniqueId: true
       - name: cId
         externalId: cid
@@ -632,7 +621,6 @@ entities:
       - name: detectionId
         externalId: detection_id
         type: String
-        indexed: true
         uniqueId: true
       - name: emailSent
         externalId: email_sent
@@ -668,7 +656,6 @@ entities:
       - name: incidentId
         externalId: incident_id
         type: String
-        indexed: true
         uniqueId: true
       - name: state
         externalId: state

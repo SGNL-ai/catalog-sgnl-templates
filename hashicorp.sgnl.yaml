@@ -41,7 +41,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: auth_method_id
         externalId: auth_method_id
@@ -93,7 +92,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: host_catalog_id
         externalId: host_catalog_id
@@ -150,7 +148,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: scope_id
         externalId: scope_id
@@ -198,7 +195,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: scope_id
         externalId: scope_id
@@ -243,7 +239,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: scope_id
         externalId: scope_id
@@ -295,7 +290,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: scope_id
         externalId: scope_id
@@ -335,7 +329,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: scope_id
         externalId: scope_id
@@ -404,7 +397,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: target_id
         externalId: target_id
@@ -467,7 +459,6 @@ entities:
         externalId: status
         type: String
         uniqueId: true
-        indexed: true
       - name: start_time
         externalId: start_time
         type: DateTime
@@ -486,7 +477,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: credential_store_id
         externalId: credential_store_id

@@ -36,7 +36,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: externalId
         externalId: externalId
@@ -141,7 +140,6 @@ entities:
       - name: value
         externalId: value
         type: String
-        indexed: true
         uniqueId: true
       - name: display
         externalId: display
@@ -164,7 +162,6 @@ entities:
       - name: formatted
         externalId: formatted
         type: String
-        indexed: true
         uniqueId: true
       - name: streetAddress
         externalId: streetAddress
@@ -196,7 +193,6 @@ entities:
       - name: value
         externalId: value
         type: String
-        indexed: true
         uniqueId: true
       - name: display
         externalId: display

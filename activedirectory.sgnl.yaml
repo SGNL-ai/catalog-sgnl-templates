@@ -77,7 +77,6 @@ entities:
         externalId: objectGUID
         description: The objectGUID of the User
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: userGUID
       - name: dn
@@ -187,7 +186,6 @@ entities:
         externalId: objectGUID
         description: The objectGUID of the Computer
         type: String
-        indexed: true
         uniqueId: true
       - name: dn
         externalId: dn
@@ -312,7 +310,6 @@ entities:
         externalId: objectGUID
         description: The objectGUID of the Group
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: groupGUID
       - name: dn
@@ -378,7 +375,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: group_objectGUID
         externalId: group_objectGUID
