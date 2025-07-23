@@ -73,12 +73,10 @@ entities:
       - name: primaryEmail
         externalId: primaryEmail
         type: String
-        indexed: true
         uniqueId: true
       - name: id
         externalId: id
         type: String
-        indexed: true
         attributeAlias: userId
       - name: kind
         externalId: kind
@@ -104,7 +102,6 @@ entities:
       - name: lastLoginTime
         externalId: lastLoginTime
         type: DateTime
-        indexed: true
       - name: creationTime
         externalId: creationTime
         type: DateTime
@@ -114,7 +111,6 @@ entities:
       - name: suspended
         externalId: suspended
         type: Bool
-        indexed: true
       - name: archived
         externalId: archived
         type: Bool
@@ -131,7 +127,6 @@ entities:
       - name: customerId
         externalId: customerId
         type: String
-        indexed: true
       - name: orgUnitPath
         externalId: orgUnitPath
         type: String
@@ -161,7 +156,6 @@ entities:
       - name: address
         externalId: address
         type: String
-        indexed: true
         uniqueId: true
       - name: type
         externalId: type
@@ -180,12 +174,10 @@ entities:
       - name: email
         externalId: email
         type: String
-        indexed: true
         uniqueId: true
       - name: id
         externalId: id
         type: String
-        indexed: true
         attributeAlias: groupId
       - name: kind
         externalId: kind
@@ -196,7 +188,6 @@ entities:
       - name: name
         externalId: name
         type: String
-        indexed: true
       - name: directMembersCount
         externalId: directMembersCount
         type: String
@@ -219,17 +210,14 @@ entities:
       - name: id
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: memberId
         externalId: id
         type: String
-        indexed: true
         attributeAlias: memberId
       - name: groupId
         externalId: groupId
         type: String
-        indexed: true
         attributeAlias: memberGroupId
       - name: kind
         externalId: kind
@@ -240,7 +228,6 @@ entities:
       - name: memberEmail
         externalId: email
         type: String
-        indexed: true
       - name: role
         externalId: role
         type: String
