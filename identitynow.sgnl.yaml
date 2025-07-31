@@ -1,14 +1,14 @@
-# Sailpoint IdentityNow Configuration YAML for DS2.0
-displayName: "Sailpoint IdentityNow"
+# Sailpoint Identity Security Cloud Configuration YAML for DS2.0
+displayName: "SailPoint Identity Security Cloud"
 icon: "PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQwLjQxMTggNDIuMTM3M0gxMEwzNS4yMzUzIDEwTDQwLjQxMTggNDIuMTM3M1oiIGZpbGw9IiMwMDMzQTEiLz4KPHBhdGggZD0iTTQwLjQxMTggNDIuMTM3M0g1NEwzNS4yMzUzIDEwTDQwLjQxMTggNDIuMTM3M1oiIGZpbGw9IiNDQzI3QjAiLz4KPHBhdGggZD0iTTQwLjQxMTggNDIuMTM3M0gxMEw0Mi4zNTI5IDUzLjc4NDNMNDAuNDExOCA0Mi4xMzczWiIgZmlsbD0iIzAwNzFDRSIvPgo8cGF0aCBkPSJNNDAuNDExOCA0Mi4xMzczSDU0TDQyLjM1MjkgNTMuNzg0M0w0MC40MTE4IDQyLjEzNzNaIiBmaWxsPSIjRTE3RkQyIi8+Cjwvc3ZnPgo="
-description: "Sailpoint IdentityNow as a System of Record"
+description: "SailPoint Identity Security Cloud as a System of Record"
 # Address does not always need to end with identitynow.com suffix. For example, identitynow-demo.com.
-address: "{{Input Required: IdentityNow-Tenant}}.api.identitynow.com"
+address: "{{Input Required: ISC-Tenant}}.api.identitynow.com"
 defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
-type: "IdentityNow-1.0.0"
+type: "ISC-1.0.0"
 # Example Config:
 # {
 #   "apiVersion": "v3",
@@ -35,14 +35,14 @@ adapterConfig: "ewogICJhcGlWZXJzaW9uIjogInYzIiwKICAiZW50aXR5Q29uZmlnIjogewogICAg
 auth:
   - oAuth2ClientCredentials:
       clientId: "{{Input Required: Client-ID}}"
-      tokenUrl: "https://{{Input Required: IdentityNow-Domain}}/oauth/token"
+      tokenUrl: "https://{{Input Required: ISC-Domain}}/oauth/token"
       authStyle: AutoDetect
       clientSecret: "{{Input Required: Client-Secret}}"
 entities:
   Account:
     displayName: Account
     externalId: accounts
-    description: Account entity in IdentityNow
+    description: Account entity in ISC
     pageSize: 250
     pagesOrderedById: false
     attributes:
@@ -97,7 +97,7 @@ entities:
   Entitlement:
     displayName: Entitlement
     externalId: entitlements
-    description: Entitlement entity in IdentityNow
+    description: Entitlement entity in ISC
     pageSize: 250
     pagesOrderedById: false
     attributes:
@@ -142,10 +142,10 @@ entities:
         list: true
   AccountEntitlement:
     displayName: AccountEntitlement
-    # This externalId does not need to match the IDN's API unlike the rest of the entities. AccountEntitlement is an entity solely used
+    # This externalId does not need to match the ISC's API unlike the rest of the entities. AccountEntitlement is an entity solely used
     # to create the relationship between Entitlement and Account.
     externalId: accountEntitlements
-    description: AccountEntitlement entity in IdentityNow
+    description: AccountEntitlement entity in ISC
     pageSize: 250
     pagesOrderedById: false
     attributes:
@@ -165,7 +165,7 @@ entities:
   Identity:
     displayName: Identity
     externalId: identities
-    description: Identity entity in IdentityNow
+    description: Identity entity in ISC
     pageSize: 250
     pagesOrderedById: false
     attributes:
