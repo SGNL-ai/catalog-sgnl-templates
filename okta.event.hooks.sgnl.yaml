@@ -1,0 +1,274 @@
+displayName: "OKTA event hooks"
+description: "OKTA event hooks Event Stream"
+type: EventStreams-1.0.0
+deliveryMethod: eventPush
+pushType: Custom
+pushEventsPath: $.data.events[*]
+entities:
+  UserLifecycleDeactivate:
+    displayName: User Lifecycle Deactivate
+    externalId: user.lifecycle.deactivate
+    pushExternalId: $.eventType
+    description: User Lifecycle Deactivate
+    pageSize: 1000
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: $.uuid
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: subject
+        externalId: $.actor.alternateId
+        type: String
+        indexed: true
+      - name: published
+        externalId: $.published
+        type: String
+      - name: version
+        externalId: $.version
+        type: String
+      - name: displayMessage
+        externalId: $.displayMessage
+        type: String
+      - name: severity
+        externalId: $.severity
+        type: String
+      - name: legacyEventType
+        externalId: $.legacyEventType
+        type: String
+      - name: outcomeResult
+        externalId: $.outcome.result
+        type: String
+      - name: outcomeReason
+        externalId: $.outcome.reason
+        type: String
+      - name: actorId
+        externalId: $.actor.id
+        type: String
+      - name: actorType
+        externalId: $.actor.type
+        type: String
+      - name: actorDisplayName
+        externalId: $.actor.displayName
+        type: String
+      - name: rawUserAgent
+        externalId: $.client.userAgent.rawUserAgent
+        type: String
+      - name: clientOS
+        externalId: $.client.userAgent.os
+        type: String
+      - name: clientId
+        externalId: $.client.id
+        type: String
+      - name: clientDevice
+        externalId: $.client.device
+        type: String
+      - name: clientZone
+        externalId: $.client.zone
+        type: String
+  
+  TargetUserLifecycleDeactivate:
+    parent: user.lifecycle.deactivate
+    displayName: Target User Lifecycle Deactivate
+    externalId: $.target
+    # Mandatory field for Custom Event Push datasources.
+    pushExternalId: $.target
+    description: Target User Lifecycle Deactivate
+    pageSize: 100
+    pagesOrderedById: false
+    entityAlias: targetUserLifecycleDeactivate
+    attributes:
+      - name: id
+        externalId: $.id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: type
+        externalId: $.type
+        type: String
+        indexed: true
+      - name: alternateId
+        externalId: $.alternateId
+        type: String
+      - name: displayName
+        externalId: $.displayName
+        type: String
+  
+  UserAuthenticationMFA:
+    displayName: User Authentication MFA
+    externalId: user.authentication.auth_via_mfa
+    pushExternalId: $.eventType
+    description: User authentication via MFA
+    pageSize: 1000
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: $.uuid
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: subject
+        externalId: $.actor.alternateId
+        type: String
+        indexed: true
+      - name: published
+        externalId: $.published
+        type: String
+      - name: version
+        externalId: $.version
+        type: String
+      - name: displayMessage
+        externalId: $.displayMessage
+        type: String
+      - name: severity
+        externalId: $.severity
+        type: String
+      - name: legacyEventType
+        externalId: $.legacyEventType
+        type: String
+      - name: outcomeResult
+        externalId: $.outcome.result
+        type: String
+      - name: outcomeReason
+        externalId: $.outcome.reason
+        type: String
+      - name: actorId
+        externalId: $.actor.id
+        type: String
+      - name: actorType
+        externalId: $.actor.type
+        type: String
+      - name: actorDisplayName
+        externalId: $.actor.displayName
+        type: String
+      - name: authenticationProvider
+        externalId: $.authenticationContext.authenticationProvider
+        type: String
+      - name: credentialProvider
+        externalId: $.authenticationContext.credentialProvider
+        type: String
+      - name: credentialType
+        externalId: $.authenticationContext.credentialType
+        type: String
+      - name: authenticationStep
+        externalId: $.authenticationContext.authenticationStep
+        type: Int64
+      - name: externalSessionId
+        externalId: $.authenticationContext.externalSessionId
+        type: String
+  
+  TargetUserAuthenticationMFA:
+    parent: user.authentication.auth_via_mfa
+    displayName: Target User Authentication MFA
+    externalId: $.target
+    # Mandatory field for Custom Event Push datasources.
+    pushExternalId: $.target
+    description: Target Target User Authentication via MFA
+    pageSize: 100
+    pagesOrderedById: false
+    entityAlias: targetUserAuthenticationMFA
+    attributes:
+      - name: id
+        externalId: $.id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: type
+        externalId: $.type
+        type: String
+        indexed: true
+      - name: alternateId
+        externalId: $.alternateId
+        type: String
+      - name: displayName
+        externalId: $.displayName
+        type: String
+  
+  AddUserToGroup:
+    displayName: Add User To Group 
+    externalId: group.user_membership.add
+    pushExternalId: $.eventType
+    description: Add user to group membership
+    pageSize: 1000
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: $.uuid
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: subject
+        externalId: $.actor.alternateId
+        type: String
+        indexed: true
+      - name: published
+        externalId: $.published
+        type: String
+      - name: version
+        externalId: $.version
+        type: String
+      - name: displayMessage
+        externalId: $.displayMessage
+        type: String
+      - name: severity
+        externalId: $.severity
+        type: String
+      - name: legacyEventType
+        externalId: $.legacyEventType
+        type: String
+      - name: outcomeResult
+        externalId: $.outcome.result
+        type: String
+      - name: outcomeReason
+        externalId: $.outcome.reason
+        type: String
+      - name: actorId
+        externalId: $.actor.id
+        type: String
+      - name: actorType
+        externalId: $.actor.type
+        type: String
+      - name: actorDisplayName
+        externalId: $.actor.displayName
+        type: String
+  
+  TargetAddUserToGroup:
+    parent: group.user_membership.add
+    displayName: Target Add User To Group
+    externalId: $.target
+    # Mandatory field for Custom Event Push datasources.
+    pushExternalId: $.target
+    description: Target Add User To Group
+    pageSize: 100
+    pagesOrderedById: false
+    entityAlias: targetAddUserToGroup
+    attributes:
+      - name: id
+        externalId: $.id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: type
+        externalId: $.type
+        type: String
+        indexed: true
+      - name: alternateId
+        externalId: $.alternateId
+        type: String
+      - name: displayName
+        externalId: $.displayName
+        type: String
+
+relationships:
+  # Parent relationships
+  ParentOfTargetUserLifecycleDeactivate:
+    displayName: ParentOfTargetUserLifecycleDeactivate
+    childEntity: targetUserLifecycleDeactivate
+  ParentOfTargetUserAuthenticationMFA:
+    displayName: ParentOfTargetUserAuthenticationMFA
+    childEntity: targetUserAuthenticationMFA
+  ParentOfTargetUserAuthenticationMFA:
+    displayName: ParentOfTargetAddUserToGroup
+    childEntity: targetAddUserToGroup
+  
