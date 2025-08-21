@@ -714,7 +714,7 @@ entities:
         indexed: true
         uniqueId: true
       - name: aggregateId
-        externalId: aggregateId
+        externalId: aggregate_id
         type: String
         indexed: true
       - name: cId
@@ -735,15 +735,9 @@ entities:
       - name: status
         externalId: status
         type: String
-      - name: product
-        externalId: product
-        type: String
       - name: displayName
         externalId: display_name
         type: String
-      - name: timestamp
-        externalId: timestamp
-        type: DateTime
       - name: userName
         externalId: user_name
         type: String
