@@ -172,7 +172,7 @@ entities:
       - name: fingerprint
         externalId: fingerprint
         type: String
-      - name: last_seen 
+      - name: last_seen
         externalId: last_seen
         type: DateTime # RFC3339 Format
       - name: model
@@ -297,10 +297,6 @@ entities:
         externalId: username
         type: String
 relationships:
-  ParentOfGroupMember:
-    childEntity: groups
-  ParentOfPhoneOwner:
-    childEntity: phones
   MemberOfGroup:
     name: MemberOf
     displayName: Member Of Group
