@@ -705,7 +705,7 @@ entities:
   Alert:
     displayName: Alert
     externalId: endpoint_protection_alert
-    description: Alert represents an alert in the CrowdStrike platform. This is fetched from the Alerts API which replaces the deprecated Detections API.
+    description: Alert represents an alert in the CrowdStrike platform. This is fetched from the Endpoint Protection module.
     pageSize: 100
     attributes:
       - name: compositeId
