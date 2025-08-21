@@ -702,6 +702,46 @@ entities:
         externalId: fine_score
         type: Int64
 
+  Alert:
+    displayName: Alert
+    externalId: endpoint_protection_alert
+    description: Alert represents an alert in the CrowdStrike platform. This is fetched from the Endpoint Protection module.
+    pageSize: 100
+    attributes:
+      - name: compositeId
+        externalId: composite_id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: aggregateId
+        externalId: aggregate_id
+        type: String
+        indexed: true
+      - name: cId
+        externalId: cid
+        type: String
+      - name: confidence
+        externalId: confidence
+        type: Int64
+      - name: createdTimestamp
+        externalId: created_timestamp
+        type: DateTime
+      - name: severity
+        externalId: severity
+        type: Int64
+      - name: severityName
+        externalId: severity_name
+        type: String
+      - name: status
+        externalId: status
+        type: String
+      - name: displayName
+        externalId: display_name
+        type: String
+      - name: userName
+        externalId: user_name
+        type: String
+
 relationships:
   CompromisedUserEntity:
     displayName: CompromisedUserEntity
