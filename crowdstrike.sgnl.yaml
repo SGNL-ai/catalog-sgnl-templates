@@ -623,42 +623,6 @@ entities:
         externalId: modified_timestamp
         type: DateTime
 
-  Detection:
-    displayName: Detection
-    externalId: endpoint_protection_detect
-    description: Detection represents a detection in the CrowdStrike platform. This is fetched from the Endpoint Protection module.
-    pageSize: 100
-    attributes:
-      - name: detectionId
-        externalId: detection_id
-        type: String
-        indexed: true
-        uniqueId: true
-      - name: emailSent
-        externalId: email_sent
-        type: Bool
-      - name: status
-        externalId: status
-        type: String
-      - name: cId
-        externalId: cid
-        type: String
-      - name: createdTimestamp
-        externalId: created_timestamp
-        type: DateTime
-      - name: maxConfidence
-        externalId: max_confidence
-        type: Int64
-      - name: maxSeverity
-        externalId: max_severity
-        type: Int64
-      - name: maxSeverityDisplayname
-        externalId: max_severity_displayname
-        type: String
-      - name: dateUpdated
-        externalId: date_updated
-        type: DateTime
-
   EndpointIncident:
     displayName: Endpoint Incident
     externalId: endpoint_protection_incident
