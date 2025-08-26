@@ -23,7 +23,6 @@ entities:
       - name: workerId
         externalId: $.worker.id
         type: String
-        indexed: true
         uniqueId: true
       - name: workerDescriptor
         externalId: $.worker.descriptor
@@ -31,11 +30,9 @@ entities:
       - name: employeeID
         externalId: employeeID
         type: String
-        indexed: true
       - name: workerActive
         externalId: workerActive
         type: Bool
-        indexed: true
       - name: managementLevelDescriptor
         externalId: $.managementLevel.descriptor
         type: String
@@ -60,7 +57,6 @@ entities:
       - name: FTE
         externalId: FTE
         type: String
-        indexed: true
       - name: positionID
         externalId: positionID
         type: String
@@ -70,15 +66,12 @@ entities:
       - name: workerCountryIsUSA
         externalId: cf_WorkerCountryEqualToUnitedStatesOfAmerica
         type: Bool
-        indexed: true
       - name: workerLocationCity
         externalId: $.location.descriptor
         type: String
-        indexed: true
       - name: workerLocationState
         externalId: $.locationAddress_StateUnitedStates.descriptor
         type: String
-        indexed: true
       - name: isUSCitizen
         externalId: isUSCitizen
         type: Bool
@@ -91,12 +84,10 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: descriptor
         externalId: descriptor
         type: String
-        indexed: true
   EmployeeType:
     parent: allWorkers
     displayName: Employee Type
@@ -105,7 +96,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: descriptor
         externalId: descriptor

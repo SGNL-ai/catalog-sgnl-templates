@@ -32,7 +32,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: organizationId
       - name: announcement
@@ -128,7 +127,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: userId
       - name: bio
@@ -149,7 +147,6 @@ entities:
       - name: login
         externalId: login
         type: String
-        indexed: true
         attributeAlias: userLogin
       - name: isBountyHunter
         externalId: isBountyHunter
@@ -218,22 +215,18 @@ entities:
       - name: id
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: orgId
         externalId: orgId
         type: String
-        indexed: true
         attributeAlias: orgUserOrgId
       - name: userId
         externalId: $.node.id
         type: String
-        indexed: true
         attributeAlias: orgUserId
       - name: role
         externalId: role
         type: String
-        indexed: true
   UserOrganizationVerifiedDomainEmails:
     parent: OrganizationUser
     displayName: UserOrganizationVerifiedDomainEmails
@@ -245,7 +238,6 @@ entities:
       - name: email
         externalId: email
         type: String
-        indexed: true
         uniqueId: true 
   
   # https://docs.github.com/en/graphql/reference/objects#team  
@@ -259,7 +251,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: combinedSlug
         externalId: combinedSlug
@@ -316,7 +307,6 @@ entities:
       - name: orgId
         externalId: orgId
         type: String
-        indexed: true
         attributeAlias: teamOrgId
   # TeamMember entity is for creating relationships between Users and Teams.
   # TeamMember is a User entity type: https://docs.github.com/en/graphql/reference/objects#user
@@ -331,7 +321,6 @@ entities:
       - name: id
         externalId: $.node.id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: teamMemberId
       # Note: Role represents the TeamMember's role on the team.
@@ -339,11 +328,9 @@ entities:
       - name: role
         externalId: role
         type: String
-        indexed: true
       - name: login
         externalId: $.node.login
         type: String
-        indexed: true
         attributeAlias: teamMemberLogin
   # TeamRepository entity is for creating relationships between Repositories and Teams.
   # TeamRepository is a Repository entity type: https://docs.github.com/en/graphql/reference/objects#repository
@@ -358,7 +345,6 @@ entities:
       - name: id
         externalId: $.node.id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: teamRepositoryId
         # Permission is the Team's permission level for this repository
@@ -366,7 +352,6 @@ entities:
       - name: permission 
         externalId: permission
         type: String
-        indexed: true
       - name: name
         externalId: $.node.name
         type: String
@@ -382,7 +367,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: repositoryId
       - name: allowUpdateBranch
@@ -472,11 +456,9 @@ entities:
       - name: name
         externalId: name
         type: String
-        indexed: true
       - name: nameWithOwner
         externalId: nameWithOwner
         type: String
-        indexed: true
       - name: projectsResourcePath
         externalId: projectsResourcePath
         type: String
@@ -536,7 +518,6 @@ entities:
       - name: orgId
         externalId: orgId
         type: String
-        indexed: true
         attributeAlias: repositoryOrgId
   RepositoryCollaborator:
     parent: Repository
@@ -549,13 +530,11 @@ entities:
       - name: collaboratorId
         externalId: $.node.id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: repositoryCollaboratorId
       - name: permission
         externalId: permission
         type: String
-        indexed: true
   # Collaborator is a User entity type: https://docs.github.com/en/graphql/reference/objects#repositorycollaboratoredge
   Collaborator:
     displayName: Collaborator
@@ -567,7 +546,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: collaboratorId
       - name: bio
@@ -588,7 +566,6 @@ entities:
       - name: login
         externalId: login
         type: String
-        indexed: true
         attributeAlias: collaboratorLogin
       - name: isBountyHunter
         externalId: isBountyHunter
@@ -659,23 +636,19 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: pullRequestId
       - name: baseRepositoryId
         externalId: $.baseRepository.id
         type: String
-        indexed: true
         attributeAlias: baseRepositoryId
       - name: headRepositoryId
         externalId: $.headRepository.id
         type: String
-        indexed: true
         attributeAlias: headRepositoryId
       - name: authorLogin
         externalId: $.author.login
         type: String
-        indexed: true
         attributeAlias: authorLogin
       - name: authorAssociation
         externalId: authorAssociation
@@ -689,7 +662,6 @@ entities:
       - name: closed
         externalId: closed
         type: Bool
-        indexed: true
       - name: closedAt
         externalId: closedAt
         type: DateTime
@@ -720,7 +692,6 @@ entities:
       - name: locked
         externalId: locked
         type: Bool
-        indexed: true
       - name: maintainerCanModify
         externalId: maintainerCanModify
         type: Bool
@@ -742,7 +713,6 @@ entities:
       - name: state
         externalId: state
         type: String
-        indexed: true
       - name: title
         externalId: title
         type: String
@@ -759,17 +729,14 @@ entities:
       - name: uniqueId
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: pullRequestId
         externalId: pullRequestId
         type: String
-        indexed: true
         attributeAlias: assignedPullRequestId
       - name: userId
         externalId: id
         type: String
-        indexed: true
         attributeAlias: pullRequestAssigneeId
   PullRequestParticipant:
     displayName: PullRequestParticipant
@@ -781,17 +748,14 @@ entities:
       - name: uniqueId
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: pullRequestId
         externalId: pullRequestId
         type: String
-        indexed: true
         attributeAlias: participantPullRequestId
       - name: userId
         externalId: id
         type: String
-        indexed: true
         attributeAlias: pullRequestParticipantId
   
   # https://docs.github.com/en/graphql/reference/objects#pullrequestreview
@@ -805,17 +769,14 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: userLogin
         externalId: $.author.login
         type: String
-        indexed: true
         attributeAlias: reviewAuthorLogin
       - name: pullRequestId
         externalId: pullRequestId
         type: String
-        indexed: true
         attributeAlias: reviewPullRequestId
       - name: authorAssociation
         externalId: authorAssociation
@@ -838,7 +799,6 @@ entities:
       - name: state
         externalId: state
         type: String
-        indexed: true
       - name: publishedAt
         externalId: publishedAt
         type: DateTime
@@ -860,12 +820,10 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: pullRequestId
         externalId: pullRequestId
         type: String
-        indexed: true
         attributeAlias: commitPullRequestId
       - name: commitId
         externalId: $.commit.id
@@ -873,11 +831,9 @@ entities:
       - name: committedDate
         externalId: $.commit.committedDate
         type: DateTime
-        indexed: true
       - name: commitAuthor
         externalId: $.commit.author.user.id
         type: String
-        indexed: true
         attributeAlias: commitAuthorId    
   
   # https://docs.github.com/en/graphql/reference/objects#pullrequestchangedfile
@@ -891,17 +847,14 @@ entities:
       - name: uniqueId # concatenated the file path and PR id
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: pullRequestId
         externalId: pullRequestId
         type: String
-        indexed: true
         attributeAlias: changedFilePullRequestId
       - name: path # unique for each PR
         externalId: path
         type: String
-        indexed: true
       - name: additions
         externalId: additions
         type: Int64
@@ -911,7 +864,6 @@ entities:
       - name: changeType
         externalId: changeType
         type: String
-        indexed: true
   
   # https://docs.github.com/en/graphql/reference/objects#issue
   Issue:
@@ -924,18 +876,15 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: issueId
       - name: authorLogin
         externalId: $.author.login
         type: String
-        indexed: true
         attributeAlias: issueAuthorLogin
       - name: repositoryId
         externalId: $.repository.id
         type: String
-        indexed: true
         attributeAlias: issueRepositoryId
       - name: activeLockReason
         externalId: activeLockReason
@@ -943,7 +892,6 @@ entities:
       - name: closed
         externalId: closed
         type: Bool
-        indexed: true
       - name: closedAt
         externalId: closedAt
         type: DateTime
@@ -965,7 +913,6 @@ entities:
       - name: locked
         externalId: locked
         type: Bool
-        indexed: true
       - name: number
         externalId: number
         type: Int64
@@ -975,7 +922,6 @@ entities:
       - name: state
         externalId: state
         type: String
-        indexed: true
       - name: stateReason
         externalId: stateReason
         type: String
@@ -995,17 +941,14 @@ entities:
       - name: uniqueId
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: issueId
         externalId: issueId
         type: String
-        indexed: true
         attributeAlias: assignedIssueId
       - name: userId
         externalId: id
         type: String
-        indexed: true
         attributeAlias: issueAssigneeId
   IssueParticipant:
     displayName: IssueParticipant
@@ -1017,17 +960,14 @@ entities:
       - name: uniqueId
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: issueId
         externalId: issueId
         type: String
-        indexed: true
         attributeAlias: participantIssueId
       - name: userId
         externalId: id
         type: String
-        indexed: true
         attributeAlias: issueParticipantId
   
   # https://docs.github.com/en/graphql/reference/objects#label
@@ -1041,13 +981,11 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
         attributeAlias: labelId
       - name: repositoryId
         externalId: repositoryId
         type: String
-        indexed: true
         attributeAlias: labelRepositoryId
       - name: color
         externalId: color
@@ -1061,7 +999,6 @@ entities:
       - name: name
         externalId: name
         type: String
-        indexed: true
       - name: updatedAt
         externalId: updatedAt
         type: DateTime
@@ -1076,17 +1013,14 @@ entities:
       - name: uniqueId
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: pullRequestId
         externalId: id
         type: String
-        indexed: true
         attributeAlias: pullRequestLabelPullRequestId
       - name: labelId
         externalId: labelId
         type: String
-        indexed: true
         attributeAlias: pullRequestLabelId
   
   IssueLabel:
@@ -1099,17 +1033,14 @@ entities:
       - name: uniqueId
         externalId: uniqueId
         type: String
-        indexed: true
         uniqueId: true
       - name: issueId
         externalId: id
         type: String
-        indexed: true
         attributeAlias: issueLabelIssueId
       - name: labelId
         externalId: labelId
         type: String
-        indexed: true
         attributeAlias: issueLabelId
   
   # https://docs.github.com/en/enterprise-server@3.12/rest/secret-scanning/secret-scanning?apiVersion=2022-11-28#list-secret-scanning-alerts-for-an-enterprise
@@ -1123,7 +1054,6 @@ entities:
       - name: number
         externalId: number
         type: Int64
-        indexed: true
         uniqueId: true
       - name: createdAt
         externalId: created_at
@@ -1131,7 +1061,6 @@ entities:
       - name: state
         externalId: state
         type: String
-        indexed: true
       - name: resolution
         externalId: resolution
         type: String
@@ -1141,7 +1070,6 @@ entities:
       - name: resolvedByAuthorId
         externalId: $.resolved_by.node_id
         type: String
-        indexed: true
         attributeAlias: resolvedByAuthorId
       - name: secretType
         externalId: secret_type
@@ -1155,7 +1083,6 @@ entities:
       - name: repositoryId
         externalId: $.repository.node_id
         type: String
-        indexed: true
         attributeAlias: secretScanningAlertRepositoryId
       - name: pushProtectionBypassed
         externalId: push_protection_bypassed
@@ -1163,7 +1090,6 @@ entities:
       - name: pushProtectionBypassedBy
         externalId: $.push_protection_bypassed_by.node_id
         type: String
-        indexed: true
         attributeAlias: pushProtectionBypassedById
       - name: pushProtectedBypassedAt
         externalId: push_protected_bypassed_at

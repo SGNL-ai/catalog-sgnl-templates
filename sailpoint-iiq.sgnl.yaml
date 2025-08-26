@@ -33,7 +33,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: nativeIdentity
         externalId: nativeIdentity
@@ -74,7 +73,6 @@ entities:
       - name: identityUserName
         externalId: $.identity.userName
         type: String
-        indexed: true
       - name: identityDisplayName
         externalId: $.identity.displayName
         type: String
@@ -115,7 +113,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: name
         externalId: name
@@ -182,7 +179,6 @@ entities:
       - name: key
         externalId: key
         type: String
-        indexed: true
         uniqueId: true
       - name: value
         externalId: value
@@ -199,7 +195,6 @@ entities:
       - name: resultId
         externalId: resultId
         type: String
-        indexed: true
         uniqueId: true
       - name: type
         externalId: type
@@ -219,7 +214,6 @@ entities:
       - name: workflowName
         externalId: workflowName
         type: String
-        indexed: true
         uniqueId: true
       - name: name
         externalId: name
@@ -236,7 +230,6 @@ entities:
       - name: emailAddresses
         externalId: emailAddresses
         type: String
-        indexed: true
         uniqueId: true
       - name: name
         externalId: name
@@ -255,7 +248,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: name
         externalId: name
@@ -305,7 +297,6 @@ entities:
       - name: value
         externalId: value
         type: String
-        indexed: true
         uniqueId: true
       - name: type
         externalId: type
@@ -326,7 +317,6 @@ entities:
         externalId: locale
         type: String
         uniqueId: true
-        indexed: true
       - name: value
         externalId: value
         type: String
@@ -341,7 +331,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: displayName
         externalId: displayName
@@ -441,7 +430,6 @@ entities:
       - name: locale
         externalId: locale
         type: String
-        indexed: true
         uniqueId: true
       - name: value
         externalId: value
@@ -458,7 +446,6 @@ entities:
       - name: value
         externalId: value
         type: String
-        indexed: true
         uniqueId: true
       - name: displayName
         externalId: displayName
@@ -478,7 +465,6 @@ entities:
       - name: value
         externalId: value
         type: String
-        indexed: true
         uniqueId: true
       - name: displayName
         externalId: displayName
@@ -498,7 +484,6 @@ entities:
         externalId: id
         type: String
         uniqueId: true
-        indexed: true
       - name: partitioned
         externalId: partitioned
         type: Bool
@@ -586,7 +571,6 @@ entities:
       - name: key
         externalId: key
         type: String
-        indexed: true
         uniqueId: true
       - name: value
         externalId: value
@@ -606,7 +590,6 @@ entities:
       - name: key
         externalId: key
         type: String
-        indexed: true
         uniqueId: true
       - name: value
         externalId: value
@@ -626,7 +609,6 @@ entities:
       - name: key
         externalId: key
         type: String
-        indexed: true
         uniqueId: true
       - name: value
         externalId: value
@@ -646,7 +628,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: name
         externalId: name
@@ -680,7 +661,6 @@ entities:
       - name: name
         externalId: name
         type: String
-        indexed: true
         uniqueId: true
       - name: displayName
         externalId: displayName
@@ -727,7 +707,6 @@ entities:
       - name: key
         externalId: key
         type: String
-        indexed: true
         uniqueId: true
       - name: instance
         externalId: instance
@@ -750,7 +729,6 @@ entities:
       - name: key
         externalId: key
         type: String
-        indexed: true
         uniqueId: true
       - name: instance
         externalId: instance
@@ -775,7 +753,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: policyName
         externalId: policyName
@@ -836,7 +813,6 @@ entities:
         externalId: id
         type: String
         uniqueId: true
-        indexed: true
       - name: name
         externalId: name
         type: String
@@ -915,7 +891,6 @@ entities:
         externalId: locale
         type: String
         uniqueId: true
-        indexed: true
       - name: value
         externalId: value
         type: String
@@ -931,7 +906,6 @@ entities:
       - name: value
         externalId: value
         type: String
-        indexed: true
         uniqueId: true
       - name: displayName
         externalId: displayName
@@ -951,7 +925,6 @@ entities:
       - name: value
         externalId: value
         type: String
-        indexed: true
         uniqueId: true
       - name: displayName
         externalId: displayName
@@ -971,7 +944,6 @@ entities:
       - name: value
         externalId: value
         type: String
-        indexed: true
         uniqueId: true
       - name: displayName
         externalId: displayName
@@ -991,7 +963,6 @@ entities:
       - name: classificationName
         externalId: $.classification.name
         type: String
-        indexed: true
         uniqueId: true
       - name: classificationDisplayName
         externalId: $.classification.displayName
@@ -1020,7 +991,6 @@ entities:
         externalId: id
         type: String
         uniqueId: true
-        indexed: true
       - name: name
         externalId: name
         type: String
@@ -1108,7 +1078,6 @@ entities:
       - name: key
         externalId: key
         type: String
-        indexed: true
         uniqueId: true
       - name: value
         externalId: value
@@ -1125,7 +1094,6 @@ entities:
         externalId: id
         type: String
         uniqueId: true
-        indexed: true
       - name: userName
         externalId: userName
         type: String
@@ -1152,7 +1120,6 @@ entities:
       - name: managerId
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.value
         type: String
-        indexed: true
       - name: managerDisplayName
         externalId: $..["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"].manager.displayName
         type: String
@@ -1255,7 +1222,6 @@ entities:
       - name: value
         externalId: value
         type: String
-        indexed: true
         uniqueId: true
       - name: display
         externalId: display
@@ -1278,7 +1244,6 @@ entities:
       - name: value
         externalId: value
         type: String
-        indexed: true
         uniqueId: true
       - name: displayName
         externalId: displayName
@@ -1298,7 +1263,6 @@ entities:
       - name: value
         externalId: value
         type: String
-        indexed: true
         uniqueId: true
       - name: display
         externalId: display
@@ -1327,7 +1291,6 @@ entities:
       - name: value
         externalId: value
         type: String
-        indexed: true
         uniqueId: true
       - name: display
         externalId: display
@@ -1358,7 +1321,6 @@ entities:
       - name: id
         externalId: id
         type: String
-        indexed: true
         uniqueId: true
       - name: name
         externalId: name
