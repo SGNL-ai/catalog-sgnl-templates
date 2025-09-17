@@ -752,11 +752,6 @@ relationships:
     displayName: User Member
     fromAttribute: GroupMember.memberId
     toAttribute: User.id
-  GroupMember:
-    name: Member
-    displayName: Group Member
-    fromAttribute: GroupMember.memberId
-    toAttribute: Group.id
   MemberOf:
     name: MemberOf
     displayName: Member Of
