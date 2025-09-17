@@ -19,7 +19,7 @@ auth:
       tokenUrl: "https://{{Input Required: yourOktaSubDomain}}.okta.com/oauth2/v1/token"
       authStyle: AutoDetect
       clientSecret: "{{Input Required: Client-Secret}}"
-      scope: "okta.users.read okta.groups.read"
+      scope: "okta.users.read okta.groups.read okta.apps.read"
   - bearer:
       authToken: "SSWS {{Input Required: token}}"
 entities:
@@ -212,6 +212,40 @@ entities:
         externalId: userId
         type: String
         indexed: true
+  Application:
+    displayName: Application
+    externalId: Application
+    description: Application entity in Okta
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: name
+        externalId: name
+        type: String
+        indexed: true
+      - name: label
+        externalId: label
+        type: String
+      - name: created
+        externalId: created
+        type: DateTime
+      - name: lastUpdated
+        externalId: lastUpdated
+        type: DateTime
+      - name: status
+        externalId: status
+        type: String
+      - name: signOnMode
+        externalId: signOnMode
+        type: String
+      - name: orn
+        externalId: orn
+        type: String
 
 relationships:
   Member:
