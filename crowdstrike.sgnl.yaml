@@ -718,19 +718,19 @@ entities:
         externalId: name
         type: String
       - name: incidentId
-        externalId: incident.id
+        externalId: $.incident.id
         type: String
       - name: incidentCreated
-        externalId: incident.created
+        externalId: $.incident.created
         type: DateTime
       - name: incidentEnd
-        externalId: incident.end
+        externalId: $.incident.end
         type: DateTime
       - name: incidentScore
-        externalId: incident.score
+        externalId: $.incident.score
         type: String
       - name: incidentStart
-        externalId: incident.start
+        externalId: $.incident.start
         type: DateTime
 
 relationships:
