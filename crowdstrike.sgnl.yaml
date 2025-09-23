@@ -705,6 +705,33 @@ entities:
       - name: userName
         externalId: user_name
         type: String
+      - name: user_id
+        externalId: user_id
+        type: String
+      - name: userPrincipal
+        externalId: user_principal
+        type: String
+      - name: resolution
+        externalId: resolution
+        type: String
+      - name: name
+        externalId: name
+        type: String
+      - name: incidentId
+        externalId: $.incident.id
+        type: String
+      - name: incidentCreated
+        externalId: $.incident.created
+        type: DateTime
+      - name: incidentEnd
+        externalId: $.incident.end
+        type: DateTime
+      - name: incidentScore
+        externalId: $.incident.score
+        type: String
+      - name: incidentStart
+        externalId: $.incident.start
+        type: DateTime
 
 relationships:
   CompromisedUserEntity:
