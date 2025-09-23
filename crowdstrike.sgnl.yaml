@@ -720,6 +720,18 @@ entities:
       - name: incidentId
         externalId: incident.id
         type: String
+      - name: incidentCreated
+        externalId: incident.created
+        type: DateTime
+      - name: incidentEnd
+        externalId: incident.end
+        type: DateTime
+      - name: incidentScore
+        externalId: incident.score
+        type: String
+      - name: incidentStart
+        externalId: incident.start
+        type: DateTime
 
 relationships:
   CompromisedUserEntity:
