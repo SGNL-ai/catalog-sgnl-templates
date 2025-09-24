@@ -90,6 +90,27 @@ entities:
       - name: type
         externalId: type
         type: String
+      - name: upn
+        externalId: $.accounts[0].upn
+        description: ""
+        type: String
+        indexed: true
+        uniqueId: false
+      - name: objectSid
+        externalId: $.accounts[0].objectSid
+        description: ""
+        type: String
+        indexed: true
+        uniqueId: false
+        list: false
+        attributeAlias: UserObjectSid
+      - name: samAccountName
+        externalId: $.accounts[0].samAccountName
+        description: ""
+        type: String
+        indexed: true
+        uniqueId: false
+        list: false
 
   UserRiskFactor:
     parent: user
@@ -583,6 +604,7 @@ entities:
         type: String
         indexed: true
         uniqueId: true
+        attributeAlias: DeviceId
       - name: cId
         externalId: cid
         type: String
@@ -607,6 +629,8 @@ entities:
       - name: lastLoginUserSid
         externalId: last_login_user_sid
         type: String
+        attributeAlias: DeviceLastLoginUserSid
+        indexed: true
       - name: platformName
         externalId: platform_name
         type: String
@@ -732,6 +756,13 @@ entities:
       - name: incidentStart
         externalId: $.incident.start
         type: DateTime
+      - name: device_id
+        externalId: $.device.device_id
+        description: ""
+        type: String
+        indexed: true
+        uniqueId: false
+        attributeAlisas: AlertDeviceId
 
 relationships:
   CompromisedUserEntity:
@@ -744,6 +775,16 @@ relationships:
     name: CompromisedEndpointEntity
     fromAttribute: compromisedEntityId
     toAttribute: endpoint.entityId
+  AlertCompromisedDevice:
+    displayName: AlertCompromisedDevice
+    name: AlertCompromisedDevice
+    fromAttribute: AlertDeviceId
+    toAttribute: DeviceId
+  DeviceCompromisedUser:
+    displayName: DeviceCompromisedUser
+    name: DeviceCompromisedUser
+    fromAttribute: DeviceLastLoginUserSid
+    toAttribute: UserObjectSid
   # Parent relationships
   ParentOfUserRiskFactor:
     displayName: ParentOfUserRiskFactor
