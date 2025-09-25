@@ -762,7 +762,7 @@ entities:
         type: String
         indexed: true
         uniqueId: false
-        attributeAlisas: AlertDeviceId
+        attributeAlias: AlertDeviceId
 
 relationships:
   CompromisedUserEntity:
