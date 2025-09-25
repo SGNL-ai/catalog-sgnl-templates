@@ -316,10 +316,6 @@ entities:
       - name: visibility
         externalId: visibility
         type: String
-      - name: assignedLabels
-        externalId: assignedLabels
-        type: String
-        list: true
       - name: licenseProcessingState
         externalId: licenseProcessingState
         type: String
@@ -703,6 +699,22 @@ entities:
       - name: completedDateTime
         externalId: completedDateTime
         type: DateTime
+  AssignedLabels:
+    parent: Group
+    displayName: AssignedLabels
+    externalId: $.assignedLabels
+    description: AssignedLabels is a list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group.
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: displayName
+        externalId: displayName
+        type: String
+      - name: labelId
+        externalId: labelId
+        type: String
+        indexed: true
+        uniqueId: true
 
 relationships:
   UserRoleMember:
@@ -778,3 +790,7 @@ relationships:
         direction: Backward
       - relationship: MemberOf
         direction: Forward
+  # Parent relationships
+  ParentOfAssignedLabels:
+    displayName: ParentOfAssignedLabels
+    childEntity: $.assignedLabels
