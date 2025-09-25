@@ -775,6 +775,11 @@ relationships:
     name: CompromisedEndpointEntity
     fromAttribute: compromisedEntityId
     toAttribute: endpoint.entityId
+  RelatedAlert:
+    displayName: RelatedAlert
+    name: RelatedAlert
+    fromAttribute: aggregateId
+    toAttribute: aggregateId
   AlertCompromisedDevice:
     displayName: AlertCompromisedDevice
     name: AlertCompromisedDevice
