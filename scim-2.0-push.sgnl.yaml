@@ -35,6 +35,11 @@ entities:
         type: String
         indexed: true
         uniqueId: true
+      - name: schemas
+        externalId: schemas
+        pushExternalId: schemas
+        type: String
+        list: true
       - name: externalId
         externalId: externalId
         pushExternalId: externalId
@@ -142,6 +147,11 @@ entities:
         type: String
         indexed: true
         uniqueId: true
+      - name: schemas
+        externalId: schemas
+        pushExternalId: schemas
+        type: String
+        list: true
       - name: displayName
         externalId: displayName
         pushExternalId: displayName
