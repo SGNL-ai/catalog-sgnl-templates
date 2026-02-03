@@ -53,7 +53,7 @@ type: "LDAP-2.0.0"
 
 # [Optional] entityConfig.GroupMember (Object): Configuration for group membership entities.
 # [Required] entityConfig.GroupMember.memberOf (String): Specifies the group to which the members belong.
-# [Required] entityConfig.GroupMember.query (String): Specifies the LDAP query for retrieving group members for {{CollectionAttribute}}={{CollectionId}} attribute value for a group query.
+# [Required] entityConfig.GroupMember.query (String): Specifies the LDAP query for retrieving group members using the {{CollectionAttribute}}={{CollectionId}} attribute value pair.
 # [Required] entityConfig.GroupMember.collectionAttribute (String): Specifies attribute name of a group whose value is used to replace {{CollectionId}}.
 # [Required] entityConfig.GroupMember.memberUniqueIdAttribute (String): Specifies the attribute used as a unique identifier for members (for range query, this can only be a "distinguishedName").
 # [Required] entityConfig.GroupMember.memberOfUniqueIdAttribute (String): Specifies the attribute used as a unique identifier for the group.
