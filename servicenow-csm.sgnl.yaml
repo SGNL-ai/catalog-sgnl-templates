@@ -330,6 +330,7 @@ entities:
       - name: entitlement
         externalId: entitlement
         type: String
+        indexed: true
       - name: incident
         externalId: incident
         type: String
@@ -509,6 +510,89 @@ entities:
         externalId: primary_contact
         type: String
 
+  Entitlement:
+    displayName: Entitlement
+    externalId: service_entitlement
+    description: Entitlement Entity in ServiceNow
+    pageSize: 350
+    pagesOrderedById: true
+    attributes:
+      - name: sysId
+        externalId: sys_id
+        description: ID of the entitlment
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: channel
+        externalId: channel
+        type: String
+        indexed: true
+      - name: consumer
+        externalId: consumer
+        type: String
+        indexed: true
+      - name: contract
+        externalId: contract
+        type: String
+        indexed: true
+      - name: endDate
+        externalId: end_date
+        type: DateTime
+        indexed: true
+      - name: entitlementName
+        externalId: entitlement_name
+        type: String
+        indexed: true
+      - name: entitlementProcess
+        externalId: entitlement_process
+        type: String
+      - name: perUnit
+        externalId: per_unit
+        type: Bool
+        indexed: true
+      - name: product
+        externalId: product
+        type: String
+        indexed: true
+      - name: remainingUnits
+        externalId: remaining_units
+        type: String
+        indexed: true
+      - name: startDate
+        externalId: start_date
+        type: DateTime
+        indexed: true
+      - name: sysCreatedBy
+        externalId: sys_created_by
+        type: String
+        indexed: true
+      - name: sysCreatedOn
+        externalId: sys_created_on
+        type: DateTime
+        indexed: true
+      - name: sysDomain
+        externalId: sys_domain
+        type: String
+        indexed: true
+      - name: sysModCount
+        externalId: sys_mod_count
+        type: String
+        indexed: true
+      - name: sysUpdatedBy
+        externalId: sys_updated_by
+        type: String
+        indexed: true
+      - name: sysUpdatedOn
+        externalId: sys_updated_on
+        type: DateTime
+        indexed: true
+      - name: totalUnits
+        externalId: total_units
+        type: String
+      - name: unit
+        externalId: unit
+        type: String
+
 relationships:
   UserManager:
     name: Manager
@@ -545,6 +629,11 @@ relationships:
     displayName: Case Account
     fromAttribute: sn_customerservice_case.account
     toAttribute: customer_account.sys_id
+  CaseEntitlement:
+    name: CaseEntitlement
+    displayName: CaseEntitlement
+    fromAttribute: sn_customerservice_case.entitlement
+    toAttribute: service_entitlement.sys_id
   GroupDefaultAssignee:
     name: DefaultAssignee
     displayName: Group Default Assignee
