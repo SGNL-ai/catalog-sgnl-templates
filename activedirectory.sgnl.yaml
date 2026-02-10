@@ -8,7 +8,7 @@ defaultSyncFrequency: HOURLY
 defaultSyncMinInterval: 1
 defaultApiCallFrequency: SECONDLY
 defaultApiCallMinInterval: 1
-type: "LDAP-1.0.0"
+type: "LDAP-2.0.0"
 # Example Config:
 # {
 #   "baseDN":"dc=org,dc=example,dc=io",
@@ -26,9 +26,10 @@ type: "LDAP-1.0.0"
 #     "GroupMember": {
 #       "memberOf": "Group",
 #       "collectionAttribute": "distinguishedName",
-#       "query": "(&(memberOf={{CollectionId}})(objectCategory=user)(objectClass=user))",
-#       "memberUniqueIdAttribute": "objectGUID",
-#       "memberOfUniqueIdAttribute": "objectGUID"
+#       # Users who are members
+#       "query": "(&(objectClass=group)({{CollectionAttribute}}={{CollectionId}}))",
+#       "memberUniqueIdAttribute": "distinguishedName",
+#       "memberOfUniqueIdAttribute": "distinguishedName"
 #     }
 #   },
 # }
@@ -52,9 +53,9 @@ type: "LDAP-1.0.0"
 
 # [Optional] entityConfig.GroupMember (Object): Configuration for group membership entities.
 # [Required] entityConfig.GroupMember.memberOf (String): Specifies the group to which the members belong.
-# [Required] entityConfig.GroupMember.query (String): Specifies the LDAP query for retrieving group members with {{CollectionID}}.
-# [Required] entityConfig.GroupMember.collectionAttribute (String): Specifies attribute name to replate {{CollectionID}}.
-# [Required] entityConfig.GroupMember.memberUniqueIdAttribute (String): Specifies the attribute used as a unique identifier for members.
+# [Required] entityConfig.GroupMember.query (String): Specifies the LDAP query for retrieving group members using the {{CollectionAttribute}}={{CollectionId}} attribute value pair.
+# [Required] entityConfig.GroupMember.collectionAttribute (String): Specifies attribute name of a group whose value is used to replace {{CollectionId}}.
+# [Required] entityConfig.GroupMember.memberUniqueIdAttribute (String): Specifies the attribute used as a unique identifier for members (for range query, this can only be a "distinguishedName").
 # [Required] entityConfig.GroupMember.memberOfUniqueIdAttribute (String): Specifies the attribute used as a unique identifier for the group.
 
 adapterConfig: "ewogICAgImJhc2VETiI6ICJ7e0lucHV0IFJlcXVpcmVkOiBCYXNlRE59fSIsCiAgICAiY2VydGlmaWNhdGVDaGFpbiI6ICJ7e0lucHV0IFJlcXVpcmVkOiBJZiBMREFQUyBpcyBlbmFibGVkOiBiYXNlNjQgZW5jb2RlZCBjZXJ0aWZpY2F0ZUNoYWlufX0iCn0="
