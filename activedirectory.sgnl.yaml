@@ -99,6 +99,7 @@ entities:
         externalId: distinguishedName
         type: String
         attributeAlias: userDistinguishedName
+        indexed: true
       - name: instanceType
         externalId: instanceType
         type: Int64
@@ -337,6 +338,7 @@ entities:
         externalId: distinguishedName
         type: String
         attributeAlias: groupDistinguishedName
+        indexed: true
       - name: instanceType
         externalId: instanceType
         type: Int64
