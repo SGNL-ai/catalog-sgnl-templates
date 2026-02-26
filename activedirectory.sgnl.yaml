@@ -98,6 +98,8 @@ entities:
       - name: distinguishedName
         externalId: distinguishedName
         type: String
+        attributeAlias: userDistinguishedName
+        indexed: true
       - name: instanceType
         externalId: instanceType
         type: Int64
@@ -335,6 +337,8 @@ entities:
       - name: distinguishedName
         externalId: distinguishedName
         type: String
+        attributeAlias: groupDistinguishedName
+        indexed: true
       - name: instanceType
         externalId: instanceType
         type: Int64
@@ -383,12 +387,12 @@ entities:
         type: String
         indexed: true
         uniqueId: true
-      - name: group_objectGUID
-        externalId: group_objectGUID
+      - name: group_distinguishedName
+        externalId: group_distinguishedName
         type: String
         indexed: true
-      - name: member_objectGUID
-        externalId: member_objectGUID
+      - name: member_distinguishedName
+        externalId: member_distinguishedName
         type: String
         indexed: true
 
@@ -396,18 +400,18 @@ relationships:
   UserMember:
     name: Member
     displayName: User Member
-    fromAttribute: GroupMember.member_objectGUID
-    toAttribute: userGUID
+    fromAttribute: GroupMember.member_distinguishedName
+    toAttribute: userDistinguishedName
   GroupMember:
     name: Member
     displayName: Group Member
-    fromAttribute: GroupMember.member_objectGUID
-    toAttribute: groupGUID
+    fromAttribute: GroupMember.member_distinguishedName
+    toAttribute: groupDistinguishedName
   MemberOf:
     name: MemberOf
     displayName: Member Of
-    fromAttribute: GroupMember.group_objectGUID
-    toAttribute: groupGUID
+    fromAttribute: GroupMember.group_distinguishedName
+    toAttribute: groupDistinguishedName
   UserMemberGroup:
     name: Group
     displayName: User Member Group
