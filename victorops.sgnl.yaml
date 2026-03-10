@@ -67,6 +67,7 @@ entities:
     displayName: User
     externalId: User
     description: User entity in VictorOps
+    pageSize: 100
     pagesOrderedById: false
     attributes:
       - name: username
@@ -90,7 +91,7 @@ relationships:
   # (User) -[UserPagedUsers]-> (PagedUsers) via username matching
   UserPagedUsers:
     displayName: User to PagedUsers
-    name: same_as
+    name: SameAs
     fromAttribute: User.username
     toAttribute: pagedUsers.value
   # Path relationship: (IncidentReport) -[IncidentReportUser]-> (User)
