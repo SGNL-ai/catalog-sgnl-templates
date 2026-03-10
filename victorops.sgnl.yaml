@@ -51,6 +51,7 @@ entities:
     displayName: PagedUsers
     externalId: pagedUsers
     description: PagedUsers child entity of IncidentReport in VictorOps
+    pageSize: 100
     pagesOrderedById: false
     attributes:
       - name: id
