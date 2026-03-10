@@ -1,0 +1,104 @@
+# VictorOps Configuration YAML for DS2.0
+displayName: "VictorOps"
+icon: PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCI+PHBhdGggZD0iTTY0IDMyYzAgMTcuNjgtMTQuMzIgMzItMzIgMzJTMCA0OS42OCAwIDMyIDE0LjMyIDAgMzIgMHMzMiAxNC4zMiAzMiAzMnoiIGZpbGw9IiNmYmIwNDAiLz48cGF0aCBkPSJNMjUuOTIgNDUuNmw1LjM2IDYuMjR2Ny4zNmgxLjM2di03LjM2bDUuMjgtNi4yNC0xLjkyLjg4LjQtMS4zNiA0LjQ4LTIgLjI0LTEuNDQgMy42LTQuNTYtNy4xMiAyLjMyLjE2LTEuNiA5LjQ0LTQuOC0yLjA4LTMuNjggNC40LTYuMzItMTIuMzIgNS45Mi0uMjQtMS43NiAzLjYtNS45Mi0uNDgtLjk2IDEuNi02Ljg4LTYuNCA2LjgtLjQtMy43NiAxLjkyLTUuNjgtMi41Ni44OC0yLjMyLTYuODgtMi4yNCA2Ljg4LTIuNTYtLjg4IDEuOTIgNS42OC0uNCAzLjc2LTYuNDgtNi44IDEuNjggNi44OC0uNDguOTYgMy42IDUuOTItLjI0IDEuNzYtMTIuNC01LjkyIDQuNDggNi4zMi0yLjA4IDMuNjggOS40NCA0LjguMTYgMS42LTcuMi0yLjMyIDMuNiA0LjU2LjMyIDEuNDQgNC40IDIgLjQ4IDEuMzZ6IiBmaWxsPSIjMmQyZDJkIi8+PC9zdmc+
+description: "VictorOps as a System of Record"
+hostname: "api.victorops.com"
+defaultSyncFrequency: HOURLY
+defaultSyncMinInterval: 1
+defaultApiCallFrequency: SECONDLY
+defaultApiCallMinInterval: 1
+type: "VictorOps-1.0.0"
+# Config:
+# {
+#   "queryParameters": {
+#     "IncidentReport": "currentPhase=triggered,acknowledged"
+#   }
+# }
+adapterConfig: "eyJxdWVyeVBhcmFtZXRlcnMiOnsiSW5jaWRlbnRSZXBvcnQiOiJjdXJyZW50UGhhc2U9dHJpZ2dlcmVkLGFja25vd2xlZGdlZCJ9fQ=="
+# All auth mechanisms specified below must be supported by the specified Adapter.
+auth:
+  - basic:
+      username: "{{Input Required: API-ID}}"
+      password: "{{Input Required: API-Key}}"
+deliveryMethod: syncPoll
+
+entities:
+  IncidentReport:
+    displayName: IncidentReport
+    externalId: IncidentReport
+    description: IncidentReport entity in VictorOps
+    pageSize: 100
+    pagesOrderedById: false
+    attributes:
+      - name: incidentNumber
+        externalId: incidentNumber
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: startTime
+        externalId: startTime
+        type: String
+      - name: currentPhase
+        externalId: currentPhase
+        type: String
+        indexed: true
+      - name: entityDisplayName
+        externalId: entityDisplayName
+        type: String
+
+  PagedUsers:
+    parent: IncidentReport
+    displayName: PagedUsers
+    externalId: pagedUsers
+    description: PagedUsers child entity of IncidentReport in VictorOps
+    pagesOrderedById: false
+    attributes:
+      - name: id
+        externalId: id
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: value
+        externalId: value
+        type: String
+        indexed: true
+
+  User:
+    displayName: User
+    externalId: User
+    description: User entity in VictorOps
+    pagesOrderedById: false
+    attributes:
+      - name: username
+        externalId: username
+        type: String
+        indexed: true
+        uniqueId: true
+      - name: email
+        externalId: email
+        type: String
+        indexed: true
+      - name: verified
+        externalId: verified
+        type: Bool
+
+relationships:
+  # Parent relationship: IncidentReport -> PagedUsers
+  ParentOfPagedUsers:
+    displayName: ParentOfPagedUsers
+    childEntity: pagedUsers
+  # (User) -[UserPagedUsers]-> (PagedUsers) via username matching
+  UserPagedUsers:
+    displayName: User to PagedUsers
+    name: same_as
+    fromAttribute: User.username
+    toAttribute: pagedUsers.value
+  # Path relationship: (IncidentReport) -[IncidentReportUser]-> (User)
+  IncidentReportUser:
+    displayName: IncidentReport to User
+    name: IncidentReportUser
+    path:
+      - relationship: ParentOfPagedUsers
+        direction: Backward
+      - relationship: UserPagedUsers
+        direction: Backward
