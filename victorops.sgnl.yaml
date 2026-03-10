@@ -20,7 +20,6 @@ auth:
   - basic:
       username: "{{Input Required: API-ID}}"
       password: "{{Input Required: API-Key}}"
-deliveryMethod: syncPoll
 
 entities:
   IncidentReport:
@@ -37,7 +36,7 @@ entities:
         uniqueId: true
       - name: startTime
         externalId: startTime
-        type: String
+        type: DateTime
       - name: currentPhase
         externalId: currentPhase
         type: String
