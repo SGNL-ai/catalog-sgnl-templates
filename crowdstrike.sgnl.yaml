@@ -623,49 +623,6 @@ entities:
         externalId: modified_timestamp
         type: DateTime
 
-  EndpointIncident:
-    displayName: Endpoint Incident
-    externalId: endpoint_protection_incident
-    description: Endpoint Incident represents an incident in the CrowdStrike platform. This is fetched from the Endpoint Protection module.
-    pageSize: 100
-    attributes:
-      - name: incidentId
-        externalId: incident_id
-        type: String
-        indexed: true
-        uniqueId: true
-      - name: state
-        externalId: state
-        type: String
-      - name: incidentType
-        externalId: incident_type
-        type: Int64
-      - name: cId
-        externalId: cid
-        type: String
-      - name: hostIds
-        externalId: host_ids
-        type: String
-        list: true
-      - name: created
-        externalId: created
-        type: DateTime
-      - name: start
-        externalId: start
-        type: DateTime
-      - name: end
-        externalId: end
-        type: DateTime
-      - name: emailState
-        externalId: email_state
-        type: String
-      - name: status
-        externalId: status
-        type: Int64
-      - name: fineScore
-        externalId: fine_score
-        type: Int64
-
   Alert:
     displayName: Alert
     externalId: endpoint_protection_alert
